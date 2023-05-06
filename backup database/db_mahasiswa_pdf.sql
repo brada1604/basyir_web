@@ -389,10 +389,17 @@ CREATE TABLE `tbl_transaksi`  (
   `total_pembayaran` double(20, 2) UNSIGNED NOT NULL,
   `waktu` timestamp(0) NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP(0),
   `nama_pembeli` varchar(255) NOT NULL,
+<<<<<<< Updated upstream
   `email` varchar(255) NOT NULL,
   `telepon` varchar(15) NOT NULL,
   `alamat` text NOT NULL,
   `kode_pos` varchar(5) NOT NULL,
+=======
+  `email` varchar(255)  NOT NULL,
+  `telepon` varchar(15)  NOT NULL,
+  `alamat` text  NOT NULL,
+  `kode_pos` varchar(5)  NOT NULL,
+>>>>>>> Stashed changes
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 22 ROW_FORMAT = Dynamic;
 
@@ -417,7 +424,11 @@ CREATE TABLE `tbl_transpjl`  (
   `idtrans` int unsigned NOT NULL,
   `nama` varchar(255) DEFAULT NULL,
   `hp` varchar(15) DEFAULT NULL,
+<<<<<<< Updated upstream
   `alamat` text ,
+=======
+  `alamat` text,
+>>>>>>> Stashed changes
   `kecamatan` varchar(50) DEFAULT NULL,
   `kota` varchar(50) DEFAULT NULL,
   `total` double(10, 2) DEFAULT NULL,

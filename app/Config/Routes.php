@@ -106,6 +106,9 @@ $routes->post('/login/auth', 'AuthController::auth'); // untuk checking data log
 $routes->get('/register', 'RegisterController::index'); // untuk register data
 $routes->post('/register/save', 'RegisterController::save'); // untuk menyimpan user baru
 
+// ROUTE LANDING PAGE
+$routes->get('/welcome', 'welcome::index');
+
 
 // ROUTE BERITA
 $routes->get('/berita', 'BeritaController::display'); // untuk menampilkan data
