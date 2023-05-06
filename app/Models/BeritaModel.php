@@ -40,13 +40,14 @@ class BeritaModel extends Model
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
 
-    public function getBerita($id = false, $id_user = false)
+    public function getBerita($id = false)
     {
+        $id_user = session()->get('role');
         if ($id === false) {
             // return $this->findAll();
 
             // Manual atau Query Builder
-            $query = $this->db->query("SELECT * FROM tbl_berita");
+            $query = $this->db->query("SELECT * FROM tbl_berita where id_user = '$id_user'");
             return $query->getResult(); // return berupa array objek
 
         } else {

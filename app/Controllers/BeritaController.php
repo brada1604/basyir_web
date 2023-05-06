@@ -10,6 +10,7 @@ class BeritaController extends BaseController
     public function index()
     {
         $model = new BeritaModel;
+        $data['session'] = session();
         $data['title'] = 'Data Berita';
         $data['getBerita'] = $model->getBerita();
 
@@ -21,15 +22,18 @@ class BeritaController extends BaseController
     }
 
     public function add(){
-        $data['title'] = 'Data Berita';
+        $data['title'] = 'Data Berita - Add';
+        $data['session'] = session();
 
         echo view('layout/v_header', $data);
+        echo view('layout/v_sidebar');
         echo view('layout/v_navbar');
         echo view('berita/add');
         echo view('layout/v_footer');
     }
 
     public function save(){
+        $data['session'] = session();
         $rules = [
             'judul_berita' => 'required',
             'ringkasan_berita' => 'required',
@@ -69,6 +73,7 @@ class BeritaController extends BaseController
             $data['title'] = 'Data Berita';
 
             echo view('layout/v_header', $data);
+            echo view('layout/v_sidebar');
             echo view('layout/v_navbar');
             echo view('berita/add', $data);
             echo view('layout/v_footer');
@@ -77,16 +82,19 @@ class BeritaController extends BaseController
 
     public function edit($id){
         $model = new BeritaModel;
+        $data['session'] = session();
         $data['title'] = 'Data Berita - Edit';
         $data['getBerita'] = $model->getBerita($id);
 
         echo view('layout/v_header', $data);
+        echo view('layout/v_sidebar');
         echo view('layout/v_navbar');
         echo view('berita/edit', $data);
         echo view('layout/v_footer');
     }
 
     public function update(){
+        $data['session'] = session();
         $rules = [
             'judul_berita' => 'required',
             'ringkasan_berita' => 'required',

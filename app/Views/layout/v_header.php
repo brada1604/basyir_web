@@ -20,4 +20,10 @@
     <!-- Custom styles for this template-->
     <link href="<?= base_url();?>/assets/assets-admin/css/sb-admin-2.min.css" rel="stylesheet">
 
+    <!-- Custom styles -->
+    <link href="<?= base_url();?>/assets/assets-admin/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+
+    <!-- WYSIWYG -->
+    <script src="<?=base_url();?>/assets/assets-admin/ckeditor/ckeditor.js"></script>
+
 </head>
