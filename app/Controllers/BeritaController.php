@@ -94,43 +94,64 @@ class BeritaController extends BaseController
      
         if($this->validate($rules)){
             $model = new BeritaModel();
-
             $id_berita = $this->request->getVar('id_berita');
 
-            $data_berita = $model->getBerita($id_berita);
-            @unlink($data_berita[0]->gambar_berita);
+            $cek = $this->request->getFile('image_file');
+            
+            if (empty($cek->getName())) {
+                $data = [
+                    'id_user' => $this->request->getVar('id_user'),
+                    'judul_berita' => $this->request->getVar('judul_berita'),
+                    'ringkasan_berita' => $this->request->getVar('ringkasan_berita'),
+                    'konten_berita' => $this->request->getVar('konten_berita'),
+                    'video_berita' => $this->request->getVar('video_berita'),
+                ];
 
+                $model->update($id_berita, $data);
 
-            $fileImage_name = "";
+                echo '<script>
+                    alert("Selamat! Berhasil Mengubah Data Berita");
+                    window.location="' . base_url('berita_master') . '"
+                </script>';
+            }
+            else{
+                
 
-            if(isset($_FILES) && @$_FILES['image_file']['error'] != '4') {
-                if($fileImage = $this->request->getFile('image_file')) {
-                    if (! $fileImage->isValid()) {
-                        throw new \RuntimeException($fileImage->getErrorString().'('.$fileImage->getError().')');
-                    } else {            
-     
-                        $fileImage->move('assets/image/berita');
-                        $fileImage_name = $fileImage->getName();
+                $data_berita = $model->getBerita($id_berita);
+                @unlink($data_berita[0]->gambar_berita);
+
+                $fileImage_name = "";
+
+                if(isset($_FILES) && @$_FILES['image_file']['error'] != '4') {
+                    if($fileImage = $this->request->getFile('image_file')) {
+                        if (! $fileImage->isValid()) {
+                            throw new \RuntimeException($fileImage->getErrorString().'('.$fileImage->getError().')');
+                        } else {            
+         
+                            $fileImage->move('assets/image/berita');
+                            $fileImage_name = $fileImage->getName();
+                        }
                     }
                 }
+
+                $data = [
+                    'id_user' => $this->request->getVar('id_user'),
+                    'judul_berita' => $this->request->getVar('judul_berita'),
+                    'ringkasan_berita' => $this->request->getVar('ringkasan_berita'),
+                    'konten_berita' => $this->request->getVar('konten_berita'),
+                    'video_berita' => $this->request->getVar('video_berita'),
+                    'gambar_berita' => 'assets/image/berita/'.$fileImage_name,
+                ];
+
+                 
+                $model->update($id_berita, $data);
+         
+                echo '<script>
+                    alert("Selamat! Berhasil Mengubah Data Berita");
+                    window.location="' . base_url('berita_master') . '"
+                </script>';
             }
 
-            $data = [
-                'id_user' => $this->request->getVar('id_user'),
-                'judul_berita' => $this->request->getVar('judul_berita'),
-                'ringkasan_berita' => $this->request->getVar('ringkasan_berita'),
-                'konten_berita' => $this->request->getVar('konten_berita'),
-                'video_berita' => $this->request->getVar('video_berita'),
-                'gambar_berita' => 'assets/image/berita/'.$fileImage_name,
-            ];
-
-             
-            $model->update($id_berita, $data);
-     
-            echo '<script>
-                alert("Selamat! Berhasil Mengubah Data Berita");
-                window.location="' . base_url('berita_master') . '"
-            </script>';
      
         } else {
             $data['validation'] = $this->validator;
