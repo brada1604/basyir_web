@@ -34,6 +34,7 @@ class AuthController extends BaseController
                     'id'        => $data[0]->id,
                     'email'  => $data[0]->email,
                     'name'      => $data[0]->name,
+                    'role'      => $data[0]->role,
                     'logged_in' => TRUE
                 ]; // proses pembuatan data session
 

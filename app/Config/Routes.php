@@ -107,6 +107,17 @@ $routes->get('/register', 'RegisterController::index'); // untuk register data
 $routes->post('/register/save', 'RegisterController::save'); // untuk menyimpan user baru
 
 
+// ROUTE BERITA
+$routes->get('/berita', 'BeritaController::display'); // untuk menampilkan data
+$routes->get('/berita_master', 'BeritaController::index',['filter' => 'auth']); // untuk menampilkan data
+$routes->get('/berita/add', 'BeritaController::add',['filter' => 'auth']); // untuk menambahkan data
+$routes->post('/berita/save', 'BeritaController::save'); // untuk menyimpan data
+$routes->get('/berita/(:segment)', 'BeritaController::detail/$1',['filter' => 'auth']); // (:segment) = parameter, $1 = parameter pertama yang di ambil
+$routes->get('/berita/edit/(:segment)', 'BeritaController::edit/$1',['filter' => 'auth']); // (:segment) = parameter, $1 = parameter pertama yang di ambil
+$routes->post('/berita/update', 'BeritaController::update'); // untuk mengupdate data
+$routes->get('/berita/delete/(:segment)', 'BeritaController::delete/$1',['filter' => 'auth']); // (:segment) = parameter, $1 = parameter pertama yang di ambil
+$routes->post('/berita/search', 'BeritaController::search'); // untuk mencari data berdasarkan variable tertentu
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing
