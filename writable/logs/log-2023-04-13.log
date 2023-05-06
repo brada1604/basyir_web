@@ -1,0 +1,85 @@
+INFO - 2023-04-13 03:33:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-13 03:33:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-04-13 03:33:56 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\laragon\www\mahasiswa_excel\system\Database\MySQLi\Connection.php:173
+Stack trace:
+#0 C:\laragon\www\mahasiswa_excel\system\Database\MySQLi\Connection.php(173): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'db_toko_online_...', 3306, '', 0)
+#1 C:\laragon\www\mahasiswa_excel\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\laragon\www\mahasiswa_excel\system\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\laragon\www\mahasiswa_excel\app\Models\UserModel.php(46): CodeIgniter\Database\BaseConnection->query('SELECT * FROM t...')
+#4 C:\laragon\www\mahasiswa_excel\app\Controllers\AuthController.php(27): App\Models\UserModel->getUser('admin')
+#5 C:\laragon\www\mahasiswa_excel\system\CodeIgniter.php(934): App\Controllers\AuthController->auth()
+#6 C:\laragon\www\mahasiswa_excel\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#7 C:\laragon\www\mahasiswa_excel\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\laragon\www\mahasiswa_excel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#9 C:\laragon\www\mahasiswa_excel\system\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\...')
+#10 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\laragon\www\mahasiswa_excel\system\Database\MySQLi\Connection.php:218
+Stack trace:
+#0 C:\laragon\www\mahasiswa_excel\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\laragon\www\mahasiswa_excel\system\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\laragon\www\mahasiswa_excel\app\Models\UserModel.php(46): CodeIgniter\Database\BaseConnection->query('SELECT * FROM t...')
+#3 C:\laragon\www\mahasiswa_excel\app\Controllers\AuthController.php(27): App\Models\UserModel->getUser('admin')
+#4 C:\laragon\www\mahasiswa_excel\system\CodeIgniter.php(934): App\Controllers\AuthController->auth()
+#5 C:\laragon\www\mahasiswa_excel\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#6 C:\laragon\www\mahasiswa_excel\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\laragon\www\mahasiswa_excel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#8 C:\laragon\www\mahasiswa_excel\system\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\...')
+#9 {main}
+CRITICAL - 2023-04-13 03:33:56 --> Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+in SYSTEMPATH\Database\BaseConnection.php on line 427.
+ 1 SYSTEMPATH\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+ 2 APPPATH\Models\UserModel.php(46): CodeIgniter\Database\BaseConnection->query('SELECT * FROM tbl_user where binary username = \'admin\' ')
+ 3 APPPATH\Controllers\AuthController.php(27): App\Models\UserModel->getUser('admin')
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AuthController->auth()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2023-04-13 03:34:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-04-13 03:34:11 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\laragon\www\mahasiswa_excel\system\Database\MySQLi\Connection.php:173
+Stack trace:
+#0 C:\laragon\www\mahasiswa_excel\system\Database\MySQLi\Connection.php(173): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'db_toko_online_...', 3306, '', 0)
+#1 C:\laragon\www\mahasiswa_excel\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\laragon\www\mahasiswa_excel\system\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\laragon\www\mahasiswa_excel\app\Models\UserModel.php(46): CodeIgniter\Database\BaseConnection->query('SELECT * FROM t...')
+#4 C:\laragon\www\mahasiswa_excel\app\Controllers\AuthController.php(27): App\Models\UserModel->getUser('admin')
+#5 C:\laragon\www\mahasiswa_excel\system\CodeIgniter.php(934): App\Controllers\AuthController->auth()
+#6 C:\laragon\www\mahasiswa_excel\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#7 C:\laragon\www\mahasiswa_excel\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\laragon\www\mahasiswa_excel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#9 C:\laragon\www\mahasiswa_excel\system\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\...')
+#10 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\laragon\www\mahasiswa_excel\system\Database\MySQLi\Connection.php:218
+Stack trace:
+#0 C:\laragon\www\mahasiswa_excel\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\laragon\www\mahasiswa_excel\system\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\laragon\www\mahasiswa_excel\app\Models\UserModel.php(46): CodeIgniter\Database\BaseConnection->query('SELECT * FROM t...')
+#3 C:\laragon\www\mahasiswa_excel\app\Controllers\AuthController.php(27): App\Models\UserModel->getUser('admin')
+#4 C:\laragon\www\mahasiswa_excel\system\CodeIgniter.php(934): App\Controllers\AuthController->auth()
+#5 C:\laragon\www\mahasiswa_excel\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#6 C:\laragon\www\mahasiswa_excel\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\laragon\www\mahasiswa_excel\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#8 C:\laragon\www\mahasiswa_excel\system\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\...')
+#9 {main}
+CRITICAL - 2023-04-13 03:34:11 --> Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+in SYSTEMPATH\Database\BaseConnection.php on line 427.
+ 1 SYSTEMPATH\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+ 2 APPPATH\Models\UserModel.php(46): CodeIgniter\Database\BaseConnection->query('SELECT * FROM tbl_user where binary username = \'admin\' ')
+ 3 APPPATH\Controllers\AuthController.php(27): App\Models\UserModel->getUser('admin')
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AuthController->auth()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2023-04-13 03:34:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-13 03:34:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-13 03:34:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-13 03:34:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-13 03:34:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-13 03:34:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-13 03:35:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-13 03:36:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

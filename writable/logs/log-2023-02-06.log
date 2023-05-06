@@ -1,0 +1,30 @@
+CRITICAL - 2023-02-06 16:19:07 --> syntax error, unexpected string content "", expecting "-" or identifier or variable or number
+in APPPATH\Models\MahasiswaModel.php on line 67.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('APPPATH\\Models\\MahasiswaModel.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Models\\MahasiswaModel')
+ 3 APPPATH\Controllers\MahasiswaController.php(12): CodeIgniter\Autoloader\Autoloader->loadClass('App\\Models\\MahasiswaModel')
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\MahasiswaController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MahasiswaController))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-02-06 16:19:51 --> syntax error, unexpected token "}", expecting ";"
+in APPPATH\Models\MahasiswaModel.php on line 72.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('APPPATH\\Models\\MahasiswaModel.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Models\\MahasiswaModel')
+ 3 APPPATH\Controllers\MahasiswaController.php(12): CodeIgniter\Autoloader\Autoloader->loadClass('App\\Models\\MahasiswaModel')
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\MahasiswaController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MahasiswaController))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-02-06 16:20:13 --> Unclosed '{' on line 8
+in APPPATH\Models\MahasiswaModel.php on line 73.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('APPPATH\\Models\\MahasiswaModel.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Models\\MahasiswaModel')
+ 3 APPPATH\Controllers\MahasiswaController.php(12): CodeIgniter\Autoloader\Autoloader->loadClass('App\\Models\\MahasiswaModel')
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\MahasiswaController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MahasiswaController))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')

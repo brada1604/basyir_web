@@ -1,0 +1,193 @@
+CRITICAL - 2023-02-11 18:21:36 --> Undefined property: App\Controllers\InfoController::$load
+in APPPATH\Controllers\InfoController.php on line 13.
+ 1 APPPATH\Controllers\InfoController.php(13): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\InfoController::$load', 'APPPATH\\Controllers\\InfoController.php', 13)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\InfoController->index()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\InfoController))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-02-11 18:25:13 --> Undefined property: App\Controllers\InfoController::$view
+in APPPATH\Controllers\InfoController.php on line 13.
+ 1 APPPATH\Controllers\InfoController.php(13): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\InfoController::$view', 'APPPATH\\Controllers\\InfoController.php', 13)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\InfoController->index()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\InfoController))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-02-11 18:25:28 --> Undefined property: App\Controllers\InfoController::$view
+in APPPATH\Controllers\InfoController.php on line 13.
+ 1 APPPATH\Controllers\InfoController.php(13): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\InfoController::$view', 'APPPATH\\Controllers\\InfoController.php', 13)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\InfoController->index()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\InfoController))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-02-11 18:25:29 --> Undefined property: App\Controllers\InfoController::$view
+in APPPATH\Controllers\InfoController.php on line 13.
+ 1 APPPATH\Controllers\InfoController.php(13): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\InfoController::$view', 'APPPATH\\Controllers\\InfoController.php', 13)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\InfoController->index()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\InfoController))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-02-11 18:29:44 --> Undefined property: App\Controllers\InfoController::$view
+in APPPATH\Controllers\InfoController.php on line 13.
+ 1 APPPATH\Controllers\InfoController.php(13): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\InfoController::$view', 'APPPATH\\Controllers\\InfoController.php', 13)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\InfoController->index()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\InfoController))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-02-11 18:29:45 --> Undefined property: App\Controllers\InfoController::$view
+in APPPATH\Controllers\InfoController.php on line 13.
+ 1 APPPATH\Controllers\InfoController.php(13): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\InfoController::$view', 'APPPATH\\Controllers\\InfoController.php', 13)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\InfoController->index()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\InfoController))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-02-11 18:29:46 --> Undefined property: App\Controllers\InfoController::$view
+in APPPATH\Controllers\InfoController.php on line 13.
+ 1 APPPATH\Controllers\InfoController.php(13): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\InfoController::$view', 'APPPATH\\Controllers\\InfoController.php', 13)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\InfoController->index()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\InfoController))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-02-11 18:31:01 --> Undefined property: App\Controllers\InfoController::$view
+in APPPATH\Controllers\InfoController.php on line 14.
+ 1 APPPATH\Controllers\InfoController.php(14): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\InfoController::$view', 'APPPATH\\Controllers\\InfoController.php', 14)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\InfoController->index()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\InfoController))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-02-11 18:31:02 --> Undefined property: App\Controllers\InfoController::$view
+in APPPATH\Controllers\InfoController.php on line 14.
+ 1 APPPATH\Controllers\InfoController.php(14): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\InfoController::$view', 'APPPATH\\Controllers\\InfoController.php', 14)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\InfoController->index()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\InfoController))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-02-11 18:31:03 --> Undefined property: App\Controllers\InfoController::$view
+in APPPATH\Controllers\InfoController.php on line 14.
+ 1 APPPATH\Controllers\InfoController.php(14): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\InfoController::$view', 'APPPATH\\Controllers\\InfoController.php', 14)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\InfoController->index()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\InfoController))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-02-11 18:31:30 --> Undefined property: App\Controllers\InfoController::$view
+in APPPATH\Controllers\InfoController.php on line 13.
+ 1 APPPATH\Controllers\InfoController.php(13): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\InfoController::$view', 'APPPATH\\Controllers\\InfoController.php', 13)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\InfoController->index()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\InfoController))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-02-11 18:31:52 --> Undefined property: App\Controllers\InfoController::$view
+in APPPATH\Controllers\InfoController.php on line 13.
+ 1 APPPATH\Controllers\InfoController.php(13): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\InfoController::$view', 'APPPATH\\Controllers\\InfoController.php', 13)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\InfoController->index()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\InfoController))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+ERROR - 2023-02-11 18:36:26 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\si_akademik\system\Database\MySQLi\Connection.php:173
+Stack trace:
+#0 C:\xampp\htdocs\si_akademik\system\Database\MySQLi\Connection.php(173): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'db_akademik', 3306, '', 0)
+#1 C:\xampp\htdocs\si_akademik\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\si_akademik\system\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\si_akademik\app\Models\MahasiswaModel.php(49): CodeIgniter\Database\BaseConnection->query('SELECT * FROM t...')
+#4 C:\xampp\htdocs\si_akademik\app\Controllers\MahasiswaController.php(14): App\Models\MahasiswaModel->getMahasiswa()
+#5 C:\xampp\htdocs\si_akademik\system\CodeIgniter.php(934): App\Controllers\MahasiswaController->index()
+#6 C:\xampp\htdocs\si_akademik\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MahasiswaController))
+#7 C:\xampp\htdocs\si_akademik\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\si_akademik\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\si_akademik\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\si_akademik\system\Database\MySQLi\Connection.php:218
+Stack trace:
+#0 C:\xampp\htdocs\si_akademik\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\si_akademik\system\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\si_akademik\app\Models\MahasiswaModel.php(49): CodeIgniter\Database\BaseConnection->query('SELECT * FROM t...')
+#3 C:\xampp\htdocs\si_akademik\app\Controllers\MahasiswaController.php(14): App\Models\MahasiswaModel->getMahasiswa()
+#4 C:\xampp\htdocs\si_akademik\system\CodeIgniter.php(934): App\Controllers\MahasiswaController->index()
+#5 C:\xampp\htdocs\si_akademik\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MahasiswaController))
+#6 C:\xampp\htdocs\si_akademik\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\si_akademik\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\si_akademik\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2023-02-11 18:36:26 --> Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+in SYSTEMPATH\Database\BaseConnection.php on line 427.
+ 1 SYSTEMPATH\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+ 2 APPPATH\Models\MahasiswaModel.php(49): CodeIgniter\Database\BaseConnection->query('SELECT * FROM tbl_mahasiswa')
+ 3 APPPATH\Controllers\MahasiswaController.php(14): App\Models\MahasiswaModel->getMahasiswa()
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\MahasiswaController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MahasiswaController))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-02-11 18:41:05 --> Invalid file: "info/v_header.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('info/v_header.php')
+ 2 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('info/v_header', [], true)
+ 3 APPPATH\Controllers\InfoController.php(13): view('info/v_header', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\InfoController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\InfoController))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-02-11 18:42:01 --> Invalid file: "info/v_header.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('info/v_header.php')
+ 2 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('info/v_header', [], true)
+ 3 APPPATH\Controllers\InfoController.php(13): view('info/v_header', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\InfoController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\InfoController))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-02-11 18:42:02 --> Invalid file: "info/v_header.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('info/v_header.php')
+ 2 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('info/v_header', [], true)
+ 3 APPPATH\Controllers\InfoController.php(13): view('info/v_header', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\InfoController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\InfoController))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-02-11 18:42:13 --> Invalid file: "info/v_header.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('info/v_header.php')
+ 2 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('info/v_header', [], true)
+ 3 APPPATH\Controllers\InfoController.php(13): view('info/v_header', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\InfoController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\InfoController))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-02-11 18:42:14 --> Invalid file: "info/v_header.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('info/v_header.php')
+ 2 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('info/v_header', [], true)
+ 3 APPPATH\Controllers\InfoController.php(13): view('info/v_header', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\InfoController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\InfoController))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-02-11 18:42:14 --> Invalid file: "info/v_header.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('info/v_header.php')
+ 2 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('info/v_header', [], true)
+ 3 APPPATH\Controllers\InfoController.php(13): view('info/v_header', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\InfoController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\InfoController))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')

@@ -1,0 +1,43 @@
+INFO - 2023-05-06 06:17:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-06 06:18:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-05-06 06:18:04 --> Error connecting to the database: mysqli_sql_exception: Unknown database 'db_mahasiswa_pdf' in C:\xampp\htdocs\basyir_web\system\Database\MySQLi\Connection.php:173
+Stack trace:
+#0 C:\xampp\htdocs\basyir_web\system\Database\MySQLi\Connection.php(173): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'db_mahasiswa_pd...', 3306, '', 0)
+#1 C:\xampp\htdocs\basyir_web\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\basyir_web\system\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\basyir_web\app\Models\UserModel.php(46): CodeIgniter\Database\BaseConnection->query('SELECT * FROM t...')
+#4 C:\xampp\htdocs\basyir_web\app\Controllers\AuthController.php(27): App\Models\UserModel->getUser('admin')
+#5 C:\xampp\htdocs\basyir_web\system\CodeIgniter.php(934): App\Controllers\AuthController->auth()
+#6 C:\xampp\htdocs\basyir_web\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#7 C:\xampp\htdocs\basyir_web\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\basyir_web\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\basyir_web\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Unknown database 'db_mahasiswa_pdf' in C:\xampp\htdocs\basyir_web\system\Database\MySQLi\Connection.php:218
+Stack trace:
+#0 C:\xampp\htdocs\basyir_web\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\basyir_web\system\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\basyir_web\app\Models\UserModel.php(46): CodeIgniter\Database\BaseConnection->query('SELECT * FROM t...')
+#3 C:\xampp\htdocs\basyir_web\app\Controllers\AuthController.php(27): App\Models\UserModel->getUser('admin')
+#4 C:\xampp\htdocs\basyir_web\system\CodeIgniter.php(934): App\Controllers\AuthController->auth()
+#5 C:\xampp\htdocs\basyir_web\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#6 C:\xampp\htdocs\basyir_web\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\basyir_web\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\basyir_web\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2023-05-06 06:18:04 --> Unable to connect to the database.
+Main connection [MySQLi]: Unknown database 'db_mahasiswa_pdf'
+in SYSTEMPATH\Database\BaseConnection.php on line 427.
+ 1 SYSTEMPATH\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+ 2 APPPATH\Models\UserModel.php(46): CodeIgniter\Database\BaseConnection->query('SELECT * FROM tbl_user where binary username = \'admin\' ')
+ 3 APPPATH\Controllers\AuthController.php(27): App\Models\UserModel->getUser('admin')
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\AuthController->auth()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2023-05-06 06:18:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-06 06:18:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-06 06:18:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-05-06 06:18:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
