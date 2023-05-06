@@ -14,6 +14,7 @@ class HomeController extends BaseController
         $data['title'] = 'Page Home';
         // return view('home/v_home', $data);
         echo view('layout/v_header', $data);
+        echo view('layout/v_sidebar');
         echo view('layout/v_navbar');
         echo view('home/v_home');
         echo view('layout/v_footer');

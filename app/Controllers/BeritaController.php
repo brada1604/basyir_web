@@ -14,6 +14,7 @@ class BeritaController extends BaseController
         $data['getBerita'] = $model->getBerita();
 
         echo view('layout/v_header', $data);
+        echo view('layout/v_sidebar');
         echo view('layout/v_navbar');
         echo view('berita/index', $data);
         echo view('layout/v_footer');
