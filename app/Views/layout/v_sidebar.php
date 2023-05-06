@@ -32,11 +32,41 @@
                 Umum
             </div>
 
+            <?php if ($session->get('role') == 1): ?>
+                <li class="nav-item">
+                    <a class="nav-link" href="/amalan_yaumi_master">
+                        <i class="fas fa-fw fa-folder"></i>
+                        <span>Amalan Yaumi</span></a>
+                </li>
+            <?php endif ?>   
+
             <?php if ($session->get('role') == 1 || $session->get('role') == 2): ?>
                 <li class="nav-item">
                     <a class="nav-link" href="/berita_master">
                         <i class="fas fa-fw fa-folder"></i>
                         <span>Berita</span></a>
+                </li>
+            <?php endif ?>
+
+            <?php if ($session->get('role') == 1): ?>
+                <li class="nav-item">
+                    <a class="nav-link" href="/doa_master">
+                        <i class="fas fa-fw fa-folder"></i>
+                        <span>Doa</span></a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/kutipan_master">
+                        <i class="fas fa-fw fa-folder"></i>
+                        <span>Kutipan</span></a>
+                </li>
+            <?php endif ?>
+
+            <?php if ($session->get('role') == 1 || $session->get('role') == 4): ?>
+                <li class="nav-item">
+                    <a class="nav-link" href="/rencana_kegiatan_master">
+                        <i class="fas fa-fw fa-folder"></i>
+                        <span>Rencana Kegiatan</span></a>
                 </li>
             <?php endif ?>
 
@@ -47,6 +77,7 @@
                         <span>Wawasan Islami</span></a>
                 </li>
             <?php endif ?>
+
 
             <!-- Divider -->
             <hr class="sidebar-divider">
