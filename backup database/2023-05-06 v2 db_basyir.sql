@@ -23,14 +23,11 @@ SET FOREIGN_KEY_CHECKS = 0;
 DROP TABLE IF EXISTS `tbl_amalan_yaumi`;
 CREATE TABLE `tbl_amalan_yaumi`  (
   `id_amalan_yaumi` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `judul_amalan_yaumi` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `konten_amalan_yaumi` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `gambar_amalan_yaumi` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `video_amalan_yaumi` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `judul_amalan_yaumi` varchar(255)  NOT NULL,
+  `konten_amalan_yaumi` longtext  NOT NULL,
+  `gambar_amalan_yaumi` longtext  NOT NULL,
+  `video_amalan_yaumi` longtext  NOT NULL,
   `status_amalan_yaumi` bigint(20) NOT NULL,
-  `deleted_at` timestamp(0) DEFAULT NULL,
-  `created_at` timestamp(0) DEFAULT NULL,
-  `updated_at` timestamp(0) DEFAULT NULL,
   PRIMARY KEY (`id_amalan_yaumi`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
@@ -66,11 +63,11 @@ DROP TABLE IF EXISTS `tbl_berita`;
 CREATE TABLE `tbl_berita`  (
   `id_berita` int(20) UNSIGNED NOT NULL AUTO_INCREMENT,
   `id_user` int(20) NOT NULL,
-  `judul_berita` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `ringkasan_berita` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `konten_berita` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `gambar_berita` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `video_berita` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `judul_berita` varchar(255)  NOT NULL,
+  `ringkasan_berita` text  NOT NULL,
+  `konten_berita` text  NOT NULL,
+  `gambar_berita` text ,
+  `video_berita` text ,
   `status_berita` int(20) NOT NULL DEFAULT 1,
   `created_at` timestamp(0) NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp(0) NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(0),
@@ -143,13 +140,10 @@ INSERT INTO `tbl_detailjual` VALUES (10, 10, 2, 19000.00, 2, 38000.00);
 DROP TABLE IF EXISTS `tbl_doa`;
 CREATE TABLE `tbl_doa`  (
   `id_doa` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `judul_doa` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `ringkasan_doa` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `ringkasan_latin_doa` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `judul_doa` varchar(255)  NOT NULL,
+  `ringkasan_doa` longtext  NOT NULL,
+  `ringkasan_latin_doa` longtext  NOT NULL,
   `status_doa` bigint(20) NOT NULL,
-  `deleted_at` timestamp(0) DEFAULT NULL,
-  `created_at` timestamp(0) DEFAULT NULL,
-  `updated_at` timestamp(0) DEFAULT NULL,
   PRIMARY KEY (`id_doa`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
@@ -160,12 +154,9 @@ DROP TABLE IF EXISTS `tbl_doa_detail`;
 CREATE TABLE `tbl_doa_detail`  (
   `id_doa_detail` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
   `id_doa` bigint(20) UNSIGNED NOT NULL,
-  `konten_doa` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `konten_latin_doa` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `konten_doa` longtext  NOT NULL,
+  `konten_latin_doa` longtext  NOT NULL,
   `status_doa` bigint(20) NOT NULL,
-  `deleted_at` timestamp(0) DEFAULT NULL,
-  `created_at` timestamp(0) DEFAULT NULL,
-  `updated_at` timestamp(0) DEFAULT NULL,
   PRIMARY KEY (`id_doa_detail`) USING BTREE,
   INDEX `doa_detail_id_doa_foreign`(`id_doa`) USING BTREE,
   CONSTRAINT `tbl_doa_detail_ibfk_1` FOREIGN KEY (`id_doa`) REFERENCES `tbl_doa` (`id_doa`) ON DELETE RESTRICT ON UPDATE RESTRICT
@@ -177,13 +168,10 @@ CREATE TABLE `tbl_doa_detail`  (
 DROP TABLE IF EXISTS `tbl_kutipan`;
 CREATE TABLE `tbl_kutipan`  (
   `id_kutipan` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `judul_kutipan` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `deskripsi_kutipan` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `sumber_kutipan` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `judul_kutipan` varchar(255)  NOT NULL,
+  `deskripsi_kutipan` longtext  NOT NULL,
+  `sumber_kutipan` longtext  NOT NULL,
   `status_kutipan` bigint(20) NOT NULL,
-  `deleted_at` timestamp(0) DEFAULT NULL,
-  `created_at` timestamp(0) DEFAULT NULL,
-  `updated_at` timestamp(0) DEFAULT NULL,
   PRIMARY KEY (`id_kutipan`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
@@ -451,9 +439,6 @@ CREATE TABLE `tbl_rencana_kegiatan`  (
   `id_user` bigint(20) UNSIGNED NOT NULL,
   `id_amalan_yaumi` bigint(20) UNSIGNED NOT NULL,
   `status_rencana_kegiatan` bigint(20) NOT NULL,
-  `deleted_at` timestamp(0) DEFAULT NULL,
-  `created_at` timestamp(0) DEFAULT NULL,
-  `updated_at` timestamp(0) DEFAULT NULL,
   PRIMARY KEY (`id_rencana_kegiatan`) USING BTREE,
   INDEX `rencana_kegiatan_id_user_foreign`(`id_user`) USING BTREE,
   INDEX `rencana_kegiatan_id_amalan_yaumi_foreign`(`id_amalan_yaumi`) USING BTREE,
@@ -567,15 +552,12 @@ INSERT INTO `tbl_user` VALUES (4, 4, 'User', 'user@basyir.cp,', '$2y$10$qJuz8CGw
 DROP TABLE IF EXISTS `tbl_wawasan_islami`;
 CREATE TABLE `tbl_wawasan_islami`  (
   `id_wawasan_islami` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `judul_wawasan_islami` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `ringkasan_wawasan_islami` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `konten_wawasan_islami` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `gambar_wawasan_islami` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `video_wawasan_islami` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `judul_wawasan_islami` varchar(255)  NOT NULL,
+  `ringkasan_wawasan_islami` longtext  NOT NULL,
+  `konten_wawasan_islami` longtext  NOT NULL,
+  `gambar_wawasan_islami` longtext  NOT NULL,
+  `video_wawasan_islami` longtext  NOT NULL,
   `status_wawasan_islami` bigint(20) NOT NULL,
-  `deleted_at` timestamp(0) DEFAULT NULL,
-  `created_at` timestamp(0) DEFAULT NULL,
-  `updated_at` timestamp(0) DEFAULT NULL,
   PRIMARY KEY (`id_wawasan_islami`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 

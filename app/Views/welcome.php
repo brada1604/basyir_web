@@ -94,9 +94,9 @@
                                     <li class="nav-item">
                                         <a class="page-scroll" href="#team">Team</a>
                                     </li>
-                                    <li class="nav-item">
+                                    <!-- <li class="nav-item">
                                     <a class="main-btn gradient-btn" data-scroll-nav="0" href="http://127.0.0.1:8000/login" rel="nofollow">Login Admin</a>
-                                    </li>
+                                    </li> -->
                                 </ul>
                             </div> <!-- navbar collapse -->
                             
@@ -137,35 +137,35 @@
     
     <!--====== PERKENALAN BASYIR ======-->
     
-    <div class="pt-24 brand-area">
+    <!-- <div class="pt-24 brand-area">
         <div class="container">
             <div class="row">
                 <div class="w-full">
                     <div class="pb-10 text-center section-title">
                         <div class="m-auto line"></div>
-                        <h3 class="title">Supported By</h3>
-                        <div class="items-center justify-center row lg:justify-between">
+                        <h3 class="title">Supported By</h3> -->
+                        <!-- <div class="items-center justify-center row lg:justify-between">
                             <div class="single-logo hover:opacity-100 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
                                 <img src="assets/images/brand-1.png" alt="brand" style="width: 70px; height: auto;">
-                            </div> <!-- single logo -->
+                            </div> 
                             <div class="single-logo hover:opacity-100 wow fadeIn" data-wow-duration="1.5s" data-wow-delay="0.2s">
                                 <img src="assets/images/brand-2.png" alt="brand" style="width: 100px; height: auto;">
-                            </div> <!-- single logo -->
+                            </div> 
                             <div class="single-logo hover:opacity-100 wow fadeIn" data-wow-duration="1.5s" data-wow-delay="0.3s">
                                 <img src="assets/images/brand-3.png" alt="brand" style="width: 100px; height: auto;">
-                            </div> <!-- single logo -->
+                            </div> 
                             <div class="single-logo hover:opacity-100 wow fadeIn" data-wow-duration="1.5s" data-wow-delay="0.4s">
                                 <img src="assets/images/brand-4.png" alt="brand" style="width: 100px; height: auto;">
-                            </div> <!-- single logo -->
+                            </div> 
                             <div class="single-logo hover:opacity-100 wow fadeIn" data-wow-duration="1.5s" data-wow-delay="0.5s">
                                 <img src="assets/images/brand-5.png" alt="brand" style="width: 100px; height: auto;">
-                            </div> <!-- single logo -->
-                        </div> <!-- brand logo -->
-                    </div> <!-- section title -->
+                            </div> 
+                        </div> -->
+                    <!-- </div> 
                 </div>
-            </div>   <!-- row -->
-        </div> <!-- container -->
-    </div>
+            </div>   
+        </div> 
+    </div> -->
     
     <!--====== PERKENALAN BASYIR ENDS ======-->
     
