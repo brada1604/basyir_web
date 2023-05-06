@@ -40,10 +40,10 @@ class UserModel extends Model
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
 
-    public function getUser($username)
+    public function getUser($email)
     {
         // Manual atau Query Builder
-        $query = $this->db->query("SELECT * FROM tbl_user where binary username = '$username' ");
+        $query = $this->db->query("SELECT * FROM tbl_user where binary email = '$email' ");
         return $query->getResult(); // return berupa array objek
     }
 }

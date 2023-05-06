@@ -3,32 +3,136 @@
 
  Source Server         : localhost
  Source Server Type    : MySQL
- Source Server Version : 80030
+ Source Server Version : 100427
  Source Host           : localhost:3306
- Source Schema         : db_mahasiswa_pdf
+ Source Schema         : db_basyir
 
  Target Server Type    : MySQL
- Target Server Version : 80030
+ Target Server Version : 100427
  File Encoding         : 65001
 
- Date: 02/05/2023 15:23:54
+ Date: 06/05/2023 14:27:51
 */
 
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
 
 -- ----------------------------
+-- Table structure for amalan_yaumi
+-- ----------------------------
+DROP TABLE IF EXISTS `amalan_yaumi`;
+CREATE TABLE `amalan_yaumi`  (
+  `id_amalan_yaumi` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `judul_amalan_yaumi` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `konten_amalan_yaumi` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `gambar_amalan_yaumi` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `video_amalan_yaumi` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status_amalan_yaumi` bigint(20) NOT NULL,
+  `deleted_at` timestamp(0) DEFAULT NULL,
+  `created_at` timestamp(0) DEFAULT NULL,
+  `updated_at` timestamp(0) DEFAULT NULL,
+  PRIMARY KEY (`id_amalan_yaumi`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Table structure for berita
+-- ----------------------------
+DROP TABLE IF EXISTS `berita`;
+CREATE TABLE `berita`  (
+  `id_berita` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `judul_berita` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `ringkasan_berita` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `konten_berita` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `gambar_berita` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `video_berita` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status_berita` bigint(20) NOT NULL,
+  `deleted_at` timestamp(0) DEFAULT NULL,
+  `created_at` timestamp(0) DEFAULT NULL,
+  `updated_at` timestamp(0) DEFAULT NULL,
+  PRIMARY KEY (`id_berita`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Table structure for doa
+-- ----------------------------
+DROP TABLE IF EXISTS `doa`;
+CREATE TABLE `doa`  (
+  `id_doa` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `judul_doa` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `ringkasan_doa` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `ringkasan_latin_doa` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status_doa` bigint(20) NOT NULL,
+  `deleted_at` timestamp(0) DEFAULT NULL,
+  `created_at` timestamp(0) DEFAULT NULL,
+  `updated_at` timestamp(0) DEFAULT NULL,
+  PRIMARY KEY (`id_doa`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Table structure for doa_detail
+-- ----------------------------
+DROP TABLE IF EXISTS `doa_detail`;
+CREATE TABLE `doa_detail`  (
+  `id_doa_detail` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `id_doa` bigint(20) UNSIGNED NOT NULL,
+  `konten_doa` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `konten_latin_doa` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status_doa` bigint(20) NOT NULL,
+  `deleted_at` timestamp(0) DEFAULT NULL,
+  `created_at` timestamp(0) DEFAULT NULL,
+  `updated_at` timestamp(0) DEFAULT NULL,
+  PRIMARY KEY (`id_doa_detail`) USING BTREE,
+  INDEX `doa_detail_id_doa_foreign`(`id_doa`) USING BTREE,
+  CONSTRAINT `doa_detail_ibfk_1` FOREIGN KEY (`id_doa`) REFERENCES `doa` (`id_doa`) ON DELETE RESTRICT ON UPDATE RESTRICT
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Table structure for kutipan
+-- ----------------------------
+DROP TABLE IF EXISTS `kutipan`;
+CREATE TABLE `kutipan`  (
+  `id_kutipan` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `judul_kutipan` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `deskripsi_kutipan` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `sumber_kutipan` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status_kutipan` bigint(20) NOT NULL,
+  `deleted_at` timestamp(0) DEFAULT NULL,
+  `created_at` timestamp(0) DEFAULT NULL,
+  `updated_at` timestamp(0) DEFAULT NULL,
+  PRIMARY KEY (`id_kutipan`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Table structure for rencana_kegiatan
+-- ----------------------------
+DROP TABLE IF EXISTS `rencana_kegiatan`;
+CREATE TABLE `rencana_kegiatan`  (
+  `id_rencana_kegiatan` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `id_user` bigint(20) UNSIGNED NOT NULL,
+  `id_amalan_yaumi` bigint(20) UNSIGNED NOT NULL,
+  `status_rencana_kegiatan` bigint(20) NOT NULL,
+  `deleted_at` timestamp(0) DEFAULT NULL,
+  `created_at` timestamp(0) DEFAULT NULL,
+  `updated_at` timestamp(0) DEFAULT NULL,
+  PRIMARY KEY (`id_rencana_kegiatan`) USING BTREE,
+  INDEX `rencana_kegiatan_id_user_foreign`(`id_user`) USING BTREE,
+  INDEX `rencana_kegiatan_id_amalan_yaumi_foreign`(`id_amalan_yaumi`) USING BTREE,
+  CONSTRAINT `rencana_kegiatan_ibfk_1` FOREIGN KEY (`id_amalan_yaumi`) REFERENCES `amalan_yaumi` (`id_amalan_yaumi`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `rencana_kegiatan_ibfk_2` FOREIGN KEY (`id_user`) REFERENCES `users` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
 -- Table structure for tbl_barang
 -- ----------------------------
 DROP TABLE IF EXISTS `tbl_barang`;
 CREATE TABLE `tbl_barang`  (
-  `id` int(0) NOT NULL AUTO_INCREMENT,
-  `nama_barang` varchar(100) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nama_barang` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `harga_barang` double(10, 2) NOT NULL,
-  `stok_barang` int(0) NOT NULL,
-  `file_barang` text NOT NULL,
+  `stok_barang` int(11) NOT NULL,
+  `file_barang` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 25 ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 25 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of tbl_barang
@@ -47,14 +151,14 @@ INSERT INTO `tbl_barang` VALUES (8, 'Taro', 2000.00, 299, 'assets/image/barang/T
 -- ----------------------------
 DROP TABLE IF EXISTS `tbl_detail_transaksi`;
 CREATE TABLE `tbl_detail_transaksi`  (
-  `id` bigint unsigned NOT NULL,
-  `id_transaksi` bigint(0) NOT NULL,
-  `id_barang` bigint(0) NOT NULL,
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `id_transaksi` bigint(20) NOT NULL,
+  `id_barang` bigint(20) NOT NULL,
   `harga_beli` double(20, 2) UNSIGNED NOT NULL,
-  `qty` bigint(0) NOT NULL,
+  `qty` bigint(20) NOT NULL,
   `subtotal` double(20, 2) UNSIGNED NOT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 41 ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of tbl_detail_transaksi
@@ -81,14 +185,14 @@ INSERT INTO `tbl_detail_transaksi` VALUES (40, 21, 9, 10000.00, 1, 10000.00);
 -- ----------------------------
 DROP TABLE IF EXISTS `tbl_detailjual`;
 CREATE TABLE `tbl_detailjual`  (
-  `id` int unsigned NOT NULL,
-  `idtrans` int(0) NOT NULL,
-  `idbrg` int(0) NOT NULL,
+  `id` int(10) UNSIGNED NOT NULL,
+  `idtrans` int(11) NOT NULL,
+  `idbrg` int(11) NOT NULL,
   `hargajual` double(10, 2) DEFAULT NULL,
-  `jmljual` int(0) DEFAULT NULL,
+  `jmljual` int(11) DEFAULT NULL,
   `subtotal` double(10, 2) DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 11 ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of tbl_detailjual
@@ -101,12 +205,12 @@ INSERT INTO `tbl_detailjual` VALUES (10, 10, 2, 19000.00, 2, 38000.00);
 -- ----------------------------
 DROP TABLE IF EXISTS `tbl_mahasiswa`;
 CREATE TABLE `tbl_mahasiswa`  (
-  `id` int unsigned NOT NULL,
-  `nim` varchar(15) NOT NULL,
-  `nama` varchar(255) NOT NULL,
-  `umur` int(0) NOT NULL,
+  `id` int(10) UNSIGNED NOT NULL,
+  `nim` varchar(15) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `nama` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `umur` int(11) NOT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 36 ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of tbl_mahasiswa
@@ -133,15 +237,15 @@ INSERT INTO `tbl_mahasiswa` VALUES (35, '211511059', 'salman', 50);
 -- ----------------------------
 DROP TABLE IF EXISTS `tbl_pegawai`;
 CREATE TABLE `tbl_pegawai`  (
-  `id` int unsigned NOT NULL,
-  `nip` varchar(255) DEFAULT NULL,
-  `nama` varchar(255) DEFAULT NULL,
-  `gender` varchar(255) DEFAULT NULL,
-  `telp` varchar(255) DEFAULT NULL,
-  `email` varchar(255) DEFAULT NULL,
-  `pendidikan` varchar(255) DEFAULT NULL,
+  `id` int(10) UNSIGNED NOT NULL,
+  `nip` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `nama` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `gender` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `telp` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `pendidikan` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 205 ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of tbl_pegawai
@@ -356,14 +460,14 @@ INSERT INTO `tbl_pegawai` VALUES (204, '1234560204', 'Bagus Nugroho 204', 'Wanit
 -- ----------------------------
 DROP TABLE IF EXISTS `tbl_souvenir`;
 CREATE TABLE `tbl_souvenir`  (
-  `idbrg` int unsigned NOT NULL,
-  `namabrg` varchar(255) DEFAULT NULL,
+  `idbrg` int(10) UNSIGNED NOT NULL,
+  `namabrg` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `harga` double(10, 2) DEFAULT NULL,
   `diskon` double(10, 2) DEFAULT NULL,
-  `stok` int(0) DEFAULT NULL,
-  `namafile` text ,
+  `stok` int(11) DEFAULT NULL,
+  `namafile` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci,
   PRIMARY KEY (`idbrg`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 13 ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of tbl_souvenir
@@ -383,18 +487,18 @@ INSERT INTO `tbl_souvenir` VALUES (12, 'Sosis Sonice', 20000.00, 0.10, 300, 'ass
 -- ----------------------------
 DROP TABLE IF EXISTS `tbl_transaksi`;
 CREATE TABLE `tbl_transaksi`  (
-  `id` bigint unsigned NOT NULL,
-  `status_pembayaran` int(0) NOT NULL,
-  `metode_pembayaran` varchar(50) NOT NULL,
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `status_pembayaran` int(11) NOT NULL,
+  `metode_pembayaran` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `total_pembayaran` double(20, 2) UNSIGNED NOT NULL,
-  `waktu` timestamp(0) NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP(0),
-  `nama_pembeli` varchar(255) NOT NULL,
-  `email` varchar(255) NOT NULL,
-  `telepon` varchar(15) NOT NULL,
-  `alamat` text NOT NULL,
-  `kode_pos` varchar(5) NOT NULL,
+  `waktu` timestamp(0) NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(0),
+  `nama_pembeli` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `telepon` varchar(15) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `alamat` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `kode_pos` varchar(5) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 22 ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of tbl_transaksi
@@ -414,16 +518,16 @@ INSERT INTO `tbl_transaksi` VALUES (21, 1, 'Dana', 10000.00, '2023-04-04 12:36:3
 -- ----------------------------
 DROP TABLE IF EXISTS `tbl_transpjl`;
 CREATE TABLE `tbl_transpjl`  (
-  `idtrans` int unsigned NOT NULL,
-  `nama` varchar(255) DEFAULT NULL,
-  `hp` varchar(15) DEFAULT NULL,
-  `alamat` text ,
-  `kecamatan` varchar(50) DEFAULT NULL,
-  `kota` varchar(50) DEFAULT NULL,
+  `idtrans` int(10) UNSIGNED NOT NULL,
+  `nama` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `hp` varchar(15) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `alamat` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci,
+  `kecamatan` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `kota` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `total` double(10, 2) DEFAULT NULL,
-  `tgl_transaksi` timestamp(0) DEFAULT CURRENT_TIMESTAMP,
+  `tgl_transaksi` timestamp(0) NOT NULL DEFAULT current_timestamp(),
   PRIMARY KEY (`idtrans`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 11 ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of tbl_transpjl
@@ -435,17 +539,35 @@ INSERT INTO `tbl_transpjl` VALUES (10, 'Bagus Nugroho', '082123456789', 'ciamiss
 -- ----------------------------
 DROP TABLE IF EXISTS `tbl_user`;
 CREATE TABLE `tbl_user`  (
-  `id` int unsigned NOT NULL,
-  `nip` varchar(10) NOT NULL,
-  `username` varchar(255) DEFAULT NULL,
-  `name` varchar(255) DEFAULT NULL,
-  `password` varchar(255) DEFAULT NULL,
+  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `role` int(1) NOT NULL,
+  `name` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `email` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `password` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 2 ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of tbl_user
 -- ----------------------------
-INSERT INTO `tbl_user` VALUES (1, '1234567890', 'admin', 'Administrator', '$2y$10$qJuz8CGwLwXtPAQ9r/zIW.DjFInUjlK8hDWJSV6EkYonDnxLdKFPa');
+INSERT INTO `tbl_user` VALUES (1, 1, 'Administrator', 'administrator@basyir.com', '$2y$10$qJuz8CGwLwXtPAQ9r/zIW.DjFInUjlK8hDWJSV6EkYonDnxLdKFPa');
+
+-- ----------------------------
+-- Table structure for wawasan_islami
+-- ----------------------------
+DROP TABLE IF EXISTS `wawasan_islami`;
+CREATE TABLE `wawasan_islami`  (
+  `id_wawasan_islami` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `judul_wawasan_islami` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `ringkasan_wawasan_islami` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `konten_wawasan_islami` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `gambar_wawasan_islami` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `video_wawasan_islami` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status_wawasan_islami` bigint(20) NOT NULL,
+  `deleted_at` timestamp(0) DEFAULT NULL,
+  `created_at` timestamp(0) DEFAULT NULL,
+  `updated_at` timestamp(0) DEFAULT NULL,
+  PRIMARY KEY (`id_wawasan_islami`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 SET FOREIGN_KEY_CHECKS = 1;
