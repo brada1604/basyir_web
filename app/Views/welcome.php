@@ -29,7 +29,7 @@
     <!--====== Style CSS ======-->
     <!-- <link rel="stylesheet" href="assets/css/style.css"> -->
     <link rel="stylesheet" href="assets/css/tailwind.css">
-    @vite('resources/css/app.css')
+    <!-- @vite('resources/css/app.css') -->
 </head>
 
 <body>

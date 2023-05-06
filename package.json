@@ -92,5 +92,13 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brada1604/basyir_web.git"
+  },
+  "bugs": {
+    "url": "https://github.com/brada1604/basyir_web/issues"
+  },
+  "homepage": "https://github.com/brada1604/basyir_web#readme"
 }
