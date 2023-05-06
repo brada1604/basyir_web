@@ -22,14 +22,18 @@ class AuthController extends BaseController
         $email = $this->request->getVar('email'); // data input
         $password = $this->request->getVar('password'); // data input
 
+
+
         // $data = $model->where('email LIKE BINARY', $email)->first(); // digunakan like binary agar case sensitive
         $data = $model->getUser($email);
 
         if($data){
+            
             $pass = $data[0]->password; // data dari database yang sudah di cocokan
             $verify_pass = password_verify($password, $pass);
 
             if($verify_pass){
+                
                 $sess_data = [
                     'id'        => $data[0]->id,
                     'email'  => $data[0]->email,
@@ -39,7 +43,7 @@ class AuthController extends BaseController
                 ]; // proses pembuatan data session
 
                 $session->set($sess_data); // proses input data session
-                return redirect()->to('/home');
+                return redirect()->to('/dashboard');
             }else{
                 $session->setFlashdata('msg', 'Password salah !');
                 return redirect()->to('/login');

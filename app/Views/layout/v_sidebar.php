@@ -7,11 +7,11 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/dashboard">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+                <div class="sidebar-brand-text mx-3">Basyir</div>
             </a>
 
             <!-- Divider -->
@@ -19,7 +19,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="/dashboard">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -29,8 +29,24 @@
 
             <!-- Heading -->
             <div class="sidebar-heading">
-                Interface
+                Umum
             </div>
+
+            <?php if ($session->get('role') == 1 || $session->get('role') == 2): ?>
+                <li class="nav-item">
+                    <a class="nav-link" href="/berita_master">
+                        <i class="fas fa-fw fa-folder"></i>
+                        <span>Berita</span></a>
+                </li>
+            <?php endif ?>
+
+            <?php if ($session->get('role') == 1 || $session->get('role') == 3): ?>
+                <li class="nav-item">
+                    <a class="nav-link" href="/berita_master">
+                        <i class="fas fa-fw fa-folder"></i>
+                        <span>Wawasan Islami</span></a>
+                </li>
+            <?php endif ?>
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
@@ -72,7 +88,7 @@
 
             <!-- Heading -->
             <div class="sidebar-heading">
-                Addons
+                Pengaturan
             </div>
 
             <!-- Nav Item - Pages Collapse Menu -->
@@ -116,13 +132,6 @@
             <!-- Sidebar Toggler (Sidebar) -->
             <div class="text-center d-none d-md-inline">
                 <button class="rounded-circle border-0" id="sidebarToggle"></button>
-            </div>
-
-            <!-- Sidebar Message -->
-            <div class="sidebar-card d-none d-lg-flex">
-                <img class="sidebar-card-illustration mb-2" src="<?= base_url();?>/assets/assets-admin/img/undraw_rocket.svg" alt="...">
-                <p class="text-center mb-2"><strong>SB Admin Pro</strong> is packed with premium features, components, and more!</p>
-                <a class="btn btn-success btn-sm" href="https://startbootstrap.com/theme/sb-admin-pro">Upgrade to Pro!</a>
             </div>
 
         </ul>
