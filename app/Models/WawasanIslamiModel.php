@@ -7,14 +7,14 @@ use CodeIgniter\Model;
 class WawasanIslamiModel extends Model
 {
     protected $DBGroup          = 'default';
-    protected $table            = 'wawasanislamis';
-    protected $primaryKey       = 'id';
+    protected $table            = 'tbl_wawasan_islami';
+    protected $primaryKey       = 'id_wawasan_islami';
     protected $useAutoIncrement = true;
     protected $insertID         = 0;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = [];
+    protected $allowedFields    = ["id_user", "judul_wawasan_islami", "ringkasan_wawasan_islami", "konten_wawasan_islami", "gambar_wawasan_islami", "video_wawasan_islami", "status_wawasan_islami",];
 
     // Dates
     protected $useTimestamps = false;
@@ -39,4 +39,23 @@ class WawasanIslamiModel extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+
+    public function getWawasanIslami($id = false)
+    {
+        $id_user = session()->get('role');
+        if ($id === false) {
+            // return $this->findAll();
+
+            // Manual atau Query Builder
+            $query = $this->db->query("SELECT * FROM tbl_wawasan_islami where id_user = '$id_user'");
+            return $query->getResult(); // return berupa array objek
+
+        } else {
+            // return $this->getWhere(['id' => $id]);
+
+            // Manual atau Query Builder
+            $query = $this->db->query("SELECT * FROM tbl_wawasan_islami where id_wawasan_islami = '$id' ");
+            return $query->getResult(); // return berupa array objek
+        }
+    }
 }

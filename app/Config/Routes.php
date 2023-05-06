@@ -121,6 +121,17 @@ $routes->post('/berita/update', 'BeritaController::update'); // untuk mengupdate
 $routes->get('/berita/delete/(:segment)', 'BeritaController::delete/$1',['filter' => 'auth']); // (:segment) = parameter, $1 = parameter pertama yang di ambil
 $routes->post('/berita/search', 'BeritaController::search'); // untuk mencari data berdasarkan variable tertentu
 
+// ROUTE BERITA
+$routes->get('/wawasan_islami', 'WawasanIslamiController::display'); // untuk menampilkan data
+$routes->get('/wawasan_islami_master', 'WawasanIslamiController::index',['filter' => 'auth']); // untuk menampilkan data
+$routes->get('/wawasan_islami/add', 'WawasanIslamiController::add',['filter' => 'auth']); // untuk menambahkan data
+$routes->post('/wawasan_islami/save', 'WawasanIslamiController::save'); // untuk menyimpan data
+$routes->get('/wawasan_islami/(:segment)', 'WawasanIslamiController::detail/$1',['filter' => 'auth']); // (:segment) = parameter, $1 = parameter pertama yang di ambil
+$routes->get('/wawasan_islami/edit/(:segment)', 'WawasanIslamiController::edit/$1',['filter' => 'auth']); // (:segment) = parameter, $1 = parameter pertama yang di ambil
+$routes->post('/wawasan_islami/update', 'WawasanIslamiController::update'); // untuk mengupdate data
+$routes->get('/wawasan_islami/delete/(:segment)', 'WawasanIslamiController::delete/$1',['filter' => 'auth']); // (:segment) = parameter, $1 = parameter pertama yang di ambil
+$routes->post('/wawasan_islami/search', 'WawasanIslamiController::search'); // untuk mencari data berdasarkan variable tertentu
+
 
 // ROUTE DASHBOARD
 $routes->get('/dashboard', 'DashboardController::index',['filter' => 'auth']); // untuk menampilkan data
