@@ -115,7 +115,7 @@
                     <div class="w-full lg:w-2/3">
                         <div class="pt-32 mb-12 text-center lg:pt-48 header-hero-content">
                             <h3 class="text-4xl font-light leading-tight text-white header-sub-title wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.2s">Basyir - Booster your iman</h3>
-                            <h2 class="mb-3 text-4xl font-bold text-white header-title wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.5s">To increase your productivity in worship</h2>
+                            <h2 class="mb-3 text-4xl font-bold text-white header-title wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.5s">Tingkatkan Produktivitas Kamu Dalam Beribadah</h2>
                             <p class="mb-8 text-white text wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.8s">UNDUH APLIKASI BASYIR DI PLAYSTORE</p>
                             <a href="#" class="main-btn gradient-btn gradient-btn-2 wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="1.1s">Unduh Sekarang</a>
                         </div> <!-- header hero content -->
@@ -190,7 +190,7 @@
                         </div>
                         <div class="mt-8 services-content">
                             <h4 class="mb-8 text-xl font-bold text-gray-900">POLITEKNIK NEGERI BANDUNG</h4>
-                            <p class="mb-8">Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu eirmod tempor invidunt labore.</p>
+                            <!-- <p class="mb-8">Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu eirmod tempor invidunt labore.</p> -->
                             <a class="duration-300 hover:text-theme-color" href="https://www.instagram.com/politekniknegeribandung/">Kunjungi di instagram <i class="ml-2 lni lni-chevron-right"></i></a>
                         </div>
                     </div>
@@ -203,7 +203,7 @@
                         </div>
                         <div class="mt-8 services-content">
                             <h4 class="mb-8 text-xl font-bold text-gray-900">TEKNIK KOMPUTER & INFORMATIKA POLBAN</h4>
-                            <p class="mb-8">Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu eirmod tempor invidunt labore.</p>
+                            <!-- <p class="mb-8">Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu eirmod tempor invidunt labore.</p> -->
                             <a class="duration-300 hover:text-theme-color" href="https://www.instagram.com/jtkpolban/">Kunjungi di instagram <i class="ml-2 lni lni-chevron-right"></i></a>
                         </div>
                     </div> 
@@ -216,7 +216,7 @@
                         </div>
                         <div class="mt-8 services-content">
                             <h4 class="mb-8 text-xl font-bold text-gray-900">UKM ASSALAM POLBAN</h4>
-                            <p class="mb-8">Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu eirmod tempor invidunt labore.</p>
+                            <!-- <p class="mb-8">Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu eirmod tempor invidunt labore.</p> -->
                             <a class="duration-300 hover:text-theme-color" href="https://www.instagram.com/assalampolban/">Kunjungi di instagram <i class="ml-2 lni lni-chevron-right"></i></a>
                         </div>
                     </div> 
@@ -229,7 +229,7 @@
                         </div>
                         <div class="mt-8 services-content">
                             <h4 class="mb-8 text-xl font-bold text-gray-900">PHM DKM Luqmanul Hakim POLBAN</h4>
-                            <p class="mb-8">Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu eirmod tempor invidunt labore.</p>
+                            <!-- <p class="mb-8">Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu eirmod tempor invidunt labore.</p> -->
                             <a class="duration-300 hover:text-theme-color" href="https://www.instagram.com/masjidlhpolban/">Kunjungi di instagram <i class="ml-2 lni lni-chevron-right"></i></a>
                         </div>
                     </div>
@@ -241,8 +241,8 @@
                             <img src="assets/images/brand-5.png" alt="brand" style="width: 88px; height: auto;">
                         </div>
                         <div class="mt-8 services-content">
-                            <h4 class="mb-8 text-xl font-bold text-gray-900">Ma'had Luqmanul Hakim</h4>
-                            <p class="mb-8">Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu eirmod tempor invidunt labore.</p>
+                            <h4 class="mb-8 text-xl font-bold text-gray-900">Ma'had Luqmanul Hakim POLBAN</h4>
+                            <!-- <p class="mb-8">Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu eirmod tempor invidunt labore.</p> -->
                             <a class="duration-300 hover:text-theme-color" href="https://www.instagram.com/mahad.lh/">Kunjungi di instagram <i class="ml-2 lni lni-chevron-right"></i></a>
                         </div>
                     </div> <!-- single services -->
@@ -252,6 +252,86 @@
     </section>
     
     <!--====== SUPPORTED BY ENDS ======-->
+
+    <!--====== JADWAL SHOLAT PART START ======-->
+    <section id="features" class="services-area pt-120">
+        <div class="container">
+            <div class="px-6 pt-10 pb-20 mb-12 bg-white rounded-lg shadow-xl md:px-12 subscribe-area wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
+                <div class="row">
+                    <div class="w-full lg:w-1/2">
+                        <div class="lg:mt-12 subscribe-content">
+                            <h2 class="text-2xl font-bold sm:text-1xl subscribe-title">
+                                Waktu Solat di Bandung 
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="w-full lg:w-1/2">
+                        <div class="lg:mt-12 subscribe-content text-right">
+                                <span class="font-normal right">SUN 16 APR 2023</span>
+                        </div>
+                    </div>
+                    <div class="w-full lg:w-2/2">
+                        <div class="mt-12 subscribe-form">
+                            <form action="#" class="relative focus:outline-none">
+                                <input type="email" placeholder="Ketik Lokasi Kamu..." class="w-full py-4 pl-6 pr-40 duration-300 border-2 rounded focus:border-theme-color focus:outline-none">
+                                <button class="main-btn gradient-btn">Cari</button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="w-full sm:w-2/6 lg:w-1/3">
+                        <div class="mt-8 text-center single-services wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
+                            <div class="mt-8 services-content">
+                                <h4 class="mb-8 text-xl font-bold text-gray-900">Imsak</h4>
+                                <h3 class="mb-8 text-xl font-bold text-gray-900"><a class="duration-300 hover:text-theme-color" href="#">03.50</a></h3>
+                            </div>
+                        </div> <!-- single services -->
+                    </div>
+                    <div class="w-full sm:w-2/6 lg:w-1/3">
+                        <div class="mt-8 text-center single-services wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
+                            <div class="mt-8 services-content">
+                                <h4 class="mb-8 text-xl font-bold text-gray-900">Subuh</h4>
+                                <h3 class="mb-8 text-xl font-bold text-gray-900"><a class="duration-300 hover:text-theme-color" href="#">03.50</a></h3>
+                            </div>
+                        </div> <!-- single services -->
+                    </div>
+                    <div class="w-full sm:w-2/6 lg:w-1/3">
+                        <div class="mt-8 text-center single-services wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
+                            <div class="mt-8 services-content">
+                                <h4 class="mb-8 text-xl font-bold text-gray-900">Dzuhur</h4>
+                                <h3 class="mb-8 text-xl font-bold text-gray-900"><a class="duration-300 hover:text-theme-color" href="#">03.50</a></h3>
+                            </div>
+                        </div> <!-- single services -->
+                    </div>
+                    <div class="w-full sm:w-2/6 lg:w-1/3">
+                        <div class="mt-8 text-center single-services wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
+                            <div class="mt-8 services-content">
+                                <h4 class="mb-8 text-xl font-bold text-gray-900">Ashar</h4>
+                                <h3 class="mb-8 text-xl font-bold text-gray-900"><a class="duration-300 hover:text-theme-color" href="#">03.50</a></h3>
+                            </div>
+                        </div> <!-- single services -->
+                    </div>
+                    <div class="w-full sm:w-2/6 lg:w-1/3">
+                        <div class="mt-8 text-center single-services wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
+                            <div class="mt-8 services-content">
+                                <h4 class="mb-8 text-xl font-bold text-gray-900">Magrib</h4>
+                                <h3 class="mb-8 text-xl font-bold text-gray-900"><a class="duration-300 hover:text-theme-color" href="#">03.50</a></h3>
+                            </div>
+                        </div> <!-- single services -->
+                    </div>
+                    <div class="w-full sm:w-2/6 lg:w-1/3">
+                        <div class="mt-8 text-center single-services wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
+                            <div class="mt-8 services-content">
+                                <h4 class="mb-8 text-xl font-bold text-gray-900">Isya</h4>
+                                <h3 class="mb-8 text-xl font-bold text-gray-900"><a class="duration-300 hover:text-theme-color" href="#">03.50</a></h3>
+                            </div>
+                        </div> <!-- single services -->
+                    </div>
+                </div> <!-- row -->
+            </div> <!-- subscribe area -->
+        </div>
+    </section>
+    <!--====== JADWAL SHOLAT PART END ======-->
     
     <!--====== ABOUT PART START ======-->
     
@@ -268,8 +348,8 @@
                             <!-- <div class="line"></div> -->
                             <h3 class="title">Quick & Easy, <span>Instalasi dan penggunaannya pun sangat mudah</span></h3>
                         </div> <!-- section title -->
-                        <p class="mb-8">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, seiam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing.</p>
-                        <a href="javascript:void(0)" class="main-btn gradient-btn">Try it Free</a>
+                        <p class="mb-8">Penginstalan Aplikasi Basyir cukup dengan mendownload melalui Play Store maupung App Store. Aplikasi Basyir mendukung penggunaan yang cukup simple dan praktis, tidak banyak langkah untuk dapat menggunakannya. Aplikasi Basyir berbasis mobile dapat diinstall pada Smartphone kamu.</p>
+                        <a href="#" class="main-btn gradient-btn">Coba Sekarang</a>
                     </div> <!-- about content -->
                 </div>
                 <div class="w-full lg:w-1/2">
@@ -300,8 +380,8 @@
                             <!-- <div class="line"></div> -->
                             <h3 class="title">Tampilan yang menarik <span> memberikan semangat energi positif kepada anda</span></h3>
                         </div> <!-- section title -->
-                        <p class="mb-8">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, seiam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing.</p>
-                        <a href="javascript:void(0)" class="main-btn gradient-btn">Try it Free</a>
+                        <p class="mb-8">Tampilan yang menarik pada Aplikasi Basyir akan memberikan semangat beribadah kepada kamu. Produktivitas kamu dalam beribadah akan meningkat setelah menggunakan Aplikasi Basyir. Selain itu, Aplikasi Basyir juga memiliki warna yang tidak membuat mata kamu cepat lelah ketika menggunakannya.</p>
+                        <a href="#" class="main-btn gradient-btn">Unduh Sekarang</a>
                     </div> <!-- about content -->
                 </div>
                 <div class="w-full lg:w-1/2 lg:order-first">
@@ -325,8 +405,8 @@
                             <!-- <div class="line"></div> -->
                             <h3 class="title"><span>Diciptakan untuk</span> meningkatkan kedisiplinan anda dalam beribadah</h3>
                         </div> <!-- section title -->
-                        <p class="mb-8">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, seiam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing.</p>
-                        <a href="javascript:void(0)" class="main-btn gradient-btn">Try it Free</a>
+                        <p class="mb-8">Aplikasi Basyir direkomendasikan untuk kamu yang masih kurang disipling dalam beribadah. Basyir hadir untuk membantu kamu dalam melakukan perencanaan ibadah wajib dan juga ibadah harian yang sering kamu lewatkan. Basyir akan selalu mengingatkanmu melalui notifikasi yang ciamik melalui smartphone kamu.</p>
+                        <a href="#" class="main-btn gradient-btn">Saya mau</a>
                     </div> <!-- about content -->
                 </div>
                 <div class="w-full lg:w-1/2">
@@ -340,9 +420,6 @@
             <img src="assets/images/about-shape-1.svg" alt="shape">
         </div>
     </section>
-    
-    <!--====== ABOUT PART ENDS ======-->
-
     
     <!--====== ABOUT PART ENDS ======-->
     
@@ -371,25 +448,25 @@
                                 <div class="line"></div>
                                 <h3 class="title">Fakta-fakta menarik <span> tentang aplikasi ini</span></h3>
                             </div> <!-- section title -->
-                            <p class="text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, seiam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+                            <p class="text">Ringkasan pengguna aktif yang sudah mendowload Aplikasi Basyir dan rating yang telah diusulkan oleh mereka</p>
                         </div> <!-- counter content -->
                         <div class="row no-gutters">
                             <div class="flex items-center justify-center single-counter counter-color-1">
                                 <div class="text-center counter-items">
                                     <span class="text-2xl font-bold text-white"><span class="counter">125</span>K</span>
-                                    <p class="text-white">Downloads</p>
+                                    <p class="text-white">Download</p>
                                 </div>
                             </div> <!-- single counter -->
                             <div class="flex items-center justify-center single-counter counter-color-2">
                                 <div class="text-center counter-items">
                                     <span class="text-2xl font-bold text-white"><span class="counter">87</span>K</span>
-                                    <p class="text-white">Active Users</p>
+                                    <p class="text-white">Pengguna Aktif</p>
                                 </div>
                             </div> <!-- single counter -->
                             <div class="flex items-center justify-center single-counter counter-color-3">
                                 <div class="text-center counter-items">
                                     <span class="text-2xl font-bold text-white"><span class="counter">4.8</span></span>
-                                    <p class="text-white">User Rating</p>
+                                    <p class="text-white">Penilaian</p>
                                 </div>
                             </div> <!-- single counter -->
                         </div> <!-- row -->
