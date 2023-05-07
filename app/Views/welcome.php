@@ -101,7 +101,7 @@
                             </div> <!-- navbar collapse -->
                             
                             <div class="absolute right-0 hidden mt-2 mr-24 navbar-btn sm:inline-block lg:mt-0 lg:static lg:mr-0">
-                                <a class="main-btn gradient-btn" data-scroll-nav="0" href="http://127.0.0.1:8000/login" rel="nofollow">Login Admin</a>
+                                <a class="main-btn gradient-btn" data-scroll-nav="0" href="/login" rel="nofollow">Login</a>
                             </div>
                         </nav> <!-- navbar -->
                     </div>

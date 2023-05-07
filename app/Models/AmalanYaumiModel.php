@@ -7,14 +7,14 @@ use CodeIgniter\Model;
 class AmalanYaumiModel extends Model
 {
     protected $DBGroup          = 'default';
-    protected $table            = 'amalanyaumis';
-    protected $primaryKey       = 'id';
+    protected $table            = 'tbl_amalan_yaumi';
+    protected $primaryKey       = 'id_amalan_yaumi';
     protected $useAutoIncrement = true;
     protected $insertID         = 0;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = [];
+    protected $allowedFields    = ["judul_amalan_yaumi", "konten_amalan_yaumi", "gambar_amalan_yaumi", "video_amalan_yaumi", "status_amalan_yaumi",];
 
     // Dates
     protected $useTimestamps = false;
@@ -39,4 +39,24 @@ class AmalanYaumiModel extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+
+    public function getAmalanYaumi($id = false)
+    {
+        if ($id === false) {
+            // return $this->findAll();
+
+            // Manual atau Query Builder
+            $query = $this->db->query("SELECT * FROM tbl_amalan_yaumi");
+            return $query->getResult(); // return berupa array objek
+
+        } else {
+            // return $this->getWhere(['id' => $id]);
+
+            // Manual atau Query Builder
+            $query = $this->db->query("SELECT * FROM tbl_amalan_yaumi where id_amalan_yaumi = '$id' ");
+            return $query->getResult(); // return berupa array objek
+        }
+    }
 }
+
+

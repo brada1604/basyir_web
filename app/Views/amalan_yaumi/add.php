@@ -2,9 +2,9 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Tambah Berita</h1>
+                    <h1 class="h3 mb-2 text-gray-800">Tambah Amalan Yaumi</h1>
                     
-                    <form action="<?= base_url(); ?>/berita/save" method="post" enctype="multipart/form-data">
+                    <form action="<?= base_url(); ?>/amalan_yaumi/save" method="post" enctype="multipart/form-data">
 
                         <div class="row card-group-row">
 
@@ -26,12 +26,13 @@
                                             <div class="col-md-2 mb-8pt mb-md-0">
                                                 <div class="media align-items-left">
                                                     <div class="d-flex flex-column media-body media-middle">
-                                                        <span class="card-title">ID User</span>
+                                                        <span
+                                                        class="card-title">Judul Amalan Yaumi</span>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="col mb-8pt mb-md-0">
-                                                <input name="id_user" type="text" class="form-control" value="<?= $session->get('id')?>" placeholder="<?= $session->get('name');?> - <?= $session->get('email');?>" readonly/>
+                                                <input name="judul_amalan_yaumi" value="<?= old('judul_amalan_yaumi') ?>" type="text" class="form-control" placeholder="Masukan Judul Amalan Yaumi" required/>
                                             </div>
                                         </div>
                                     </div>
@@ -42,12 +43,12 @@
                                                 <div class="media align-items-left">
                                                     <div class="d-flex flex-column media-body media-middle">
                                                         <span
-                                                        class="card-title">Judul Berita</span>
+                                                        class="card-title">Konten Amalan Yaumi</span>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="col mb-8pt mb-md-0">
-                                                <input name="judul_berita" value="<?= old('judul_berita') ?>" type="text" class="form-control" placeholder="Masukan Judul Berita" required/>
+                                                <textarea name="konten_amalan_yaumi" id="editor1" required><?= old('konten_amalan_yaumi') ?></textarea>
                                             </div>
                                         </div>
                                     </div>
@@ -58,44 +59,12 @@
                                                 <div class="media align-items-left">
                                                     <div class="d-flex flex-column media-body media-middle">
                                                         <span
-                                                        class="card-title">Ringkasan Berita</span>
+                                                        class="card-title">Link Video Amalan Yaumi</span>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="col mb-8pt mb-md-0">
-                                                <textarea name="ringkasan_berita" class="form-control" required><?= old('ringkasan_berita') ?></textarea>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="list-group-item p-3">
-                                        <div class="row align-items-start">
-                                            <div class="col-md-2 mb-8pt mb-md-0">
-                                                <div class="media align-items-left">
-                                                    <div class="d-flex flex-column media-body media-middle">
-                                                        <span
-                                                        class="card-title">Konten Berita</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col mb-8pt mb-md-0">
-                                                <textarea name="konten_berita" id="editor1" required><?= old('konten_berita') ?></textarea>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="list-group-item p-3">
-                                        <div class="row align-items-start">
-                                            <div class="col-md-2 mb-8pt mb-md-0">
-                                                <div class="media align-items-left">
-                                                    <div class="d-flex flex-column media-body media-middle">
-                                                        <span
-                                                        class="card-title">Link Video Berita</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col mb-8pt mb-md-0">
-                                                <input name="video_berita" value="<?= old('video_berita') ?>" type="text" class="form-control" placeholder="Masukan Link Video Berita"/>
+                                                <input name="video_amalan_yaumi" value="<?= old('video_amalan_yaumi') ?>" type="text" class="form-control" placeholder="Masukan Link Video Amalan Yaumi"/>
                                             </div>
                                         </div>
                                     </div>        
@@ -106,7 +75,7 @@
                                                 <div class="media align-items-left">
                                                     <div class="d-flex flex-column media-body media-middle">
                                                         <span
-                                                        class="card-title">Gambar Berita</span>
+                                                        class="card-title">Gambar Amalan Yaumi</span>
                                                     </div>
                                                 </div>
                                             </div>

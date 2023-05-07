@@ -121,7 +121,7 @@ $routes->post('/berita/update', 'BeritaController::update'); // untuk mengupdate
 $routes->get('/berita/delete/(:segment)', 'BeritaController::delete/$1',['filter' => 'auth']); // (:segment) = parameter, $1 = parameter pertama yang di ambil
 $routes->post('/berita/search', 'BeritaController::search'); // untuk mencari data berdasarkan variable tertentu
 
-// ROUTE BERITA
+// ROUTE WAWASAN ISLAMI
 $routes->get('/wawasan_islami', 'WawasanIslamiController::display'); // untuk menampilkan data
 $routes->get('/wawasan_islami_master', 'WawasanIslamiController::index',['filter' => 'auth']); // untuk menampilkan data
 $routes->get('/wawasan_islami/add', 'WawasanIslamiController::add',['filter' => 'auth']); // untuk menambahkan data
@@ -143,6 +143,16 @@ $routes->post('/kutipan/update', 'KutipanController::update'); // untuk mengupda
 $routes->get('/kutipan/delete/(:segment)', 'KutipanController::delete/$1',['filter' => 'auth']); // (:segment) = parameter, $1 = parameter pertama yang di ambil
 $routes->post('/kutipan/search', 'KutipanController::search'); // untuk mencari data berdasarkan variable tertentu
 
+// ROUTE AMALAN YAUMI
+$routes->get('/amalan_yaumi', 'AmalanYaumiController::display'); // untuk menampilkan data
+$routes->get('/amalan_yaumi_master', 'AmalanYaumiController::index',['filter' => 'auth']); // untuk menampilkan data
+$routes->get('/amalan_yaumi/add', 'AmalanYaumiController::add',['filter' => 'auth']); // untuk menambahkan data
+$routes->post('/amalan_yaumi/save', 'AmalanYaumiController::save'); // untuk menyimpan data
+$routes->get('/amalan_yaumi/(:segment)', 'AmalanYaumiController::detail/$1',['filter' => 'auth']); // (:segment) = parameter, $1 = parameter pertama yang di ambil
+$routes->get('/amalan_yaumi/edit/(:segment)', 'AmalanYaumiController::edit/$1',['filter' => 'auth']); // (:segment) = parameter, $1 = parameter pertama yang di ambil
+$routes->post('/amalan_yaumi/update', 'AmalanYaumiController::update'); // untuk mengupdate data
+$routes->get('/amalan_yaumi/delete/(:segment)', 'AmalanYaumiController::delete/$1',['filter' => 'auth']); // (:segment) = parameter, $1 = parameter pertama yang di ambil
+$routes->post('/amalan_yaumi/search', 'AmalanYaumiController::search'); // untuk mencari data berdasarkan variable tertentu
 
 // ROUTE DASHBOARD
 $routes->get('/dashboard', 'DashboardController::index',['filter' => 'auth']); // untuk menampilkan data
