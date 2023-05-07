@@ -268,7 +268,7 @@
                     <div class="w-full lg:w-1/2">
                         <div class="lg:mt-12 subscribe-content">
                             <h2 class="text-2xl font-bold sm:text-1xl subscribe-title">
-                                Waktu Solat di Kota Bandung 
+                                Waktu Solat di <?= $nama_kota;?> 
                             </h2>
                         </div>
                     </div>
@@ -279,11 +279,11 @@
                     </div>
                     <div class="w-full lg:w-2/2">
                         <div class="mt-12 subscribe-form">
-                            <form action="#" class="relative focus:outline-none">
+                            <form action="/kota" method="post" class="relative focus:outline-none">
                                 <!-- <input type="text" placeholder="Ketik Lokasi Kamu..." class="typeahead w-full py-4 pl-6 pr-40 duration-300 border-2 rounded focus:border-theme-color focus:outline-none"> -->
-                                <select name="#" class="w-full py-4 pl-6 pr-40 duration-300 border-2 rounded focus:border-theme-color focus:outline-none">
+                                <select name="nama" class="w-full py-4 pl-6 pr-40 duration-300 border-2 rounded focus:border-theme-color focus:outline-none">
                                     <?php foreach ($kota as $u): ?>
-                                        <option value="<?= $u->id; ?>"><?= $u->id; ?> <?= $u->nama; ?></option>
+                                        <option value="<?= $u->nama; ?>"><?= $u->nama; ?></option>
                                     <?php endforeach ?>
                                 </select>
                                 <button class="main-btn gradient-btn">Cari</button>
