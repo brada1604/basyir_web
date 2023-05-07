@@ -132,6 +132,17 @@ $routes->post('/wawasan_islami/update', 'WawasanIslamiController::update'); // u
 $routes->get('/wawasan_islami/delete/(:segment)', 'WawasanIslamiController::delete/$1',['filter' => 'auth']); // (:segment) = parameter, $1 = parameter pertama yang di ambil
 $routes->post('/wawasan_islami/search', 'WawasanIslamiController::search'); // untuk mencari data berdasarkan variable tertentu
 
+//ROUTE KUTIPAN ISLAMI
+$routes->get('/kutipan', 'KutipanController::display'); // untuk menampilkan data
+$routes->get('/kutipan_master', 'KutipanController::index',['filter' => 'auth']); // untuk menampilkan data
+$routes->get('/kutipan/add', 'KutipanController::add',['filter' => 'auth']); // untuk menambahkan data
+$routes->post('/kutipan/save', 'KutipanController::save'); // untuk menyimpan data
+$routes->get('/kutipan/(:segment)', 'KutipanController::detail/$1',['filter' => 'auth']); // (:segment) = parameter, $1 = parameter pertama yang di ambil
+$routes->get('/kutipan/edit/(:segment)', 'KutipanController::edit/$1',['filter' => 'auth']); // (:segment) = parameter, $1 = parameter pertama yang di ambil
+$routes->post('/kutipan/update', 'KutipanController::update'); // untuk mengupdate data
+$routes->get('/kutipan/delete/(:segment)', 'KutipanController::delete/$1',['filter' => 'auth']); // (:segment) = parameter, $1 = parameter pertama yang di ambil
+$routes->post('/kutipan/search', 'KutipanController::search'); // untuk mencari data berdasarkan variable tertentu
+
 
 // ROUTE DASHBOARD
 $routes->get('/dashboard', 'DashboardController::index',['filter' => 'auth']); // untuk menampilkan data

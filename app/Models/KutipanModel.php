@@ -7,14 +7,14 @@ use CodeIgniter\Model;
 class KutipanModel extends Model
 {
     protected $DBGroup          = 'default';
-    protected $table            = 'kutipans';
-    protected $primaryKey       = 'id';
+    protected $table            = 'tbl_kutipan';
+    protected $primaryKey       = 'id_kutipan';
     protected $useAutoIncrement = true;
     protected $insertID         = 0;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = [];
+    protected $allowedFields    = ['id_user', 'judul_kutipan', 'deskripsi_kutipan', 'sumber_kutipan'];
 
     // Dates
     protected $useTimestamps = false;
@@ -39,4 +39,23 @@ class KutipanModel extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+
+    public function getKutipan($id = false)
+    {
+        $id_user = session()->get('role');
+        if ($id === false) {
+            // return $this->findAll();
+
+            // Manual atau Query Builder
+            $query = $this->db->query("SELECT * FROM tbl_kutipan where id_user = '$id_user'");
+            return $query->getResult(); // return berupa array objek
+
+        } else {
+            // return $this->getWhere(['id' => $id]);
+
+            // Manual atau Query Builder
+            $query = $this->db->query("SELECT * FROM tbl_kutipan where id_kutipan = '$id' ");
+            return $query->getResult(); // return berupa array objek
+        }
+    }
 }

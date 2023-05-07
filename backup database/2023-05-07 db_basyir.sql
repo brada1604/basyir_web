@@ -28,9 +28,6 @@ CREATE TABLE `tbl_amalan_yaumi`  (
   `gambar_amalan_yaumi` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `video_amalan_yaumi` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `status_amalan_yaumi` bigint(20) NOT NULL,
-  `deleted_at` timestamp(0) DEFAULT NULL,
-  `created_at` timestamp(0) DEFAULT NULL,
-  `updated_at` timestamp(0) DEFAULT NULL,
   PRIMARY KEY (`id_amalan_yaumi`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
@@ -147,9 +144,7 @@ CREATE TABLE `tbl_doa`  (
   `ringkasan_doa` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `ringkasan_latin_doa` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `status_doa` bigint(20) NOT NULL,
-  `deleted_at` timestamp(0) DEFAULT NULL,
-  `created_at` timestamp(0) DEFAULT NULL,
-  `updated_at` timestamp(0) DEFAULT NULL,
+
   PRIMARY KEY (`id_doa`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
@@ -163,9 +158,7 @@ CREATE TABLE `tbl_doa_detail`  (
   `konten_doa` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `konten_latin_doa` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `status_doa` bigint(20) NOT NULL,
-  `deleted_at` timestamp(0) DEFAULT NULL,
-  `created_at` timestamp(0) DEFAULT NULL,
-  `updated_at` timestamp(0) DEFAULT NULL,
+
   PRIMARY KEY (`id_doa_detail`) USING BTREE,
   INDEX `doa_detail_id_doa_foreign`(`id_doa`) USING BTREE,
   CONSTRAINT `tbl_doa_detail_ibfk_1` FOREIGN KEY (`id_doa`) REFERENCES `tbl_doa` (`id_doa`) ON DELETE RESTRICT ON UPDATE RESTRICT
@@ -181,9 +174,7 @@ CREATE TABLE `tbl_kutipan`  (
   `deskripsi_kutipan` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `sumber_kutipan` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `status_kutipan` bigint(20) NOT NULL,
-  `deleted_at` timestamp(0) DEFAULT NULL,
-  `created_at` timestamp(0) DEFAULT NULL,
-  `updated_at` timestamp(0) DEFAULT NULL,
+
   PRIMARY KEY (`id_kutipan`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
@@ -451,9 +442,7 @@ CREATE TABLE `tbl_rencana_kegiatan`  (
   `id_user` bigint(20) UNSIGNED NOT NULL,
   `id_amalan_yaumi` bigint(20) UNSIGNED NOT NULL,
   `status_rencana_kegiatan` bigint(20) NOT NULL,
-  `deleted_at` timestamp(0) DEFAULT NULL,
-  `created_at` timestamp(0) DEFAULT NULL,
-  `updated_at` timestamp(0) DEFAULT NULL,
+
   PRIMARY KEY (`id_rencana_kegiatan`) USING BTREE,
   INDEX `rencana_kegiatan_id_user_foreign`(`id_user`) USING BTREE,
   INDEX `rencana_kegiatan_id_amalan_yaumi_foreign`(`id_amalan_yaumi`) USING BTREE,
