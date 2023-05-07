@@ -143,6 +143,17 @@ $routes->post('/kutipan/update', 'KutipanController::update'); // untuk mengupda
 $routes->get('/kutipan/delete/(:segment)', 'KutipanController::delete/$1',['filter' => 'auth']); // (:segment) = parameter, $1 = parameter pertama yang di ambil
 $routes->post('/kutipan/search', 'KutipanController::search'); // untuk mencari data berdasarkan variable tertentu
 
+//ROUTE RENCANA KEGIATAN
+$routes->get('/rencana_kegiatan', 'RencanaKegiatanController::display'); // untuk menampilkan data
+$routes->get('/rencana_kegiatan_master', 'RencanaKegiatanController::index',['filter' => 'auth']); // untuk menampilkan data
+$routes->get('/rencana_kegiatan/add', 'RencanaKegiatanController::add',['filter' => 'auth']); // untuk menambahkan data
+$routes->post('/rencana_kegiatan/save', 'RencanaKegiatanController::save'); // untuk menyimpan data
+$routes->get('/rencana_kegiatan/(:segment)', 'RencanaKegiatanController::detail/$1',['filter' => 'auth']); // (:segment) = parameter, $1 = parameter pertama yang di ambil
+$routes->get('/rencana_kegiatan/edit/(:segment)', 'RencanaKegiatanController::edit/$1',['filter' => 'auth']); // (:segment) = parameter, $1 = parameter pertama yang di ambil
+$routes->post('/rencana_kegiatan/update', 'RencanaKegiatanController::update'); // untuk mengupdate data
+$routes->get('/rencana_kegiatan/delete/(:segment)', 'RencanaKegiatanController::delete/$1',['filter' => 'auth']); // (:segment) = parameter, $1 = parameter pertama yang di ambil
+$routes->post('/rencana_kegiatan/search', 'RencanaKegiatanController::search'); // untuk mencari data berdasarkan variable tertentu
+
 // ROUTE AMALAN YAUMI
 $routes->get('/amalan_yaumi', 'AmalanYaumiController::display'); // untuk menampilkan data
 $routes->get('/amalan_yaumi_master', 'AmalanYaumiController::index',['filter' => 'auth']); // untuk menampilkan data

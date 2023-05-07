@@ -22,11 +22,11 @@ SET FOREIGN_KEY_CHECKS = 0;
 -- ----------------------------
 DROP TABLE IF EXISTS `tbl_amalan_yaumi`;
 CREATE TABLE `tbl_amalan_yaumi`  (
-  `id_amalan_yaumi` int(20) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `judul_amalan_yaumi` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `konten_amalan_yaumi` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `gambar_amalan_yaumi` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `video_amalan_yaumi` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `id_amalan_yaumi` int(20)  NOT NULL AUTO_INCREMENT,
+  `judul_amalan_yaumi` varchar(255)  NOT NULL,
+  `konten_amalan_yaumi` text  NOT NULL,
+  `gambar_amalan_yaumi` text  NOT NULL,
+  `video_amalan_yaumi` text ,
   `status_amalan_yaumi` int(1) NOT NULL DEFAULT 1,
   `created_at` timestamp(0) NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp(0) NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(0),
@@ -68,13 +68,13 @@ INSERT INTO `tbl_barang` VALUES (8, 'Taro', 2000.00, 299, 'assets/image/barang/T
 -- ----------------------------
 DROP TABLE IF EXISTS `tbl_berita`;
 CREATE TABLE `tbl_berita`  (
-  `id_berita` int(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `id_berita` int(20)  NOT NULL AUTO_INCREMENT,
   `id_user` int(20) NOT NULL,
-  `judul_berita` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `ringkasan_berita` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `konten_berita` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `gambar_berita` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `video_berita` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `judul_berita` varchar(255)  NOT NULL,
+  `ringkasan_berita` text  NOT NULL,
+  `konten_berita` text  NOT NULL,
+  `gambar_berita` text ,
+  `video_berita` text ,
   `status_berita` int(20) NOT NULL DEFAULT 1,
   `created_at` timestamp(0) NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp(0) NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(0),
@@ -92,12 +92,12 @@ INSERT INTO `tbl_berita` VALUES (3, 2, 'dsfdsfdsaaasdasdasd bagus', 'frtetaaasda
 -- ----------------------------
 DROP TABLE IF EXISTS `tbl_detail_transaksi`;
 CREATE TABLE `tbl_detail_transaksi`  (
-  `id` bigint(20) UNSIGNED NOT NULL,
+  `id` bigint(20)  NOT NULL,
   `id_transaksi` bigint(20) NOT NULL,
   `id_barang` bigint(20) NOT NULL,
-  `harga_beli` double(20, 2) UNSIGNED NOT NULL,
+  `harga_beli` double(20, 2)  NOT NULL,
   `qty` bigint(20) NOT NULL,
-  `subtotal` double(20, 2) UNSIGNED NOT NULL,
+  `subtotal` double(20, 2)  NOT NULL,
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
@@ -126,7 +126,7 @@ INSERT INTO `tbl_detail_transaksi` VALUES (40, 21, 9, 10000.00, 1, 10000.00);
 -- ----------------------------
 DROP TABLE IF EXISTS `tbl_detailjual`;
 CREATE TABLE `tbl_detailjual`  (
-  `id` int(10) UNSIGNED NOT NULL,
+  `id` int(10)  NOT NULL,
   `idtrans` int(11) NOT NULL,
   `idbrg` int(11) NOT NULL,
   `hargajual` double(10, 2) DEFAULT NULL,
@@ -146,10 +146,10 @@ INSERT INTO `tbl_detailjual` VALUES (10, 10, 2, 19000.00, 2, 38000.00);
 -- ----------------------------
 DROP TABLE IF EXISTS `tbl_doa`;
 CREATE TABLE `tbl_doa`  (
-  `id_doa` int(20) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `judul_doa` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `ringkasan_doa` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `ringkasan_latin_doa` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `id_doa` int(20)  NOT NULL AUTO_INCREMENT,
+  `judul_doa` varchar(255)  NOT NULL,
+  `ringkasan_doa` text  NOT NULL,
+  `ringkasan_latin_doa` text  NOT NULL,
   `status_doa` int(1) NOT NULL DEFAULT 1,
   `created_at` timestamp(0) NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp(0) NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(0),
@@ -166,10 +166,10 @@ INSERT INTO `tbl_doa` VALUES (2, 'Doa Minum', 'asdas', 'asdasd', 1, '2023-05-07 
 -- ----------------------------
 DROP TABLE IF EXISTS `tbl_doa_detail`;
 CREATE TABLE `tbl_doa_detail`  (
-  `id_doa_detail` int(20) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `id_doa` int(20) UNSIGNED NOT NULL,
-  `konten_doa` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `konten_latin_doa` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `id_doa_detail` int(20)  NOT NULL AUTO_INCREMENT,
+  `id_doa` int(20)  NOT NULL,
+  `konten_doa` text  NOT NULL,
+  `konten_latin_doa` text  NOT NULL,
   `status_doa` int(1) NOT NULL DEFAULT 1,
   `created_at` timestamp(0) NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp(0) NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(0),
@@ -182,10 +182,10 @@ CREATE TABLE `tbl_doa_detail`  (
 -- ----------------------------
 DROP TABLE IF EXISTS `tbl_kutipan`;
 CREATE TABLE `tbl_kutipan`  (
-  `id_kutipan` int(20) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `judul_kutipan` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `deskripsi_kutipan` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `sumber_kutipan` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `id_kutipan` int(20)  NOT NULL AUTO_INCREMENT,
+  `judul_kutipan` varchar(255)  NOT NULL,
+  `deskripsi_kutipan` text  NOT NULL,
+  `sumber_kutipan` text  NOT NULL,
   `status_kutipan` int(1) NOT NULL DEFAULT 1,
   `created_at` timestamp(0) NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp(0) NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(0),
@@ -202,7 +202,7 @@ INSERT INTO `tbl_kutipan` VALUES (2, 'waduh haha', 'asdas', 'qwew', 1, '2023-05-
 -- ----------------------------
 DROP TABLE IF EXISTS `tbl_mahasiswa`;
 CREATE TABLE `tbl_mahasiswa`  (
-  `id` int(10) UNSIGNED NOT NULL,
+  `id` int(10)  NOT NULL,
   `nim` varchar(15) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `nama` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `umur` int(11) NOT NULL,
@@ -234,7 +234,7 @@ INSERT INTO `tbl_mahasiswa` VALUES (35, '211511059', 'salman', 50);
 -- ----------------------------
 DROP TABLE IF EXISTS `tbl_pegawai`;
 CREATE TABLE `tbl_pegawai`  (
-  `id` int(10) UNSIGNED NOT NULL,
+  `id` int(10)  NOT NULL,
   `nip` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `nama` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `gender` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
@@ -457,9 +457,9 @@ INSERT INTO `tbl_pegawai` VALUES (204, '1234560204', 'Bagus Nugroho 204', 'Wanit
 -- ----------------------------
 DROP TABLE IF EXISTS `tbl_rencana_kegiatan`;
 CREATE TABLE `tbl_rencana_kegiatan`  (
-  `id_rencana_kegiatan` int(20) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `id_user` int(20) UNSIGNED NOT NULL,
-  `id_amalan_yaumi` int(20) UNSIGNED NOT NULL,
+  `id_rencana_kegiatan` int(20) NOT NULL AUTO_INCREMENT,
+  `id_user` int(20) NOT NULL,
+  `id_amalan_yaumi` int(20) NOT NULL,
   `status_rencana_kegiatan` int(1) NOT NULL,
   `created_at` timestamp(0) NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp(0) NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(0),
@@ -473,7 +473,7 @@ CREATE TABLE `tbl_rencana_kegiatan`  (
 -- ----------------------------
 DROP TABLE IF EXISTS `tbl_souvenir`;
 CREATE TABLE `tbl_souvenir`  (
-  `idbrg` int(10) UNSIGNED NOT NULL,
+  `idbrg` int(10)  NOT NULL,
   `namabrg` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `harga` double(10, 2) DEFAULT NULL,
   `diskon` double(10, 2) DEFAULT NULL,
@@ -500,10 +500,10 @@ INSERT INTO `tbl_souvenir` VALUES (12, 'Sosis Sonice', 20000.00, 0.10, 300, 'ass
 -- ----------------------------
 DROP TABLE IF EXISTS `tbl_transaksi`;
 CREATE TABLE `tbl_transaksi`  (
-  `id` bigint(20) UNSIGNED NOT NULL,
+  `id` bigint(20)  NOT NULL,
   `status_pembayaran` int(11) NOT NULL,
   `metode_pembayaran` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `total_pembayaran` double(20, 2) UNSIGNED NOT NULL,
+  `total_pembayaran` double(20, 2)  NOT NULL,
   `waktu` timestamp(0) NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(0),
   `nama_pembeli` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
@@ -531,7 +531,7 @@ INSERT INTO `tbl_transaksi` VALUES (21, 1, 'Dana', 10000.00, '2023-04-04 12:36:3
 -- ----------------------------
 DROP TABLE IF EXISTS `tbl_transpjl`;
 CREATE TABLE `tbl_transpjl`  (
-  `idtrans` int(10) UNSIGNED NOT NULL,
+  `idtrans` int(10)  NOT NULL,
   `nama` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `hp` varchar(15) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `alamat` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci,
@@ -552,7 +552,7 @@ INSERT INTO `tbl_transpjl` VALUES (10, 'Bagus Nugroho', '082123456789', 'ciamiss
 -- ----------------------------
 DROP TABLE IF EXISTS `tbl_user`;
 CREATE TABLE `tbl_user`  (
-  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `id` int(10)  NOT NULL AUTO_INCREMENT,
   `role` int(1) NOT NULL,
   `name` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `email` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
@@ -573,13 +573,13 @@ INSERT INTO `tbl_user` VALUES (4, 4, 'User', 'user@basyir.cp,', '$2y$10$qJuz8CGw
 -- ----------------------------
 DROP TABLE IF EXISTS `tbl_wawasan_islami`;
 CREATE TABLE `tbl_wawasan_islami`  (
-  `id_wawasan_islami` int(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `id_wawasan_islami` int(20)  NOT NULL AUTO_INCREMENT,
   `id_user` int(20) NOT NULL,
-  `judul_wawasan_islami` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `ringkasan_wawasan_islami` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `konten_wawasan_islami` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `gambar_wawasan_islami` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `video_wawasan_islami` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `judul_wawasan_islami` varchar(255)  NOT NULL,
+  `ringkasan_wawasan_islami` text  NOT NULL,
+  `konten_wawasan_islami` text  NOT NULL,
+  `gambar_wawasan_islami` text  NOT NULL,
+  `video_wawasan_islami` text ,
   `status_wawasan_islami` int(1) NOT NULL DEFAULT 1,
   `created_at` timestamp(0) NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp(0) NOT NULL DEFAULT current_timestamp() ON UPDATE CURRENT_TIMESTAMP(0),
