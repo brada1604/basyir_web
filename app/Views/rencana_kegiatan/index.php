@@ -1,21 +1,9 @@
-<?php 
-function youtube($url){
-    $link=str_replace('http://www.youtube.com/watch?v=', '', $url);
-    $link=str_replace('https://www.youtube.com/watch?v=', '', $link);
-    $data='<object width="300" height="200" data="http://www.youtube.com/v/'.$link.'" type="application/x-shockwave-flash">
-    <param name="src" value="http://www.youtube.com/v/'.$link.'" />
-    </object>';
-    return $data;
-}
- 
-?>
-
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
                     <h1 class="h3 mb-2 text-gray-800">Master Rencana Kegiatan</h1>
-                    <p class="mb-4">Data untuk memanage rencana kegiatan. Kunjungi Website <a target="_blank" href="/berita">Berita Basyir</a>.</p>
+                    <p class="mb-4">Data untuk memanage rencana kegiatan. Kunjungi Website <a target="_blank" href="/rencana_kegiatan">Rencana Kegiatan Basyir</a>.</p>
                     <a class="edit" href="/rencana_kegiatan/add"><button type="button" class="btn btn-primary">Tambah</button></a>
 
                     <!-- DataTales Example -->
@@ -47,21 +35,20 @@ function youtube($url){
                                         </tr>
                                     </tfoot>
                                     <tbody>
-                                        <?php 
-                                            $nomor = 1; 
-                                            foreach($getRencanaKegiatan as $row):
+                                        <?php
+                                        $nomor = 1;
+                                        foreach ($getRencanaKegiatan as $row) :
                                         ?>
                                             <tr>
                                                 <td><?= $nomor++; ?></td>
-                                                <td><?= $row->id_user;?></td>
-                                                <td><?= $row->id_rencana_kegiatan;?></td>
-                                                <td><?= $row->id_amalan_yaumi;?></td>
-                                                <td><?= $row->status_rencana_kegiatan;?></td>
-                                                <td><img clas="bd-placeholder-img card-img-top" width="100" height="100" src="<?=base_url($row->gambar_berita);?>"></td>
+                                                <td><?= $row->id_user; ?></td>
+                                                <td><?= $row->id_rencana_kegiatan; ?></td>
+                                                <td><?= $row->id_amalan_yaumi; ?></td>
+                                                <td><?= $row->status_rencana_kegiatan; ?></td>
                                                 <td>
-                                                    <a class="edit" class="btn btn-warning" href="/rencana_kegiatan/edit/<?= $row->id_rencana_kegiatan;?>"><button type="button" class="btn btn-warning">Edit</button></a>
-                                                    <a class="hapus" class="btn btn-danger" href="/rencana_kegiatan/delete/<?= $row->id_rencana_kegiatan;?>"><button type="button" class="btn btn-danger">Hapus</button></a>
-                                                    <!-- <a class="detail" class="btn btn-info" href="/berita/<?= $row->id_rencana_kegiatan;?>"><button type="button" class="btn btn-info">Detail</button></a>                      -->
+                                                    <a class="edit" class="btn btn-warning" href="/rencana_kegiatan/edit/<?= $row->id_rencana_kegiatan; ?>"><button type="button" class="btn btn-warning">Edit</button></a>
+                                                    <a class="hapus" class="btn btn-danger" href="/rencana_kegiatan/delete/<?= $row->id_rencana_kegiatan; ?>"><button type="button" class="btn btn-danger">Hapus</button></a>
+                                                    <!-- <a class="detail" class="btn btn-info" href="/rencana_kegiatan/<?= $row->id_rencana_kegiatan; ?>"><button type="button" class="btn btn-info">Detail</button></a>                      -->
                                                 </td>
                                             </tr>
                                         <?php endforeach; ?>
@@ -74,5 +61,5 @@ function youtube($url){
                 </div>
                 <!-- /.container-fluid -->
 
-            </div>
-            <!-- End of Main Content -->
+                </div>
+                <!-- End of Main Content -->
