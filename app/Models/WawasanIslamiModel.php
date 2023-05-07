@@ -58,4 +58,22 @@ class WawasanIslamiModel extends Model
             return $query->getResult(); // return berupa array objek
         }
     }
+
+    public function getWawasanIslamiLandingPage($id = false)
+    {
+        if ($id === false) {
+            // return $this->findAll();
+
+            // Manual atau Query Builder
+            $query = $this->db->query("SELECT * FROM tbl_wawasan_islami where status_wawasan_islami = '2'");
+            return $query->getResult(); // return berupa array objek
+
+        } else {
+            // return $this->getWhere(['id' => $id]);
+
+            // Manual atau Query Builder
+            $query = $this->db->query("SELECT * FROM tbl_wawasan_islami where id_wawasan_islami = '$id' ");
+            return $query->getResult(); // return berupa array objek
+        }
+    }
 }

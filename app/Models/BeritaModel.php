@@ -58,4 +58,23 @@ class BeritaModel extends Model
             return $query->getResult(); // return berupa array objek
         }
     }
+
+    public function getBeritaLandingPage($id = false)
+    {
+        $id_user = session()->get('role');
+        if ($id === false) {
+            // return $this->findAll();
+
+            // Manual atau Query Builder
+            $query = $this->db->query("SELECT * FROM tbl_berita where status_berita = '2'");
+            return $query->getResult(); // return berupa array objek
+
+        } else {
+            // return $this->getWhere(['id' => $id]);
+
+            // Manual atau Query Builder
+            $query = $this->db->query("SELECT * FROM tbl_berita where id_berita = '$id' ");
+            return $query->getResult(); // return berupa array objek
+        }
+    }
 }

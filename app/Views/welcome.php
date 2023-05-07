@@ -83,7 +83,7 @@
                                         <a class="page-scroll" href="#home">Home</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="page-scroll" href="#features">Features</a>
+                                        <a class="page-scroll" href="#supported">Supported</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="page-scroll" href="#about">About</a>
@@ -171,7 +171,7 @@
     
     <!--====== SUPPORTED BY ======-->
     
-    <section id="features" class="services-area pt-120">
+    <section id="supported" class="services-area pt-120">
         <div class="container">
             <div class="justify-center row">
                 <div class="w-full lg:w-2/3">
@@ -652,10 +652,34 @@
                 </div>
             </div> <!-- row -->
             <div class="justify-center row">
+                <?php 
+                    $nomor = 1; 
+                    foreach($getBeritaLandingPage as $gblp):
+                ?>
+                    <div class="w-full md:w-2/3 lg:w-1/3">
+                        <div class="mx-4 mt-10 single-blog wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
+                            <div class="mb-5 overflow-hidden blog-image rounded-xl">
+                                <img class="w-full" src="<?=base_url($gblp->gambar_berita);?>" alt="blog">
+                            </div>
+                            <div class="blog-content">
+                                <ul class="flex mb-5 meta">
+                                    <li>Posted By: <a href="javascript:void(0)"><?= $gblp->id_user;?></a></li>
+                                    <li class="ml-12"><?= date('d F Y', strtotime($gblp->created_at));?></li>
+                                </ul>
+                                <p class="mb-6 text-2xl leading-snug text-gray-900"><?= $gblp->ringkasan_berita;?></p>
+                                <a class="text-theme-color-2" href="javascript:void(0)">
+                                    Selengkapnya
+                                    <i class="ml-2 lni lni-chevron-right"></i>
+                                </a>
+                            </div>
+                        </div> <!-- single blog -->
+                    </div> 
+                <?php endforeach; ?>
+
                 <div class="w-full md:w-2/3 lg:w-1/3">
-                    <div class="mx-4 mt-10 single-blog wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
+                    <div class="mx-4 mt-10 single-blog wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
                         <div class="mb-5 overflow-hidden blog-image rounded-xl">
-                            <img class="w-full" src="assets/images/blog-1.jpg" alt="blog">
+                            <img class="w-full" src="assets/images/blog-2.jpg" alt="blog">
                         </div>
                         <div class="blog-content">
                             <ul class="flex mb-5 meta">
@@ -670,6 +694,50 @@
                         </div>
                     </div> <!-- single blog -->
                 </div> 
+                <div class="w-full md:w-2/3 lg:w-1/3">
+                    <div class="mx-4 mt-10 single-blog wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
+                        <div class="mb-5 overflow-hidden blog-image rounded-xl">
+                            <img class="w-full" src="assets/images/blog-3.jpg" alt="blog">
+                        </div>
+                        <div class="blog-content">
+                            <ul class="flex mb-5 meta">
+                                <li>Posted By: <a href="javascript:void(0)">Admin</a></li>
+                                <li class="ml-12">03 June, 2023</li>
+                            </ul>
+                            <p class="mb-6 text-2xl leading-snug text-gray-900">Lorem ipsuamet conset sadips cing elitr seddiam nonu eirmod tempor invidunt labore.</p>
+                            <a class="text-theme-color-2" href="javascript:void(0)">
+                                Learn More 
+                                <i class="ml-2 lni lni-chevron-right"></i>
+                            </a>
+                        </div>
+                    </div> <!-- single blog -->
+                </div> 
+            </div> <!-- row -->
+            <div class="justify-center row">
+                <?php 
+                    $nomor = 1; 
+                    foreach($getWawasanIslamiLandingPage as $gwilp):
+                ?>
+                    <div class="w-full md:w-2/3 lg:w-1/3">
+                        <div class="mx-4 mt-10 single-blog wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
+                            <div class="mb-5 overflow-hidden blog-image rounded-xl">
+                                <img class="w-full" src="<?=base_url($gwilp->gambar_wawasan_islami);?>" alt="blog">
+                            </div>
+                            <div class="blog-content">
+                                <ul class="flex mb-5 meta">
+                                    <li>Posted By: <a href="javascript:void(0)"><?= $gwilp->id_user;?></a></li>
+                                    <li class="ml-12"><?= date('d F Y', strtotime($gwilp->created_at));?></li>
+                                </ul>
+                                <p class="mb-6 text-2xl leading-snug text-gray-900"><?= $gwilp->ringkasan_wawasan_islami;?></p>
+                                <a class="text-theme-color-2" href="javascript:void(0)">
+                                    Selengkapnya
+                                    <i class="ml-2 lni lni-chevron-right"></i>
+                                </a>
+                            </div>
+                        </div> <!-- single blog -->
+                    </div> 
+                <?php endforeach; ?>
+
                 <div class="w-full md:w-2/3 lg:w-1/3">
                     <div class="mx-4 mt-10 single-blog wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
                         <div class="mb-5 overflow-hidden blog-image rounded-xl">
