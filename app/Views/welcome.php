@@ -29,13 +29,6 @@
     <!--====== Style CSS ======-->
     <!-- <link rel="stylesheet" href="assets/css/style.css"> -->
     <link rel="stylesheet" href="assets/css/tailwind.css">
-    <!-- @vite('resources/css/app.css') -->
-
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" />
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.1/bootstrap3-typeahead.min.js"></script>  
-
 </head>
 
 <body>
@@ -75,7 +68,7 @@
                     <div class="w-full">
                         <nav class="flex items-center justify-between navbar navbar-expand-lg">
                             <a class="mr-4 navbar-brand" href="index.html">
-                                <img src="../assets/images/logo-2.svg" alt="Logo" width="120">
+                                <img src="../assets/images/Asset 6.png" alt="Logo" width="120">
                             </a>
                             <button class="block navbar-toggler focus:outline-none lg:hidden" type="button" data-toggle="collapse" data-target="#navbarOne" aria-controls="navbarOne" aria-expanded="false" aria-label="Toggle navigation">
                                 <span class="toggler-icon"></span>
@@ -89,26 +82,26 @@
                                         <a class="page-scroll" href="#home">Home</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="page-scroll" href="#supported">Supported</a>
+                                        <a class="page-scroll" href="#features">Support</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="page-scroll" href="#about">About</a>
+                                        <a class="page-scroll" href="#about">Benefit</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="page-scroll" href="#facts">Why</a>
+                                        <a class="page-scroll" href="#facts">Fun Fact</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="page-scroll" href="#team">Team</a>
                                     </li>
-                                    <!-- <li class="nav-item">
+                                    <li class="nav-item">
                                     <a class="main-btn gradient-btn" data-scroll-nav="0" href="http://127.0.0.1:8000/login" rel="nofollow">Login Admin</a>
-                                    </li> -->
+                                    </li>
                                 </ul>
                             </div> <!-- navbar collapse -->
                             
-                            <div class="absolute right-0 hidden mt-2 mr-24 navbar-btn sm:inline-block lg:mt-0 lg:static lg:mr-0">
-                                <a class="main-btn gradient-btn" data-scroll-nav="0" href="/login" rel="nofollow">Login</a>
-                            </div>
+                            <!-- <div class="absolute right-0 hidden mt-2 mr-24 navbar-btn sm:inline-block lg:mt-0 lg:static lg:mr-0">
+                                <a class="main-btn gradient-btn" data-scroll-nav="0" href="http://127.0.0.1:8000/login" rel="nofollow">Login Admin</a>
+                            </div> -->
                         </nav> <!-- navbar -->
                     </div>
                 </div> <!-- row -->
@@ -121,9 +114,8 @@
                     <div class="w-full lg:w-2/3">
                         <div class="pt-32 mb-12 text-center lg:pt-48 header-hero-content">
                             <h3 class="text-4xl font-light leading-tight text-white header-sub-title wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.2s">Basyir - Booster your iman</h3>
-                            <h2 class="mb-3 text-4xl font-bold text-white header-title wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.5s">Tingkatkan Produktivitas Kamu Dalam Beribadah</h2>
+                            <h2 class="mb-3 text-4xl font-bold text-white header-title wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.5s">To increase your productivity in worship</h2>
                             <p class="mb-8 text-white text wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.8s">UNDUH APLIKASI BASYIR DI PLAYSTORE</p>
-                            
                             <a href="#" class="main-btn gradient-btn gradient-btn-2 wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="1.1s">Unduh Sekarang</a>
                         </div> <!-- header hero content -->
                     </div>
@@ -131,7 +123,7 @@
                 <div class="justify-center row">
                     <div class="w-full lg:w-2/3">
                         <div class="text-center header-hero-image wow fadeIn" data-wow-duration="1.3s" data-wow-delay="1.4s">
-                            <img src="assets/images/logo.svg" alt="hero" style="margin-left: 1px;">
+                            <img src="assets/images/layar hp basyir.svg" alt="hero" style="margin-left: 1px;">
                         </div> <!-- header hero image -->
                     </div>
                 </div> <!-- row -->
@@ -141,6 +133,106 @@
     </header>
     
     <!--====== HEADER PART ENDS ======-->
+
+    <!--====== JADWAL SHOLAT PART START ======-->
+    <div class="pt-24 brand-area">
+        <div class="container">
+            <div class="row">
+                <div class="w-full">
+                    <div class="pb-10 text-center section-title">
+                        <div class="m-auto line"></div>
+                            <h3 class="title">Jadwal Shalat</h3>
+                        <div class="items-center justify-center row lg:justify-between">
+                            <section id="features" class="services-area pt-120">
+                                <div class="container" style="margin: 0 auto;">
+                                    <div class="px-6 pt-10 pb-20 mb-12 bg-white rounded-lg shadow-xl md:px-12 subscribe-area wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
+                                        <div class="row">
+                                            <div class="w-full lg:w-1/2">
+                                                <div class="lg:mt-12 subscribe-content">
+                                                    <h2 class="text-2xl font-bold sm:text-1xl subscribe-title">
+                                                        Waktu Solat di <?= $nama_kota;?> 
+                                                    </h2>
+                                                </div>
+                                            </div>
+                                            <div class="w-full lg:w-1/2">
+                                                <div class="lg:mt-12 subscribe-content text-right">
+                                                        <span class="font-normal right"><p id="time"></p></span>
+                                                </div>
+                                            </div>
+                                            <div class="w-full lg:w-2/2">
+                                                <div class="mt-12 subscribe-form">
+                                                    <form action="/kota" method="post" class="relative focus:outline-none">
+                                                        <!-- <input type="text" placeholder="Ketik Lokasi Kamu..." class="typeahead w-full py-4 pl-6 pr-40 duration-300 border-2 rounded focus:border-theme-color focus:outline-none"> -->
+                                                        <select name="nama" class="w-full py-4 pl-6 pr-40 duration-300 border-2 rounded focus:border-theme-color focus:outline-none">
+                                                            <?php foreach ($kota as $u): ?>
+                                                                <option value="<?= $u->nama; ?>"><?= $u->nama; ?></option>
+                                                            <?php endforeach ?>
+                                                        </select>
+                                                        <button class="main-btn gradient-btn">Cari</button>
+                                                    </form>
+                                                </div>
+                                            </div>
+
+                                            <div class="w-full sm:w-2/6 lg:w-1/3">
+                                                <div class="mt-8 text-center single-services wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
+                                                    <div class="mt-8 services-content">
+                                                        <h4 class="mb-8 text-xl font-bold text-gray-900">Imsak</h4>
+                                                        <h3 class="mb-8 text-xl font-bold text-gray-900"><a class="duration-300 hover:text-theme-color" href="#"><?= $pengingat_imsak;?></a></h3>
+                                                    </div>
+                                                </div> <!-- single services -->
+                                            </div>
+                                            <div class="w-full sm:w-2/6 lg:w-1/3">
+                                                <div class="mt-8 text-center single-services wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
+                                                    <div class="mt-8 services-content">
+                                                        <h4 class="mb-8 text-xl font-bold text-gray-900">Subuh</h4>
+                                                        <h3 class="mb-8 text-xl font-bold text-gray-900"><a class="duration-300 hover:text-theme-color" href="#"><?= $pengingat_subuh;?></a></h3>
+                                                    </div>
+                                                </div> <!-- single services -->
+                                            </div>
+                                            <div class="w-full sm:w-2/6 lg:w-1/3">
+                                                <div class="mt-8 text-center single-services wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
+                                                    <div class="mt-8 services-content">
+                                                        <h4 class="mb-8 text-xl font-bold text-gray-900">Dzuhur</h4>
+                                                        <h3 class="mb-8 text-xl font-bold text-gray-900"><a class="duration-300 hover:text-theme-color" href="#"><?= $pengingat_dzuhur;?></a></h3>
+                                                    </div>
+                                                </div> <!-- single services -->
+                                            </div>
+                                            <div class="w-full sm:w-2/6 lg:w-1/3">
+                                                <div class="mt-8 text-center single-services wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
+                                                    <div class="mt-8 services-content">
+                                                        <h4 class="mb-8 text-xl font-bold text-gray-900">Ashar</h4>
+                                                        <h3 class="mb-8 text-xl font-bold text-gray-900"><a class="duration-300 hover:text-theme-color" href="#"><?= $pengingat_ashar;?></a></h3>
+                                                    </div>
+                                                </div> <!-- single services -->
+                                            </div>
+                                            <div class="w-full sm:w-2/6 lg:w-1/3">
+                                                <div class="mt-8 text-center single-services wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
+                                                    <div class="mt-8 services-content">
+                                                        <h4 class="mb-8 text-xl font-bold text-gray-900">Maghrib</h4>
+                                                        <h3 class="mb-8 text-xl font-bold text-gray-900"><a class="duration-300 hover:text-theme-color" href="#"><?= $pengingat_maghrib;?></a></h3>
+                                                    </div>
+                                                </div> <!-- single services -->
+                                            </div>
+                                            <div class="w-full sm:w-2/6 lg:w-1/3">
+                                                <div class="mt-8 text-center single-services wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
+                                                    <div class="mt-8 services-content">
+                                                        <h4 class="mb-8 text-xl font-bold text-gray-900">Isya</h4>
+                                                        <h3 class="mb-8 text-xl font-bold text-gray-900"><a class="duration-300 hover:text-theme-color" href="#"><?= $pengingat_isya;?></a></h3>
+                                                    </div>
+                                                </div> <!-- single services -->
+                                            </div>
+                                        </div> <!-- row -->
+                                    </div> <!-- subscribe area -->
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+ </div>              
+    <!--====== JADWAL SHOLAT PART END ======-->
     
     <!--====== PERKENALAN BASYIR ======-->
     
@@ -150,8 +242,8 @@
                 <div class="w-full">
                     <div class="pb-10 text-center section-title">
                         <div class="m-auto line"></div>
-                        <h3 class="title">Supported By</h3> -->
-                        <!-- <div class="items-center justify-center row lg:justify-between">
+                        <h3 class="title">Supported By</h3>
+                        <div class="items-center justify-center row lg:justify-between">
                             <div class="single-logo hover:opacity-100 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
                                 <img src="assets/images/brand-1.png" alt="brand" style="width: 70px; height: auto;">
                             </div> 
@@ -167,18 +259,18 @@
                             <div class="single-logo hover:opacity-100 wow fadeIn" data-wow-duration="1.5s" data-wow-delay="0.5s">
                                 <img src="assets/images/brand-5.png" alt="brand" style="width: 100px; height: auto;">
                             </div> 
-                        </div> -->
-                    <!-- </div> 
+                        </div> 
+                    </div>
                 </div>
-            </div>   
-        </div> 
+            </div> 
+        </div>
     </div> -->
     
     <!--====== PERKENALAN BASYIR ENDS ======-->
     
     <!--====== SUPPORTED BY ======-->
     
-    <section id="supported" class="services-area pt-120">
+    <section id="features" class="services-area pt-120">
         <div class="container">
             <div class="justify-center row">
                 <div class="w-full lg:w-2/3">
@@ -197,7 +289,7 @@
                         </div>
                         <div class="mt-8 services-content">
                             <h4 class="mb-8 text-xl font-bold text-gray-900">POLITEKNIK NEGERI BANDUNG</h4>
-                            <!-- <p class="mb-8">Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu eirmod tempor invidunt labore.</p> -->
+                            <p class="mb-8">Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu eirmod tempor invidunt labore.</p>
                             <a class="duration-300 hover:text-theme-color" href="https://www.instagram.com/politekniknegeribandung/">Kunjungi di instagram <i class="ml-2 lni lni-chevron-right"></i></a>
                         </div>
                     </div>
@@ -210,7 +302,7 @@
                         </div>
                         <div class="mt-8 services-content">
                             <h4 class="mb-8 text-xl font-bold text-gray-900">TEKNIK KOMPUTER & INFORMATIKA POLBAN</h4>
-                            <!-- <p class="mb-8">Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu eirmod tempor invidunt labore.</p> -->
+                            <p class="mb-8">Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu eirmod tempor invidunt labore.</p>
                             <a class="duration-300 hover:text-theme-color" href="https://www.instagram.com/jtkpolban/">Kunjungi di instagram <i class="ml-2 lni lni-chevron-right"></i></a>
                         </div>
                     </div> 
@@ -223,7 +315,7 @@
                         </div>
                         <div class="mt-8 services-content">
                             <h4 class="mb-8 text-xl font-bold text-gray-900">UKM ASSALAM POLBAN</h4>
-                            <!-- <p class="mb-8">Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu eirmod tempor invidunt labore.</p> -->
+                            <p class="mb-8">Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu eirmod tempor invidunt labore.</p>
                             <a class="duration-300 hover:text-theme-color" href="https://www.instagram.com/assalampolban/">Kunjungi di instagram <i class="ml-2 lni lni-chevron-right"></i></a>
                         </div>
                     </div> 
@@ -236,7 +328,7 @@
                         </div>
                         <div class="mt-8 services-content">
                             <h4 class="mb-8 text-xl font-bold text-gray-900">PHM DKM Luqmanul Hakim POLBAN</h4>
-                            <!-- <p class="mb-8">Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu eirmod tempor invidunt labore.</p> -->
+                            <p class="mb-8">Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu eirmod tempor invidunt labore.</p>
                             <a class="duration-300 hover:text-theme-color" href="https://www.instagram.com/masjidlhpolban/">Kunjungi di instagram <i class="ml-2 lni lni-chevron-right"></i></a>
                         </div>
                     </div>
@@ -248,8 +340,8 @@
                             <img src="assets/images/brand-5.png" alt="brand" style="width: 88px; height: auto;">
                         </div>
                         <div class="mt-8 services-content">
-                            <h4 class="mb-8 text-xl font-bold text-gray-900">Ma'had Luqmanul Hakim POLBAN</h4>
-                            <!-- <p class="mb-8">Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu eirmod tempor invidunt labore.</p> -->
+                            <h4 class="mb-8 text-xl font-bold text-gray-900">Ma'had Luqmanul Hakim</h4>
+                            <p class="mb-8">Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu eirmod tempor invidunt labore.</p>
                             <a class="duration-300 hover:text-theme-color" href="https://www.instagram.com/mahad.lh/">Kunjungi di instagram <i class="ml-2 lni lni-chevron-right"></i></a>
                         </div>
                     </div> <!-- single services -->
@@ -259,91 +351,6 @@
     </section>
     
     <!--====== SUPPORTED BY ENDS ======-->
-
-    <!--====== JADWAL SHOLAT PART START ======-->
-    <section id="features" class="services-area pt-120">
-        <div class="container">
-            <div class="px-6 pt-10 pb-20 mb-12 bg-white rounded-lg shadow-xl md:px-12 subscribe-area wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
-                <div class="row">
-                    <div class="w-full lg:w-1/2">
-                        <div class="lg:mt-12 subscribe-content">
-                            <h2 class="text-2xl font-bold sm:text-1xl subscribe-title">
-                                Waktu Solat di <?= $nama_kota;?> 
-                            </h2>
-                        </div>
-                    </div>
-                    <div class="w-full lg:w-1/2">
-                        <div class="lg:mt-12 subscribe-content text-right">
-                                <span class="font-normal right"><p id="time"></p></span>
-                        </div>
-                    </div>
-                    <div class="w-full lg:w-2/2">
-                        <div class="mt-12 subscribe-form">
-                            <form action="/kota" method="post" class="relative focus:outline-none">
-                                <!-- <input type="text" placeholder="Ketik Lokasi Kamu..." class="typeahead w-full py-4 pl-6 pr-40 duration-300 border-2 rounded focus:border-theme-color focus:outline-none"> -->
-                                <select name="nama" class="w-full py-4 pl-6 pr-40 duration-300 border-2 rounded focus:border-theme-color focus:outline-none">
-                                    <?php foreach ($kota as $u): ?>
-                                        <option value="<?= $u->nama; ?>"><?= $u->nama; ?></option>
-                                    <?php endforeach ?>
-                                </select>
-                                <button class="main-btn gradient-btn">Cari</button>
-                            </form>
-                        </div>
-                    </div>
-
-                    <div class="w-full sm:w-2/6 lg:w-1/3">
-                        <div class="mt-8 text-center single-services wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
-                            <div class="mt-8 services-content">
-                                <h4 class="mb-8 text-xl font-bold text-gray-900">Imsak</h4>
-                                <h3 class="mb-8 text-xl font-bold text-gray-900"><a class="duration-300 hover:text-theme-color" href="#"><?= $pengingat_imsak;?></a></h3>
-                            </div>
-                        </div> <!-- single services -->
-                    </div>
-                    <div class="w-full sm:w-2/6 lg:w-1/3">
-                        <div class="mt-8 text-center single-services wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
-                            <div class="mt-8 services-content">
-                                <h4 class="mb-8 text-xl font-bold text-gray-900">Subuh</h4>
-                                <h3 class="mb-8 text-xl font-bold text-gray-900"><a class="duration-300 hover:text-theme-color" href="#"><?= $pengingat_subuh;?></a></h3>
-                            </div>
-                        </div> <!-- single services -->
-                    </div>
-                    <div class="w-full sm:w-2/6 lg:w-1/3">
-                        <div class="mt-8 text-center single-services wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
-                            <div class="mt-8 services-content">
-                                <h4 class="mb-8 text-xl font-bold text-gray-900">Dzuhur</h4>
-                                <h3 class="mb-8 text-xl font-bold text-gray-900"><a class="duration-300 hover:text-theme-color" href="#"><?= $pengingat_dzuhur;?></a></h3>
-                            </div>
-                        </div> <!-- single services -->
-                    </div>
-                    <div class="w-full sm:w-2/6 lg:w-1/3">
-                        <div class="mt-8 text-center single-services wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
-                            <div class="mt-8 services-content">
-                                <h4 class="mb-8 text-xl font-bold text-gray-900">Ashar</h4>
-                                <h3 class="mb-8 text-xl font-bold text-gray-900"><a class="duration-300 hover:text-theme-color" href="#"><?= $pengingat_ashar;?></a></h3>
-                            </div>
-                        </div> <!-- single services -->
-                    </div>
-                    <div class="w-full sm:w-2/6 lg:w-1/3">
-                        <div class="mt-8 text-center single-services wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
-                            <div class="mt-8 services-content">
-                                <h4 class="mb-8 text-xl font-bold text-gray-900">Maghrib</h4>
-                                <h3 class="mb-8 text-xl font-bold text-gray-900"><a class="duration-300 hover:text-theme-color" href="#"><?= $pengingat_maghrib;?></a></h3>
-                            </div>
-                        </div> <!-- single services -->
-                    </div>
-                    <div class="w-full sm:w-2/6 lg:w-1/3">
-                        <div class="mt-8 text-center single-services wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
-                            <div class="mt-8 services-content">
-                                <h4 class="mb-8 text-xl font-bold text-gray-900">Isya</h4>
-                                <h3 class="mb-8 text-xl font-bold text-gray-900"><a class="duration-300 hover:text-theme-color" href="#"><?= $pengingat_isya;?></a></h3>
-                            </div>
-                        </div> <!-- single services -->
-                    </div>
-                </div> <!-- row -->
-            </div> <!-- subscribe area -->
-        </div>
-    </section>
-    <!--====== JADWAL SHOLAT PART END ======-->
     
     <!--====== ABOUT PART START ======-->
     
@@ -360,8 +367,8 @@
                             <!-- <div class="line"></div> -->
                             <h3 class="title">Quick & Easy, <span>Instalasi dan penggunaannya pun sangat mudah</span></h3>
                         </div> <!-- section title -->
-                        <p class="mb-8">Penginstalan Aplikasi Basyir cukup dengan mendownload melalui Play Store maupung App Store. Aplikasi Basyir mendukung penggunaan yang cukup simple dan praktis, tidak banyak langkah untuk dapat menggunakannya. Aplikasi Basyir berbasis mobile dapat diinstall pada Smartphone kamu.</p>
-                        <a href="#" class="main-btn gradient-btn">Coba Sekarang</a>
+                        <p class="mb-8">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, seiam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing.</p>
+                        <a href="javascript:void(0)" class="main-btn gradient-btn">Try it Free</a>
                     </div> <!-- about content -->
                 </div>
                 <div class="w-full lg:w-1/2">
@@ -392,8 +399,8 @@
                             <!-- <div class="line"></div> -->
                             <h3 class="title">Tampilan yang menarik <span> memberikan semangat energi positif kepada anda</span></h3>
                         </div> <!-- section title -->
-                        <p class="mb-8">Tampilan yang menarik pada Aplikasi Basyir akan memberikan semangat beribadah kepada kamu. Produktivitas kamu dalam beribadah akan meningkat setelah menggunakan Aplikasi Basyir. Selain itu, Aplikasi Basyir juga memiliki warna yang tidak membuat mata kamu cepat lelah ketika menggunakannya.</p>
-                        <a href="#" class="main-btn gradient-btn">Unduh Sekarang</a>
+                        <p class="mb-8">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, seiam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing.</p>
+                        <a href="javascript:void(0)" class="main-btn gradient-btn">Try it Free</a>
                     </div> <!-- about content -->
                 </div>
                 <div class="w-full lg:w-1/2 lg:order-first">
@@ -417,8 +424,8 @@
                             <!-- <div class="line"></div> -->
                             <h3 class="title"><span>Diciptakan untuk</span> meningkatkan kedisiplinan anda dalam beribadah</h3>
                         </div> <!-- section title -->
-                        <p class="mb-8">Aplikasi Basyir direkomendasikan untuk kamu yang masih kurang disipling dalam beribadah. Basyir hadir untuk membantu kamu dalam melakukan perencanaan ibadah wajib dan juga ibadah harian yang sering kamu lewatkan. Basyir akan selalu mengingatkanmu melalui notifikasi yang ciamik melalui smartphone kamu.</p>
-                        <a href="#" class="main-btn gradient-btn">Saya mau</a>
+                        <p class="mb-8">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, seiam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing.</p>
+                        <a href="javascript:void(0)" class="main-btn gradient-btn">Try it Free</a>
                     </div> <!-- about content -->
                 </div>
                 <div class="w-full lg:w-1/2">
@@ -432,6 +439,9 @@
             <img src="assets/images/about-shape-1.svg" alt="shape">
         </div>
     </section>
+    
+    <!--====== ABOUT PART ENDS ======-->
+
     
     <!--====== ABOUT PART ENDS ======-->
     
@@ -460,25 +470,25 @@
                                 <div class="line"></div>
                                 <h3 class="title">Fakta-fakta menarik <span> tentang aplikasi ini</span></h3>
                             </div> <!-- section title -->
-                            <p class="text">Ringkasan pengguna aktif yang sudah mendowload Aplikasi Basyir dan rating yang telah diusulkan oleh mereka</p>
+                            <p class="text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, seiam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
                         </div> <!-- counter content -->
                         <div class="row no-gutters">
                             <div class="flex items-center justify-center single-counter counter-color-1">
                                 <div class="text-center counter-items">
                                     <span class="text-2xl font-bold text-white"><span class="counter">125</span>K</span>
-                                    <p class="text-white">Download</p>
+                                    <p class="text-white">Downloads</p>
                                 </div>
                             </div> <!-- single counter -->
                             <div class="flex items-center justify-center single-counter counter-color-2">
                                 <div class="text-center counter-items">
                                     <span class="text-2xl font-bold text-white"><span class="counter">87</span>K</span>
-                                    <p class="text-white">Pengguna Aktif</p>
+                                    <p class="text-white">Active Users</p>
                                 </div>
                             </div> <!-- single counter -->
                             <div class="flex items-center justify-center single-counter counter-color-3">
                                 <div class="text-center counter-items">
                                     <span class="text-2xl font-bold text-white"><span class="counter">4.8</span></span>
-                                    <p class="text-white">Penilaian</p>
+                                    <p class="text-white">User Rating</p>
                                 </div>
                             </div> <!-- single counter -->
                         </div> <!-- row -->
@@ -736,86 +746,72 @@
                 <div class="w-full lg:w-1/2">
                     <div class="pb-8 section-title">
                         <div class="line"></div>
-                        <h3 class="title"><span>Yuk</span> baca berita dibawah ini</h3>
-                    </div> <!-- section title -->
-                </div>
-                <div class="w-full lg:w-1/2">
-                    <div class="pb-8 section-title">
-                        <h4 class="title"><a href="/berita"><span>Lihat Lebih Lanjut <i class="lni lni-chevron-right"></i></span></a></h4>
-                        <div class="line"></div>
-                    </div> <!-- section title -->
-                </div>
-            </div> <!-- row -->
-            <div class="justify-center row">
-                <?php 
-                    $nomor = 1; 
-                    foreach($getBeritaLandingPage as $gblp):
-                ?>
-                    <div class="w-full md:w-2/3 lg:w-1/3">
-                        <div class="mx-4 mt-10 single-blog wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
-                            <div class="mb-5 overflow-hidden blog-image rounded-xl">
-                                <img class="w-full" src="<?=base_url($gblp->gambar_berita);?>" alt="blog">
-                            </div>
-                            <div class="blog-content">
-                                <ul class="flex mb-5 meta">
-                                    <li>Posted By: <a href="javascript:void(0)"><?= $gblp->id_user;?></a></li>
-                                    <li class="ml-12"><?= date('d F Y', strtotime($gblp->created_at));?></li>
-                                </ul>
-                                <p class="mb-6 text-2xl leading-snug text-gray-900"><?= $gblp->ringkasan_berita;?></p>
-                                <a class="text-theme-color-2" href="javascript:void(0)">
-                                    Selengkapnya
-                                    <i class="ml-2 lni lni-chevron-right"></i>
-                                </a>
-                            </div>
-                        </div> <!-- single blog -->
-                    </div> 
-                <?php endforeach; ?>
- 
-            </div> <!-- row -->
-            <br><br>
-            <div class="row">
-                <div class="w-full lg:w-1/2">
-                    <div class="pb-8 section-title">
-                        <div class="line"></div>
                         <h3 class="title"><span>Yuk</span> baca artikel dibawah ini</h3>
                     </div> <!-- section title -->
                 </div>
-                <div class="w-full lg:w-1/2">
-                    <div class="pb-8 section-title">
-                        <h4 class="title"><a href="/berita"><span>Lihat Lebih Lanjut <i class="lni lni-chevron-right"></i></span></a></h4>
-                        <div class="line"></div>
-                    </div> <!-- section title -->
-                </div>
             </div> <!-- row -->
             <div class="justify-center row">
-                <?php 
-                    $nomor = 1; 
-                    foreach($getWawasanIslamiLandingPage as $gwilp):
-                ?>
-                    <div class="w-full md:w-2/3 lg:w-1/3">
-                        <div class="mx-4 mt-10 single-blog wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
-                            <div class="mb-5 overflow-hidden blog-image rounded-xl">
-                                <img class="w-full" src="<?=base_url($gwilp->gambar_wawasan_islami);?>" alt="blog">
-                            </div>
-                            <div class="blog-content">
-                                <ul class="flex mb-5 meta">
-                                    <li>Posted By: <a href="javascript:void(0)"><?= $gwilp->id_user;?></a></li>
-                                    <li class="ml-12"><?= date('d F Y', strtotime($gwilp->created_at));?></li>
-                                </ul>
-                                <p class="mb-6 text-2xl leading-snug text-gray-900"><?= $gwilp->ringkasan_wawasan_islami;?></p>
-                                <a class="text-theme-color-2" href="javascript:void(0)">
-                                    Selengkapnya
-                                    <i class="ml-2 lni lni-chevron-right"></i>
-                                </a>
-                            </div>
-                        </div> <!-- single blog -->
-                    </div> 
-                <?php endforeach; ?>
- 
+                <div class="w-full md:w-2/3 lg:w-1/3">
+                    <div class="mx-4 mt-10 single-blog wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
+                        <div class="mb-5 overflow-hidden blog-image rounded-xl">
+                            <img class="w-full" src="assets/images/blog-1.jpg" alt="blog">
+                        </div>
+                        <div class="blog-content">
+                            <ul class="flex mb-5 meta">
+                                <li>Posted By: <a href="javascript:void(0)">Admin</a></li>
+                                <li class="ml-12">03 June, 2023</li>
+                            </ul>
+                            <p class="mb-6 text-2xl leading-snug text-gray-900">Lorem ipsuamet conset sadips cing elitr seddiam nonu eirmod tempor invidunt labore.</p>
+                            <a class="text-theme-color-2" href="javascript:void(0)">
+                                Baca lebih lanjut...
+                                <i class="ml-2 lni lni-chevron-right"></i>
+                            </a>
+                        </div>
+                    </div> <!-- single blog -->
+                </div> 
+                <div class="w-full md:w-2/3 lg:w-1/3">
+                    <div class="mx-4 mt-10 single-blog wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
+                        <div class="mb-5 overflow-hidden blog-image rounded-xl">
+                            <img class="w-full" src="assets/images/blog-2.jpg" alt="blog">
+                        </div>
+                        <div class="blog-content">
+                            <ul class="flex mb-5 meta">
+                                <li>Posted By: <a href="javascript:void(0)">Admin</a></li>
+                                <li class="ml-12">03 June, 2023</li>
+                            </ul>
+                            <p class="mb-6 text-2xl leading-snug text-gray-900">Lorem ipsuamet conset sadips cing elitr seddiam nonu eirmod tempor invidunt labore.</p>
+                            <a class="text-theme-color-2" href="javascript:void(0)">
+                                Baca lebih lanjut...
+                                <i class="ml-2 lni lni-chevron-right"></i>
+                            </a>
+                        </div>
+                    </div> <!-- single blog -->
+                </div> 
+                <div class="w-full md:w-2/3 lg:w-1/3">
+                    <div class="mx-4 mt-10 single-blog wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
+                        <div class="mb-5 overflow-hidden blog-image rounded-xl">
+                            <img class="w-full" src="assets/images/blog-3.jpg" alt="blog">
+                        </div>
+                        <div class="blog-content">
+                            <ul class="flex mb-5 meta">
+                                <li>Posted By: <a href="javascript:void(0)">Admin</a></li>
+                                <li class="ml-12">03 June, 2023</li>
+                            </ul>
+                            <p class="mb-6 text-2xl leading-snug text-gray-900">Lorem ipsuamet conset sadips cing elitr seddiam nonu eirmod tempor invidunt labore.</p>
+                            <a class="text-theme-color-2" href="javascript:void(0)">
+                                Baca lebih lanjut... 
+                                <i class="ml-2 lni lni-chevron-right"></i>
+                            </a>
+                        </div>
+                    </div> <!-- single blog -->
+                </div>
             </div> <!-- row -->
         </div> <!-- container -->
     </section>
-    
+
+    <div class>
+    <a href="javascript:void(0)" class="main-btn gradient-btn" style="text-align: center; display: block; width: 50%; margin: 0 auto; padding: 10px 20px;">Try it Free</a>
+    </div>
     <!--====== BLOG PART ENDS ======-->
     
     <!--====== FOOTER PART START ======-->
@@ -827,15 +823,16 @@
                 <div class="row">
                     <div class="w-full lg:w-1/2">
                         <div class="lg:mt-12 subscribe-content">
-                            <h4 class="text-2xl font-bold sm:text-4xl subscribe-title">
-                                Bantu kami lebih berkembang dengan mengirimkan saran dan masukkan anda
-                            </h4>
+                            <h2 class="text-2xl font-bold sm:text-4xl subscribe-title">
+                                Bantu kami lebih berkembang dengan 
+                                <span class="block font-normal">mengirimkan saran dan masukkan anda</span>
+                            </h2>
                         </div>
                     </div>
                     <div class="w-full lg:w-1/2">
                         <div class="mt-12 subscribe-form">
-                            <form action="/saran/save" method="post" class="relative focus:outline-none">
-                                <input type="text" name="pesan_saran" placeholder="Ketikan pesan anda" class="w-full py-4 pl-6 pr-40 duration-300 border-2 rounded focus:border-theme-color focus:outline-none" required>
+                            <form action="#" class="relative focus:outline-none">
+                                <input type="email" placeholder="Ketikan pesan anda" class="w-full py-4 pl-6 pr-40 duration-300 border-2 rounded focus:border-theme-color focus:outline-none">
                                 <button class="main-btn gradient-btn">Kirim</button>
                             </form>
                         </div>
@@ -847,7 +844,7 @@
                     <div class="w-4/5 md:w-3/5 lg:w-2/6">
                         <div class="mt-12 footer-about wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
                             <a class="inline-block mb-8 logo" href="index.html">
-                                <img src="assets/images/logo-2.svg" alt="logo" class="w-40">
+                                <img src="assets/images/logo-2.png" alt="logo" class="w-40">
                             </a>
                             <p class="pb-10 pr-10 leading-snug text-white">Lorem ipsum dolor sit amet consetetur sadipscing elitr, sederfs diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam.</p>
                             <ul class="flex footer-social">
@@ -962,29 +959,6 @@
     
     <!--====== Main js ======-->
     <script src="assets/js/main.js"></script>
-
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> -->
-    <script type="text/javascript">
-        var timestamp = '<?=time();?>';
-        function updateTime(){
-            var date = new Date(timestamp * 1000);
-            var days = ['Minggu','Senin','Selasa','Rabu','Kamis','Jumat','Sabtu'];
-            var dayOfWeek = days[date.getDay()];
-            var dayOfMonth = date.getDate();
-            var month = date.getMonth() + 1;
-            var year = date.getFullYear();
-            var hour = date.getHours();
-            var minute = date.getMinutes();
-            var second = date.getSeconds();
-            var formattedTime = dayOfWeek + ', ' + dayOfMonth + '-' + month + '-' + year + ' ' + hour + ':' + minute + ':' + second;
-            $('#time').html(formattedTime);
-            timestamp++;
-        }
-        $(function(){
-            setInterval(updateTime, 1000);
-        });
-    </script>
-
     
 </body>
 

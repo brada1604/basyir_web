@@ -848,6 +848,9 @@ video {
 .text-center {
   text-align: center;
 }
+.text-right {
+  text-align: right;
+}
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
@@ -980,6 +983,10 @@ video {
 
   .sm\:w-2\/3 {
     width: 66.666667%;
+  }
+
+  .sm\:w-2\/6 {
+    width: 33.333333%;
   }
 
   .sm\:text-4xl {
