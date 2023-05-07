@@ -46,8 +46,14 @@ class BeritaModel extends Model
         if ($id === false) {
             // return $this->findAll();
 
-            // Manual atau Query Builder
-            $query = $this->db->query("SELECT * FROM tbl_berita where id_user = '$id_user'");
+            if ($id_user == 1) {
+                // Manual atau Query Builder
+                $query = $this->db->query("SELECT * FROM tbl_berita");
+            } else {
+                // Manual atau Query Builder
+                $query = $this->db->query("SELECT * FROM tbl_berita where id_user = '$id_user'");
+            }
+
             return $query->getResult(); // return berupa array objek
 
         } else {
