@@ -99,13 +99,13 @@ class KutipanController extends BaseController
                 $model->update($id_kutipan, $data);
          
                 echo '<script>
-                    alert("Selamat! Berhasil Mengubah Data Kutipan Islami");
+                    alert("Selamat! Berhasil Mengubah Data Kutipan");
                     window.location="' . base_url('kutipan_master') . '"
                 </script>';
             }
         else {
             $data['validation'] = $this->validator;
-            $data['title'] = 'Data Kutipan Islami';
+            $data['title'] = 'Data Kutipan';
 
             echo view('layout/v_header', $data);
             echo view('layout/v_navbar');
@@ -119,7 +119,7 @@ class KutipanController extends BaseController
         $model = new KutipanModel;
         $model->delete($id);
         echo '<script>
-                alert("Selamat! Berhasil Menghapus Data Kutipan Islami");
+                alert("Selamat! Berhasil Menghapus Data Kutipan");
                 window.location="' . base_url('kutipan_master') . '"
             </script>';
     }
