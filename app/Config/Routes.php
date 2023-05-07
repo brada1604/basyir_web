@@ -173,6 +173,8 @@ $routes->get('/saran_master', 'saranController::index',['filter' => 'auth']); //
 $routes->post('/saran/save', 'saranController::save'); // untuk menyimpan data
 $routes->get('/saran/delete/(:segment)', 'saranController::delete/$1',['filter' => 'auth']); // (:segment) = parameter, $1 = parameter pertama yang di ambil
 
+// ROUTE SARAN
+$routes->get('/jadwal_solat', 'JadwalSolatController::index'); // untuk menampilkan data
 
 // ROUTE DASHBOARD
 $routes->get('/dashboard', 'DashboardController::index',['filter' => 'auth']); // untuk menampilkan data

@@ -30,6 +30,12 @@
     <!-- <link rel="stylesheet" href="assets/css/style.css"> -->
     <link rel="stylesheet" href="assets/css/tailwind.css">
     <!-- @vite('resources/css/app.css') -->
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" />
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.1/bootstrap3-typeahead.min.js"></script>  
+
 </head>
 
 <body>
@@ -262,7 +268,7 @@
                     <div class="w-full lg:w-1/2">
                         <div class="lg:mt-12 subscribe-content">
                             <h2 class="text-2xl font-bold sm:text-1xl subscribe-title">
-                                Waktu Solat di Bandung 
+                                Waktu Solat di Kota Bandung 
                             </h2>
                         </div>
                     </div>
@@ -274,7 +280,12 @@
                     <div class="w-full lg:w-2/2">
                         <div class="mt-12 subscribe-form">
                             <form action="#" class="relative focus:outline-none">
-                                <input type="email" placeholder="Ketik Lokasi Kamu..." class="w-full py-4 pl-6 pr-40 duration-300 border-2 rounded focus:border-theme-color focus:outline-none">
+                                <!-- <input type="text" placeholder="Ketik Lokasi Kamu..." class="typeahead w-full py-4 pl-6 pr-40 duration-300 border-2 rounded focus:border-theme-color focus:outline-none"> -->
+                                <select name="#" class="w-full py-4 pl-6 pr-40 duration-300 border-2 rounded focus:border-theme-color focus:outline-none">
+                                    <?php foreach ($kota as $u): ?>
+                                        <option value="<?= $u->id; ?>"><?= $u->id; ?> <?= $u->nama; ?></option>
+                                    <?php endforeach ?>
+                                </select>
                                 <button class="main-btn gradient-btn">Cari</button>
                             </form>
                         </div>
@@ -284,7 +295,7 @@
                         <div class="mt-8 text-center single-services wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
                             <div class="mt-8 services-content">
                                 <h4 class="mb-8 text-xl font-bold text-gray-900">Imsak</h4>
-                                <h3 class="mb-8 text-xl font-bold text-gray-900"><a class="duration-300 hover:text-theme-color" href="#">03.50</a></h3>
+                                <h3 class="mb-8 text-xl font-bold text-gray-900"><a class="duration-300 hover:text-theme-color" href="#"><?= $pengingat_imsak;?></a></h3>
                             </div>
                         </div> <!-- single services -->
                     </div>
@@ -292,7 +303,7 @@
                         <div class="mt-8 text-center single-services wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
                             <div class="mt-8 services-content">
                                 <h4 class="mb-8 text-xl font-bold text-gray-900">Subuh</h4>
-                                <h3 class="mb-8 text-xl font-bold text-gray-900"><a class="duration-300 hover:text-theme-color" href="#">03.50</a></h3>
+                                <h3 class="mb-8 text-xl font-bold text-gray-900"><a class="duration-300 hover:text-theme-color" href="#"><?= $pengingat_subuh;?></a></h3>
                             </div>
                         </div> <!-- single services -->
                     </div>
@@ -300,7 +311,7 @@
                         <div class="mt-8 text-center single-services wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
                             <div class="mt-8 services-content">
                                 <h4 class="mb-8 text-xl font-bold text-gray-900">Dzuhur</h4>
-                                <h3 class="mb-8 text-xl font-bold text-gray-900"><a class="duration-300 hover:text-theme-color" href="#">03.50</a></h3>
+                                <h3 class="mb-8 text-xl font-bold text-gray-900"><a class="duration-300 hover:text-theme-color" href="#"><?= $pengingat_dzuhur;?></a></h3>
                             </div>
                         </div> <!-- single services -->
                     </div>
@@ -308,15 +319,15 @@
                         <div class="mt-8 text-center single-services wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
                             <div class="mt-8 services-content">
                                 <h4 class="mb-8 text-xl font-bold text-gray-900">Ashar</h4>
-                                <h3 class="mb-8 text-xl font-bold text-gray-900"><a class="duration-300 hover:text-theme-color" href="#">03.50</a></h3>
+                                <h3 class="mb-8 text-xl font-bold text-gray-900"><a class="duration-300 hover:text-theme-color" href="#"><?= $pengingat_ashar;?></a></h3>
                             </div>
                         </div> <!-- single services -->
                     </div>
                     <div class="w-full sm:w-2/6 lg:w-1/3">
                         <div class="mt-8 text-center single-services wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
                             <div class="mt-8 services-content">
-                                <h4 class="mb-8 text-xl font-bold text-gray-900">Magrib</h4>
-                                <h3 class="mb-8 text-xl font-bold text-gray-900"><a class="duration-300 hover:text-theme-color" href="#">03.50</a></h3>
+                                <h4 class="mb-8 text-xl font-bold text-gray-900">Maghrib</h4>
+                                <h3 class="mb-8 text-xl font-bold text-gray-900"><a class="duration-300 hover:text-theme-color" href="#"><?= $pengingat_maghrib;?></a></h3>
                             </div>
                         </div> <!-- single services -->
                     </div>
@@ -324,7 +335,7 @@
                         <div class="mt-8 text-center single-services wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
                             <div class="mt-8 services-content">
                                 <h4 class="mb-8 text-xl font-bold text-gray-900">Isya</h4>
-                                <h3 class="mb-8 text-xl font-bold text-gray-900"><a class="duration-300 hover:text-theme-color" href="#">03.50</a></h3>
+                                <h3 class="mb-8 text-xl font-bold text-gray-900"><a class="duration-300 hover:text-theme-color" href="#"><?= $pengingat_isya;?></a></h3>
                             </div>
                         </div> <!-- single services -->
                     </div>
