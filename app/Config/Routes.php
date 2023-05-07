@@ -168,6 +168,15 @@ $routes->post('/doa/search', 'DoaController::search'); // untuk mencari data ber
 // ROUTE DASHBOARD
 $routes->get('/dashboard', 'DashboardController::index',['filter' => 'auth']); // untuk menampilkan data
 
+// ROUTE SARAN
+$routes->get('/saran_master', 'saranController::index',['filter' => 'auth']); // untuk menampilkan data
+$routes->post('/saran/save', 'saranController::save'); // untuk menyimpan data
+$routes->get('/saran/delete/(:segment)', 'saranController::delete/$1',['filter' => 'auth']); // (:segment) = parameter, $1 = parameter pertama yang di ambil
+
+
+// ROUTE DASHBOARD
+$routes->get('/dashboard', 'DashboardController::index',['filter' => 'auth']); // untuk menampilkan data
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing

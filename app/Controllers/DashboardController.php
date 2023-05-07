@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Models\SaranModel;
 use App\Controllers\BaseController;
 
 class DashboardController extends BaseController
@@ -11,12 +12,14 @@ class DashboardController extends BaseController
         $data['session'] = session();
 
         if (session()->get('role') == 1) { // Role : superadmin
+            $model_saran = new SaranModel;
             $data['title'] = 'Basyir - Dashboard Superadmin';
+            $data['total_saran'] = $model_saran->countAll();
 
             echo view('layout/v_header', $data);
             echo view('layout/v_sidebar');
             echo view('layout/v_navbar');
-            echo view('dashboard/dashboard_superadmin');
+            echo view('dashboard/dashboard_superadmin', $data);
             echo view('layout/v_footer');
         }
         elseif (session()->get('role') == 2) { // Role : kontributor
