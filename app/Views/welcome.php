@@ -117,6 +117,7 @@
                             <h3 class="text-4xl font-light leading-tight text-white header-sub-title wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.2s">Basyir - Booster your iman</h3>
                             <h2 class="mb-3 text-4xl font-bold text-white header-title wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.5s">Tingkatkan Produktivitas Kamu Dalam Beribadah</h2>
                             <p class="mb-8 text-white text wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.8s">UNDUH APLIKASI BASYIR DI PLAYSTORE</p>
+                            
                             <a href="#" class="main-btn gradient-btn gradient-btn-2 wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="1.1s">Unduh Sekarang</a>
                         </div> <!-- header hero content -->
                     </div>
@@ -267,7 +268,7 @@
                     </div>
                     <div class="w-full lg:w-1/2">
                         <div class="lg:mt-12 subscribe-content text-right">
-                                <span class="font-normal right">SUN 16 APR 2023</span>
+                                <span class="font-normal right"><p id="time"></p></span>
                         </div>
                     </div>
                     <div class="w-full lg:w-2/2">
@@ -950,6 +951,29 @@
     
     <!--====== Main js ======-->
     <script src="assets/js/main.js"></script>
+
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> -->
+    <script type="text/javascript">
+        var timestamp = '<?=time();?>';
+        function updateTime(){
+            var date = new Date(timestamp * 1000);
+            var days = ['Minggu','Senin','Selasa','Rabu','Kamis','Jumat','Sabtu'];
+            var dayOfWeek = days[date.getDay()];
+            var dayOfMonth = date.getDate();
+            var month = date.getMonth() + 1;
+            var year = date.getFullYear();
+            var hour = date.getHours();
+            var minute = date.getMinutes();
+            var second = date.getSeconds();
+            var formattedTime = dayOfWeek + ', ' + dayOfMonth + '-' + month + '-' + year + ' ' + hour + ':' + minute + ':' + second;
+            $('#time').html(formattedTime);
+            timestamp++;
+        }
+        $(function(){
+            setInterval(updateTime, 1000);
+        });
+    </script>
+
     
 </body>
 
