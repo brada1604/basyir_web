@@ -14,7 +14,7 @@ class KutipanModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['id_user', 'judul_kutipan', 'deskripsi_kutipan', 'sumber_kutipan'];
+    protected $allowedFields    = ['id_user', 'judul_kutipan', 'deskripsi_kutipan', 'sumber_kutipan', 'status_kutipan'];
 
     // Dates
     protected $useTimestamps = false;
@@ -42,12 +42,11 @@ class KutipanModel extends Model
 
     public function getKutipan($id = false)
     {
-        $id_user = session()->get('role');
         if ($id === false) {
             // return $this->findAll();
 
             // Manual atau Query Builder
-            $query = $this->db->query("SELECT * FROM tbl_kutipan where id_user = '$id_user'");
+            $query = $this->db->query("SELECT * FROM tbl_kutipan");
             return $query->getResult(); // return berupa array objek
 
         } else {

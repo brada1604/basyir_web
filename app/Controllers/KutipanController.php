@@ -2,8 +2,8 @@
 
 namespace App\Controllers;
 
-use App\Controllers\BaseController;
 use App\Models\KutipanModel;
+use App\Controllers\BaseController;
 
 class KutipanController extends BaseController
 {
@@ -42,19 +42,8 @@ class KutipanController extends BaseController
      
         if($this->validate($rules)){
             $model = new KutipanModel();
-            $fileImage_name = "";
-            if(isset($_FILES) && @$_FILES['image_file']['error'] != '4') {
-                if($fileImage = $this->request->getFile('image_file')) {
-                    if (! $fileImage->isValid()) {
-                        throw new \RuntimeException($fileImage->getErrorString().'('.$fileImage->getError().')');
-                    } else {            
-                        $fileImage->move('assets/image/kutipan');
-                        $fileImage_name = $fileImage->getName();
-                    }
-                }
-            }
+
             $data = [
-                'id_user' => $this->request->getVar('id_user'),
                 'judul_kutipan' => $this->request->getVar('judul_kutipan'),
                 'deskripsi_kutipan' => $this->request->getVar('deskripsi_kutipan'),
                 'sumber_kutipan' => $this->request->getVar('sumber_kutipan'),
@@ -102,10 +91,9 @@ class KutipanController extends BaseController
             $id_kutipan = $this->request->getVar('id_kutipan');
 
                 $data = [
-                    'id_user' => $this->request->getVar('id_user'),
-                    'judul_kutipan' => 'required',
-                    'deskripsi_kutipan' => 'required',
-                    'sumber_kutipan' => 'required'
+                    'judul_kutipan' => $this->request->getVar('judul_kutipan'),
+                    'deskripsi_kutipan' => $this->request->getVar('deskripsi_kutipan'),
+                    'sumber_kutipan' => $this->request->getVar('sumber_kutipan'),
                 ];
 
                 $model->update($id_kutipan, $data);
