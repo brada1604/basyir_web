@@ -66,7 +66,7 @@ class BeritaModel extends Model
             // return $this->findAll();
 
             // Manual atau Query Builder
-            $query = $this->db->query("SELECT * FROM tbl_berita where status_berita = '2'");
+            $query = $this->db->query("SELECT * FROM tbl_berita where status_berita = '2' ORDER BY created_at desc limit 3");
             return $query->getResult(); // return berupa array objek
 
         } else {

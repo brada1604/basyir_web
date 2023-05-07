@@ -65,7 +65,7 @@ class WawasanIslamiModel extends Model
             // return $this->findAll();
 
             // Manual atau Query Builder
-            $query = $this->db->query("SELECT * FROM tbl_wawasan_islami where status_wawasan_islami = '2'");
+            $query = $this->db->query("SELECT * FROM tbl_wawasan_islami where status_wawasan_islami = '2' ORDER BY created_at desc limit 3");
             return $query->getResult(); // return berupa array objek
 
         } else {
