@@ -93,6 +93,24 @@ class WawasanIslamiController extends BaseController
         echo view('layout/v_footer');
     }
 
+    public function edit_status($id, $no)
+    {
+        $model = new WawasanIslamiModel();
+        $wawasan_islami = $id;
+        $status = $no;
+
+        $data = [
+            'status_wawasan_islami' => $status
+        ];
+
+        $model->update($wawasan_islami, $data);
+
+        echo '<script>
+                    alert("Selamat! Berhasil Mengubah Status Wawasan Islami");
+                    window.location="' . base_url('/wawasan_islami_master') . '"
+                </script>';
+    }
+
     public function update(){
         $data['session'] = session();
         $rules = [

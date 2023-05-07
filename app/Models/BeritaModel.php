@@ -42,11 +42,12 @@ class BeritaModel extends Model
 
     public function getBerita($id = false)
     {
-        $id_user = session()->get('role');
+        $id_user = session()->get('id');
+        $role_user = session()->get('role');
         if ($id === false) {
             // return $this->findAll();
 
-            if ($id_user == 1) {
+            if ($role_user == 1) {
                 // Manual atau Query Builder
                 $query = $this->db->query("SELECT * FROM tbl_berita");
             } else {

@@ -42,12 +42,18 @@ class WawasanIslamiModel extends Model
 
     public function getWawasanIslami($id = false)
     {
-        $id_user = session()->get('role');
+        $id_user = session()->get('id');
+        $role_user = session()->get('role');
         if ($id === false) {
             // return $this->findAll();
 
-            // Manual atau Query Builder
-            $query = $this->db->query("SELECT * FROM tbl_wawasan_islami where id_user = '$id_user'");
+            if ($role_user == 1) {
+                // Manual atau Query Builder
+                $query = $this->db->query("SELECT * FROM tbl_wawasan_islami");
+            } else {
+                // Manual atau Query Builder
+                $query = $this->db->query("SELECT * FROM tbl_wawasan_islami where id_user = '$id_user'");
+            }
             return $query->getResult(); // return berupa array objek
 
         } else {
