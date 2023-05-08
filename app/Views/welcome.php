@@ -833,8 +833,8 @@
                     </div>
                     <div class="w-full lg:w-1/2">
                         <div class="mt-12 subscribe-form">
-                            <form action="#" class="relative focus:outline-none">
-                                <input type="email" placeholder="Ketikan pesan anda" class="w-full py-4 pl-6 pr-40 duration-300 border-2 rounded focus:border-theme-color focus:outline-none">
+                            <form action="/saran/save" method="post" class="relative focus:outline-none">
+                                <input type="text" name="pesan_saran" placeholder="Ketikan pesan anda" class="w-full py-4 pl-6 pr-40 duration-300 border-2 rounded focus:border-theme-color focus:outline-none" required>
                                 <button class="main-btn gradient-btn">Kirim</button>
                             </form>
                         </div>
