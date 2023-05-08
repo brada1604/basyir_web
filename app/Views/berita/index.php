@@ -79,7 +79,7 @@ function youtube($url)
                                         <button type="button" class="btn btn-outline-danger">Rejected</button>
                                     <?php endif ?>
                                 </td>
-                                <td><?= youtube($row->video_berita); ?></td>
+                                <td><?= youtube($row->video_berita); ?> <br> <a href="<?=$row->video_berita?>" target="_blank">kunjungi situs</a></td>
                                 <td><img clas="bd-placeholder-img card-img-top" width="100" height="100" src="<?= base_url($row->gambar_berita); ?>"></td>
                                 <td>
                                     <a class="edit" class="btn btn-warning" href="/berita/edit/<?= $row->id_berita; ?>"><button type="button" class="btn btn-warning">Edit</button></a>

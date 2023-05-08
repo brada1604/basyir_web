@@ -84,4 +84,20 @@ class BeritaModel extends Model
             return $query->getResult(); // return berupa array objek
         }
     }
+
+    public function countByStatus($status)
+    {
+        $id_user = session()->get('id');
+        $role_user = session()->get('role');
+
+        if ($role_user == 1) {
+            $query = $this->db->query("SELECT count(id_berita) as total_berita FROM tbl_berita where status_berita = '$status'");
+        } else {
+            $query = $this->db->query("SELECT count(id_berita) as total_berita FROM tbl_berita where status_berita = '$status' AND id_user = '$id_user'");
+        }
+
+        return $query->getResult(); // return berupa array objek
+
+
+    }
 }
