@@ -82,7 +82,10 @@
                                         <a class="page-scroll" href="#home">Home</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="page-scroll" href="#features">Support</a>
+                                        <a class="page-scroll" href="#features">Jadwal Shalat</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="page-scroll" href="#features1">Support</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="page-scroll" href="#about">Benefit</a>
@@ -94,7 +97,7 @@
                                         <a class="page-scroll" href="#team">Team</a>
                                     </li>
                                     <li class="nav-item">
-                                    <a class="main-btn gradient-btn" data-scroll-nav="0" href="http://127.0.0.1:8000/login" rel="nofollow">Login Admin</a>
+                                    <a class="main-btn gradient-btn" data-scroll-nav="0" href="http://localhost:8080/login" rel="nofollow">Login Admin</a>
                                     </li>
                                 </ul>
                             </div> <!-- navbar collapse -->
@@ -270,7 +273,7 @@
     
     <!--====== SUPPORTED BY ======-->
     
-    <section id="features" class="services-area pt-120">
+    <section id="features1" class="services-area pt-120">
         <div class="container">
             <div class="justify-center row">
                 <div class="w-full lg:w-2/3">
@@ -289,7 +292,7 @@
                         </div>
                         <div class="mt-8 services-content">
                             <h4 class="mb-8 text-xl font-bold text-gray-900">POLITEKNIK NEGERI BANDUNG</h4>
-                            <p class="mb-8">Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu eirmod tempor invidunt labore.</p>
+                            <p class="mb-8">Politeknik Negeri Bandung adalah sebuah perguruan tinggi vokasi negeri yang bermula dibawah naungan ITB.</p>
                             <a class="duration-300 hover:text-theme-color" href="https://www.instagram.com/politekniknegeribandung/">Kunjungi di instagram <i class="ml-2 lni lni-chevron-right"></i></a>
                         </div>
                     </div>
@@ -302,7 +305,7 @@
                         </div>
                         <div class="mt-8 services-content">
                             <h4 class="mb-8 text-xl font-bold text-gray-900">TEKNIK KOMPUTER & INFORMATIKA POLBAN</h4>
-                            <p class="mb-8">Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu eirmod tempor invidunt labore.</p>
+                            <p class="mb-8">Jurusan Teknik Komputer dan Informatika merupakan salah satu jurusan yang ada di Politeknik Negeri Bandung.</p>
                             <a class="duration-300 hover:text-theme-color" href="https://www.instagram.com/jtkpolban/">Kunjungi di instagram <i class="ml-2 lni lni-chevron-right"></i></a>
                         </div>
                     </div> 
@@ -315,7 +318,7 @@
                         </div>
                         <div class="mt-8 services-content">
                             <h4 class="mb-8 text-xl font-bold text-gray-900">UKM ASSALAM POLBAN</h4>
-                            <p class="mb-8">Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu eirmod tempor invidunt labore.</p>
+                            <p class="mb-8">UKM dikelola oleh mahasiswa muslim untuk mengkoordinir dan mengembangkan keislaman di Polban.</p>
                             <a class="duration-300 hover:text-theme-color" href="https://www.instagram.com/assalampolban/">Kunjungi di instagram <i class="ml-2 lni lni-chevron-right"></i></a>
                         </div>
                     </div> 
@@ -328,7 +331,7 @@
                         </div>
                         <div class="mt-8 services-content">
                             <h4 class="mb-8 text-xl font-bold text-gray-900">PHM DKM Luqmanul Hakim POLBAN</h4>
-                            <p class="mb-8">Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu eirmod tempor invidunt labore.</p>
+                            <p class="mb-8">organisasi yang didirikan sebagai upaya untuk memakmurkan Mahasiswa Masjid Luqmanul Hakim Politeknik Negeri Bandung..</p>
                             <a class="duration-300 hover:text-theme-color" href="https://www.instagram.com/masjidlhpolban/">Kunjungi di instagram <i class="ml-2 lni lni-chevron-right"></i></a>
                         </div>
                     </div>
@@ -341,7 +344,7 @@
                         </div>
                         <div class="mt-8 services-content">
                             <h4 class="mb-8 text-xl font-bold text-gray-900">Ma'had Luqmanul Hakim</h4>
-                            <p class="mb-8">Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu eirmod tempor invidunt labore.</p>
+                            <p class="mb-8">asrama masjid Luqmanul Hakim Polban merupakan tempat yang ditujukan sebagai wadah pengembangan anggota DKM Luqmanul Hakim.</p>
                             <a class="duration-300 hover:text-theme-color" href="https://www.instagram.com/mahad.lh/">Kunjungi di instagram <i class="ml-2 lni lni-chevron-right"></i></a>
                         </div>
                     </div> <!-- single services -->
@@ -367,8 +370,8 @@
                             <!-- <div class="line"></div> -->
                             <h3 class="title">Quick & Easy, <span>Instalasi dan penggunaannya pun sangat mudah</span></h3>
                         </div> <!-- section title -->
-                        <p class="mb-8">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, seiam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing.</p>
-                        <a href="javascript:void(0)" class="main-btn gradient-btn">Try it Free</a>
+                        <p class="mb-8">Anda hanya perlu mendownload aplikasi aplikasi ini di Google Play Store tanpa harus setting sana sini.</p>
+                        <!-- <a href="javascript:void(0)" class="main-btn gradient-btn">Unduh Di</a> -->
                     </div> <!-- about content -->
                 </div>
                 <div class="w-full lg:w-1/2">
@@ -399,8 +402,8 @@
                             <!-- <div class="line"></div> -->
                             <h3 class="title">Tampilan yang menarik <span> memberikan semangat energi positif kepada anda</span></h3>
                         </div> <!-- section title -->
-                        <p class="mb-8">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, seiam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing.</p>
-                        <a href="javascript:void(0)" class="main-btn gradient-btn">Try it Free</a>
+                        <p class="mb-8">Tampilan yang menarik dan memanjakan mata akan memberikan semangat energi positif kepada anda</p>
+                        <!-- <a href="javascript:void(0)" class="main-btn gradient-btn">Try it Free</a> -->
                     </div> <!-- about content -->
                 </div>
                 <div class="w-full lg:w-1/2 lg:order-first">
@@ -424,8 +427,8 @@
                             <!-- <div class="line"></div> -->
                             <h3 class="title"><span>Diciptakan untuk</span> meningkatkan kedisiplinan anda dalam beribadah</h3>
                         </div> <!-- section title -->
-                        <p class="mb-8">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, seiam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing.</p>
-                        <a href="javascript:void(0)" class="main-btn gradient-btn">Try it Free</a>
+                        <p class="mb-8">dengan fitur to do list ibadah yang diintegrasikan ke dalam notifikasi dan widget akan membuat anda lebih disiplin lagi dalam memanfaatkan waktu, utamanya dalam beribadah kepada Allah.</p>
+                        <a href="javascript:void(0)" class="main-btn gradient-btn">Unduh di Playstore sekarang</a>
                     </div> <!-- about content -->
                 </div>
                 <div class="w-full lg:w-1/2">
@@ -470,7 +473,7 @@
                                 <div class="line"></div>
                                 <h3 class="title">Fakta-fakta menarik <span> tentang aplikasi ini</span></h3>
                             </div> <!-- section title -->
-                            <p class="text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, seiam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+                            <p class="text">berikut adalah fakta-fakta menarik yang terdapat pada aplikasi ini.</p>
                         </div> <!-- counter content -->
                         <div class="row no-gutters">
                             <div class="flex items-center justify-center single-counter counter-color-1">
@@ -516,7 +519,7 @@
                 <div class="w-full sm:w-2/3 lg:w-1/3">
                     <div class="mt-8 text-center single-team wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
                         <div class="relative team-image">
-                            <img class="w-full" src="assets/images/team-1.png" alt="Team">
+                            <img class="w-full" src="assets/images/bagus.jpg" alt="Team">
                             <div class="team-social">
                                 <ul>
                                     <li><a href="javascript:void(0)"><i class="lni lni-facebook-filled"></i></a></li>
@@ -535,7 +538,7 @@
                 <div class="w-full sm:w-2/3 lg:w-1/3">
                     <div class="mt-8 text-center single-team wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
                         <div class="relative team-image">
-                            <img class="w-full" src="assets/images/team-2.png" alt="Team">
+                            <img class="w-full" src="assets/images/salamn fixbgt.png" alt="Team">
                             <div class="team-social">
                                 <ul>
                                     <li><a href="javascript:void(0)"><i class="lni lni-facebook-filled"></i></a></li>
@@ -554,7 +557,7 @@
                 <div class="w-full sm:w-2/3 lg:w-1/3">
                     <div class="mt-8 text-center single-team wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
                         <div class="relative team-image">
-                            <img class="w-full" src="assets/images/team-3.png" alt="Team">
+                            <img class="w-full" src="assets/images/reyna.jpg" alt="Team">
                             <div class="team-social">
                                 <ul>
                                     <li><a href="javascript:void(0)"><i class="lni lni-facebook-filled"></i></a></li>
@@ -565,7 +568,7 @@
                             </div>
                         </div>
                         <div class="p-8">
-                            <h5 class="mb-1 text-xl font-bold text-gray-900">Reyna Nur</h5>
+                            <h5 class="mb-1 text-xl font-bold text-gray-900">Reyna Nur Rahmah</h5>
                             <p>UI/UX Designer & Front-End Developer</p>
                         </div>
                     </div> <!-- single team -->
@@ -573,7 +576,7 @@
                 <div class="w-full sm:w-2/3 lg:w-1/3">
                     <div class="mt-8 text-center single-team wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
                         <div class="relative team-image">
-                            <img class="w-full" src="assets/images/team-3.png" alt="Team">
+                            <img class="w-full" src="assets/images/rivan.jfif" alt="Team">
                             <div class="team-social">
                                 <ul>
                                     <li><a href="javascript:void(0)"><i class="lni lni-facebook-filled"></i></a></li>
@@ -808,9 +811,8 @@
             </div> <!-- row -->
         </div> <!-- container -->
     </section>
-
     <div class>
-    <a href="javascript:void(0)" class="main-btn gradient-btn" style="text-align: center; display: block; width: 50%; margin: 0 auto; padding: 10px 20px;">Try it Free</a>
+        <a href="javascript:void(0)" class="main-btn gradient-btn" style="text-align: center; display: block; width: 50%; margin: 0 auto; padding: 10px 90px;">Baca artikel lainnya</a>
     </div>
     <!--====== BLOG PART ENDS ======-->
     
