@@ -82,4 +82,20 @@ class WawasanIslamiModel extends Model
             return $query->getResult(); // return berupa array objek
         }
     }
+
+    public function countByStatus($status)
+    {
+        $id_user = session()->get('id');
+        $role_user = session()->get('role');
+
+        if ($role_user == 1) {
+            $query = $this->db->query("SELECT count(id_wawasan_islami) as total_wawasan_islami FROM tbl_wawasan_islami where status_wawasan_islami = '$status'");
+        } else {
+            $query = $this->db->query("SELECT count(id_wawasan_islami) as total_wawasan_islami FROM tbl_wawasan_islami where status_wawasan_islami = '$status' AND id_user = '$id_user'");
+        }
+
+        return $query->getResult(); // return berupa array objek
+
+
+    }
 }

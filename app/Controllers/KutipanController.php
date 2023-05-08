@@ -78,6 +78,24 @@ class KutipanController extends BaseController
         echo view('layout/v_footer');
     }
 
+    public function edit_status($id, $no)
+    {
+        $model = new KutipanModel();
+        $id_kutipan = $id;
+        $status = $no;
+
+        $data = [
+            'status_kutipan' => $status
+        ];
+
+        $model->update($id_kutipan, $data);
+
+        echo '<script>
+                    alert("Selamat! Berhasil Mengubah Status Kutipan");
+                    window.location="' . base_url('kutipan_master') . '"
+                </script>';
+    }
+
     public function update(){
         $data['session'] = session();
         $rules = [

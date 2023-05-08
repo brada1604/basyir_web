@@ -70,12 +70,15 @@
                 </li>
             <?php endif ?>
 
-            <?php if ($session->get('role') == 1 || $session->get('role') == 3): ?>
+            <?php if ($session->get('role') == 1) : ?>
                 <li class="nav-item">
                     <a class="nav-link" href="/saran_master">
                         <i class="fas fa-fw fa-folder"></i>
                         <span>Saran</span></a>
                 </li>
+            <?php endif ?>
+
+            <?php if ($session->get('role') == 1 || $session->get('role') == 3): ?>
                 <li class="nav-item">
                     <a class="nav-link" href="/wawasan_islami_master">
                         <i class="fas fa-fw fa-folder"></i>

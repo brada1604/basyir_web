@@ -142,6 +142,7 @@ $routes->get('/kutipan/add', 'KutipanController::add', ['filter' => 'auth']); //
 $routes->post('/kutipan/save', 'KutipanController::save'); // untuk menyimpan data
 $routes->get('/kutipan/(:segment)', 'KutipanController::detail/$1', ['filter' => 'auth']); // (:segment) = parameter, $1 = parameter pertama yang di ambil
 $routes->get('/kutipan/edit/(:segment)', 'KutipanController::edit/$1', ['filter' => 'auth']); // (:segment) = parameter, $1 = parameter pertama yang di ambil
+$routes->get('/kutipan/edit_status/(:segment)/(:segment)', 'KutipanController::edit_status/$1/$2', ['filter' => 'auth']); // (:segment) = parameter, $1 = parameter pertama yang di ambil
 $routes->post('/kutipan/update', 'KutipanController::update'); // untuk mengupdate data
 $routes->get('/kutipan/delete/(:segment)', 'KutipanController::delete/$1', ['filter' => 'auth']); // (:segment) = parameter, $1 = parameter pertama yang di ambil
 $routes->post('/kutipan/search', 'KutipanController::search'); // untuk mencari data berdasarkan variable tertentu

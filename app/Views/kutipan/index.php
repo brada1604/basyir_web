@@ -44,7 +44,19 @@
                                                 <td><?= $row->judul_kutipan;?></td>
                                                 <td><?= $row->deskripsi_kutipan;?></td>
                                                 <td><?= $row->sumber_kutipan;?></td>
-                                                <td><?= $row->status_kutipan;?></td>
+                                                <!-- <td><?= $row->status_kutipan;?></td> -->
+                                                <td>
+                                                    <?php if ($row->status_kutipan == 1) : ?>
+                                                        <button type="button" class="btn btn-outline-success">Show</button>
+                                                        
+                                                        <a class="edit_status" class="btn btn-outline-secondary" href="/kutipan/edit_status/<?= $row->id_kutipan; ?>/0"><button type="button" class="btn btn-outline-secondary">Hide</button></a>
+                                                            
+                                                        
+                                                    <?php elseif ($row->status_kutipan == 0) : ?>
+                                                        <button type="button" class="btn btn-outline-secondary">Hide</button>
+                                                        <a class="edit_status" class="btn btn-outline-success" href="/kutipan/edit_status/<?= $row->id_kutipan; ?>/1"><button type="button" class="btn btn-outline-success">Archive</button></a>
+                                                    <?php endif ?>
+                                                </td>
                                                 <td>
                                                     <a class="edit" class="btn btn-warning" href="/kutipan/edit/<?= $row->id_kutipan;?>"><button type="button" class="btn btn-warning">Edit</button></a>
                                                     <a class="hapus" class="btn btn-danger" href="/kutipan/delete/<?= $row->id_kutipan;?>"><button type="button" class="btn btn-danger">Hapus</button></a>
