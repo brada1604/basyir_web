@@ -21,6 +21,20 @@ class BeritaController extends BaseController
         echo view('layout/v_footer');
     }
 
+    public function detail($id)
+    {
+        $model = new BeritaModel;
+        $data['session'] = session();
+        $data['title'] = 'Data Berita - Detail';
+        $data['getBerita'] = $model->getBerita($id);
+
+        echo view('layout/v_header', $data);
+        echo view('layout/v_sidebar');
+        echo view('layout/v_navbar');
+        echo view('berita/detail', $data);
+        echo view('layout/v_footer');
+    }
+
     public function add()
     {
         $data['title'] = 'Data Berita - Add';

@@ -30,11 +30,14 @@ function youtube($url)
                     <thead>
                         <tr>
                             <th>No</th>
-                            <th>ID User</th>
+                            <?php if ($session->get('role') == 1) : ?>
+                                <th>ID User</th>
+                            <?php endif ?>
                             <th>Judul</th>
                             <th>Ringkasan</th>
-                            <th>Konten</th>
+                            <!-- <th>Konten</th> -->
                             <th>Status</th>
+                            <th>Upload</th>
                             <th>Video</th>
                             <th>Gambar</th>
                             <th>Opsi</th>
@@ -43,11 +46,14 @@ function youtube($url)
                     <tfoot>
                         <tr>
                             <th>No</th>
-                            <th>ID User</th>
+                            <?php if ($session->get('role') == 1) : ?>
+                                <th>ID User</th>
+                            <?php endif ?>
                             <th>Judul</th>
                             <th>Ringkasan</th>
-                            <th>Konten</th>
+                            <!-- <th>Konten</th> -->
                             <th>Status</th>
+                            <th>Upload</th>
                             <th>Video</th>
                             <th>Gambar</th>
                             <th>Opsi</th>
@@ -60,10 +66,12 @@ function youtube($url)
                         ?>
                             <tr>
                                 <td><?= $nomor++; ?></td>
-                                <td><?= $row->id_user; ?></td>
+                                <?php if ($session->get('role') == 1) : ?>
+                                    <td><?= $row->id_user; ?></td>
+                                <?php endif ?>
                                 <td><?= $row->judul_berita; ?></td>
                                 <td><?= $row->ringkasan_berita; ?></td>
-                                <td><?= $row->konten_berita; ?></td>
+                                <!-- <td><?= $row->konten_berita; ?></td> -->
                                 <td>
                                     <?php if ($row->status_berita == 1) : ?>
                                         <button type="button" class="btn btn-outline-primary">Draft</button>
@@ -73,18 +81,21 @@ function youtube($url)
                                         <?php endif ?>
                                     <?php elseif ($row->status_berita == 2) : ?>
                                         <button type="button" class="btn btn-outline-success">Show</button>
+                                        <a class="edit_status" class="btn btn-outline-secondary" href="/berita/edit_status/<?= $row->id_berita; ?>/3"><button type="button" class="btn btn-outline-secondary">Archive</button></a>
                                     <?php elseif ($row->status_berita == 3) : ?>
                                         <button type="button" class="btn btn-outline-secondary">Archive</button>
+                                        <a class="edit_status" class="btn btn-outline-success" href="/berita/edit_status/<?= $row->id_berita; ?>/2"><button type="button" class="btn btn-outline-success">Show</button></a>
                                     <?php elseif ($row->status_berita == 4) : ?>
                                         <button type="button" class="btn btn-outline-danger">Rejected</button>
                                     <?php endif ?>
                                 </td>
+                                <td><?= $row->created_at; ?></td>
                                 <td><?= youtube($row->video_berita); ?> <br> <a href="<?=$row->video_berita?>" target="_blank">kunjungi situs</a></td>
                                 <td><img clas="bd-placeholder-img card-img-top" width="100" height="100" src="<?= base_url($row->gambar_berita); ?>"></td>
                                 <td>
                                     <a class="edit" class="btn btn-warning" href="/berita/edit/<?= $row->id_berita; ?>"><button type="button" class="btn btn-warning">Edit</button></a>
                                     <a class="hapus" class="btn btn-danger" href="/berita/delete/<?= $row->id_berita; ?>"><button type="button" class="btn btn-danger">Hapus</button></a>
-                                    <!-- <a class="detail" class="btn btn-info" href="/berita/<?= $row->id_berita; ?>"><button type="button" class="btn btn-info">Detail</button></a>                      -->
+                                    <a class="detail" class="btn btn-info" href="/berita/<?= $row->id_berita; ?>"><button type="button" class="btn btn-info">Detail</button></a>                     
                                 </td>
                             </tr>
                         <?php endforeach; ?>
