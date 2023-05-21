@@ -60,15 +60,30 @@
                                                 <div class="col-md-2 mb-8pt mb-md-0">
                                                     <div class="media align-items-left">
                                                         <div class="d-flex flex-column media-body media-middle">
-                                                            <span class="card-title">id amalan yaumi</span>
+                                                            <span
+                                                            class="card-title">Kategori Berita</span>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="col mb-8pt mb-md-0">
-                                                    <textarea name="id_amalan_yaumi" class="form-control" required><?= $row->id_amalan_yaumi; ?></textarea>
+                                                    <select class="form-control" name="id_amalan_yaumi" required>
+                                                        <option value="">-- Pilih Amalan Yaumi --</option>
+                                                        <?php
+                                                            foreach ($getAmalanYaumi as $row2) :
+                                                        ?>
+                                                            <?php if ($row2->id_amalan_yaumi == $row->id_amalan_yaumi) : ?>
+                                                                <option selected value="<?= $row2->id_amalan_yaumi; ?>"><?= $row2->judul_amalan_yaumi; ?></option>
+                                                            <?php else : ?> 
+                                                                <option value="<?= $row2->id_amalan_yaumi; ?>"><?= $row2->judul_amalan_yaumi; ?></option>
+                                                            <?php endif ?>
+                                                        <?php endforeach; ?>
+                                                    </select>
                                                 </div>
                                             </div>
                                         </div>
+
+
+
                                     </div>
                                 </div>
                             </div>

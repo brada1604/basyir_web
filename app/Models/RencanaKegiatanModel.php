@@ -47,14 +47,14 @@ class RencanaKegiatanModel extends Model
             // return $this->findAll();
 
             // Manual atau Query Builder
-            $query = $this->db->query("SELECT * FROM tbl_rencana_kegiatan");
+            $query = $this->db->query("SELECT * FROM tbl_rencana_kegiatan as a INNER JOIN tbl_user as b on a.id_user = b.id INNER join tbl_amalan_yaumi as c on a.id_amalan_yaumi = c.id_amalan_yaumi");
             return $query->getResult(); // return berupa array objek
 
         } else {
             // return $this->getWhere(['id' => $id]);
 
             // Manual atau Query Builder
-            $query = $this->db->query("SELECT * FROM tbl_rencana_kegiatan where id_rencana_kegiatan = '$id' ");
+            $query = $this->db->query("SELECT * FROM tbl_rencana_kegiatan as a INNER JOIN tbl_user as b on a.id_user = b.id INNER join tbl_amalan_yaumi as c on a.id_amalan_yaumi = c.id_amalan_yaumi where id_rencana_kegiatan = '$id' ");
             return $query->getResult(); // return berupa array objek
         }
     }

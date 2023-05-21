@@ -17,9 +17,9 @@
                                     <thead>
                                         <tr>
                                             <th>No</th>
-                                            <th>ID User</th>
-                                            <th>ID Rencana Kegiatan</th>
-                                            <th>ID Amalan Yaumi</th>
+                                            <th>User</th>
+                                            <!-- <th>ID Rencana Kegiatan</th> -->
+                                            <th>Amalan Yaumi</th>
                                             <th>Status</th>
                                             <th>Opsi</th>
                                         </tr>
@@ -27,9 +27,9 @@
                                     <tfoot>
                                         <tr>
                                             <th>No</th>
-                                            <th>ID User</th>
-                                            <th>ID Rencana Kegiatan</th>
-                                            <th>ID Amalan Yaumi</th>
+                                            <th>User</th>
+                                            <!-- <th>ID Rencana Kegiatan</th> -->
+                                            <th>Amalan Yaumi</th>
                                             <th>Status</th>
                                             <th>Opsi</th>
                                         </tr>
@@ -41,10 +41,21 @@
                                         ?>
                                             <tr>
                                                 <td><?= $nomor++; ?></td>
-                                                <td><?= $row->id_user; ?></td>
-                                                <td><?= $row->id_rencana_kegiatan; ?></td>
-                                                <td><?= $row->id_amalan_yaumi; ?></td>
-                                                <td><?= $row->status_rencana_kegiatan; ?></td>
+                                                <td><?= $row->email; ?></td>
+                                                <!-- <td><?= $row->id_rencana_kegiatan; ?></td> -->
+                                                <td><?= $row->judul_amalan_yaumi; ?></td>
+                                                <td>
+                                                    <?php if ($row->status_rencana_kegiatan == 1) : ?>
+                                                        <button type="button" class="btn btn-outline-success">Show</button>
+                                                        
+                                                        <a class="edit_status" class="btn btn-outline-secondary" href="/rencana_kegiatan/edit_status/<?= $row->id_rencana_kegiatan; ?>/0"><button type="button" class="btn btn-outline-secondary">Hide</button></a>
+                                                            
+                                                        
+                                                    <?php elseif ($row->status_rencana_kegiatan == 0) : ?>
+                                                        <button type="button" class="btn btn-outline-danger">Hide</button>
+                                                        <a class="edit_status" class="btn btn-outline-secondary" href="/rencana_kegiatan/edit_status/<?= $row->id_rencana_kegiatan; ?>/1"><button type="button" class="btn btn-outline-secondary">Show</button></a>
+                                                    <?php endif ?>
+                                                </td>
                                                 <td>
                                                     <a class="edit" class="btn btn-warning" href="/rencana_kegiatan/edit/<?= $row->id_rencana_kegiatan; ?>"><button type="button" class="btn btn-warning">Edit</button></a>
                                                     <a class="hapus" class="btn btn-danger" href="/rencana_kegiatan/delete/<?= $row->id_rencana_kegiatan; ?>"><button type="button" class="btn btn-danger">Hapus</button></a>
