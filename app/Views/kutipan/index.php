@@ -53,8 +53,8 @@
                                                             
                                                         
                                                     <?php elseif ($row->status_kutipan == 0) : ?>
-                                                        <button type="button" class="btn btn-outline-secondary">Hide</button>
-                                                        <a class="edit_status" class="btn btn-outline-success" href="/kutipan/edit_status/<?= $row->id_kutipan; ?>/1"><button type="button" class="btn btn-outline-success">Archive</button></a>
+                                                        <button type="button" class="btn btn-outline-danger">Hide</button>
+                                                        <a class="edit_status" class="btn btn-outline-secondary" href="/kutipan/edit_status/<?= $row->id_kutipan; ?>/1"><button type="button" class="btn btn-outline-secondary">Show</button></a>
                                                     <?php endif ?>
                                                 </td>
                                                 <td>
