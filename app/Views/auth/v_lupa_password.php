@@ -40,29 +40,29 @@
                             <div class="col-lg-6 mx-auto">
                                 <div class="p-5">
                                     <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-4">Ahlan Wa Sahlan!</h1>
+                                        <h1 class="h4 text-gray-900 mb-4">Lupa Password!</h1>
                                         <?php if(session()->getFlashdata('msg')):?>
                                             <label style="color: red;"> <?= session()->getFlashdata('msg') ?> </label>
                                         <?php endif;?>
                                     </div>
-                                    <form class="user" action="/login/auth" method="post">
+                                    <form class="user" action="/user/reset_password" method="post">
                                         <div class="form-group">
                                             <input type="email" name="email" class="form-control form-control-user"
                                                 id="exampleInputEmail" aria-describedby="emailHelp"
                                                 placeholder="Ketikkan email kamu..." required>
                                         </div>
-                                        <div class="form-group">
+                                        <!-- <div class="form-group">
                                             <input type="password" name="password" class="form-control form-control-user"
                                                 id="exampleInputPassword" placeholder="Ketikkan password kamu.." required>
-                                        </div>
-                                        <div class="form-group">
+                                        </div> -->
+                                        <!-- <div class="form-group">
                                             <div class="custom-control custom-checkbox small">
                                                 <input type="checkbox" class="custom-control-input" id="customCheck">
                                                 <label class="custom-control-label" for="customCheck">Remember
                                                     Me</label>
                                             </div>
-                                        </div>
-                                        <input type="submit" class="btn btn-primary btn-success btn-block" name="login" value="Log In">
+                                        </div> -->
+                                        <input type="submit" class="btn btn-primary btn-success btn-block" name="login" value="Submit">
                                     </form>
                                         <!-- <hr>
                                         <a href="index.html" class="btn btn-google btn-user btn-block">
@@ -72,12 +72,12 @@
                                             <i class="fab fa-facebook-f fa-fw"></i> Login with Facebook
                                         </a>
                                         <hr> -->
-                                    <div class="text-center">
-                                        <a class="small" href="/lupa_password">Lupa password?</a>
+                                    <!-- <div class="text-center">
+                                        <a class="small" href="forgot-password.html">Lupa password?</a>
                                     </div>
                                     <div class="text-center">
                                         <a class="small" href="register.html">Buat akun baru</a>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
                         </div>

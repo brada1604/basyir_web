@@ -36,7 +36,7 @@ class UserController extends BaseController
         $data['session'] = session();
         $rules = [
             'name' => 'required',
-            'email' => 'required',
+            'email' => 'required|is_unique[tbl_user.email]',
             'password' => 'required',
             'confirm_password' => 'required|matches[password]'
         ];
@@ -48,7 +48,7 @@ class UserController extends BaseController
                 'role' => $this->request->getVar('role'),
                 'name' => $this->request->getVar('name'),
                 'email' => $this->request->getVar('email'),
-                'password' => md5($this->request->getVar('password')),
+                'password' => password_hash($this->request->getVar('password'), PASSWORD_BCRYPT),
             ];
              
             $model->save($data);
@@ -76,7 +76,7 @@ class UserController extends BaseController
         $model = new UserModel;
         $data['session'] = session();
         $data['title'] = 'Data User - Edit';
-        $data['getUser'] = $model->getUser($id);
+        $data['getUser'] = $model->getUserById($id);
 
         echo view('layout/v_header', $data);
         echo view('layout/v_sidebar');
@@ -88,14 +88,13 @@ class UserController extends BaseController
     public function edit_status($id, $no)
     {
         $model = new UserModel();
-        $id_user = $id;
         $status = $no;
 
         $data = [
-            'status_user' => $status
+            'status' => $status
         ];
 
-        $model->update($id_user, $data);
+        $model->update($id, $data);
 
         echo '<script>
                     alert("Selamat! Berhasil Mengubah Status User");
@@ -124,25 +123,55 @@ class UserController extends BaseController
                 </script>';
     }
 
+    public function lupa_password(){
+        $data['title'] = 'Lupa Password';
+
+        echo view('auth/v_lupa_password', $data);
+    }
+
+    public function reset_password()
+    {
+        $model = new UserModel();
+
+        date_default_timezone_set('Asia/Jakarta');
+        
+        $email = $this->request->getVar('email');
+
+        $id = $model->getUser($email);
+
+        if (!empty($id[0]->id)) {
+            $data = [
+                'password' => password_hash('12345678', PASSWORD_BCRYPT)
+            ];
+
+            $model->update($id[0]->id, $data);
+
+            $this->kirim_email_reset_password($email);
+        }
+        else{
+            echo '<script>
+                    alert("Maaf! Email yang kamu masukkan tidak ada dalam system");
+                    window.location="' . base_url('/') . '"
+                </script>';
+        }
+    }
+
     public function update(){
         $data['session'] = session();
         $rules = [
-            'judul_user' => 'required',
-            'deskripsi_user' => 'required',
-            'sumber_user' => 'required'
+            'name' => 'required'
         ];
      
         if($this->validate($rules)){
             $model = new UserModel();
-            $id_user = $this->request->getVar('id_user');
+            $id = $this->request->getVar('id');
 
                 $data = [
-                    'judul_user' => $this->request->getVar('judul_user'),
-                    'deskripsi_user' => $this->request->getVar('deskripsi_user'),
-                    'sumber_user' => $this->request->getVar('sumber_user'),
+                    'role' => $this->request->getVar('role'),
+                    'name' => $this->request->getVar('name'),
                 ];
 
-                $model->update($id_user, $data);
+                $model->update($id, $data);
          
                 echo '<script>
                     alert("Selamat! Berhasil Mengubah Data User");
@@ -199,7 +228,7 @@ class UserController extends BaseController
         // return view('welcome_message');
     }
 
-    public function index2()
+    public function kirim_email_reset_password($email_user)
     {
         // initialize email setting from emailConfig function.
         $this->email->initialize($this->emailConfig());
@@ -207,21 +236,28 @@ class UserController extends BaseController
         // Set sender email and name from .env file
         $this->email->setFrom('b32c2204641c0d', 'Basyir Group');
         // target email or receiver
-        $this->email->setTo('jaironlanda@gmail.com');
+        $this->email->setTo($email_user);
         // Email subject
         $this->email->setSubject('Reset Password');
         // Email message
-        $this->email->setMessage('Testing the email class.');
-
+        $this->email->setMessage('Selamat Datang '.$email_user.' di Basyir System. Password baru kamu adalah "12345678". Link Login '.base_url("/login"));
         // make sure email is send
         if($this->email->send()){
             echo 'Success!';
+
+            echo '<script>
+                    alert("Selamat! Berhasil Reset Password Akun,  Cek email kamu");
+                    window.location="' . base_url('/') . '"
+                </script>';
+
         }else {
             echo 'failed';
         }
         
         // return view('welcome_message');
     }
+
+
 
     //--------------------------------------------------------------------
 

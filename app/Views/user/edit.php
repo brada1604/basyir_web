@@ -2,13 +2,13 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Edit Kutipan</h1>
+                    <h1 class="h3 mb-2 text-gray-800">Edit User</h1>
 
                     <?php
-                        foreach($getKutipan as $row):
+                        foreach($getUser as $row):
                     ?>
 
-                    <form action="<?= base_url(); ?>/kutipan/update" method="post" enctype="multipart/form-data">
+                    <form action="<?= base_url(); ?>/user/update" method="post" enctype="multipart/form-data">
 
                         <div class="row card-group-row">
 
@@ -30,60 +30,60 @@
                                             <div class="col-md-2 mb-8pt mb-md-0">
                                                 <div class="media align-items-left">
                                                     <div class="d-flex flex-column media-body media-middle">
-                                                        <span class="card-title">ID Kutipan</span>
+                                                        <span class="card-title">ID User</span>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="col mb-8pt mb-md-0">
-                                                <input name="id_kutipan" type="text" class="form-control" value="<?= $row->id_kutipan; ?>"  readonly/>
+                                                <input name="id" type="text" class="form-control" value="<?= $row->id; ?>" readonly/>
                                             </div>
                                         </div>
                                     </div>
 
+                                    <!-- ROLE -->
                                     <div class="list-group-item p-3">
                                         <div class="row align-items-start">
                                             <div class="col-md-2 mb-8pt mb-md-0">
                                                 <div class="media align-items-left">
                                                     <div class="d-flex flex-column media-body media-middle">
                                                         <span
-                                                        class="card-title">Judul Kutipan</span>
+                                                        class="card-title">Role User</span>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="col mb-8pt mb-md-0">
-                                                <input name="judul_kutipan" type="text" class="form-control" value="<?= $row->judul_kutipan; ?>" placeholder="Masukan Judul Kutipan" required/>
+                                                <select class="form-control" name="role" = required>
+                                                    <?php if ($row->role == 2) : ?>
+                                                        <option value="2" selected>Kontributor</option>
+                                                        <option value="3">Kreator</option>
+                                                        <option value="4">User</option>
+                                                    <?php elseif ($row->role == 3) : ?>
+                                                        <option value="2">Kontributor</option>
+                                                        <option value="3" selected>Kreator</option>
+                                                        <option value="4">User</option>
+                                                    <?php elseif ($row->role == 4) : ?>
+                                                        <option value="2">Kontributor</option>
+                                                        <option value="3">Kreator</option>
+                                                        <option value="4" selected>User</option>
+                                                    <?php endif ?>
+                                                </select>
                                             </div>
                                         </div>
                                     </div>
 
+                                    <!-- NAMA -->
                                     <div class="list-group-item p-3">
                                         <div class="row align-items-start">
                                             <div class="col-md-2 mb-8pt mb-md-0">
                                                 <div class="media align-items-left">
                                                     <div class="d-flex flex-column media-body media-middle">
                                                         <span
-                                                        class="card-title">Deskripsi Kutipan</span>
+                                                        class="card-title">Nama User</span>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="col mb-8pt mb-md-0">
-                                                <textarea name="deskripsi_kutipan" class="form-control" required><?= $row->deskripsi_kutipan; ?></textarea>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="list-group-item p-3">
-                                        <div class="row align-items-start">
-                                            <div class="col-md-2 mb-8pt mb-md-0">
-                                                <div class="media align-items-left">
-                                                    <div class="d-flex flex-column media-body media-middle">
-                                                        <span
-                                                        class="card-title">Sumber Kutipan</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col mb-8pt mb-md-0">
-                                                <input name="sumber_kutipan" type="text" class="form-control" value="<?= $row->sumber_kutipan; ?>" placeholder="Masukan Sumber Kutipan" required/>
+                                                <input name="name" value="<?= $row->name; ?>" type="text" class="form-control" placeholder="Masukan Nama User" required/>
                                             </div>
                                         </div>
                                     </div>

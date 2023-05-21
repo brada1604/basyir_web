@@ -53,4 +53,11 @@ class UserModel extends Model
         $query = $this->db->query("SELECT * FROM tbl_user");
         return $query->getResult(); // return berupa array objek
     }
+
+    public function getUserById($id)
+    {
+        // Manual atau Query Builder
+        $query = $this->db->query("SELECT * FROM tbl_user where id = '$id'");
+        return $query->getResult(); // return berupa array objek
+    }
 }

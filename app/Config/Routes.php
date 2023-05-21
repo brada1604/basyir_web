@@ -209,6 +209,8 @@ $routes->get('/user/delete/(:segment)', 'UserController::delete/$1', ['filter' =
 $routes->post('/user/search', 'UserController::search'); // untuk mencari data berdasarkan variable tertentu
 $routes->get('/user/email_activation/(:segment)/(:segment)', 'UserController::kirim_email/$1/$2'); // untuk menampilkan data
 $routes->get('/aktivasi_akun/(:segment)', 'UserController::aktivasi_akun/$1'); // untuk menampilkan data
+$routes->get('/lupa_password/', 'UserController::lupa_password/'); // untuk menampilkan data
+$routes->post('/user/reset_password', 'UserController::reset_password'); // untuk mencari data berdasarkan variable tertentu
 /*
  * --------------------------------------------------------------------
  * Additional Routing
