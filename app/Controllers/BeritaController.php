@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\BeritaModel;
+use App\Models\UserModel;
 use App\Controllers\BaseController;
 
 /**
@@ -12,10 +13,15 @@ class BeritaController extends BaseController
 {
     public function index()
     {
-        $model = new BeritaModel;
+        $model_berita = new BeritaModel;
+        $model_kategori_berita = new KategoriBeritaModel;
+        $model_user = new UserModel;
+
         $data['session'] = session();
         $data['title'] = 'Data Berita';
-        $data['getBerita'] = $model->getBerita();
+        $data['getBerita'] = $model_berita->getBerita();
+        $data['getKategoriBerita'] = $model_kategori_berita->getKategoriBerita();
+        $data['getUser'] = $model_user->getUserALL();
 
         echo view('layout/v_header', $data);
         echo view('layout/v_sidebar');
@@ -63,7 +69,7 @@ class BeritaController extends BaseController
     {
         $data['session'] = session();
         $rules = [
-            'judul_berita' => 'required',
+            'judul_berita' => 'required|is_unique[tbl_berita.judul_berita]',
             'ringkasan_berita' => 'required',
             'konten_berita' => 'required',
             'image_file'     => 'uploaded[image_file]|is_image[image_file]'
@@ -86,6 +92,7 @@ class BeritaController extends BaseController
             $data = [
                 'id_user' => $this->request->getVar('id_user'),
                 'judul_berita' => $this->request->getVar('judul_berita'),
+                'slug_berita' => str_replace ( ' ' , '_' , $this->request->getVar('judul_berita') ),
                 'ringkasan_berita' => $this->request->getVar('ringkasan_berita'),
                 'konten_berita' => $this->request->getVar('konten_berita'),
                 'video_berita' => $this->request->getVar('video_berita'),
@@ -157,7 +164,9 @@ class BeritaController extends BaseController
             if (empty($cek->getName())) {
                 $data = [
                     'id_user' => $this->request->getVar('id_user'),
+                    'id_kategori_berita' => $this->request->getVar('id_kategori_berita'),
                     'judul_berita' => $this->request->getVar('judul_berita'),
+                    'slug_berita' => str_replace ( ' ' , '_' , $this->request->getVar('judul_berita') ),
                     'ringkasan_berita' => $this->request->getVar('ringkasan_berita'),
                     'konten_berita' => $this->request->getVar('konten_berita'),
                     'video_berita' => $this->request->getVar('video_berita'),
@@ -191,7 +200,9 @@ class BeritaController extends BaseController
 
                 $data = [
                     'id_user' => $this->request->getVar('id_user'),
+                    'id_kategori_berita' => $this->request->getVar('id_kategori_berita'),
                     'judul_berita' => $this->request->getVar('judul_berita'),
+                    'slug_berita' => str_replace ( ' ' , '_' , $this->request->getVar('judul_berita') ),
                     'ringkasan_berita' => $this->request->getVar('ringkasan_berita'),
                     'konten_berita' => $this->request->getVar('konten_berita'),
                     'video_berita' => $this->request->getVar('video_berita'),

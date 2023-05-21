@@ -87,7 +87,11 @@
                                                     <?php
                                                         foreach ($getKategoriBerita as $row2) :
                                                     ?>
-                                                        <option value="<?= $row2->id_kategori_berita; ?>"><?= $row2->nama_kategori_berita; ?></option>
+                                                        <?php if ($row2->id_kategori_berita == $row->id_kategori_berita) : ?>
+                                                            <option selected value="<?= $row2->id_kategori_berita; ?>"><?= $row2->nama_kategori_berita; ?></option>
+                                                        <?php else : ?> 
+                                                            <option value="<?= $row2->id_kategori_berita; ?>"><?= $row2->nama_kategori_berita; ?></option>
+                                                        <?php endif ?>
                                                     <?php endforeach; ?>
                                                 </select>
                                             </div>

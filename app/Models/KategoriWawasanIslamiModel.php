@@ -57,4 +57,22 @@ class KategoriWawasanIslamiModel extends Model
             return $query->getResult(); // return berupa array objek
         }
     }
+
+    public function getKategoriWawasanIslamiForm($id = false)
+    {
+        if ($id === false) {
+            // return $this->findAll();
+
+            // Manual atau Query Builder
+            $query = $this->db->query("SELECT * FROM tbl_kategori_wawasan_islami where status_kategori_wawasan_islami = '1'");
+            return $query->getResult(); // return berupa array objek
+
+        } else {
+            // return $this->getWhere(['id' => $id]);
+
+            // Manual atau Query Builder
+            $query = $this->db->query("SELECT * FROM tbl_kategori_wawasan_islami where status_kategori_wawasan_islami = '1' AND id_kategori_wawasan_islami = '$id' ");
+            return $query->getResult(); // return berupa array objek
+        }
+    }
 }

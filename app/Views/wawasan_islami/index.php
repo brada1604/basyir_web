@@ -34,6 +34,7 @@ function youtube($url)
                                 <th>ID User</th>
                             <?php endif ?>
                             <th>Judul</th>
+                            <th>Kategori</th>
                             <th>Ringkasan</th>
                             <!-- <th>Konten</th> -->
                             <th>Status</th>
@@ -49,6 +50,7 @@ function youtube($url)
                                 <th>ID User</th>
                             <?php endif ?>
                             <th>Judul</th>
+                            <th>Kategori</th>
                             <th>Ringkasan</th>
                             <!-- <th>Konten</th> -->
                             <th>Status</th>
@@ -65,9 +67,10 @@ function youtube($url)
                             <tr>
                                 <td><?= $nomor++; ?></td>
                                 <?php if ($session->get('role') == 1) : ?>
-                                    <td><?= $row->id_user; ?></td>
+                                    <td><?= $row->email; ?></td>
                                 <?php endif ?>
                                 <td><?= $row->judul_wawasan_islami; ?></td>
+                                <td><?= $row->nama_kategori_wawasan_islami; ?></td>
                                 <td><?= $row->ringkasan_wawasan_islami; ?></td>
                                 <!-- <td><?= $row->konten_wawasan_islami; ?></td> -->
                                 <td>

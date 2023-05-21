@@ -14,7 +14,7 @@ class WawasanIslamiModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ["id_user", "judul_wawasan_islami", "ringkasan_wawasan_islami", "konten_wawasan_islami", "gambar_wawasan_islami", "video_wawasan_islami", "status_wawasan_islami",];
+    protected $allowedFields    = ["id_user", "id_kategori_wawasan_islami","judul_wawasan_islami", "slug_wawasan_islami", "ringkasan_wawasan_islami", "konten_wawasan_islami", "gambar_wawasan_islami", "video_wawasan_islami", "status_wawasan_islami",];
 
     // Dates
     protected $useTimestamps = false;
@@ -49,10 +49,10 @@ class WawasanIslamiModel extends Model
 
             if ($role_user == 1) {
                 // Manual atau Query Builder
-                $query = $this->db->query("SELECT * FROM tbl_wawasan_islami");
+                $query = $this->db->query("SELECT * FROM tbl_wawasan_islami as a INNER JOIN tbl_user as b on a.id_user = b.id INNER join tbl_kategori_wawasan_islami as c on a.id_kategori_wawasan_islami = c.id_kategori_wawasan_islami");
             } else {
                 // Manual atau Query Builder
-                $query = $this->db->query("SELECT * FROM tbl_wawasan_islami where id_user = '$id_user'");
+                $query = $this->db->query("SELECT * FROM tbl_wawasan_islami as a INNER JOIN tbl_user as b on a.id_user = b.id INNER join tbl_kategori_wawasan_islami as c on a.id_kategori_wawasan_islami = c.id_kategori_wawasan_islami where id_user = '$id_user'");
             }
             return $query->getResult(); // return berupa array objek
 
@@ -60,7 +60,7 @@ class WawasanIslamiModel extends Model
             // return $this->getWhere(['id' => $id]);
 
             // Manual atau Query Builder
-            $query = $this->db->query("SELECT * FROM tbl_wawasan_islami where id_wawasan_islami = '$id' ");
+            $query = $this->db->query("SELECT * FROM tbl_wawasan_islami as a INNER JOIN tbl_user as b on a.id_user = b.id INNER join tbl_kategori_wawasan_islami as c on a.id_kategori_wawasan_islami = c.id_kategori_wawasan_islami where id_wawasan_islami = '$id' ");
             return $query->getResult(); // return berupa array objek
         }
     }

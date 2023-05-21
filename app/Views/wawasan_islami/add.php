@@ -58,6 +58,29 @@
                                                 <div class="media align-items-left">
                                                     <div class="d-flex flex-column media-body media-middle">
                                                         <span
+                                                        class="card-title">Kategori Wawasan Islami</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col mb-8pt mb-md-0">
+                                                <select class="form-control" name="id_kategori_wawasan_islami" required>
+                                                    <option value="">-- Pilih Kategori --</option>
+                                                    <?php
+                                                        foreach ($getKategoriWawasanIslami as $row) :
+                                                    ?>
+                                                        <option value="<?= $row->id_kategori_wawasan_islami; ?>"><?= $row->nama_kategori_wawasan_islami; ?></option>
+                                                    <?php endforeach; ?>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="list-group-item p-3">
+                                        <div class="row align-items-start">
+                                            <div class="col-md-2 mb-8pt mb-md-0">
+                                                <div class="media align-items-left">
+                                                    <div class="d-flex flex-column media-body media-middle">
+                                                        <span
                                                         class="card-title">Ringkasan Wawasan Islami</span>
                                                     </div>
                                                 </div>

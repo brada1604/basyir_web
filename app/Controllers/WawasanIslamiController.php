@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\WawasanIslamiModel;
+use App\Models\KategoriWawasanIslamiModel;
 use App\Controllers\BaseController;
 
 class WawasanIslamiController extends BaseController
@@ -36,13 +37,16 @@ class WawasanIslamiController extends BaseController
     }
 
     public function add(){
+        $model = new KategoriWawasanIslamiModel;
         $data['title'] = 'Data Wawasan Islami - Add';
         $data['session'] = session();
+
+        $data['getKategoriWawasanIslami'] = $model->getKategoriWawasanIslamiForm();
 
         echo view('layout/v_header', $data);
         echo view('layout/v_sidebar');
         echo view('layout/v_navbar');
-        echo view('wawasan_islami/add');
+        echo view('wawasan_islami/add', $data);
         echo view('layout/v_footer');
     }
 
@@ -71,7 +75,9 @@ class WawasanIslamiController extends BaseController
             }
             $data = [
                 'id_user' => $this->request->getVar('id_user'),
+                'id_kategori_wawasan_islami' => $this->request->getVar('id_kategori_wawasan_islami'),
                 'judul_wawasan_islami' => $this->request->getVar('judul_wawasan_islami'),
+                'slug_wawasan_islami' => str_replace ( ' ' , '_' , $this->request->getVar('judul_wawasan_islami') ),
                 'ringkasan_wawasan_islami' => $this->request->getVar('ringkasan_wawasan_islami'),
                 'konten_wawasan_islami' => $this->request->getVar('konten_wawasan_islami'),
                 'video_wawasan_islami' => $this->request->getVar('video_wawasan_islami'),
@@ -95,10 +101,12 @@ class WawasanIslamiController extends BaseController
     }
 
     public function edit($id){
-        $model = new WawasanIslamiModel;
+        $model_wawasan_islami = new WawasanIslamiModel;
+        $model_kategori_wawasan_islami = new KategoriWawasanIslamiModel;
         $data['session'] = session();
         $data['title'] = 'Data Wawasan Islami - Edit';
-        $data['getWawasanIslami'] = $model->getWawasanIslami($id);
+        $data['getWawasanIslami'] = $model_wawasan_islami->getWawasanIslami($id);
+        $data['getKategoriWawasanIslami'] = $model_kategori_wawasan_islami->getKategoriWawasanIslamiForm();
 
         echo view('layout/v_header', $data);
         echo view('layout/v_sidebar');
@@ -142,7 +150,9 @@ class WawasanIslamiController extends BaseController
             if (empty($cek->getName())) {
                 $data = [
                     'id_user' => $this->request->getVar('id_user'),
+                    'id_kategori_wawasan_islami' => $this->request->getVar('id_kategori_wawasan_islami'),
                     'judul_wawasan_islami' => $this->request->getVar('judul_wawasan_islami'),
+                    'slug_wawasan_islami' => str_replace ( ' ' , '_' , $this->request->getVar('judul_wawasan_islami') ),
                     'ringkasan_wawasan_islami' => $this->request->getVar('ringkasan_wawasan_islami'),
                     'konten_wawasan_islami' => $this->request->getVar('konten_wawasan_islami'),
                     'video_wawasan_islami' => $this->request->getVar('video_wawasan_islami'),
@@ -177,7 +187,9 @@ class WawasanIslamiController extends BaseController
 
                 $data = [
                     'id_user' => $this->request->getVar('id_user'),
+                    'id_kategori_wawasan_islami' => $this->request->getVar('id_kategori_wawasan_islami'),
                     'judul_wawasan_islami' => $this->request->getVar('judul_wawasan_islami'),
+                    'slug_wawasan_islami' => str_replace ( ' ' , '_' , $this->request->getVar('judul_wawasan_islami') ),
                     'ringkasan_wawasan_islami' => $this->request->getVar('ringkasan_wawasan_islami'),
                     'konten_wawasan_islami' => $this->request->getVar('konten_wawasan_islami'),
                     'video_wawasan_islami' => $this->request->getVar('video_wawasan_islami'),
