@@ -6,6 +6,7 @@ use App\Models\SaranModel;
 use App\Models\KutipanModel;
 use App\Models\BeritaModel;
 use App\Models\WawasanIslamiModel;
+use App\Models\UserModel;
 use App\Controllers\BaseController;
 
 class DashboardController extends BaseController
@@ -19,11 +20,17 @@ class DashboardController extends BaseController
             $model_kutipan = new KutipanModel;
             $model_berita = new BeritaModel;
             $model_wawasan_islami = new WawasanIslamiModel;
+            $model_user = new UserModel;
+
             $data['title'] = 'Basyir - Dashboard Superadmin';
             $data['total_saran'] = $model_saran->countAll();
             $data['total_kutipan'] = $model_kutipan->countAll();
             $data['total_berita'] = $model_berita->countAll();
+            $data['total_user'] = $model_berita->countAll();
             $data['total_wawasan_islami'] = $model_wawasan_islami->countAll();
+            $data['total_user_kontributor'] = $model_user->where(["role" => 2])->countAllResults();
+            $data['total_user_kreator'] = $model_user->where(["role" => 3])->countAllResults();
+            $data['total_user_user'] = $model_user->where(["role" => 4])->countAllResults();
 
             echo view('layout/v_header', $data);
             echo view('layout/v_sidebar');

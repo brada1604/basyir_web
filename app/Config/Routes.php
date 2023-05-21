@@ -32,6 +32,12 @@ $routes->set404Override();
 $routes->get('/', 'Home::index');
 $routes->post('/kota', 'Home::index2');
 
+// ROUTE AUTH
+$routes->get('/login', 'AuthController::index'); // untuk login
+$routes->get('/logout', 'AuthController::logout'); // untuk logout
+$routes->post('/login/auth', 'AuthController::auth'); // untuk checking data login
+$routes->get('/register', 'RegisterController::index'); // untuk register data
+$routes->post('/register/save', 'RegisterController::save'); // untuk menyimpan user baru
 
 // ROUTE AMALAN YAUMI
 $routes->get('/amalan_yaumi', 'AmalanYaumiController::display'); // untuk menampilkan data
@@ -44,6 +50,7 @@ $routes->get('/amalan_yaumi/edit_status/(:segment)/(:segment)', 'AmalanYaumiCont
 $routes->post('/amalan_yaumi/update', 'AmalanYaumiController::update'); // untuk mengupdate data
 $routes->get('/amalan_yaumi/delete/(:segment)', 'AmalanYaumiController::delete/$1', ['filter' => 'auth']); // (:segment) = parameter, $1 = parameter pertama yang di ambil
 $routes->post('/amalan_yaumi/search', 'AmalanYaumiController::search'); // untuk mencari data berdasarkan variable tertentu
+
 
 // ROUTE DOA
 $routes->get('/doa', 'DoaController::display'); // untuk menampilkan data
@@ -64,18 +71,35 @@ $routes->get('/doa/delete_detail/(:segment)/(:segment)', 'DoaController::delete_
 $routes->post('/doa/search', 'DoaController::search'); // untuk mencari data berdasarkan variable tertentu
 
 
+//ROUTE KATEGORI BERITA
+$routes->get('/kategori_berita', 'KategoriBeritaController::display'); // untuk menampilkan data
+$routes->get('/kategori_berita_master', 'KategoriBeritaController::index', ['filter' => 'auth']); // untuk menampilkan data
+$routes->get('/kategori_berita/add', 'KategoriBeritaController::add', ['filter' => 'auth']); // untuk menambahkan data
+$routes->post('/kategori_berita/save', 'KategoriBeritaController::save'); // untuk menyimpan data
+$routes->get('/kategori_berita/(:segment)', 'KategoriBeritaController::detail/$1', ['filter' => 'auth']); // (:segment) = parameter, $1 = parameter pertama yang di ambil
+$routes->get('/kategori_berita/edit/(:segment)', 'KategoriBeritaController::edit/$1', ['filter' => 'auth']); // (:segment) = parameter, $1 = parameter pertama yang di ambil
+$routes->get('/kategori_berita/edit_status/(:segment)/(:segment)', 'KategoriBeritaController::edit_status/$1/$2', ['filter' => 'auth']); // (:segment) = parameter, $1 = parameter pertama yang di ambil
+$routes->post('/kategori_berita/update', 'KategoriBeritaController::update'); // untuk mengupdate data
+$routes->get('/kategori_berita/delete/(:segment)', 'KategoriBeritaController::delete/$1', ['filter' => 'auth']); // (:segment) = parameter, $1 = parameter pertama yang di ambil
+$routes->post('/kategori_berita/search', 'KategoriBeritaController::search'); // untuk mencari data berdasarkan variable tertentu
+
+
+//ROUTE KUTIPAN
+$routes->get('/kutipan', 'KutipanController::display'); // untuk menampilkan data
+$routes->get('/kutipan_master', 'KutipanController::index', ['filter' => 'auth']); // untuk menampilkan data
+$routes->get('/kutipan/add', 'KutipanController::add', ['filter' => 'auth']); // untuk menambahkan data
+$routes->post('/kutipan/save', 'KutipanController::save'); // untuk menyimpan data
+$routes->get('/kutipan/(:segment)', 'KutipanController::detail/$1', ['filter' => 'auth']); // (:segment) = parameter, $1 = parameter pertama yang di ambil
+$routes->get('/kutipan/edit/(:segment)', 'KutipanController::edit/$1', ['filter' => 'auth']); // (:segment) = parameter, $1 = parameter pertama yang di ambil
+$routes->get('/kutipan/edit_status/(:segment)/(:segment)', 'KutipanController::edit_status/$1/$2', ['filter' => 'auth']); // (:segment) = parameter, $1 = parameter pertama yang di ambil
+$routes->post('/kutipan/update', 'KutipanController::update'); // untuk mengupdate data
+$routes->get('/kutipan/delete/(:segment)', 'KutipanController::delete/$1', ['filter' => 'auth']); // (:segment) = parameter, $1 = parameter pertama yang di ambil
+$routes->post('/kutipan/search', 'KutipanController::search'); // untuk mencari data berdasarkan variable tertentu
 
 
 
 
 
-
-// ROUTE AUTH
-$routes->get('/login', 'AuthController::index'); // untuk login
-$routes->get('/logout', 'AuthController::logout'); // untuk logout
-$routes->post('/login/auth', 'AuthController::auth'); // untuk checking data login
-$routes->get('/register', 'RegisterController::index'); // untuk register data
-$routes->post('/register/save', 'RegisterController::save'); // untuk menyimpan user baru
 
 // ROUTE LANDING PAGE
 $routes->get('/welcome', 'welcome::index');
@@ -106,17 +130,7 @@ $routes->post('/wawasan_islami/update', 'WawasanIslamiController::update'); // u
 $routes->get('/wawasan_islami/delete/(:segment)', 'WawasanIslamiController::delete/$1', ['filter' => 'auth']); // (:segment) = parameter, $1 = parameter pertama yang di ambil
 $routes->post('/wawasan_islami/search', 'WawasanIslamiController::search'); // untuk mencari data berdasarkan variable tertentu
 
-//ROUTE KUTIPAN ISLAMI
-$routes->get('/kutipan', 'KutipanController::display'); // untuk menampilkan data
-$routes->get('/kutipan_master', 'KutipanController::index', ['filter' => 'auth']); // untuk menampilkan data
-$routes->get('/kutipan/add', 'KutipanController::add', ['filter' => 'auth']); // untuk menambahkan data
-$routes->post('/kutipan/save', 'KutipanController::save'); // untuk menyimpan data
-$routes->get('/kutipan/(:segment)', 'KutipanController::detail/$1', ['filter' => 'auth']); // (:segment) = parameter, $1 = parameter pertama yang di ambil
-$routes->get('/kutipan/edit/(:segment)', 'KutipanController::edit/$1', ['filter' => 'auth']); // (:segment) = parameter, $1 = parameter pertama yang di ambil
-$routes->get('/kutipan/edit_status/(:segment)/(:segment)', 'KutipanController::edit_status/$1/$2', ['filter' => 'auth']); // (:segment) = parameter, $1 = parameter pertama yang di ambil
-$routes->post('/kutipan/update', 'KutipanController::update'); // untuk mengupdate data
-$routes->get('/kutipan/delete/(:segment)', 'KutipanController::delete/$1', ['filter' => 'auth']); // (:segment) = parameter, $1 = parameter pertama yang di ambil
-$routes->post('/kutipan/search', 'KutipanController::search'); // untuk mencari data berdasarkan variable tertentu
+
 
 //ROUTE RENCANA KEGIATAN
 $routes->get('/rencana_kegiatan', 'RencanaKegiatanController::display'); // untuk menampilkan data

@@ -127,7 +127,7 @@ class KutipanController extends BaseController
 
             echo view('layout/v_header', $data);
             echo view('layout/v_navbar');
-            echo view('kutipan/add', $data);
+            echo view('kutipan/edit', $data);
             echo view('layout/v_footer');
         }
 
