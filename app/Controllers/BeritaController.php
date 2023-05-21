@@ -21,6 +21,10 @@ class BeritaController extends BaseController
         echo view('layout/v_footer');
     }
 
+    public function detail_berita_depan(){
+        echo "test";
+    }
+
     public function detail($id)
     {
         $model = new BeritaModel;

@@ -112,6 +112,7 @@ $routes->get('/welcome', 'welcome::index');
 
 
 // ROUTE BERITA
+$routes->get('/berita/detail', 'BeritaController::detail_berita_depan'); // untuk menampilkan data
 $routes->get('/berita', 'BeritaController::display'); // untuk menampilkan data
 $routes->get('/berita_master', 'BeritaController::index', ['filter' => 'auth']); // untuk menampilkan data
 $routes->get('/berita/add', 'BeritaController::add', ['filter' => 'auth']); // untuk menambahkan data
