@@ -40,11 +40,11 @@ class BeritaController extends BaseController
         echo view('detailBeritaPengunjung', $data);
     }
 
-    public function listBerita($id_berita){
+    public function listBerita(){
         $model = new BeritaModel;
-        $data['getListBerita'] = $model->getBeritaLandingPage($id_berita);
+        $data['getListBerita'] = $model->getBeritaLandingPage();
 
-        echo view('berita/listBerita', $data);
+        echo view('berita/listBerita');
     }
 
     public function detail($id)
