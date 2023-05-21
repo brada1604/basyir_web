@@ -97,11 +97,11 @@
                                         <a class="page-scroll" href="#team">Team</a>
                                     </li>
                                     <li class="nav-item">
-<<<<<<< Updated upstream
+
                                     <a class="main-btn gradient-btn" data-scroll-nav="0" href="http://localhost:8080/login" rel="nofollow">Login Admin</a>
-=======
+
                                     <a class="main-btn gradient-btn" data-scroll-nav="0" href="/login" rel="nofollow">Login</a>
->>>>>>> Stashed changes
+
                                     </li>
                                 </ul>
                             </div> <!-- navbar collapse -->
