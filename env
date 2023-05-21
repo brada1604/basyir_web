@@ -141,3 +141,15 @@ CI_ENVIRONMENT = development
 #--------------------------------------------------------------------
 
 # curlrequest.shareOptions = true
+
+
+#--------------------------------------------------------------------
+# Email Configuration
+#--------------------------------------------------------------------
+email_config_protocol = 'smtp'
+email_config_SMTPHost = 'smtp.mailtrap.io'
+email_config_SMTPPort = 2525
+email_config_SMTPUser = 'b32c2204641c0d'
+email_config_SMTPPass = '1458624a24aa24'
+email_config_senderMail = ''
+email_config_senderName = 'Test Email'

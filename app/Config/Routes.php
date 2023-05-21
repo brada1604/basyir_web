@@ -195,6 +195,8 @@ $routes->get('/jadwal_solat', 'JadwalSolatController::index'); // untuk menampil
 // ROUTE DASHBOARD
 $routes->get('/dashboard', 'DashboardController::index', ['filter' => 'auth']); // untuk menampilkan data
 
+
+$routes->get('/test-email', 'UserController::index'); // untuk menampilkan data
 /*
  * --------------------------------------------------------------------
  * Additional Routing
