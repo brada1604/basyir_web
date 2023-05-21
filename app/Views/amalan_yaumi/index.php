@@ -15,7 +15,7 @@ function youtube($url){
 
                     <!-- Page Heading -->
                     <h1 class="h3 mb-2 text-gray-800">Master Amalan Yaumi</h1>
-                    <p class="mb-4">Data untuk memanage amalan yaumi. Kunjungi Website <a target="_blank" href="/amalan_yaumi">Amalan Yaumi Basyir</a>.</p>
+                    <p class="mb-4">Data untuk memanage amalan yaumi</p>
                     <a class="edit" href="/amalan_yaumi/add"><button type="button" class="btn btn-primary">Tambah</button></a>
 
                     <!-- DataTales Example -->
