@@ -3,7 +3,7 @@
 
                     <!-- Page Heading -->
                     <h1 class="h3 mb-2 text-gray-800">Master Kutipan</h1>
-                    <p class="mb-4">Data untuk memanage Kutipan. Kunjungi Website <a target="_blank" href="/kutipan">Kutipan Basyir</a>.</p>
+                    <p class="mb-4">Data untuk memanage Kutipan.</p>
                     <a class="edit" href="/kutipan/add"><button type="button" class="btn btn-primary">Tambah</button></a>
 
                     <!-- DataTales Example -->

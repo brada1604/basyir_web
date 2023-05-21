@@ -3,7 +3,7 @@
 
                     <!-- Page Heading -->
                     <h1 class="h3 mb-2 text-gray-800">Master Doa</h1>
-                    <p class="mb-4">Data untuk memanage Doa. Kunjungi Website <a target="_blank" href="/doa">Doa Basyir</a>.</p>
+                    <p class="mb-4">Data untuk memanage Doa. </p>
                     <a class="edit" href="/doa/add"><button type="button" class="btn btn-primary">Tambah</button></a>
 
                     <!-- DataTales Example -->
@@ -42,13 +42,24 @@
                                             <tr>
                                                 <td><?= $nomor++; ?></td>
                                                 <td><?= $row->judul_doa;?></td>
-                                                <td><?= $row->ringkasan_doa;?></td>
+                                                <td  style="text-align: right;"><?= $row->ringkasan_doa;?></td>
                                                 <td><?= $row->ringkasan_latin_doa;?></td>
-                                                <td><?= $row->status_doa;?></td>
+                                                <td>
+                                                    <?php if ($row->status_doa == 1) : ?>
+                                                        <button type="button" class="btn btn-outline-success">Show</button>
+                                                        
+                                                        <a class="edit_status" class="btn btn-outline-secondary" href="/doa/edit_status/<?= $row->id_doa; ?>/0"><button type="button" class="btn btn-outline-secondary">Hide</button></a>
+                                                            
+                                                        
+                                                    <?php elseif ($row->status_doa == 0) : ?>
+                                                        <button type="button" class="btn btn-outline-danger">Hide</button>
+                                                        <a class="edit_status" class="btn btn-outline-secondary" href="/doa/edit_status/<?= $row->id_doa; ?>/1"><button type="button" class="btn btn-outline-secondary">Show</button></a>
+                                                    <?php endif ?>
+                                                </td>
                                                 <td>
                                                     <a class="edit" class="btn btn-warning" href="/doa/edit/<?= $row->id_doa;?>"><button type="button" class="btn btn-warning">Edit</button></a>
                                                     <a class="hapus" class="btn btn-danger" href="/doa/delete/<?= $row->id_doa;?>"><button type="button" class="btn btn-danger">Hapus</button></a>
-                                                    <!-- <a class="detail" class="btn btn-info" href="/doa/<?= $row->id_doa;?>"><button type="button" class="btn btn-info">Detail</button></a>                      -->
+                                                    <a class="detail" class="btn btn-info" href="/doa/detail/<?= $row->id_doa;?>"><button type="button" class="btn btn-info">Detail</button></a>                     
                                                 </td>
                                             </tr>
                                         <?php endforeach; ?>

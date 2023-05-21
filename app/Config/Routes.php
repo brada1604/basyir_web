@@ -45,6 +45,34 @@ $routes->post('/amalan_yaumi/update', 'AmalanYaumiController::update'); // untuk
 $routes->get('/amalan_yaumi/delete/(:segment)', 'AmalanYaumiController::delete/$1', ['filter' => 'auth']); // (:segment) = parameter, $1 = parameter pertama yang di ambil
 $routes->post('/amalan_yaumi/search', 'AmalanYaumiController::search'); // untuk mencari data berdasarkan variable tertentu
 
+// ROUTE DOA
+$routes->get('/doa', 'DoaController::display'); // untuk menampilkan data
+$routes->get('/doa_master', 'DoaController::index', ['filter' => 'auth']); // untuk menampilkan data
+$routes->get('/doa/add', 'DoaController::add', ['filter' => 'auth']); // untuk menambahkan data
+$routes->get('/doa/add_detail/(:segment)', 'DoaController::add_detail/$1', ['filter' => 'auth']); // untuk menambahkan data
+$routes->post('/doa/save', 'DoaController::save'); // untuk menyimpan data
+$routes->post('/doa/save_detail', 'DoaController::save_detail'); // untuk menyimpan data
+$routes->get('/doa/detail/(:segment)', 'DoaController::detail/$1', ['filter' => 'auth']); // (:segment) = parameter, $1 = parameter pertama yang di ambil
+$routes->get('/doa/edit/(:segment)', 'DoaController::edit/$1', ['filter' => 'auth']); // (:segment) = parameter, $1 = parameter pertama yang di ambil
+$routes->get('/doa/edit_detail/(:segment)/(:segment)', 'DoaController::edit_detail/$1/$2', ['filter' => 'auth']); // (:segment) = parameter, $1 = parameter pertama yang di ambil
+$routes->get('/doa/edit_status/(:segment)/(:segment)', 'DoaController::edit_status/$1/$2', ['filter' => 'auth']); // (:segment) = parameter, $1 = parameter pertama yang di ambil
+$routes->get('/doa/edit_status_detail/(:segment)/(:segment)/(:segment)', 'DoaController::edit_status_detail/$1/$2/$3', ['filter' => 'auth']); // (:segment) = parameter, $1 = parameter pertama yang di ambil
+$routes->post('/doa/update', 'DoaController::update'); // untuk mengupdate data
+$routes->post('/doa/update_detail', 'DoaController::update_detail'); // untuk mengupdate data
+$routes->get('/doa/delete/(:segment)', 'DoaController::delete/$1', ['filter' => 'auth']); // (:segment) = parameter, $1 = parameter pertama yang di ambil
+$routes->get('/doa/delete_detail/(:segment)/(:segment)', 'DoaController::delete_detail/$1/$2', ['filter' => 'auth']); // (:segment) = parameter, $1 = parameter pertama yang di ambil
+$routes->post('/doa/search', 'DoaController::search'); // untuk mencari data berdasarkan variable tertentu
+
+
+
+
+
+
+
+
+
+
+
 
 
 // ROUTE MAHASISWA
@@ -176,16 +204,7 @@ $routes->post('/rencana_kegiatan/search', 'RencanaKegiatanController::search'); 
 
 
 
-// ROUTE DOA
-$routes->get('/doa', 'DoaController::display'); // untuk menampilkan data
-$routes->get('/doa_master', 'DoaController::index', ['filter' => 'auth']); // untuk menampilkan data
-$routes->get('/doa/add', 'DoaController::add', ['filter' => 'auth']); // untuk menambahkan data
-$routes->post('/doa/save', 'DoaController::save'); // untuk menyimpan data
-$routes->get('/doa/(:segment)', 'DoaController::detail/$1', ['filter' => 'auth']); // (:segment) = parameter, $1 = parameter pertama yang di ambil
-$routes->get('/doa/edit/(:segment)', 'DoaController::edit/$1', ['filter' => 'auth']); // (:segment) = parameter, $1 = parameter pertama yang di ambil
-$routes->post('/doa/update', 'DoaController::update'); // untuk mengupdate data
-$routes->get('/doa/delete/(:segment)', 'DoaController::delete/$1', ['filter' => 'auth']); // (:segment) = parameter, $1 = parameter pertama yang di ambil
-$routes->post('/doa/search', 'DoaController::search'); // untuk mencari data berdasarkan variable tertentu
+
 
 // ROUTE DASHBOARD
 $routes->get('/dashboard', 'DashboardController::index', ['filter' => 'auth']); // untuk menampilkan data

@@ -3,7 +3,7 @@
 
                     <!-- Page Heading -->
                     <h1 class="h3 mb-2 text-gray-800">Master Rencana Kegiatan</h1>
-                    <p class="mb-4">Data untuk memanage rencana kegiatan. Kunjungi Website <a target="_blank" href="/rencana_kegiatan">Rencana Kegiatan Basyir</a>.</p>
+                    <p class="mb-4">Data untuk memanage rencana kegiatan. </p>
                     <a class="edit" href="/rencana_kegiatan/add"><button type="button" class="btn btn-primary">Tambah</button></a>
 
                     <!-- DataTales Example -->

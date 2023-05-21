@@ -2,9 +2,13 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Tambah Doa</h1>
-                    
-                    <form action="<?= base_url(); ?>/doa/save" method="post" enctype="multipart/form-data">
+                    <h1 class="h3 mb-2 text-gray-800">Edit Doa Detail</h1>
+
+                    <?php
+                        foreach($getDoaDetail as $row):
+                    ?>
+
+                    <form action="<?= base_url(); ?>/doa/update_detail" method="post" enctype="multipart/form-data">
 
                         <div class="row card-group-row">
 
@@ -21,57 +25,68 @@
 
                             <div class="col-md-12">
                                 <div class="list-group list-group-flush">
-                                    
-                                    <!-- JUDUL DOA -->
                                     <div class="list-group-item p-3">
                                         <div class="row align-items-start">
                                             <div class="col-md-2 mb-8pt mb-md-0">
                                                 <div class="media align-items-left">
                                                     <div class="d-flex flex-column media-body media-middle">
-                                                        <span
-                                                        class="card-title">Judul Doa</span>
+                                                        <span class="card-title">ID Doa Detail</span>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="col mb-8pt mb-md-0">
-                                                <input name="judul_doa" value="<?= old('judul_doa') ?>" type="text" class="form-control" placeholder="Masukan Judul Doa" required/>
+                                                <input name="id_doa_detail" type="text" class="form-control" value="<?= $row->id_doa_detail; ?>"  readonly/>
                                             </div>
                                         </div>
                                     </div>
 
-                                    <!-- RINGKASAN DOA -->
+                                    <div class="list-group-item p-3">
+                                        <div class="row align-items-start">
+                                            <div class="col-md-2 mb-8pt mb-md-0">
+                                                <div class="media align-items-left">
+                                                    <div class="d-flex flex-column media-body media-middle">
+                                                        <span class="card-title">ID Doa</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col mb-8pt mb-md-0">
+                                                <input name="id_doa" type="text" class="form-control" value="<?= $row->id_doa; ?>"  readonly/>
+                                            </div>
+                                        </div>
+                                    </div>
+
                                     <div class="list-group-item p-3">
                                         <div class="row align-items-start">
                                             <div class="col-md-2 mb-8pt mb-md-0">
                                                 <div class="media align-items-left">
                                                     <div class="d-flex flex-column media-body media-middle">
                                                         <span
-                                                        class="card-title">Ringkasan Doa</span>
+                                                        class="card-title">Konten Doa</span>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="col mb-8pt mb-md-0">
-                                                <textarea name="ringkasan_doa" class="form-control" required><?= old('ringkasan_doa') ?></textarea>
+                                                <textarea name="konten_doa" class="form-control" required><?= $row->konten_doa; ?></textarea>
                                             </div>
                                         </div>
                                     </div>
-                                    
-                                    <!-- RINGKASAN LATIN DOA -->
+
                                     <div class="list-group-item p-3">
                                         <div class="row align-items-start">
                                             <div class="col-md-2 mb-8pt mb-md-0">
                                                 <div class="media align-items-left">
                                                     <div class="d-flex flex-column media-body media-middle">
                                                         <span
-                                                        class="card-title">Ringkasan Latin Doa</span>
+                                                        class="card-title">Konten Latin Doa</span>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="col mb-8pt mb-md-0">
-                                                <textarea name="ringkasan_latin_doa" class="form-control" required><?= old('ringkasan_latin_doa') ?></textarea>
+                                                <textarea name="konten_latin_doa" class="form-control" required><?= $row->konten_latin_doa; ?></textarea>
                                             </div>
                                         </div>
                                     </div>
+
                                 </div>
                             </div>
                         </div>
@@ -82,7 +97,9 @@
                             </div>
                         </div>
 
-                    </form>  
+                    </form>
+
+                    <?php endforeach;?>
 
                 </div>
                 <!-- /.container-fluid -->
