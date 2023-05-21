@@ -134,6 +134,8 @@ $routes->get('/berita/delete/(:segment)', 'BeritaController::delete/$1', ['filte
 $routes->post('/berita/search', 'BeritaController::search'); // untuk mencari data berdasarkan variable tertentu
 
 // ROUTE WAWASAN ISLAMI
+$routes->get('/berita/listWawasan', 'WawasanIslamiController::listWawasan'); // untuk menampilkan data
+$routes->get('/detailWawasanPengunjung/(:segment)', 'WawasanIslamiController::detail_wawasan_depan/$1'); // untuk menampilkan data
 $routes->get('/wawasan_islami', 'WawasanIslamiController::display'); // untuk menampilkan data
 $routes->get('/wawasan_islami_master', 'WawasanIslamiController::index', ['filter' => 'auth']); // untuk menampilkan data
 $routes->get('/wawasan_islami/add', 'WawasanIslamiController::add', ['filter' => 'auth']); // untuk menambahkan data

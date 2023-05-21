@@ -47,6 +47,8 @@ class BeritaController extends BaseController
     public function listBerita(){
         $model = new BeritaModel;
         $data['getListBerita'] = $model->getBeritaLandingPage();
+        $data['pager'] = $model->pager;
+
 
         echo view('berita/listBerita', $data);
     }

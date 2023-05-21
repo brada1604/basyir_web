@@ -767,7 +767,7 @@
                                     <li class="ml-12"><?= date('d F Y', strtotime($gwilp->created_at));?></li>
                                 </ul>
                                 <p class="mb-6 text-2xl leading-snug text-gray-900"><?= $gwilp->ringkasan_wawasan_islami;?></p>
-                                <a class="text-theme-color-2" href="/">
+                                <a class="text-theme-color-2" href="/detailWawasanPengunjung/<?= $gwilp->id_wawasan_islami?>">
                                     Selengkapnya
                                     <i class="ml-2 lni lni-chevron-right"></i>
                                 </a>

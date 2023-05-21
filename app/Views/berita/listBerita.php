@@ -35,6 +35,19 @@
             padding: 20px;
             text-align: center;
             }
+            .back-button {
+                background-color: #fff;
+                color: #629C87;
+                padding: 10px 20px;
+                border-radius: 5px;
+                text-decoration: none;
+                margin-right: 10px;
+            }
+
+            .back-button:hover {
+                background-color: #629C87;
+                color: #fff;
+            }
         p,
         h1,
         h2,
@@ -338,6 +351,7 @@
                                                 <td align="center">
                                                     <!-- <a style="font-size: 14px; font-family: 'Work Sans', Calibri, sans-serif; line-height: 24px;color: #5caad2; text-decoration: none;font-weight:bold;"
                                                         href="{{UnsubscribeURL}}">UNSUBSCRIBE</a> -->
+                                                        <a href="/" class="back-button">Back</a>
                                                 </td>
                                             </tr>
                                         </table>

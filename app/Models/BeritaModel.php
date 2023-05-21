@@ -83,6 +83,11 @@ class BeritaModel extends Model
             $query = $this->db->query("SELECT * FROM tbl_berita where id_berita = '$id' ");
             return $query->getResult(); // return berupa array objek
         }
+
+        $data = [
+            'users' => $query,
+            'pager' => $model->pager,
+        ];
     }
 
     public function countByStatus($status)

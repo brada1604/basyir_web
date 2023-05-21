@@ -36,6 +36,14 @@ class WawasanIslamiController extends BaseController
         echo view('layout/v_footer');
     }
 
+    public function detail_wawasan_depan($id_wawasan_islami){
+        $model = new WawasanIslamiModel;
+        $data['getWawasanDepan'] = $model->getWawasanIslamiLandingPage($id_wawasan_islami);
+
+        echo view('detailWawasanPengunjung', $data);
+    }
+
+
     public function add(){
         $model = new KategoriWawasanIslamiModel;
         $data['title'] = 'Data Wawasan Islami - Add';
