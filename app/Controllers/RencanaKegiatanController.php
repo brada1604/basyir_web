@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\RencanaKegiatanModel;
+use App\Models\AmalanYaumiModel;
 use App\Controllers\BaseController;
 
 class RencanaKegiatanController extends BaseController
@@ -26,10 +27,13 @@ class RencanaKegiatanController extends BaseController
         $data['title'] = 'Data Rencana Kegiatan - Add';
         $data['session'] = session();
 
+        $model = new AmalanYaumiModel;
+        $data['getAmalanYaumi'] = $model->getAmalanYaumi();
+
         echo view('layout/v_header', $data);
         echo view('layout/v_sidebar');
         echo view('layout/v_navbar');
-        echo view('rencana_kegiatan/add');
+        echo view('rencana_kegiatan/add', $data);
         echo view('layout/v_footer');
     }
 
@@ -56,6 +60,9 @@ class RencanaKegiatanController extends BaseController
             $data['validation'] = $this->validator;
             $data['title'] = 'Data Rencana Kegiatan';
 
+            $model = new AmalanYaumiModel;
+            $data['getAmalanYaumi'] = $model->getAmalanYaumi();
+
             echo view('layout/v_header', $data);
             echo view('layout/v_sidebar');
             echo view('layout/v_navbar');
@@ -66,16 +73,37 @@ class RencanaKegiatanController extends BaseController
 
     public function edit($id)
     {
-        $model = new RencanaKegiatanModel();
+        $model_rencana_kegiatan = new RencanaKegiatanModel();
         $data['session'] = session();
         $data['title'] = 'Data Rencana Kegiatan - Edit';
-        $data['getRencanaKegiatan'] = $model->getRencanaKegiatan($id);
+        $data['getRencanaKegiatan'] = $model_rencana_kegiatan->getRencanaKegiatan($id);
+
+        $model_amalan_yaumi = new AmalanYaumiModel;
+        $data['getAmalanYaumi'] = $model_amalan_yaumi->getAmalanYaumi();
 
         echo view('layout/v_header', $data);
         echo view('layout/v_sidebar');
         echo view('layout/v_navbar');
         echo view('rencana_kegiatan/edit', $data);
         echo view('layout/v_footer');
+    }
+
+    public function edit_status($id, $no)
+    {
+        $model = new RencanaKegiatanModel();
+        $id_rencana_kegiatan = $id;
+        $status = $no;
+
+        $data = [
+            'status_rencana_kegiatan' => $status
+        ];
+
+        $model->update($id_rencana_kegiatan, $data);
+
+        echo '<script>
+                    alert("Selamat! Berhasil Mengubah Status Rencana Kegiatan");
+                    window.location="' . base_url('rencana_kegiatan_master') . '"
+                </script>';
     }
 
     public function update()
@@ -106,6 +134,9 @@ class RencanaKegiatanController extends BaseController
         } else {
             $data['validation'] = $this->validator;
             $data['title'] = 'Data Rencana Kegiatan';
+
+            $model_amalan_yaumi = new AmalanYaumiModel;
+            $data['getAmalanYaumi'] = $model_amalan_yaumi->getAmalanYaumi();
 
             echo view('layout/v_header', $data);
             echo view('layout/v_navbar');

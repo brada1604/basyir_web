@@ -153,6 +153,7 @@ $routes->get('/rencana_kegiatan/add', 'RencanaKegiatanController::add', ['filter
 $routes->post('/rencana_kegiatan/save', 'RencanaKegiatanController::save'); // untuk menyimpan data
 $routes->get('/rencana_kegiatan/(:segment)', 'RencanaKegiatanController::detail/$1', ['filter' => 'auth']); // (:segment) = parameter, $1 = parameter pertama yang di ambil
 $routes->get('/rencana_kegiatan/edit/(:segment)', 'RencanaKegiatanController::edit/$1', ['filter' => 'auth']); // (:segment) = parameter, $1 = parameter pertama yang di ambil
+$routes->get('/rencana_kegiatan/edit_status/(:segment)/(:segment)', 'RencanaKegiatanController::edit_status/$1/$2', ['filter' => 'auth']); // (:segment) = parameter, $1 = parameter pertama yang di ambil
 $routes->post('/rencana_kegiatan/update', 'RencanaKegiatanController::update'); // untuk mengupdate data
 $routes->get('/rencana_kegiatan/delete/(:segment)', 'RencanaKegiatanController::delete/$1', ['filter' => 'auth']); // (:segment) = parameter, $1 = parameter pertama yang di ambil
 $routes->post('/rencana_kegiatan/search', 'RencanaKegiatanController::search'); // untuk mencari data berdasarkan variable tertentu

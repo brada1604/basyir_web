@@ -40,12 +40,20 @@
                                             <div class="col-md-2 mb-8pt mb-md-0">
                                                 <div class="media align-items-left">
                                                     <div class="d-flex flex-column media-body media-middle">
-                                                        <span class="card-title">ID Amalan Yaumi</span>
+                                                        <span
+                                                        class="card-title">Amalan Yaumi</span>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="col mb-8pt mb-md-0">
-                                                <input name="id_amalan_yaumi" value="<?= old('id_amalan_yaumi') ?>" type="text" class="form-control" placeholder="Masukan ID Amalan Yaumi" required />
+                                                <select class="form-control" name="id_amalan_yaumi" required>
+                                                    <option value="">-- Pilih Amalan yaumi --</option>
+                                                    <?php
+                                                        foreach ($getAmalanYaumi as $row) :
+                                                    ?>
+                                                        <option value="<?= $row->id_amalan_yaumi; ?>"><?= $row->judul_amalan_yaumi; ?></option>
+                                                    <?php endforeach; ?>
+                                                </select>
                                             </div>
                                         </div>
                                     </div>
