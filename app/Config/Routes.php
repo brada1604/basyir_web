@@ -198,9 +198,11 @@ $routes->get('/dashboard', 'DashboardController::index', ['filter' => 'auth']); 
 
 // ROUTE USER
 $routes->get('/user', 'UserController::display'); // untuk menampilkan data
+$routes->get('/user/ubah_password', 'UserController::ubah_password'); // untuk mencari data berdasarkan variable tertentu
 $routes->get('/user_master', 'UserController::index', ['filter' => 'auth']); // untuk menampilkan data
 $routes->get('/user/add', 'UserController::add', ['filter' => 'auth']); // untuk menambahkan data
 $routes->post('/user/save', 'UserController::save'); // untuk menyimpan data
+$routes->post('/user/save_password_baru', 'UserController::save_password_baru'); // untuk menyimpan data
 $routes->get('/user/(:segment)', 'UserController::detail/$1', ['filter' => 'auth']); // (:segment) = parameter, $1 = parameter pertama yang di ambil
 $routes->get('/user/edit/(:segment)', 'UserController::edit/$1', ['filter' => 'auth']); // (:segment) = parameter, $1 = parameter pertama yang di ambil
 $routes->get('/user/edit_status/(:segment)/(:segment)', 'UserController::edit_status/$1/$2', ['filter' => 'auth']); // (:segment) = parameter, $1 = parameter pertama yang di ambil

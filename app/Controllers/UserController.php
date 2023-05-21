@@ -280,4 +280,50 @@ class UserController extends BaseController
         
         return $config;
     }
+
+    public function ubah_password(){
+        $data['title'] = 'Data User';
+        $data['session'] = session();
+
+        echo view('layout/v_header', $data);
+        echo view('layout/v_sidebar');
+        echo view('layout/v_navbar');
+        echo view('user/ubah_password', $data);
+        echo view('layout/v_footer');
+    }
+
+    public function save_password_baru(){
+        $data['session'] = session();
+        $rules = [
+            'email' => 'required',
+            'password' => 'required',
+            'confirm_password' => 'required|matches[password]'
+        ];
+     
+        if($this->validate($rules)){
+            $model = new UserModel();
+
+            $email = $this->request->getVar('email');
+
+            $id = $model->getUser($email);
+
+            $data = [
+                'password' => password_hash($this->request->getVar('password'), PASSWORD_BCRYPT),
+            ];
+             
+            $model->update($id[0]->id, $data);
+ 
+            return redirect()->to('/user_master');
+     
+        } else {
+            $data['validation'] = $this->validator;
+            $data['title'] = 'Data User';
+
+            echo view('layout/v_header', $data);
+            echo view('layout/v_sidebar');
+            echo view('layout/v_navbar');
+            echo view('user/ubah_password', $data);
+            echo view('layout/v_footer');
+        }
+    }
 }
