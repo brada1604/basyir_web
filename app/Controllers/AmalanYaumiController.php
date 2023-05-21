@@ -36,29 +36,14 @@ class AmalanYaumiController extends BaseController
         $data['session'] = session();
         $rules = [
             'judul_amalan_yaumi' => 'required',
-            'konten_amalan_yaumi' => 'required',
-            'image_file'     => 'uploaded[image_file]|is_image[image_file]'
+            'konten_amalan_yaumi' => 'required'
         ];
      
         if($this->validate($rules)){
             $model = new AmalanYaumiModel();
-            $fileImage_name = "";
-            if(isset($_FILES) && @$_FILES['image_file']['error'] != '4') {
-                if($fileImage = $this->request->getFile('image_file')) {
-                    if (! $fileImage->isValid()) {
-                        throw new \RuntimeException($fileImage->getErrorString().'('.$fileImage->getError().')');
-                    } else {            
-     
-                        $fileImage->move('assets/image/amalan_yaumi');
-                        $fileImage_name = $fileImage->getName();
-                    }
-                }
-            }
             $data = [
                 'judul_amalan_yaumi' => $this->request->getVar('judul_amalan_yaumi'),
-                'konten_amalan_yaumi' => $this->request->getVar('konten_amalan_yaumi'),
-                'video_amalan_yaumi' => $this->request->getVar('video_amalan_yaumi'),
-                'gambar_amalan_yaumi' => 'assets/image/amalan_yaumi/'.$fileImage_name,
+                'konten_amalan_yaumi' => $this->request->getVar('konten_amalan_yaumi')
             ];
              
             $model->save($data);
@@ -90,6 +75,24 @@ class AmalanYaumiController extends BaseController
         echo view('layout/v_footer');
     }
 
+    public function edit_status($id, $no)
+    {
+        $model = new AmalanYaumiModel();
+        $id_amalan_yaumi = $id;
+        $status = $no;
+
+        $data = [
+            'status_amalan_yaumi' => $status
+        ];
+
+        $model->update($id_amalan_yaumi, $data);
+
+        echo '<script>
+                    alert("Selamat! Berhasil Mengubah Status Amalan Yaumi");
+                    window.location="' . base_url('amalan_yaumi_master') . '"
+                </script>';
+    }
+
     public function update(){
         $data['session'] = session();
         $rules = [
@@ -101,61 +104,20 @@ class AmalanYaumiController extends BaseController
             $model = new AmalanYaumiModel();
             $id_amalan_yaumi = $this->request->getVar('id_amalan_yaumi');
 
-            $cek = $this->request->getFile('image_file');
-            
-            if (empty($cek->getName())) {
-                $data = [
-                    'id_user' => $this->request->getVar('id_user'),
-                    'judul_amalan_yaumi' => $this->request->getVar('judul_amalan_yaumi'),
-                    'konten_amalan_yaumi' => $this->request->getVar('konten_amalan_yaumi'),
-                    'video_amalan_yaumi' => $this->request->getVar('video_amalan_yaumi'),
-                ];
+            $data = [
+                'id_user' => $this->request->getVar('id_user'),
+                'judul_amalan_yaumi' => $this->request->getVar('judul_amalan_yaumi'),
+                'konten_amalan_yaumi' => $this->request->getVar('konten_amalan_yaumi'),
+                'video_amalan_yaumi' => $this->request->getVar('video_amalan_yaumi'),
+            ];
 
-                $model->update($id_amalan_yaumi, $data);
+            $model->update($id_amalan_yaumi, $data);
 
-                echo '<script>
-                    alert("Selamat! Berhasil Mengubah Data Amalan Yaumi");
-                    window.location="' . base_url('amalan_yaumi_master') . '"
-                </script>';
-            }
-            else{
-                
+            echo '<script>
+                alert("Selamat! Berhasil Mengubah Data Amalan Yaumi");
+                window.location="' . base_url('amalan_yaumi_master') . '"
+            </script>';
 
-                $data_amalan_yaumi = $model->getAmalanYaumi($id_amalan_yaumi);
-                @unlink($data_amalan_yaumi[0]->gambar_amalan_yaumi);
-
-                $fileImage_name = "";
-
-                if(isset($_FILES) && @$_FILES['image_file']['error'] != '4') {
-                    if($fileImage = $this->request->getFile('image_file')) {
-                        if (! $fileImage->isValid()) {
-                            throw new \RuntimeException($fileImage->getErrorString().'('.$fileImage->getError().')');
-                        } else {            
-         
-                            $fileImage->move('assets/image/amalan_yaumi');
-                            $fileImage_name = $fileImage->getName();
-                        }
-                    }
-                }
-
-                $data = [
-                    'id_user' => $this->request->getVar('id_user'),
-                    'judul_amalan_yaumi' => $this->request->getVar('judul_amalan_yaumi'),
-                    'konten_amalan_yaumi' => $this->request->getVar('konten_amalan_yaumi'),
-                    'video_amalan_yaumi' => $this->request->getVar('video_amalan_yaumi'),
-                    'gambar_amalan_yaumi' => 'assets/image/amalan_yaumi/'.$fileImage_name,
-                ];
-
-                 
-                $model->update($id_amalan_yaumi, $data);
-         
-                echo '<script>
-                    alert("Selamat! Berhasil Mengubah Data Amalan Yaumi");
-                    window.location="' . base_url('amalan_yaumi_master') . '"
-                </script>';
-            }
-
-     
         } else {
             $data['validation'] = $this->validator;
             $data['title'] = 'Data Amalan Yaumi';
@@ -170,10 +132,6 @@ class AmalanYaumiController extends BaseController
 
     public function delete($id){
         $model = new AmalanYaumiModel;
-
-        $data_amalan_yaumi = $model->getAmalanYaumi($id);
-
-        @unlink($data_amalan_yaumi[0]->gambar_amalan_yaumi);
 
         $model->delete($id);
         echo '<script>

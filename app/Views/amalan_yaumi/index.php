@@ -32,8 +32,6 @@ function youtube($url){
                                             <th>Judul</th>
                                             <th>Konten</th>
                                             <th>Status</th>
-                                            <th>Video</th>
-                                            <th>Gambar</th>
                                             <th>Opsi</th>
                                         </tr>
                                     </thead>
@@ -43,8 +41,6 @@ function youtube($url){
                                             <th>Judul</th>
                                             <th>Konten</th>
                                             <th>Status</th>
-                                            <th>Video</th>
-                                            <th>Gambar</th>
                                             <th>Opsi</th>
                                         </tr>
                                     </tfoot>
@@ -57,13 +53,21 @@ function youtube($url){
                                                 <td><?= $nomor++; ?></td>
                                                 <td><?= $row->judul_amalan_yaumi;?></td>
                                                 <td><?= $row->konten_amalan_yaumi;?></td>
-                                                <td><?= $row->status_amalan_yaumi;?></td>
-                                                <td><?= youtube($row->video_amalan_yaumi);?></td>
-                                                <td><img clas="bd-placeholder-img card-img-top" width="100" height="100" src="<?=base_url($row->gambar_amalan_yaumi);?>"></td>
+                                                <td>
+                                                    <?php if ($row->status_amalan_yaumi == 1) : ?>
+                                                        <button type="button" class="btn btn-outline-success">Show</button>
+                                                        
+                                                        <a class="edit_status" class="btn btn-outline-secondary" href="/amalan_yaumi/edit_status/<?= $row->id_amalan_yaumi; ?>/0"><button type="button" class="btn btn-outline-secondary">Hide</button></a>
+                                                            
+                                                        
+                                                    <?php elseif ($row->status_amalan_yaumi == 0) : ?>
+                                                        <button type="button" class="btn btn-outline-danger">Hide</button>
+                                                        <a class="edit_status" class="btn btn-outline-secondary" href="/amalan_yaumi/edit_status/<?= $row->id_amalan_yaumi; ?>/1"><button type="button" class="btn btn-outline-secondary">Show</button></a>
+                                                    <?php endif ?>
+                                                </td>
                                                 <td>
                                                     <a class="edit" class="btn btn-warning" href="/amalan_yaumi/edit/<?= $row->id_amalan_yaumi;?>"><button type="button" class="btn btn-warning">Edit</button></a>
-                                                    <a class="hapus" class="btn btn-danger" href="/amalan_yaumi/delete/<?= $row->id_amalan_yaumi;?>"><button type="button" class="btn btn-danger">Hapus</button></a>
-                                                    <!-- <a class="detail" class="btn btn-info" href="/amalan_yaumi/<?= $row->id_amalan_yaumi;?>"><button type="button" class="btn btn-info">Detail</button></a>                      -->
+                                                    <a class="hapus" class="btn btn-danger" href="/amalan_yaumi/delete/<?= $row->id_amalan_yaumi;?>"><button type="button" class="btn btn-danger">Hapus</button></a> 
                                                 </td>
                                             </tr>
                                         <?php endforeach; ?>

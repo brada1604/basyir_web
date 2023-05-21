@@ -14,7 +14,7 @@ class AmalanYaumiModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ["judul_amalan_yaumi", "konten_amalan_yaumi", "gambar_amalan_yaumi", "video_amalan_yaumi", "status_amalan_yaumi",];
+    protected $allowedFields    = ["judul_amalan_yaumi", "konten_amalan_yaumi", "status_amalan_yaumi",];
 
     // Dates
     protected $useTimestamps = false;

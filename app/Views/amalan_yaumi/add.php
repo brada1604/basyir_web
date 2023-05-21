@@ -53,38 +53,6 @@
                                         </div>
                                     </div>
 
-                                    <div class="list-group-item p-3">
-                                        <div class="row align-items-start">
-                                            <div class="col-md-2 mb-8pt mb-md-0">
-                                                <div class="media align-items-left">
-                                                    <div class="d-flex flex-column media-body media-middle">
-                                                        <span
-                                                        class="card-title">Link Video Amalan Yaumi</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col mb-8pt mb-md-0">
-                                                <input name="video_amalan_yaumi" value="<?= old('video_amalan_yaumi') ?>" type="text" class="form-control" placeholder="Masukan Link Video Amalan Yaumi"/>
-                                            </div>
-                                        </div>
-                                    </div>        
-
-                                    <div class="list-group-item p-3">
-                                        <div class="row align-items-start">
-                                            <div class="col-md-2 mb-8pt mb-md-0">
-                                                <div class="media align-items-left">
-                                                    <div class="d-flex flex-column media-body media-middle">
-                                                        <span
-                                                        class="card-title">Gambar Amalan Yaumi</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col mb-8pt mb-md-0">
-                                                <input type="file" id="image_file" name="image_file" class="form-control image_file" accept=".jpg,.png,.jpeg,.gif" required/>
-                                            </div>
-                                        </div>
-                                    </div>
-
                                 </div>
                             </div>
                         </div>

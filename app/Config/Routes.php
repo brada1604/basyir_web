@@ -32,6 +32,21 @@ $routes->set404Override();
 $routes->get('/', 'Home::index');
 $routes->post('/kota', 'Home::index2');
 
+
+// ROUTE AMALAN YAUMI
+$routes->get('/amalan_yaumi', 'AmalanYaumiController::display'); // untuk menampilkan data
+$routes->get('/amalan_yaumi_master', 'AmalanYaumiController::index', ['filter' => 'auth']); // untuk menampilkan data
+$routes->get('/amalan_yaumi/add', 'AmalanYaumiController::add', ['filter' => 'auth']); // untuk menambahkan data
+$routes->post('/amalan_yaumi/save', 'AmalanYaumiController::save'); // untuk menyimpan data
+$routes->get('/amalan_yaumi/(:segment)', 'AmalanYaumiController::detail/$1', ['filter' => 'auth']); // (:segment) = parameter, $1 = parameter pertama yang di ambil
+$routes->get('/amalan_yaumi/edit/(:segment)', 'AmalanYaumiController::edit/$1', ['filter' => 'auth']); // (:segment) = parameter, $1 = parameter pertama yang di ambil
+$routes->get('/amalan_yaumi/edit_status/(:segment)/(:segment)', 'AmalanYaumiController::edit_status/$1/$2', ['filter' => 'auth']); // (:segment) = parameter, $1 = parameter pertama yang di ambil
+$routes->post('/amalan_yaumi/update', 'AmalanYaumiController::update'); // untuk mengupdate data
+$routes->get('/amalan_yaumi/delete/(:segment)', 'AmalanYaumiController::delete/$1', ['filter' => 'auth']); // (:segment) = parameter, $1 = parameter pertama yang di ambil
+$routes->post('/amalan_yaumi/search', 'AmalanYaumiController::search'); // untuk mencari data berdasarkan variable tertentu
+
+
+
 // ROUTE MAHASISWA
 $routes->get('/mahasiswa', 'MahasiswaController::index', ['filter' => 'auth']); // untuk menampilkan data
 $routes->get('/mahasiswa/export_pdf', 'MahasiswaController::export_pdf'); // untuk menyimpan data
@@ -159,16 +174,7 @@ $routes->post('/rencana_kegiatan/update', 'RencanaKegiatanController::update'); 
 $routes->get('/rencana_kegiatan/delete/(:segment)', 'RencanaKegiatanController::delete/$1', ['filter' => 'auth']); // (:segment) = parameter, $1 = parameter pertama yang di ambil
 $routes->post('/rencana_kegiatan/search', 'RencanaKegiatanController::search'); // untuk mencari data berdasarkan variable tertentu
 
-// ROUTE AMALAN YAUMI
-$routes->get('/amalan_yaumi', 'AmalanYaumiController::display'); // untuk menampilkan data
-$routes->get('/amalan_yaumi_master', 'AmalanYaumiController::index', ['filter' => 'auth']); // untuk menampilkan data
-$routes->get('/amalan_yaumi/add', 'AmalanYaumiController::add', ['filter' => 'auth']); // untuk menambahkan data
-$routes->post('/amalan_yaumi/save', 'AmalanYaumiController::save'); // untuk menyimpan data
-$routes->get('/amalan_yaumi/(:segment)', 'AmalanYaumiController::detail/$1', ['filter' => 'auth']); // (:segment) = parameter, $1 = parameter pertama yang di ambil
-$routes->get('/amalan_yaumi/edit/(:segment)', 'AmalanYaumiController::edit/$1', ['filter' => 'auth']); // (:segment) = parameter, $1 = parameter pertama yang di ambil
-$routes->post('/amalan_yaumi/update', 'AmalanYaumiController::update'); // untuk mengupdate data
-$routes->get('/amalan_yaumi/delete/(:segment)', 'AmalanYaumiController::delete/$1', ['filter' => 'auth']); // (:segment) = parameter, $1 = parameter pertama yang di ambil
-$routes->post('/amalan_yaumi/search', 'AmalanYaumiController::search'); // untuk mencari data berdasarkan variable tertentu
+
 
 // ROUTE DOA
 $routes->get('/doa', 'DoaController::display'); // untuk menampilkan data
