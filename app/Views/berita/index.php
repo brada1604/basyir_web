@@ -34,6 +34,7 @@ function youtube($url)
                                 <th>ID User</th>
                             <?php endif ?>
                             <th>Judul</th>
+                            <th>Kategori</th>
                             <th>Ringkasan</th>
                             <!-- <th>Konten</th> -->
                             <th>Status</th>
@@ -50,6 +51,7 @@ function youtube($url)
                                 <th>ID User</th>
                             <?php endif ?>
                             <th>Judul</th>
+                            <th>Kategori</th>
                             <th>Ringkasan</th>
                             <!-- <th>Konten</th> -->
                             <th>Status</th>
@@ -70,6 +72,7 @@ function youtube($url)
                                     <td><?= $row->id_user; ?></td>
                                 <?php endif ?>
                                 <td><?= $row->judul_berita; ?></td>
+                                <td><?= $row->id_kategori_berita; ?></td>
                                 <td><?= $row->ringkasan_berita; ?></td>
                                 <!-- <td><?= $row->konten_berita; ?></td> -->
                                 <td>

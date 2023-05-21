@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Models\KategoriBeritaModel;
 use App\Models\BeritaModel;
 use App\Controllers\BaseController;
 
@@ -41,13 +42,16 @@ class BeritaController extends BaseController
 
     public function add()
     {
+        $model = new KategoriBeritaModel;
         $data['title'] = 'Data Berita - Add';
         $data['session'] = session();
+
+        $data['getKategoriBerita'] = $model->getKategoriBeritaForm();
 
         echo view('layout/v_header', $data);
         echo view('layout/v_sidebar');
         echo view('layout/v_navbar');
-        echo view('berita/add');
+        echo view('berita/add', $data);
         echo view('layout/v_footer');
     }
 
@@ -77,6 +81,7 @@ class BeritaController extends BaseController
             }
             $data = [
                 'id_user' => $this->request->getVar('id_user'),
+                'id_kategori_berita' => $this->request->getVar('id_kategori_berita'),
                 'judul_berita' => $this->request->getVar('judul_berita'),
                 'ringkasan_berita' => $this->request->getVar('ringkasan_berita'),
                 'konten_berita' => $this->request->getVar('konten_berita'),
@@ -88,8 +93,11 @@ class BeritaController extends BaseController
 
             return redirect()->to('/berita_master');
         } else {
+            $model = new KategoriBeritaModel;
             $data['validation'] = $this->validator;
-            $data['title'] = 'Data Berita';
+            $data['title'] = 'Data Berita - Add';
+
+            $data['getKategoriBerita'] = $model->getKategoriBeritaForm();
 
             echo view('layout/v_header', $data);
             echo view('layout/v_sidebar');
@@ -101,10 +109,12 @@ class BeritaController extends BaseController
 
     public function edit($id)
     {
-        $model = new BeritaModel;
+        $model_berita = new BeritaModel;
+        $model_kategori_berita = new KategoriBeritaModel;
         $data['session'] = session();
         $data['title'] = 'Data Berita - Edit';
-        $data['getBerita'] = $model->getBerita($id);
+        $data['getBerita'] = $model_berita->getBerita($id);
+        $data['getKategoriBerita'] = $model_kategori_berita->getKategoriBeritaForm();
 
         echo view('layout/v_header', $data);
         echo view('layout/v_sidebar');

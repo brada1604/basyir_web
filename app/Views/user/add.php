@@ -34,7 +34,7 @@
                                                 </div>
                                             </div>
                                             <div class="col mb-8pt mb-md-0">
-                                                <select class="form-control" name="role" = required>
+                                                <select class="form-control" name="role" required>
                                                     <option value="">-- Pilih Role --</option>
                                                     <option value="2">Kontributor</option>
                                                     <option value="3">Kreator</option>

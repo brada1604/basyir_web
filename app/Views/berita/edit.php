@@ -77,6 +77,29 @@
                                                 <div class="media align-items-left">
                                                     <div class="d-flex flex-column media-body media-middle">
                                                         <span
+                                                        class="card-title">Kategori Berita</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col mb-8pt mb-md-0">
+                                                <select class="form-control" name="id_kategori_berita" required>
+                                                    <option value="">-- Pilih Kategori --</option>
+                                                    <?php
+                                                        foreach ($getKategoriBerita as $row2) :
+                                                    ?>
+                                                        <option value="<?= $row2->id_kategori_berita; ?>"><?= $row2->nama_kategori_berita; ?></option>
+                                                    <?php endforeach; ?>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="list-group-item p-3">
+                                        <div class="row align-items-start">
+                                            <div class="col-md-2 mb-8pt mb-md-0">
+                                                <div class="media align-items-left">
+                                                    <div class="d-flex flex-column media-body media-middle">
+                                                        <span
                                                         class="card-title">Ringkasan Berita</span>
                                                     </div>
                                                 </div>

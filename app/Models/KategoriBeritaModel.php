@@ -57,4 +57,22 @@ class KategoriBeritaModel extends Model
             return $query->getResult(); // return berupa array objek
         }
     }
+
+    public function getKategoriBeritaForm($id = false)
+    {
+        if ($id === false) {
+            // return $this->findAll();
+
+            // Manual atau Query Builder
+            $query = $this->db->query("SELECT * FROM tbl_kategori_berita where status_kategori_berita = '1'");
+            return $query->getResult(); // return berupa array objek
+
+        } else {
+            // return $this->getWhere(['id' => $id]);
+
+            // Manual atau Query Builder
+            $query = $this->db->query("SELECT * FROM tbl_kategori_berita where status_kategori_berita = '1' AND id_kategori_berita = '$id' ");
+            return $query->getResult(); // return berupa array objek
+        }
+    }
 }
