@@ -69,10 +69,11 @@ function youtube($url)
                             <tr>
                                 <td><?= $nomor++; ?></td>
                                 <?php if ($session->get('role') == 1) : ?>
-                                    <td><?= $row->id_user; ?></td>
+                                    <td>
+                                        <?= $row->email; ?></td>
                                 <?php endif ?>
                                 <td><?= $row->judul_berita; ?></td>
-                                <td><?= $row->id_kategori_berita; ?></td>
+                                <td><?= $row->nama_kategori_berita; ?></td>
                                 <td><?= $row->ringkasan_berita; ?></td>
                                 <!-- <td><?= $row->konten_berita; ?></td> -->
                                 <td>
