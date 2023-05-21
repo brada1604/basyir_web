@@ -98,10 +98,7 @@
                                     </li>
                                     <li class="nav-item">
 
-                                    <a class="main-btn gradient-btn" data-scroll-nav="0" href="http://localhost:8080/login" rel="nofollow">Login Admin</a>
-
-                                    <a class="main-btn gradient-btn" data-scroll-nav="0" href="/login" rel="nofollow">Login</a>
-
+                                    <a class="main-btn gradient-btn" data-scroll-nav="0" href="/login" rel="nofollow">Login Admin</a>
                                     </li>
                                 </ul>
                             </div> <!-- navbar collapse -->
@@ -149,21 +146,18 @@
                     <div class="pb-10 text-center section-title">
                         <div class="m-auto line"></div>
                             <h3 class="title">Jadwal Shalat</h3>
+                            <h1 class="text-2xl font-bold sm:text-1xl subscribe-title">
+                                Waktu Solat di <?= $nama_kota;?> 
+                            </h1>
+                            <span class="font-normal center"><p id="time"></p></span>
                         <div class="items-center justify-center row lg:justify-between">
-                            <section id="features" class="services-area pt-120">
+                            <section id="features" class="services-area pt-10">
                                 <div class="container" style="margin: 0 auto;">
                                     <div class="px-6 pt-10 pb-20 mb-12 bg-white rounded-lg shadow-xl md:px-12 subscribe-area wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
                                         <div class="row">
                                             <div class="w-full lg:w-1/2">
-                                                <div class="lg:mt-12 subscribe-content">
-                                                    <h2 class="text-2xl font-bold sm:text-1xl subscribe-title">
-                                                        Waktu Solat di <?= $nama_kota;?> 
-                                                    </h2>
-                                                </div>
-                                            </div>
-                                            <div class="w-full lg:w-1/2">
-                                                <div class="lg:mt-12 subscribe-content text-right">
-                                                        <span class="font-normal right"><p id="time"></p></span>
+                                                <div class="lg:mt-12 subscribe-content text-center">
+                                                        <span class="font-normal center"><p id="time"></p></span>
                                                 </div>
                                             </div>
                                             <div class="w-full lg:w-2/2">
@@ -172,6 +166,7 @@
                                                         <!-- <input type="text" placeholder="Ketik Lokasi Kamu..." class="typeahead w-full py-4 pl-6 pr-40 duration-300 border-2 rounded focus:border-theme-color focus:outline-none"> -->
                                                         <select name="nama" class="w-full py-4 pl-6 pr-40 duration-300 border-2 rounded focus:border-theme-color focus:outline-none">
                                                             <?php foreach ($kota as $u): ?>
+                                                                <option value="">Pilih kota anda</option>
                                                                 <option value="<?= $u->nama; ?>"><?= $u->nama; ?></option>
                                                             <?php endforeach ?>
                                                         </select>
@@ -515,7 +510,7 @@
                 <div class="w-full lg:w-2/3">
                     <div class="pb-8 text-center section-title">
                         <div class="m-auto line"></div>
-                        <h3 class="title"><span>Meet Our</span> Creative Team Members</h3>
+                        <h3 class="title"><span>Meet Our</span> Developer</h3>
                     </div> <!-- section title -->
                 </div>
             </div> <!-- row -->
@@ -526,8 +521,8 @@
                             <img class="w-full" src="assets/images/bagus.jpg" alt="Team">
                             <div class="team-social">
                                 <ul>
-                                    <li><a href="javascript:void(0)"><i class="lni lni-facebook-filled"></i></a></li>
-                                    <li><a href="javascript:void(0)"><i class="lni lni-twitter-filled"></i></a></li>
+                                    <!-- <li><a href="javascript:void(0)"><i class="lni lni-facebook-filled"></i></a></li>
+                                    <li><a href="javascript:void(0)"><i class="lni lni-twitter-filled"></i></a></li> -->
                                     <li><a href="javascript:void(0)"><i class="lni lni-instagram-filled"></i></a></li>
                                     <li><a href="javascript:void(0)"><i class="lni lni-linkedin-original"></i></a></li>
                                 </ul>
@@ -545,8 +540,8 @@
                             <img class="w-full" src="assets/images/salamn fixbgt.png" alt="Team">
                             <div class="team-social">
                                 <ul>
-                                    <li><a href="javascript:void(0)"><i class="lni lni-facebook-filled"></i></a></li>
-                                    <li><a href="javascript:void(0)"><i class="lni lni-twitter-filled"></i></a></li>
+                                    <!-- <li><a href="javascript:void(0)"><i class="lni lni-facebook-filled"></i></a></li>
+                                    <li><a href="javascript:void(0)"><i class="lni lni-twitter-filled"></i></a></li> -->
                                     <li><a href="javascript:void(0)"><i class="lni lni-instagram-filled"></i></a></li>
                                     <li><a href="javascript:void(0)"><i class="lni lni-linkedin-original"></i></a></li>
                                 </ul>
@@ -564,8 +559,8 @@
                             <img class="w-full" src="assets/images/reyna.jpg" alt="Team">
                             <div class="team-social">
                                 <ul>
-                                    <li><a href="javascript:void(0)"><i class="lni lni-facebook-filled"></i></a></li>
-                                    <li><a href="javascript:void(0)"><i class="lni lni-twitter-filled"></i></a></li>
+                                    <!-- <li><a href="javascript:void(0)"><i class="lni lni-facebook-filled"></i></a></li>
+                                    <li><a href="javascript:void(0)"><i class="lni lni-twitter-filled"></i></a></li> -->
                                     <li><a href="javascript:void(0)"><i class="lni lni-instagram-filled"></i></a></li>
                                     <li><a href="javascript:void(0)"><i class="lni lni-linkedin-original"></i></a></li>
                                 </ul>
@@ -583,8 +578,8 @@
                             <img class="w-full" src="assets/images/rivan.jfif" alt="Team">
                             <div class="team-social">
                                 <ul>
-                                    <li><a href="javascript:void(0)"><i class="lni lni-facebook-filled"></i></a></li>
-                                    <li><a href="javascript:void(0)"><i class="lni lni-twitter-filled"></i></a></li>
+                                    <!-- <li><a href="javascript:void(0)"><i class="lni lni-facebook-filled"></i></a></li>
+                                    <li><a href="javascript:void(0)"><i class="lni lni-twitter-filled"></i></a></li> -->
                                     <li><a href="javascript:void(0)"><i class="lni lni-instagram-filled"></i></a></li>
                                     <li><a href="javascript:void(0)"><i class="lni lni-linkedin-original"></i></a></li>
                                 </ul>
@@ -756,68 +751,92 @@
                         <h3 class="title"><span>Yuk</span> baca artikel dibawah ini</h3>
                     </div> <!-- section title -->
                 </div>
-            </div> <!-- row -->
             <div class="justify-center row">
-                <div class="w-full md:w-2/3 lg:w-1/3">
-                    <div class="mx-4 mt-10 single-blog wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
-                        <div class="mb-5 overflow-hidden blog-image rounded-xl">
-                            <img class="w-full" src="assets/images/blog-1.jpg" alt="blog">
-                        </div>
-                        <div class="blog-content">
-                            <ul class="flex mb-5 meta">
-                                <li>Posted By: <a href="javascript:void(0)">Admin</a></li>
-                                <li class="ml-12">03 June, 2023</li>
-                            </ul>
-                            <p class="mb-6 text-2xl leading-snug text-gray-900">Lorem ipsuamet conset sadips cing elitr seddiam nonu eirmod tempor invidunt labore.</p>
-                            <a class="text-theme-color-2" href="javascript:void(0)">
-                                Baca lebih lanjut...
-                                <i class="ml-2 lni lni-chevron-right"></i>
-                            </a>
-                        </div>
-                    </div> <!-- single blog -->
+                <?php 
+                    $nomor = 1; 
+                    foreach($getWawasanIslamiLandingPage as $gwilp):
+                ?>
+                    <div class="w-full md:w-2/3 lg:w-1/3">
+                        <div class="mx-4 mt-10 single-blog wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
+                            <div class="mb-5 overflow-hidden blog-image rounded-xl">
+                                <img class="w-full" src="<?=base_url($gwilp->gambar_wawasan_islami);?>" alt="blog">
+                            </div>
+                            <div class="blog-content">
+                                <ul class="flex mb-5 meta">
+                                    <li>Posted By: <a href="javascript:void(0)"><?= $gwilp->id_user;?></a></li>
+                                    <li class="ml-12"><?= date('d F Y', strtotime($gwilp->created_at));?></li>
+                                </ul>
+                                <p class="mb-6 text-2xl leading-snug text-gray-900"><?= $gwilp->ringkasan_wawasan_islami;?></p>
+                                <a class="text-theme-color-2" href="/">
+                                    Selengkapnya
+                                    <i class="ml-2 lni lni-chevron-right"></i>
+                                </a>
+                            </div>
+                        </div> <!-- single blog -->
+                    </div> 
+                <?php endforeach; ?>
                 </div> 
-                <div class="w-full md:w-2/3 lg:w-1/3">
-                    <div class="mx-4 mt-10 single-blog wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
-                        <div class="mb-5 overflow-hidden blog-image rounded-xl">
-                            <img class="w-full" src="assets/images/blog-2.jpg" alt="blog">
-                        </div>
-                        <div class="blog-content">
-                            <ul class="flex mb-5 meta">
-                                <li>Posted By: <a href="javascript:void(0)">Admin</a></li>
-                                <li class="ml-12">03 June, 2023</li>
-                            </ul>
-                            <p class="mb-6 text-2xl leading-snug text-gray-900">Lorem ipsuamet conset sadips cing elitr seddiam nonu eirmod tempor invidunt labore.</p>
-                            <a class="text-theme-color-2" href="javascript:void(0)">
-                                Baca lebih lanjut...
-                                <i class="ml-2 lni lni-chevron-right"></i>
-                            </a>
-                        </div>
-                    </div> <!-- single blog -->
-                </div> 
-                <div class="w-full md:w-2/3 lg:w-1/3">
-                    <div class="mx-4 mt-10 single-blog wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
-                        <div class="mb-5 overflow-hidden blog-image rounded-xl">
-                            <img class="w-full" src="assets/images/blog-3.jpg" alt="blog">
-                        </div>
-                        <div class="blog-content">
-                            <ul class="flex mb-5 meta">
-                                <li>Posted By: <a href="javascript:void(0)">Admin</a></li>
-                                <li class="ml-12">03 June, 2023</li>
-                            </ul>
-                            <p class="mb-6 text-2xl leading-snug text-gray-900">Lorem ipsuamet conset sadips cing elitr seddiam nonu eirmod tempor invidunt labore.</p>
-                            <a class="text-theme-color-2" href="javascript:void(0)">
-                                Baca lebih lanjut... 
-                                <i class="ml-2 lni lni-chevron-right"></i>
-                            </a>
-                        </div>
-                    </div> <!-- single blog -->
-                </div>
             </div> <!-- row -->
         </div> <!-- container -->
     </section>
-    <div class>
-        <a href="javascript:void(0)" class="main-btn gradient-btn" style="text-align: center; display: block; width: 50%; margin: 0 auto; padding: 10px 90px;">Baca artikel lainnya</a>
+
+    <section class="relative pt-100 about-area">
+    <div>
+        <br>
+        <a href="javascript:void(0)" class="main-btn gradient-btn" style="text-align: center; display: block; width: 50%; margin: 0 auto; padding: 10px 120px;">Baca wawasan keislaman lainnya</a>
+        <br>
     </div>
+    </section>
+
+
+    <section id="blog" class="blog-area pt-120">
+        <div class="container">
+            <div class="row">
+                <div class="w-full lg:w-1/2">
+                    <div class="pb-8 section-title">
+                        <div class="line"></div>
+                        <h3 class="title"><span>Berita</span> Kajian Keislaman</h3>
+                    </div> <!-- section title -->
+                </div>
+            <div class="justify-center row">
+                <?php 
+                    $nomor = 1; 
+                    foreach($getBeritaLandingPage as $gbKajian):
+                ?>
+                    <div class="w-full md:w-2/3 lg:w-1/3">
+                        <div class="mx-4 mt-10 single-blog wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
+                            <div class="mb-5 overflow-hidden blog-image rounded-xl">
+                                <img class="w-full" src="<?=base_url($gbKajian->gambar_berita);?>" alt="blog" style="width:135px;height:240px;">
+                            </div>
+                            <div class="blog-content">
+                                <ul class="flex mb-5 meta">
+                                    <li>Posted By: <a href="javascript:void(0)"><?= $gbKajian->id_user;?></a></li>
+                                    <li class="ml-12"><?= date('d F Y', strtotime($gbKajian->created_at));?></li>
+                                </ul>
+                                <p class="mb-6 text-2xl leading-snug text-gray-900"><?= $gbKajian->judul_berita;?></p>
+                                <p class="mb-6 text-2xl leading-snug text-gray-900" maxlength="5"><?= $gbKajian->ringkasan_berita;?></p>
+                                <br>
+                                <a class="text-theme-color-2" href="/detailBeritaPengunjung/<?= $gbKajian->id_berita?>">
+                                    Selengkapnya
+                                    <i class="ml-2 lni lni-chevron-right"></i>
+                                </a>
+                                <br>
+                            </div>
+                        </div> <!-- single blog -->
+                    </div> 
+                <?php endforeach; ?>
+                </div> 
+            </div> <!-- row -->
+        </div> <!-- container -->
+    </section>
+   
+    <section class="relative pt-100 about-area">
+    <div>
+        <br>
+        <a href="berita/list" class="main-btn gradient-btn" style="text-align: center; display: block; width: 50%; margin: 0 auto; padding: 10px 120px;">Baca berita kajian keislaman lainnya</a>
+        <br>
+    </div>
+    </section>
     <!--====== BLOG PART ENDS ======-->
     
     <!--====== FOOTER PART START ======-->
@@ -839,7 +858,7 @@
                         <div class="mt-12 subscribe-form">
                             <form action="/saran/save" method="post" class="relative focus:outline-none">
                                 <input type="text" name="pesan_saran" placeholder="Ketikan pesan anda" class="w-full py-4 pl-6 pr-40 duration-300 border-2 rounded focus:border-theme-color focus:outline-none" required>
-                                <button class="main-btn gradient-btn">Kirim</button>
+                                <button class="main-btn gradient-btn">Kirim</button>    
                             </form>
                         </div>
                     </div>
@@ -852,7 +871,7 @@
                             <a class="inline-block mb-8 logo" href="index.html">
                                 <img src="assets/images/logo-2.png" alt="logo" class="w-40">
                             </a>
-                            <p class="pb-10 pr-10 leading-snug text-white">Lorem ipsum dolor sit amet consetetur sadipscing elitr, sederfs diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam.</p>
+                            <p class="pb-10 pr-10 leading-snug text-white">Tingkatkan keimanan dan ketaqwaan anda melalui aplikasi Basyir</p>
                             <ul class="flex footer-social">
                                 <li><a href="javascript:void(0)"><i class="lni lni-facebook-filled"></i></a></li>
                                 <li><a href="javascript:void(0)"><i class="lni lni-twitter-filled"></i></a></li>
@@ -863,7 +882,7 @@
                     </div>
                     <div class="w-4/5 sm:w-2/3 md:w-3/5 lg:w-2/6">
                         <div class="row">
-                            <div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/2">
+                            <!-- <div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/2">
                                 <div class="mt-12 link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
                                     <div class="footer-title">
                                         <h4 class="mb-8 text-2xl font-bold text-white">Quick Link</h4>
@@ -875,8 +894,8 @@
                                         <li><a href="javascript:void(0)">Terms of Service</a></li>
                                         <li><a href="javascript:void(0)">Pricing</a></li>
                                     </ul>
-                                </div> <!-- footer wrapper -->
-                            </div>
+                                </div> 
+                            </div> -->
                             <div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/2">
                                 <div class="mt-12 link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
                                     <div class="footer-title">
@@ -899,9 +918,8 @@
                                 <h4 class="mb-8 text-2xl font-bold text-white">Contact Us</h4>
                             </div>
                             <ul class="contact">
-                                <li>+809272561823</li>
-                                <li>info@gmail.com</li>
-                                <li>www.yourweb.com</li>
+                                <li>Whatsapp</li>
+                                <li>basyir@gmail.com</li>
                                 <li>Jl. Gegerkalong Hilir, Desa Ciwaruga <br> Politeknik Negeri Bandung.</li>
                             </ul>
                         </div> <!-- footer contact -->
@@ -966,6 +984,28 @@
     <!--====== Main js ======-->
     <script src="assets/js/main.js"></script>
     
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> -->
+    <script type="text/javascript">
+        var timestamp = '<?=time();?>';
+        function updateTime(){
+            var date = new Date(timestamp * 1000);
+            var days = ['Minggu','Senin','Selasa','Rabu','Kamis','Jumat','Sabtu'];
+            var dayOfWeek = days[date.getDay()];
+            var dayOfMonth = date.getDate();
+            var month = date.getMonth() + 1;
+            var year = date.getFullYear();
+            var hour = date.getHours();
+            var minute = date.getMinutes();
+            var second = date.getSeconds();
+            var formattedTime = dayOfWeek + ', ' + dayOfMonth + '-' + month + '-' + year + ' ' + hour + ':' + minute + ':' + second;
+            $('#time').html(formattedTime);
+            timestamp++;
+        }
+        $(function(){
+            setInterval(updateTime, 1000);
+        });
+    </script>
+
 </body>
 
 </html>
