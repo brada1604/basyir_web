@@ -76,6 +76,11 @@
                         <i class="fas fa-fw fa-folder"></i>
                         <span>Saran</span></a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/user_master">
+                        <i class="fas fa-fw fa-folder"></i>
+                        <span>User</span></a>
+                </li>
             <?php endif ?>
 
             <?php if ($session->get('role') == 1 || $session->get('role') == 3): ?>

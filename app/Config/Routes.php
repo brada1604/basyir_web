@@ -196,7 +196,19 @@ $routes->get('/jadwal_solat', 'JadwalSolatController::index'); // untuk menampil
 $routes->get('/dashboard', 'DashboardController::index', ['filter' => 'auth']); // untuk menampilkan data
 
 
-$routes->get('/test-email', 'UserController::index'); // untuk menampilkan data
+// ROUTE USER
+$routes->get('/user', 'UserController::display'); // untuk menampilkan data
+$routes->get('/user_master', 'UserController::index', ['filter' => 'auth']); // untuk menampilkan data
+$routes->get('/user/add', 'UserController::add', ['filter' => 'auth']); // untuk menambahkan data
+$routes->post('/user/save', 'UserController::save'); // untuk menyimpan data
+$routes->get('/user/(:segment)', 'UserController::detail/$1', ['filter' => 'auth']); // (:segment) = parameter, $1 = parameter pertama yang di ambil
+$routes->get('/user/edit/(:segment)', 'UserController::edit/$1', ['filter' => 'auth']); // (:segment) = parameter, $1 = parameter pertama yang di ambil
+$routes->get('/user/edit_status/(:segment)/(:segment)', 'UserController::edit_status/$1/$2', ['filter' => 'auth']); // (:segment) = parameter, $1 = parameter pertama yang di ambil
+$routes->post('/user/update', 'UserController::update'); // untuk mengupdate data
+$routes->get('/user/delete/(:segment)', 'UserController::delete/$1', ['filter' => 'auth']); // (:segment) = parameter, $1 = parameter pertama yang di ambil
+$routes->post('/user/search', 'UserController::search'); // untuk mencari data berdasarkan variable tertentu
+$routes->get('/user/email_activation/(:segment)/(:segment)', 'UserController::kirim_email/$1/$2'); // untuk menampilkan data
+$routes->get('/aktivasi_akun/(:segment)', 'UserController::aktivasi_akun/$1'); // untuk menampilkan data
 /*
  * --------------------------------------------------------------------
  * Additional Routing

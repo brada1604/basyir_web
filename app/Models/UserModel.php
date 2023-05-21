@@ -14,7 +14,7 @@ class UserModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['email','name','password'];
+    protected $allowedFields    = ['role', 'name', 'email', 'email_activated', 'password', 'status'];
 
     // Dates
     protected $useTimestamps = false;
@@ -44,6 +44,13 @@ class UserModel extends Model
     {
         // Manual atau Query Builder
         $query = $this->db->query("SELECT * FROM tbl_user where binary email = '$email' ");
+        return $query->getResult(); // return berupa array objek
+    }
+
+    public function getUserAll()
+    {
+        // Manual atau Query Builder
+        $query = $this->db->query("SELECT * FROM tbl_user");
         return $query->getResult(); // return berupa array objek
     }
 }
