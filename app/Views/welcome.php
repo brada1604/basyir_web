@@ -833,7 +833,7 @@
     <section class="relative pt-100 about-area">
     <div>
         <br>
-        <a href="berita/list" class="main-btn gradient-btn" style="text-align: center; display: block; width: 50%; margin: 0 auto; padding: 10px 120px;">Baca berita kajian keislaman lainnya</a>
+        <a href="berita/listBerita" class="main-btn gradient-btn" style="text-align: center; display: block; width: 50%; margin: 0 auto; padding: 10px 120px;">Baca berita kajian keislaman lainnya</a>
         <br>
     </div>
     </section>
