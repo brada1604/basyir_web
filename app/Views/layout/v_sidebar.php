@@ -56,17 +56,21 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="/kutipan_master">
-                        <i class="fas fa-fw fa-folder"></i>
-                        <span>Kutipan</span></a>
-                </li>
-            <?php endif ?>
-
-            <?php if ($session->get('role') == 1 ): ?>
-                <li class="nav-item">
                     <a class="nav-link" href="/kategori_berita_master">
                         <i class="fas fa-fw fa-folder"></i>
                         <span>Kategori Berita</span></a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/kategori_wawasan_islami_master">
+                        <i class="fas fa-fw fa-folder"></i>
+                        <span>Kategori Wawasan Islami</span></a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/kutipan_master">
+                        <i class="fas fa-fw fa-folder"></i>
+                        <span>Kutipan</span></a>
                 </li>
             <?php endif ?>
 

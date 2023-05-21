@@ -84,6 +84,19 @@ $routes->get('/kategori_berita/delete/(:segment)', 'KategoriBeritaController::de
 $routes->post('/kategori_berita/search', 'KategoriBeritaController::search'); // untuk mencari data berdasarkan variable tertentu
 
 
+//ROUTE KATEGORI WAWASAN ISLAMI
+$routes->get('/kategori_wawasan_islami', 'KategoriWawasanIslamiController::display'); // untuk menampilkan data
+$routes->get('/kategori_wawasan_islami_master', 'KategoriWawasanIslamiController::index', ['filter' => 'auth']); // untuk menampilkan data
+$routes->get('/kategori_wawasan_islami/add', 'KategoriWawasanIslamiController::add', ['filter' => 'auth']); // untuk menambahkan data
+$routes->post('/kategori_wawasan_islami/save', 'KategoriWawasanIslamiController::save'); // untuk menyimpan data
+$routes->get('/kategori_wawasan_islami/(:segment)', 'KategoriWawasanIslamiController::detail/$1', ['filter' => 'auth']); // (:segment) = parameter, $1 = parameter pertama yang di ambil
+$routes->get('/kategori_wawasan_islami/edit/(:segment)', 'KategoriWawasanIslamiController::edit/$1', ['filter' => 'auth']); // (:segment) = parameter, $1 = parameter pertama yang di ambil
+$routes->get('/kategori_wawasan_islami/edit_status/(:segment)/(:segment)', 'KategoriWawasanIslamiController::edit_status/$1/$2', ['filter' => 'auth']); // (:segment) = parameter, $1 = parameter pertama yang di ambil
+$routes->post('/kategori_wawasan_islami/update', 'KategoriWawasanIslamiController::update'); // untuk mengupdate data
+$routes->get('/kategori_wawasan_islami/delete/(:segment)', 'KategoriWawasanIslamiController::delete/$1', ['filter' => 'auth']); // (:segment) = parameter, $1 = parameter pertama yang di ambil
+$routes->post('/kategori_wawasan_islami/search', 'KategoriWawasanIslamiController::search'); // untuk mencari data berdasarkan variable tertentu
+
+
 //ROUTE KUTIPAN
 $routes->get('/kutipan', 'KutipanController::display'); // untuk menampilkan data
 $routes->get('/kutipan_master', 'KutipanController::index', ['filter' => 'auth']); // untuk menampilkan data
