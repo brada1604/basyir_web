@@ -50,6 +50,7 @@ class WawasanIslamiController extends BaseController
 
 
         echo view('listWawasanIslami', $data);
+
     }
 
     public function add(){

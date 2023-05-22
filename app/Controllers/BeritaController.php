@@ -5,6 +5,7 @@ namespace App\Controllers;
 use App\Models\BeritaModel;
 use App\Models\UserModel;
 use App\Controllers\BaseController;
+use App\Models\KategoriBeritaModel;
 
 /**
  * Summary of BeritaController
@@ -22,6 +23,7 @@ class BeritaController extends BaseController
         $data['getBerita'] = $model_berita->getBerita();
         $data['getKategoriBerita'] = $model_kategori_berita->getKategoriBerita();
         $data['getUser'] = $model_user->getUserALL();
+
 
         echo view('layout/v_header', $data);
         echo view('layout/v_sidebar');
@@ -72,6 +74,9 @@ class BeritaController extends BaseController
         $data['title'] = 'Data Berita - Add';
         $data['session'] = session();
 
+        $model_kategori_berita = new KategoriBeritaModel;
+        $data['getKategoriBerita'] = $model_kategori_berita->getKategoriBerita();
+
         echo view('layout/v_header', $data);
         echo view('layout/v_sidebar');
         echo view('layout/v_navbar');
@@ -105,6 +110,7 @@ class BeritaController extends BaseController
             }
             $data = [
                 'id_user' => $this->request->getVar('id_user'),
+                'id_kategori_berita' => $this->request->getVar('id_kategori_berita'),
                 'judul_berita' => $this->request->getVar('judul_berita'),
                 'slug_berita' => str_replace ( ' ' , '_' , $this->request->getVar('judul_berita') ),
                 'ringkasan_berita' => $this->request->getVar('ringkasan_berita'),
@@ -120,6 +126,9 @@ class BeritaController extends BaseController
             $data['validation'] = $this->validator;
             $data['title'] = 'Data Berita';
 
+            $model_kategori_berita = new KategoriBeritaModel;
+            $data['getKategoriBerita'] = $model_kategori_berita->getKategoriBerita();
+
             echo view('layout/v_header', $data);
             echo view('layout/v_sidebar');
             echo view('layout/v_navbar');
@@ -131,9 +140,11 @@ class BeritaController extends BaseController
     public function edit($id)
     {
         $model = new BeritaModel;
+        $modelKategori = new KategoriBeritaModel;
         $data['session'] = session();
         $data['title'] = 'Data Berita - Edit';
         $data['getBerita'] = $model->getBerita($id);
+        $data['getKategoriBerita'] = $modelKategori->getKategoriBerita();
 
         echo view('layout/v_header', $data);
         echo view('layout/v_sidebar');
@@ -233,7 +244,12 @@ class BeritaController extends BaseController
             }
         } else {
             $data['validation'] = $this->validator;
-            $data['title'] = 'Data Berita';
+            $model = new BeritaModel;
+            $modelKategori = new KategoriBeritaModel;
+            $data['session'] = session();
+            $data['title'] = 'Data Berita - Edit';
+            $data['getBerita'] = $model->getBerita($id);
+            $data['getKategoriBerita'] = $modelKategori->getKategoriBerita();
 
             echo view('layout/v_header', $data);
             echo view('layout/v_navbar');
