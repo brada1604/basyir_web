@@ -59,7 +59,7 @@
                                                 <td>
                                                     <a class="edit" class="btn btn-warning" href="/rencana_kegiatan/edit/<?= $row->id_rencana_kegiatan; ?>"><button type="button" class="btn btn-warning">Edit</button></a>
                                                     <a class="hapus" class="btn btn-danger" href="/rencana_kegiatan/delete/<?= $row->id_rencana_kegiatan; ?>"><button type="button" class="btn btn-danger">Hapus</button></a>
-                                                    <!-- <a class="detail" class="btn btn-info" href="/rencana_kegiatan/<?= $row->id_rencana_kegiatan; ?>"><button type="button" class="btn btn-info">Detail</button></a>                      -->
+                                                    <a class="detail" class="btn btn-info" href="/rencana_kegiatan/detail/<?= $row->id_rencana_kegiatan; ?>"><button type="button" class="btn btn-info">Detail</button></a>                     
                                                 </td>
                                             </tr>
                                         <?php endforeach; ?>

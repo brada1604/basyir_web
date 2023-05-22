@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Models\RencanaKegiatanModel;
 use App\Models\AmalanYaumiModel;
+use App\Models\DetailRencanakegiatanModel;
 use App\Controllers\BaseController;
 
 class RencanaKegiatanController extends BaseController
@@ -152,6 +153,149 @@ class RencanaKegiatanController extends BaseController
         echo '<script>
                 alert("Selamat! Berhasil Menghapus Data Kutipan");
                 window.location="' . base_url('/rencana_kegiatan_master') . '"
+            </script>';
+    }
+
+    public function detail($id)
+    {
+        $model_rencana_kegiatan = new RencanaKegiatanModel;
+        $model_detail_rencana_kegiatan = new DetailRencanaKegiatanModel;
+
+        $data['session'] = session();
+        $data['title'] = 'Data Detail Rencana Kegiatan';
+
+        $data['getRencanaKegiatan'] = $model_rencana_kegiatan->getRencanaKegiatan($id);
+        $data['getDetailRencanaKegiatan'] = $model_detail_rencana_kegiatan->getDetailRencanaKegiatan($id, false);
+
+        echo view('layout/v_header', $data);
+        echo view('layout/v_sidebar');
+        echo view('layout/v_navbar');
+        echo view('rencana_kegiatan/index_detail', $data);
+        echo view('layout/v_footer');
+    }
+
+    public function add_detail($id_rencana_kegiatan){
+        $data['title'] = 'Detail Rencana Kegiatan - Add';
+        $data['session'] = session();
+
+        $data['id_rencana_kegiatan'] = $id_rencana_kegiatan;
+
+        echo view('layout/v_header', $data);
+        echo view('layout/v_sidebar');
+        echo view('layout/v_navbar');
+        echo view('rencana_kegiatan/add_detail', $data);
+        echo view('layout/v_footer');
+    }
+
+    public function save_detail(){
+        $data['session'] = session();
+        $rules = [
+            'id_rencana_kegiatan' => 'required',
+            'rencana_jadwal' => 'required',
+            'realisasi_jadwal' => 'required'
+        ];
+     
+        if($this->validate($rules)){
+            $model = new DetailRencanaKegiatanModel();
+
+            $data = [
+                'id_rencana_kegiatan' => $this->request->getVar('id_rencana_kegiatan'),
+                'rencana_jadwal' => $this->request->getVar('rencana_jadwal'),
+                'realisasi_jadwal' => $this->request->getVar('realisasi_jadwal'),
+            ];
+             
+            $model->save($data);
+            
+            $id_rencana_kegiatan = $this->request->getVar('id_rencana_kegiatan');
+
+            return redirect()->to('/rencana_kegiatan/detail/'.$id_rencana_kegiatan);
+     
+        } else {
+            $data['validation'] = $this->validator;
+            $data['title'] = 'Detail Rencana Kegiatan';
+
+            echo view('layout/v_header', $data);
+            echo view('layout/v_sidebar');
+            echo view('layout/v_navbar');
+            echo view('rencana_kegiatan/add_detail', $data);
+            echo view('layout/v_footer');
+        }
+    }
+
+    public function edit_detail($id,$id_rencana_kegiatan){
+        $model = new DetailRencanaKegiatanModel;
+        $data['session'] = session();
+        $data['title'] = 'Detail Rencana Kegiatan - Edit';
+        $data['getDetailRencanaKegiatan'] = $model->getDetailRencanaKegiatan($id_rencana_kegiatan,$id);
+
+        echo view('layout/v_header', $data);
+        echo view('layout/v_sidebar');
+        echo view('layout/v_navbar');
+        echo view('rencana_kegiatan/edit_detail', $data);
+        echo view('layout/v_footer');
+    }
+
+    public function edit_status_detail($id, $no, $id_rencana_kegiatan)
+    {
+        $model = new DetailRencanaKegiatanModel();
+        $id_rencana_kegiatan_detail = $id;
+        $status = $no;
+        
+        $data = [
+            'status_rencana_kegiatan_detail' => $status
+        ];
+
+        $model->update($id_rencana_kegiatan_detail, $data);
+
+        echo '<script>
+                    alert("Selamat! Berhasil Mengubah Status Detail Rencana Kegiatan");
+                    window.location="' . base_url('/rencana_kegiatan/detail/'.$id_rencana_kegiatan) . '"
+                </script>';
+    }
+
+    public function update_detail(){
+        $data['session'] = session();
+        $rules = [
+            'id_rencana_kegiatan' => 'required',
+            'rencana_jadwal' => 'required',
+            'realisasi_jadwal' => 'required'
+        ];
+     
+        if($this->validate($rules)){
+            $model = new DetailRencanaKegiatanModel();
+            $id_rencana_kegiatan = $this->request->getVar('id_rencana_kegiatan');
+            $id_rencana_kegiatan_detail = $this->request->getVar('id_rencana_kegiatan_detail');
+
+                $data = [
+                    'id_rencana_kegiatan' => $this->request->getVar('id_rencana_kegiatan'),
+                    'rencana_jadwal' => $this->request->getVar('rencana_jadwal'),
+                    'realisasi_jadwal' => $this->request->getVar('realisasi_jadwal'),
+                ];
+
+                $model->update($id_rencana_kegiatan_detail, $data);
+         
+                echo '<script>
+                    alert("Selamat! Berhasil Mengubah Detail Rencana Kegiatan");
+                    window.location="' . base_url('/rencana_kegiatan/detail/'.$id_rencana_kegiatan) . '"
+                </script>';
+            }
+        else {
+            $data['validation'] = $this->validator;
+            $data['title'] = 'Detail Rencana Kegiatan';
+
+            echo view('layout/v_header', $data);
+            echo view('layout/v_navbar');
+            echo view('rencana_kegiatan/edit_detail', $data);
+            echo view('layout/v_footer');
+        }
+    }
+
+    public function delete_detail($id, $id_rencana_kegiatan){
+        $model = new DetailRencanaKegiatanModel;
+        $model->delete($id);
+        echo '<script>
+                alert("Selamat! Berhasil Menghapus Detail Rencana Kegiatan");
+                window.location="' . base_url('/rencana_kegiatan/detail/'.$id_rencana_kegiatan) . '"
             </script>';
     }
 }

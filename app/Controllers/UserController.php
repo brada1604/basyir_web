@@ -326,4 +326,52 @@ class UserController extends BaseController
             echo view('layout/v_footer');
         }
     }
+
+    public function profil(){
+        $model = new UserModel;
+        $data['session'] = session();
+        $data['title'] = 'Profil user';
+        $data['getUser'] = $model->getUserById($data['session']->get('id'));
+
+        echo view('layout/v_header', $data);
+        echo view('layout/v_sidebar');
+        echo view('layout/v_navbar');
+        echo view('user/profil', $data);
+        echo view('layout/v_footer');
+    }
+
+    public function update_profil(){
+        $data['session'] = session();
+        $rules = [
+            'name' => 'required'
+        ];
+     
+        if($this->validate($rules)){
+            $model = new UserModel();
+            $id = $this->request->getVar('id');
+
+                $data = [
+                    'name' => $this->request->getVar('name'),
+                ];
+
+                $model->update($id, $data);
+         
+                echo '<script>
+                    alert("Selamat! Berhasil Mengubah Profil User");
+                    window.location="' . base_url('/user/profil') . '"
+                </script>';
+            }
+        else {
+            $data['validation'] = $this->validator;
+            $model = new UserModel;
+            $data['session'] = session();
+            $data['title'] = 'Profil user';
+            $data['getUser'] = $model->getUserById($data['session']->get('id'));
+
+            echo view('layout/v_header', $data);
+            echo view('layout/v_navbar');
+            echo view('user/add', $data);
+            echo view('layout/v_footer');
+        }
+    }
 }
