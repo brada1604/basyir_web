@@ -190,7 +190,7 @@ class UserController extends BaseController
             $this->kirim_email($name_user, $email_user);
             
             echo '<script>
-                    alert("Selamat! Berhasil Mendafat, Silahkan cek email");
+                    alert("Selamat! Berhasil Mendaftar, Silahkan cek email");
                     window.location="' . base_url('/') . '"
                 </script>';
             // return redirect()->to('/');

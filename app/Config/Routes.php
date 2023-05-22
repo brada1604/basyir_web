@@ -211,7 +211,7 @@ $routes->get('/aktivasi_akun/(:segment)', 'UserController::aktivasi_akun/$1'); /
 $routes->get('/lupa_password/', 'UserController::lupa_password/'); // untuk menampilkan data
 $routes->post('/user/reset_password', 'UserController::reset_password'); // untuk mencari data berdasarkan variable tertentu
 $routes->get('/register_user/', 'UserController::register_user'); // untuk menampilkan data
-$routes->post('user/register_user/save', 'UserController::save_register'); // untuk mencari data berdasarkan variable tertentu
+$routes->post('/user/register_user/save', 'UserController::save_register'); // untuk mencari data berdasarkan variable tertentu
 /*
  * --------------------------------------------------------------------
  * Additional Routing
