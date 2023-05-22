@@ -783,7 +783,7 @@
     <section class="relative pt-100 about-area">
     <div>
         <br>
-        <a href="javascript:void(0)" class="main-btn gradient-btn" style="text-align: center; display: block; width: 50%; margin: 0 auto; padding: 10px 120px;">Baca wawasan keislaman lainnya</a>
+        <a href="listWawasanIslami" class="main-btn gradient-btn" style="text-align: center; display: block; width: 50%; margin: 0 auto; padding: 10px 120px;">Baca wawasan keislaman lainnya</a>
         <br>
     </div>
     </section>
