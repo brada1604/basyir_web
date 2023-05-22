@@ -121,6 +121,7 @@ $routes->get('/welcome', 'welcome::index');
 // ROUTE BERITA
 $routes->get('/berita/listBerita', 'BeritaController::listBerita'); // untuk menampilkan data
 $routes->get('/detailBeritaPengunjung/(:segment)', 'BeritaController::detail_berita_depan/$1'); // untuk menampilkan data
+$routes->get('/detailBeritaPengunjung/(:segment)', 'BeritaController::detail_berita_depan/$1'); // untuk menampilkan data
 $routes->get('/berita/detail', 'BeritaController::detail_berita_depan'); // untuk menampilkan data
 $routes->get('/berita', 'BeritaController::display'); // untuk menampilkan data
 $routes->get('/berita_master', 'BeritaController::index', ['filter' => 'auth']); // untuk menampilkan data
@@ -135,6 +136,7 @@ $routes->post('/berita/search', 'BeritaController::search'); // untuk mencari da
 
 // ROUTE WAWASAN ISLAMI
 $routes->get('/listWawasanIslami', 'WawasanIslamiController::listWawasan'); // untuk menampilkan data
+$routes->get('/detailWawasanPengunjung/(:segment)', 'WawasanIslamiController::detail_wawasan_depan/$1'); // untuk menampilkan data
 $routes->get('/detailWawasanPengunjung/(:segment)', 'WawasanIslamiController::detail_wawasan_depan/$1'); // untuk menampilkan data
 $routes->get('/wawasan_islami', 'WawasanIslamiController::display'); // untuk menampilkan data
 $routes->get('/wawasan_islami_master', 'WawasanIslamiController::index', ['filter' => 'auth']); // untuk menampilkan data

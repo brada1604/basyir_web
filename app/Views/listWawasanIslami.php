@@ -9,7 +9,7 @@
     <link href='https://fonts.googleapis.com/css?family=Quicksand:300,400,700' rel="stylesheet">
     <!-- <![endif]-->
 
-    <title>List Berita</title>
+    <title>List Wawasan Keislaman</title>
 
     <style type="text/css">
         body {
@@ -269,10 +269,8 @@
 
                                                         <tr>
                                                             <td align="center" style="color: #5caad2; font-size: 14px; font-family: 'Work Sans', Calibri, sans-serif; line-height: 20px;">
-
-
                                                                 <div style="line-height: 20px;">
-                                                                    <a href="/detailWawasanPengunjung" style="color: #5caad2; text-decoration: none;">Informasi Lebih Lanjut</a>
+                                                                    <a href="/detailWawasanPengunjung/<?= $glw->id_wawasan_islami?>" style="color: #5caad2; text-decoration: none;">Informasi Lebih Lanjut</a>
                                                                 </div>
                                                             </td>
                                                         </tr>
@@ -327,7 +325,7 @@
                                     <td align="left" style="color: #aaaaaa; font-size: 14px; font-family: 'Work Sans', Calibri, sans-serif; line-height: 24px;">
                                         <div style="line-height: 24px;">
 
-                                            <span style="color: #333333;">List Berita</span>
+                                            <span style="color: #333333;">List Wawasan Keislaman</span>
 
                                         </div>
                                     </td>

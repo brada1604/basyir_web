@@ -272,7 +272,7 @@
 
 
                                                                 <div style="line-height: 20px;">
-                                                                    <a href="detailBeritaPengunjung" style="color: #5caad2; text-decoration: none;">Informasi Lebih Lanjut</a>
+                                                                <a href="/detailBeritaPengunjung/<?= $glb->id_berita?>" style="color: #5caad2; text-decoration: none;">Informasi Lebih Lanjut</a>
                                                                 </div>
                                                             </td>
                                                         </tr>
