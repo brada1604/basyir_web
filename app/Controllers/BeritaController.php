@@ -248,7 +248,7 @@ class BeritaController extends BaseController
             $modelKategori = new KategoriBeritaModel;
             $data['session'] = session();
             $data['title'] = 'Data Berita - Edit';
-            $data['getBerita'] = $model->getBerita($id);
+            $data['getBerita'] = $model->getBerita();
             $data['getKategoriBerita'] = $modelKategori->getKategoriBerita();
 
             echo view('layout/v_header', $data);

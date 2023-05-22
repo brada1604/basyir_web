@@ -68,7 +68,7 @@
                     <div class="w-full">
                         <nav class="flex items-center justify-between navbar navbar-expand-lg">
                             <a class="mr-4 navbar-brand" href="index.html">
-                                <img src="../assets/images/Asset 6.png" alt="Logo" width="120">
+                                <img src="../assets/imagesAsli/Main logo.png" alt="Logo" width="120">
                             </a>
                             <button class="block navbar-toggler focus:outline-none lg:hidden" type="button" data-toggle="collapse" data-target="#navbarOne" aria-controls="navbarOne" aria-expanded="false" aria-label="Toggle navigation">
                                 <span class="toggler-icon"></span>
@@ -98,7 +98,7 @@
                                     </li>
                                     <li class="nav-item">
 
-                                    <a class="main-btn gradient-btn" data-scroll-nav="0" href="/login" rel="nofollow">Login Admin</a>
+                                    <a class="main-btn gradient-btn" data-scroll-nav="0" href="/login" rel="nofollow">Login</a>
                                     </li>
                                 </ul>
                             </div> <!-- navbar collapse -->
@@ -127,7 +127,7 @@
                 <div class="justify-center row">
                     <div class="w-full lg:w-2/3">
                         <div class="text-center header-hero-image wow fadeIn" data-wow-duration="1.3s" data-wow-delay="1.4s">
-                            <img src="assets/images/layar hp basyir.svg" alt="hero" style="margin-left: 1px;">
+                            <img src="assets/images/mockup basyir.png" alt="hero" style="margin-left: 125px;">
                         </div> <!-- header hero image -->
                     </div>
                 </div> <!-- row -->
@@ -766,13 +766,18 @@
                                     <li>Posted By: <a href="javascript:void(0)"><?= $gwilp->id_user;?></a></li>
                                     <li class="ml-12"><?= date('d F Y', strtotime($gwilp->created_at));?></li>
                                 </ul>
-                                <p class="mb-6 text-2xl leading-snug text-gray-900"><?= $gwilp->ringkasan_wawasan_islami;?></p>
+                                <p class="mb-6 text-2xl leading-snug text-gray-900">
+                                    <strong><?= $gwilp->judul_wawasan_islami; ?></strong>
+                                </p>
+                                <p class="mb-6 text-2xl leading-snug text-gray-900" style="font-weight: lighter;">
+                                    <?= $gwilp->ringkasan_wawasan_islami; ?>
+                                </p>
                                 <a class="text-theme-color-2" href="/detailWawasanPengunjung/<?= $gwilp->id_wawasan_islami?>">
                                     Selengkapnya
                                     <i class="ml-2 lni lni-chevron-right"></i>
                                 </a>
                             </div>
-                        </div> <!-- single blog -->
+                        </div> 
                     </div> 
                 <?php endforeach; ?>
                 </div> 
@@ -806,23 +811,25 @@
                     <div class="w-full md:w-2/3 lg:w-1/3">
                         <div class="mx-4 mt-10 single-blog wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
                             <div class="mb-5 overflow-hidden blog-image rounded-xl">
-                                <img class="w-full" src="<?=base_url($gbKajian->gambar_berita);?>" alt="blog" style="width:135px;height:240px;">
+                                <img class="w-full" src="<?=base_url($gbKajian->gambar_berita);?>" alt="blog">
                             </div>
                             <div class="blog-content">
                                 <ul class="flex mb-5 meta">
                                     <li>Posted By: <a href="javascript:void(0)"><?= $gbKajian->id_user;?></a></li>
                                     <li class="ml-12"><?= date('d F Y', strtotime($gbKajian->created_at));?></li>
                                 </ul>
-                                <p class="mb-6 text-2xl leading-snug text-gray-900"><?= $gbKajian->judul_berita;?></p>
-                                <p class="mb-6 text-2xl leading-snug text-gray-900" maxlength="5"><?= $gbKajian->ringkasan_berita;?></p>
-                                <br>
-                                <a class="text-theme-color-2" href="/detailBeritaPengunjung/<?= $gbKajian->id_berita?>">
+                                <p class="mb-6 text-2xl leading-snug text-gray-900">
+                                    <strong><?= $gbKajian->judul_berita; ?></strong>
+                                </p>
+                                <p class="mb-6 text-2xl leading-snug text-gray-900" style="font-weight: lighter;">
+                                    <?= $gbKajian->ringkasan_berita; ?>
+                                </p>
+                                <a class="text-theme-color-2" href="/detailWawasanPengunjung/<?= $gbKajian->id_berita?>">
                                     Selengkapnya
                                     <i class="ml-2 lni lni-chevron-right"></i>
                                 </a>
-                                <br>
                             </div>
-                        </div> <!-- single blog -->
+                        </div> 
                     </div> 
                 <?php endforeach; ?>
                 </div> 

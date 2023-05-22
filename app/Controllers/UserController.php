@@ -156,6 +156,53 @@ class UserController extends BaseController
         }
     }
 
+
+    public function register_user(){
+        $data['title'] = 'Register User';
+
+        echo view('auth/v_register', $data);
+    }
+
+    public function save_register(){
+        $data['session'] = session();
+        $rules = [
+            'name' => 'required',
+            'email' => 'required|is_unique[tbl_user.email]',
+            'password' => 'required',
+            'confirm_password' => 'required|matches[password]'
+        ];
+     
+        if($this->validate($rules)){
+            $model = new UserModel();
+
+            $data = [
+                'role' => $this->request->getVar('role'),
+                'name' => $this->request->getVar('name'),
+                'email' => $this->request->getVar('email'),
+                'password' => password_hash($this->request->getVar('password'), PASSWORD_BCRYPT),
+            ];
+             
+            $model->save($data);
+
+            // UNTUK EMAIL AKTIVASI
+            $name_user = $this->request->getVar('name');
+            $email_user = $this->request->getVar('email');
+            $this->kirim_email($name_user, $email_user);
+            
+            echo '<script>
+                    alert("Selamat! Berhasil Mendafat, Silahkan cek email");
+                    window.location="' . base_url('/') . '"
+                </script>';
+            // return redirect()->to('/');
+     
+        } else {
+            $data['validation'] = $this->validator;
+            $data['title'] = 'Data User';
+
+            echo view('auth/v_register', $data);
+        }
+    }
+
     public function update(){
         $data['session'] = session();
         $rules = [
