@@ -39,5 +39,12 @@ class TargetNotifikasiModel extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+
+    public function getTargetNotifikasiByIdNotifikasi($id_notifikasi)
+    {
+        // Manual atau Query Builder
+        $query = $this->db->query("SELECT * FROM tbl_target_notifikasi as a inner join tbl_user as b on a.id_user = b.id where a.id_notifikasi = '$id_notifikasi'");
+        return $query->getResult(); // return berupa array objek
+    }
 }
 

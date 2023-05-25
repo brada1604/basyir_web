@@ -23,6 +23,23 @@ class NotifikasiController extends BaseController
         echo view('layout/v_footer');
     }
 
+    public function detail($id)
+    {
+        $model_notifikasi = new NotifikasiModel;
+        $model_target_notifikasi = new TargetNotifikasiModel;
+        $model = new NotifikasiModel;
+        $data['session'] = session();
+        $data['title'] = 'Data Notifikasi Detail';
+        $data['getNotifikasi'] = $model_notifikasi->getNotifikasi($id);
+        $data['getTargetNotifikasi'] = $model_target_notifikasi->getTargetNotifikasiByIdNotifikasi($id);
+
+        echo view('layout/v_header', $data);
+        echo view('layout/v_sidebar');
+        echo view('layout/v_navbar');
+        echo view('notifikasi/index_detail', $data);
+        echo view('layout/v_footer');
+    }
+
     public function add(){
         $data['title'] = 'Data Notifikasi - Add';
         $data['session'] = session();
@@ -34,7 +51,21 @@ class NotifikasiController extends BaseController
         echo view('layout/v_footer');
     }
 
-     public function save()
+    public function add_target($id_notifikasi){
+        $model_user = new UserModel;
+        $data['title'] = 'Data Target Notifikasi - Add';
+        $data['session'] = session();
+        $data['id_notifikasi'] = $id_notifikasi;
+        $data['getUserAll'] = $model_user->getUserAll();
+
+        echo view('layout/v_header', $data);
+        echo view('layout/v_sidebar');
+        echo view('layout/v_navbar');
+        echo view('notifikasi/add_target',$data);
+        echo view('layout/v_footer');
+    }
+
+    public function save()
     {
         $model_user = new UserModel;
         $model_target_notifikasi = new TargetNotifikasiModel;
@@ -168,6 +199,93 @@ class NotifikasiController extends BaseController
         }
     }
 
+    public function save_target()
+    {
+        $model_user = new UserModel;
+        $model_target_notifikasi = new TargetNotifikasiModel;
+        $data['session'] = session();
+
+        $jadwal = $this->request->getVar('jadwal');
+        $jadwal_notifikasi = $this->request->getVar('jadwal_notifikasi');
+
+        if ($jadwal == 'jadwalkan') {    
+            $arr = str_split($jadwal_notifikasi, 1);
+
+            $tahun = $arr[0].$arr[1].$arr[2].$arr[3];
+            $bulan = $arr[5].$arr[6];
+            $tanggal =  $arr[8].$arr[9];
+            $jam = $arr[11].$arr[12];
+            $menit = $arr[14].$arr[15];
+            $detik = '00';
+
+            $waktu = $tahun.'-'.$bulan.'-'.$tanggal.' '.$jam.':'.$menit.':'.$detik;
+        }
+        else{
+            $waktu = NULL;   
+        }
+
+
+        $id_notifikasi = $this->request->getVar('id_notifikasi');
+
+        $target = $this->request->getVar('target');
+        if (!empty($target[0])) {
+            $getUser0 = $model_user->getUserByRole($target[0]);
+
+            foreach ($getUser0 as $u) {
+                $data = [
+                    'id_notifikasi' => $id_notifikasi,
+                    'id_user' => $u->id,
+                    'jadwal_notifikasi' => $waktu
+                ];
+                $model_target_notifikasi->save($data);
+            }
+        }
+        if (!empty($target[1])) {
+            $getUser1 = $model_user->getUserByRole($target[1]);
+            foreach ($getUser1 as $v) {
+                $data = [
+                    'id_notifikasi' => $id_notifikasi,
+                    'id_user' => $v->id,
+                    'jadwal_notifikasi' => $waktu
+                ];
+                $model_target_notifikasi->save($data);
+            }
+        }
+        if (!empty($target[2])) {
+            $getUser2 = $model_user->getUserByRole($target[2]);
+            foreach ($getUser2 as $w) {
+                $data = [
+                    'id_notifikasi' => $id_notifikasi,
+                    'id_user' => $w->id,
+                    'jadwal_notifikasi' => $waktu
+                ];
+                $model_target_notifikasi->save($data);
+            }
+        }
+        if (!empty($target[3])) {
+            $getUser3 = $model_user->getUserByRole($target[3]);
+            foreach ($getUser3 as $x) {
+                $data = [
+                    'id_notifikasi' => $id_notifikasi,
+                    'id_user' => $x->id,
+                    'jadwal_notifikasi' => $waktu
+                ];
+                $model_target_notifikasi->save($data);
+            }
+        }
+        if (!empty($this->request->getVar('id_user'))) {
+            $data = [
+                'id_notifikasi' => $id_notifikasi,
+                'id_user' => $this->request->getVar('id_user'),
+                'jadwal_notifikasi' => $waktu
+            ];
+            $model_target_notifikasi->save($data);
+        }
+
+        return redirect()->to('/notifikasi/detail/'.$id_notifikasi);
+
+    }
+
     public function edit($id){
         $model = new NotifikasiModel;
         $data['session'] = session();
@@ -183,19 +301,19 @@ class NotifikasiController extends BaseController
 
     public function edit_status($id, $no)
     {
-        $model = new NotifikasiModel();
-        $id_notifikasi = $id;
+        $model = new TargetNotifikasiModel();
+        $id_target_notifikasi = $id;
         $status = $no;
 
         $data = [
             'status_notifikasi' => $status
         ];
 
-        $model->update($id_notifikasi, $data);
+        $model->update($id_target_notifikasi, $data);
 
         echo '<script>
                     alert("Selamat! Berhasil Mengubah Status Notifikasi");
-                    window.location="' . base_url('notifikasi_master') . '"
+                    window.location="' . base_url($_SERVER['HTTP_REFERER']) . '"
                 </script>';
     }
 
@@ -289,6 +407,18 @@ class NotifikasiController extends BaseController
         echo '<script>
                 alert("Selamat! Berhasil Menghapus Data Notifikasi");
                 window.location="' . base_url('notifikasi_master') . '"
+            </script>';
+    }
+
+    public function delete_target($id)
+    {
+        $model = new TargetNotifikasiModel;
+
+
+        $model->delete($id);
+        echo '<script>
+                alert("Selamat! Berhasil Menghapus Data Target Notifikasi");
+                window.location="' . base_url($_SERVER['HTTP_REFERER']) . '"
             </script>';
     }
 }
