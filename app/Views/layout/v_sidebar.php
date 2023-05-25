@@ -72,6 +72,12 @@
                         <i class="fas fa-fw fa-folder"></i>
                         <span>Kutipan</span></a>
                 </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/notifikasi_master">
+                        <i class="fas fa-fw fa-folder"></i>
+                        <span>Notifikasi</span></a>
+                </li>
             <?php endif ?>
 
             <?php if ($session->get('role') == 1 || $session->get('role') == 4): ?>
