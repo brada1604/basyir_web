@@ -3,6 +3,8 @@
 namespace App\Controllers;
 
 use App\Models\NotifikasiModel;
+use App\Models\TargetNotifikasiModel;
+use App\Models\UserModel;
 use App\Controllers\BaseController;
 
 class NotifikasiController extends BaseController
@@ -34,12 +36,35 @@ class NotifikasiController extends BaseController
 
      public function save()
     {
+        $model_user = new UserModel;
+        $model_target_notifikasi = new TargetNotifikasiModel;
         $data['session'] = session();
+
         $rules = [
             'judul_notifikasi' => 'required',
             'pesan_notifikasi' => 'required',
             'link_tujuan_notifikasi' => 'required'
         ];
+
+        $jadwal = $this->request->getVar('jadwal');
+        $jadwal_notifikasi = $this->request->getVar('jadwal_notifikasi');
+
+        if ($jadwal == 'jadwalkan') {    
+            $arr = str_split($jadwal_notifikasi, 1);
+
+            $tahun = $arr[0].$arr[1].$arr[2].$arr[3];
+            $bulan = $arr[5].$arr[6];
+            $tanggal =  $arr[8].$arr[9];
+            $jam = $arr[11].$arr[12];
+            $menit = $arr[14].$arr[15];
+            $detik = '00';
+
+            $waktu = $tahun.'-'.$bulan.'-'.$tanggal.' '.$jam.':'.$menit.':'.$detik;
+        }
+        else{
+            $waktu = NULL;   
+        }
+
 
         if ($this->validate($rules)) {
             $model = new NotifikasiModel();
@@ -75,6 +100,60 @@ class NotifikasiController extends BaseController
             }
 
             $model->save($data);
+
+            $id_notifikasi_last = $model->insertID();
+
+            $target = $this->request->getVar('target');
+            if (!empty($target[0])) {
+                $getUser0 = $model_user->getUserByRole($target[0]);
+
+                foreach ($getUser0 as $u) {
+                    $data = [
+                        'id_notifikasi' => $id_notifikasi_last,
+                        'id_user' => $u->id,
+                        'jadwal_notifikasi' => $waktu
+                    ];
+                    $model_target_notifikasi->save($data);
+                }
+            }
+            if (!empty($target[1])) {
+                $getUser1 = $model_user->getUserByRole($target[1]);
+                foreach ($getUser1 as $v) {
+                    $data = [
+                        'id_notifikasi' => $id_notifikasi_last,
+                        'id_user' => $v->id,
+                        'jadwal_notifikasi' => $waktu
+                    ];
+                    $model_target_notifikasi->save($data);
+                }
+            }
+            if (!empty($target[2])) {
+                $getUser2 = $model_user->getUserByRole($target[2]);
+                foreach ($getUser2 as $w) {
+                    $data = [
+                        'id_notifikasi' => $id_notifikasi_last,
+                        'id_user' => $w->id,
+                        'jadwal_notifikasi' => $waktu
+                    ];
+                    $model_target_notifikasi->save($data);
+                }
+            }
+            if (!empty($target[3])) {
+                $getUser3 = $model_user->getUserByRole($target[3]);
+                foreach ($getUser3 as $x) {
+                    $data = [
+                        'id_notifikasi' => $id_notifikasi_last,
+                        'id_user' => $x->id,
+                        'jadwal_notifikasi' => $waktu
+                    ];
+                    $model_target_notifikasi->save($data);
+                }
+            }
+
+            
+            if ($jadwal == 'now') {
+                return redirect()->to('/onesignal/push/'.$this->request->getVar('judul_notifikasi').'/'.$this->request->getVar('pesan_notifikasi').'/notifikasi_master');
+            }
 
             return redirect()->to('/notifikasi_master');
         } else {

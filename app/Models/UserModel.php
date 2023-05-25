@@ -60,4 +60,11 @@ class UserModel extends Model
         $query = $this->db->query("SELECT * FROM tbl_user where id = '$id'");
         return $query->getResult(); // return berupa array objek
     }
+
+    public function getUserByRole($id)
+    {
+        // Manual atau Query Builder
+        $query = $this->db->query("SELECT * FROM tbl_user where role = '$id'");
+        return $query->getResult(); // return berupa array objek
+    }
 }

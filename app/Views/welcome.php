@@ -1013,6 +1013,68 @@
         });
     </script>
 
+    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" defer></script>
+    <script>
+        window.OneSignal = window.OneSignal || [];
+        OneSignal.push(function() {
+            OneSignal.init({
+                appId: "1ab33eb7-d6a4-49f6-ad9e-44f65aead8fd",
+                safari_web_id: "web.onesignal.auto.165f55d2-2c2b-457d-b7b8-8b89270f4464",
+                notifyButton: {
+                    enable: true,
+                },
+                subdomainName: "basyir-web",
+            });
+        });
+    </script>
+
+    <script>
+        function subscribe() {
+                // OneSignal.push(["registerForPushNotifications"]);
+            OneSignal.push(["registerForPushNotifications"]);
+            event.preventDefault();
+        }
+        function unsubscribe(){
+            OneSignal.setSubscription(true);
+        }
+
+        var OneSignal = OneSignal || [];
+        OneSignal.push(function() {
+                /* These examples are all valid */
+                // Occurs when the user's subscription changes to a new value.
+            OneSignal.on('subscriptionChange', function (isSubscribed) {
+                console.log("The user's subscription state is now:", isSubscribed);
+                OneSignal.sendTag("user_id","4444", function(tagsSent)
+                {
+                        // Callback called when tags have finished sending
+                    console.log("Tags have finished sending!");
+                });
+            });
+
+            var isPushSupported = OneSignal.isPushNotificationsSupported();
+            if (isPushSupported)
+            {
+                    // Push notifications are supported
+                OneSignal.isPushNotificationsEnabled().then(function(isEnabled)
+                {
+                    if (isEnabled)
+                    {
+                        console.log("Push notifications are enabled!");
+
+                    } else {
+                        OneSignal.showHttpPrompt();
+                        console.log("Push notifications are not enabled yet.");
+                    }
+                });
+
+            } else {
+                console.log("Push notifications are not supported.");
+            }
+        });
+
+
+    </script>
+
 </body>
 
 </html>

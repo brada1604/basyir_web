@@ -56,6 +56,7 @@
                                                     <a class="edit" class="btn btn-warning" href="/notifikasi/edit/<?= $row->id_notifikasi;?>"><button type="button" class="btn btn-warning">Edit</button></a>
                                                     <a class="hapus" class="btn btn-danger" href="/notifikasi/delete/<?= $row->id_notifikasi;?>"><button type="button" class="btn btn-danger">Hapus</button></a>
                                                     <a class="detail" class="btn btn-info" href="/notifikasi/<?= $row->id_notifikasi;?>"><button type="button" class="btn btn-info">Detail</button></a>                     
+                                                    <a class="notif" class="btn btn-success" href="/onesignal/push/<?= $row->judul_notifikasi;?>/<?= $row->pesan_notifikasi;?>/notifikasi_master"><button type="button" class="btn btn-success">Notif To All</button></a>                     
                                                 </td>
                                             </tr>
                                         <?php endforeach; ?>

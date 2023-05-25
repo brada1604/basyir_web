@@ -67,6 +67,38 @@
      	CKEDITOR.replace( 'editor1' );
  	</script>
 
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#jadwal_notifikasi').hide();
+            var select = document.getElementById('jadwal');
+            var value = select.options[select.selectedIndex].value;
+            console.log(value); // en
+            $('#jadwal').val(); // en
+            $('#jadwal').on('change', function() {
+                if ($('#jadwal').val() == 'now' ) {
+                    $('#jadwal_notifikasi').hide();
+                } else {
+                    $('#jadwal_notifikasi').show();
+                }
+            });
+                    // $('#thisCiamis').prop('checked',true)
+                    // $('#nonCiamis').on('click', function() {
+                    //     $('#daerahCiamis').hide();
+                    //     $('#thisCiamis').prop('checked',false)
+                    //     $('#JuduldaerahCiamis').hide();
+                    //     $('#luarCiamis').show();
+                    //     $('#kecamatan').prop('required',false)
+                    //     $('#desa').prop('required',false)
+                    // });
+                    // $('#thisCiamis').on('click', function() {
+                    //     $('#daerahCiamis').show();
+                    //     $('#JuduldaerahCiamis').show();
+                    //     $('#nonCiamis').prop('checked',false)
+                    //     $('#luarCiamis').hide();
+                    // });
+        });
+    </script>
+
 </body>
 
 </html>

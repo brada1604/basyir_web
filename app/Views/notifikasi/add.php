@@ -77,6 +77,47 @@
                                                 <div class="media align-items-left">
                                                     <div class="d-flex flex-column media-body media-middle">
                                                         <span
+                                                        class="card-title">Target User</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col mb-8pt mb-md-0">
+                                                <input type="checkbox" name="target[]" value="1"> Administrator <br>
+                                                <input type="checkbox" name="target[]" value="2"> Kontributor <br>
+                                                <input type="checkbox" name="target[]" value="3"> Kreator <br>
+                                                <input type="checkbox" name="target[]" value="4"> User 
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="list-group-item p-3">
+                                        <div class="row align-items-start">
+                                            <div class="col-md-2 mb-8pt mb-md-0">
+                                                <div class="media align-items-left">
+                                                    <div class="d-flex flex-column media-body media-middle">
+                                                        <span
+                                                        class="card-title">Jadwal</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col mb-8pt mb-md-0">
+                                                <select class="form-control" id="jadwal" name="jadwal" required>
+                                                    <option value="">-- Pilih Jadwal --</option>
+                                                    <option value="now">Sekarang</option>
+                                                    <option value="jadwalkan">Dijadwalkan</option>
+                                                </select>
+                                                <br>
+                                                <input type="datetime-local" id="jadwal_notifikasi" name="jadwal_notifikasi" value="<?= old('jadwal_notifikasi') ?>" type="text" class="form-control" placeholder="Masukan Link Notifikasi" />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="list-group-item p-3">
+                                        <div class="row align-items-start">
+                                            <div class="col-md-2 mb-8pt mb-md-0">
+                                                <div class="media align-items-left">
+                                                    <div class="d-flex flex-column media-body media-middle">
+                                                        <span
                                                         class="card-title">Gambar Notifikasi</span>
                                                     </div>
                                                 </div>
@@ -105,3 +146,6 @@
 
             </div>
             <!-- End of Main Content -->
+
+
+            
