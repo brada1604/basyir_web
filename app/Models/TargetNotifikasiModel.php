@@ -46,5 +46,30 @@ class TargetNotifikasiModel extends Model
         $query = $this->db->query("SELECT * FROM tbl_target_notifikasi as a inner join tbl_user as b on a.id_user = b.id where a.id_notifikasi = '$id_notifikasi'");
         return $query->getResult(); // return berupa array objek
     }
+
+    public function countByIdUser()
+    {
+        $id_user = session()->get('id');
+        // Manual atau Query Builder
+        $query = $this->db->query("SELECT count(tbl_target_notifikasi.id_user) as total_notif FROM tbl_target_notifikasi INNER JOIN tbl_notifikasi ON tbl_target_notifikasi.id_notifikasi = tbl_notifikasi.id_notifikasi WHERE tbl_target_notifikasi.id_user = '$id_user' AND tbl_target_notifikasi.status_notifikasi = 1 AND tbl_target_notifikasi.jenis_notifikasi = 1");
+        return $query->getResult(); // return berupa array objek
+    }
+
+    public function getNotifikasiByIdUserLogin()
+    {
+        $id_user = session()->get('id');
+        // Manual atau Query Builder
+        $query = $this->db->query("SELECT tbl_target_notifikasi.id_target_notifikasi, tbl_target_notifikasi.jenis_notifikasi, tbl_notifikasi.pesan_notifikasi, tbl_notifikasi.judul_notifikasi, tbl_notifikasi.created_at FROM tbl_target_notifikasi INNER JOIN tbl_notifikasi ON tbl_target_notifikasi.id_notifikasi = tbl_notifikasi.id_notifikasi WHERE tbl_target_notifikasi.id_user = '$id_user' AND tbl_target_notifikasi.status_notifikasi = 1 AND tbl_target_notifikasi.jenis_notifikasi = 1 ORDER BY tbl_notifikasi.created_at DESC LIMIT 5 ");
+        return $query->getResult(); // return berupa array objek
+    }
+
+    public function getNotifikasiByIdUserLoginAll()
+    {
+        $id_user = session()->get('id');
+        // Manual atau Query Builder
+        $query = $this->db->query("SELECT tbl_target_notifikasi.id_target_notifikasi, tbl_target_notifikasi.jenis_notifikasi, tbl_notifikasi.pesan_notifikasi, tbl_notifikasi.judul_notifikasi, tbl_notifikasi.created_at FROM tbl_target_notifikasi INNER JOIN tbl_notifikasi ON tbl_target_notifikasi.id_notifikasi = tbl_notifikasi.id_notifikasi WHERE tbl_target_notifikasi.id_user = '$id_user' AND tbl_target_notifikasi.status_notifikasi = 1 ORDER BY tbl_notifikasi.created_at DESC ");
+        return $query->getResult(); // return berupa array objek
+    }
 }
+
 

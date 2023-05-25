@@ -40,6 +40,20 @@ class NotifikasiController extends BaseController
         echo view('layout/v_footer');
     }
 
+    public function display()
+    {
+        $model_target_notifikasi = new TargetNotifikasiModel;
+        $data['session'] = session();
+        $data['title'] = 'Data Notifikasi Detail';
+        $data['getNotifikasiByIdUserLogin'] = $model_target_notifikasi->getNotifikasiByIdUserLoginAll();
+
+        echo view('layout/v_header', $data);
+        echo view('layout/v_sidebar');
+        echo view('layout/v_navbar');
+        echo view('notifikasi/display', $data);
+        echo view('layout/v_footer');
+    }
+
     public function add(){
         $data['title'] = 'Data Notifikasi - Add';
         $data['session'] = session();
@@ -315,6 +329,20 @@ class NotifikasiController extends BaseController
                     alert("Selamat! Berhasil Mengubah Status Notifikasi");
                     window.location="' . base_url($_SERVER['HTTP_REFERER']) . '"
                 </script>';
+    }
+
+    public function read($id)
+    {
+        $model = new TargetNotifikasiModel();
+        $id_target_notifikasi = $id;
+
+        $data = [
+            'jenis_notifikasi' => '2'
+        ];
+
+        $model->update($id_target_notifikasi, $data);
+
+        return redirect()->to(base_url($_SERVER['HTTP_REFERER']));
     }
 
     public function update()

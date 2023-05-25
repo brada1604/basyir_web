@@ -51,7 +51,9 @@ class KutipanController extends BaseController
              
             $model->save($data);
      
-            return redirect()->to('/kutipan_master');
+            // return redirect()->to('/kutipan_master');
+
+            return redirect()->to('/onesignal/push/'.$this->request->getVar('sumber_kutipan').'/'.$this->request->getVar('deskripsi_kutipan').'/kutipan_master');
      
         } else {
             $data['validation'] = $this->validator;

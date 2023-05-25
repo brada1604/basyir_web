@@ -7,6 +7,7 @@ use App\Models\KutipanModel;
 use App\Models\BeritaModel;
 use App\Models\WawasanIslamiModel;
 use App\Models\UserModel;
+use App\Models\TargetNotifikasiModel;
 use App\Controllers\BaseController;
 
 class DashboardController extends BaseController
@@ -21,6 +22,7 @@ class DashboardController extends BaseController
             $model_berita = new BeritaModel;
             $model_wawasan_islami = new WawasanIslamiModel;
             $model_user = new UserModel;
+            $model_target_notifikasi = new TargetNotifikasiModel;
 
             $data['title'] = 'Basyir - Dashboard Superadmin';
             $data['total_saran'] = $model_saran->countAll();

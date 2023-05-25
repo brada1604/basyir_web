@@ -131,6 +131,7 @@ $routes->post('/kutipan/search', 'KutipanController::search'); // untuk mencari 
 
 //ROUTE NOTIFIKASI
 $routes->get('/notifikasi', 'NotifikasiController::display'); // untuk menampilkan data
+$routes->get('/notifikasi/all', 'NotifikasiController::display'); // untuk menampilkan data
 $routes->get('/notifikasi_master', 'NotifikasiController::index', ['filter' => 'auth']); // untuk menampilkan data
 $routes->get('/notifikasi/add', 'NotifikasiController::add', ['filter' => 'auth']); // untuk menambahkan data
 $routes->get('/notifikasi/add_target/(:segment)', 'NotifikasiController::add_target/$1', ['filter' => 'auth']); // untuk menambahkan data
@@ -139,6 +140,7 @@ $routes->post('/notifikasi/save_target', 'NotifikasiController::save_target'); /
 $routes->get('/notifikasi/detail/(:segment)', 'NotifikasiController::detail/$1', ['filter' => 'auth']); // (:segment) = parameter, $1 = parameter pertama yang di ambil
 $routes->get('/notifikasi/edit/(:segment)', 'NotifikasiController::edit/$1', ['filter' => 'auth']); // (:segment) = parameter, $1 = parameter pertama yang di ambil
 $routes->get('/notifikasi/edit_status/(:segment)/(:segment)', 'NotifikasiController::edit_status/$1/$2', ['filter' => 'auth']); // (:segment) = parameter, $1 = parameter pertama yang di ambil
+$routes->get('/notifikasi/read/(:segment)', 'NotifikasiController::read/$1', ['filter' => 'auth']); // (:segment) = parameter, $1 = parameter pertama yang di ambil
 $routes->post('/notifikasi/update', 'NotifikasiController::update'); // untuk mengupdate data
 $routes->get('/notifikasi/delete/(:segment)', 'NotifikasiController::delete/$1', ['filter' => 'auth']); // (:segment) = parameter, $1 = parameter pertama yang di ambil
 $routes->get('/notifikasi/delete_target/(:segment)', 'NotifikasiController::delete_target/$1', ['filter' => 'auth']); // (:segment) = parameter, $1 = parameter pertama yang di ambil

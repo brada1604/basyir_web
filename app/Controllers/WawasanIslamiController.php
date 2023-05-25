@@ -135,14 +135,21 @@ class WawasanIslamiController extends BaseController
     public function edit_status($id, $no)
     {
         $model = new WawasanIslamiModel();
-        $wawasan_islami = $id;
+        $id_wawasan_islami = $id;
         $status = $no;
 
         $data = [
             'status_wawasan_islami' => $status
         ];
 
-        $model->update($wawasan_islami, $data);
+        $model->update($id_wawasan_islami, $data);
+
+        $data_wawasan_islami = $model->getWawasanIslami($id_wawasan_islami);
+
+
+        if ($status == '2') {
+            return redirect()->to('/onesignal/push/'.'Baca Kajian Terbaru Basyir'.'/'.$data_wawasan_islami[0]->judul_wawasan_islami.'/wawasan_islami_master');
+        }
 
         echo '<script>
                     alert("Selamat! Berhasil Mengubah Status Wawasan Islami");

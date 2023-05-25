@@ -163,12 +163,20 @@ class BeritaController extends BaseController
             'status_berita' => $status
         ];
 
+        $data_berita = $model->getBerita($id_berita);
+
         $model->update($id_berita, $data);
+
+        if ($status == '2') {
+            return redirect()->to('/onesignal/push/'.'Baca Artikel Terbaru Basyir'.'/'.$data_berita[0]->judul_berita.'/berita_master');
+        }
 
         echo '<script>
                     alert("Selamat! Berhasil Mengubah Status Berita");
                     window.location="' . base_url('berita_master') . '"
                 </script>';
+
+
     }
 
     public function update()
