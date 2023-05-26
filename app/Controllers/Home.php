@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Models\BeritaModel;
 use App\Models\WawasanIslamiModel;
+use App\Models\ReviewModel;
 
 class Home extends BaseController
 {
@@ -12,9 +13,11 @@ class Home extends BaseController
         $data['nama_kota'] = 'KOTA BANDUNG';
         $model_berita = new BeritaModel;
         $model_wawasan_islami = new WawasanIslamiModel;
+        $model_review = new ReviewModel;
 
         $data['getBeritaLandingPage'] = $model_berita->getBeritaLandingPage();
         $data['getWawasanIslamiLandingPage'] = $model_wawasan_islami->getWawasanIslamiLandingPage();
+        $data['getReviewLandingPage'] = $model_review->getReviewLandingPage();
 
         // Setting API Jadwal Solat
         $today = date('Y-m-d');
@@ -79,9 +82,12 @@ class Home extends BaseController
 
         $model_berita = new BeritaModel;
         $model_wawasan_islami = new WawasanIslamiModel;
+        $model_review = new ReviewModel;
 
         $data['getBeritaLandingPage'] = $model_berita->getBeritaLandingPage();
         $data['getWawasanIslamiLandingPage'] = $model_wawasan_islami->getWawasanIslamiLandingPage();
+        $data['getReviewLandingPage'] = $model_review->getReviewLandingPage();
+
 
         // Setting API Jadwal Solat
         $today = date('Y-m-d');

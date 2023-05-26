@@ -166,6 +166,16 @@ $routes->get('/rencana_kegiatan/delete_detail/(:segment)/(:segment)', 'RencanaKe
 $routes->post('/rencana_kegiatan/search', 'RencanaKegiatanController::search'); // untuk mencari data berdasarkan variable tertentu
 
 
+// ROUTE REVIEW
+$routes->get('/review_master', 'ReviewController::index', ['filter' => 'auth']); // untuk menampilkan data
+$routes->get('/review/add', 'ReviewController::add', ['filter' => 'auth']); // untuk menambahkan data
+$routes->post('/review/save', 'ReviewController::save'); // untuk menyimpan data
+$routes->get('/review/edit/(:segment)', 'ReviewController::edit/$1', ['filter' => 'auth']); // (:segment) = parameter, $1 = parameter pertama yang di ambil
+$routes->get('/review/edit_status/(:segment)/(:segment)', 'ReviewController::edit_status/$1/$2', ['filter' => 'auth']); // (:segment) = parameter, $1 = parameter pertama yang di ambil
+$routes->post('/review/update', 'ReviewController::update'); // untuk mengupdate data
+$routes->get('/review/delete/(:segment)', 'ReviewController::delete/$1', ['filter' => 'auth']); // (:segment) = parameter, $1 = parameter pertama yang di ambil
+
+
 // ROUTE SARAN
 $routes->get('/saran_master', 'saranController::index', ['filter' => 'auth']); // untuk menampilkan data
 $routes->post('/saran/save', 'saranController::save'); // untuk menyimpan data
