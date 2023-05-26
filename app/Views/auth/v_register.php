@@ -40,7 +40,7 @@
                             <div class="col-lg-6 mx-auto">
                                 <div class="p-5">
                                     <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-4">Lupa Password!</h1>
+                                        <h1 class="h4 text-gray-900 mb-4">Register User</h1>
                                         <?php if(session()->getFlashdata('msg')):?>
                                             <label style="color: red;"> <?= session()->getFlashdata('msg') ?> </label>
                                         <?php endif;?>
