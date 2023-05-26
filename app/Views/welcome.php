@@ -165,8 +165,8 @@
                                                     <form action="/kota" method="post" class="relative focus:outline-none">
                                                         <!-- <input type="text" placeholder="Ketik Lokasi Kamu..." class="typeahead w-full py-4 pl-6 pr-40 duration-300 border-2 rounded focus:border-theme-color focus:outline-none"> -->
                                                         <select name="nama" class="w-full py-4 pl-6 pr-40 duration-300 border-2 rounded focus:border-theme-color focus:outline-none">
-                                                            <?php foreach ($kota as $u): ?>
                                                                 <option value="">Pilih kota anda</option>
+                                                            <?php foreach ($kota as $u): ?>
                                                                 <option value="<?= $u->nama; ?>"><?= $u->nama; ?></option>
                                                             <?php endforeach ?>
                                                         </select>
