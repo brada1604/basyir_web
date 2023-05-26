@@ -67,7 +67,7 @@
                     <!-- FLEX NAVBAR -->
                     <div class="w-full">
                         <nav class="flex items-center justify-between navbar navbar-expand-lg">
-                            <a class="mr-4 navbar-brand" href="index.html">
+                            <a class="mr-4 navbar-brand" href="/">
                                 <img src="../assets/imagesAsli/Main logo.png" alt="Logo" width="120">
                             </a>
                             <button class="block navbar-toggler focus:outline-none lg:hidden" type="button" data-toggle="collapse" data-target="#navbarOne" aria-controls="navbarOne" aria-expanded="false" aria-label="Toggle navigation">
@@ -875,7 +875,7 @@
                 <div class="row">
                     <div class="w-4/5 md:w-3/5 lg:w-2/6">
                         <div class="mt-12 footer-about wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
-                            <a class="inline-block mb-8 logo" href="index.html">
+                            <a class="inline-block mb-8 logo" href="/">
                                 <img src="assets/images/logo-2.png" alt="logo" class="w-40">
                             </a>
                             <p class="pb-10 pr-10 leading-snug text-white">Tingkatkan keimanan dan ketaqwaan anda melalui aplikasi Basyir</p>
