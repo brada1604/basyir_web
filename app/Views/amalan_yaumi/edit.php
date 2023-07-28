@@ -25,20 +25,20 @@
 
                             <div class="col-md-12">
                                 <div class="list-group list-group-flush">
-                                    <div class="list-group-item p-3">
-                                        <div class="row align-items-start">
-                                            <div class="col-md-2 mb-8pt mb-md-0">
-                                                <div class="media align-items-left">
-                                                    <div class="d-flex flex-column media-body media-middle">
-                                                        <span class="card-title">ID Amalan Yaumi</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col mb-8pt mb-md-0">
-                                                <input name="id_amalan_yaumi" type="text" class="form-control" value="<?= $row->id_amalan_yaumi; ?>"  readonly/>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <!-- <div class="list-group-item p-3"> -->
+                                        <!-- <div class="row align-items-start"> -->
+                                            <!-- <div class="col-md-2 mb-8pt mb-md-0"> -->
+                                                <!-- <div class="media align-items-left"> -->
+                                                    <!-- <div class="d-flex flex-column media-body media-middle"> -->
+                                                        <!-- <span class="card-title">ID Amalan Yaumi</span> -->
+                                                    <!-- </div> -->
+                                                <!-- </div> -->
+                                            <!-- </div> -->
+                                            <!-- <div class="col mb-8pt mb-md-0"> -->
+                                                <input name="id_amalan_yaumi" type="hidden" class="form-control" value="<?= $row->id_amalan_yaumi; ?>"  readonly/>
+                                            <!-- </div> -->
+                                        <!-- </div> -->
+                                    <!-- </div> -->
 
                                     <div class="list-group-item p-3">
                                         <div class="row align-items-start">
