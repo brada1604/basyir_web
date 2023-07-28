@@ -17,7 +17,7 @@ function youtube($url)
     <!-- Page Heading -->
     <h1 class="h3 mb-2 text-gray-800">Master Berita</h1>
     <p class="mb-4">Data untuk memanage berita. Kunjungi Website <a target="_blank" href="/berita">Berita Basyir</a>.</p>
-    <a class="edit" href="/berita/add"><button type="button" class="btn btn-primary">Tambah</button></a>
+    <a class="edit" href="/berita/add"><button type="button" class="btn btn-primary">Tambah Berita</button></a>
 
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
@@ -28,10 +28,10 @@ function youtube($url)
             <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
-                        <tr>
+                        <tr align="center">
                             <th>No</th>
                             <?php if ($session->get('role') == 1) : ?>
-                                <th>ID User</th>
+                                <th>Email Kontributor</th>
                             <?php endif ?>
                             <th>Judul</th>
                             <th>Kategori</th>
@@ -45,10 +45,10 @@ function youtube($url)
                         </tr>
                     </thead>
                     <tfoot>
-                        <tr>
+                        <tr align="center">
                             <th>No</th>
                             <?php if ($session->get('role') == 1) : ?>
-                                <th>ID User</th>
+                                <th>Email Kontributor</th>
                             <?php endif ?>
                             <th>Judul</th>
                             <th>Kategori</th>
@@ -67,7 +67,7 @@ function youtube($url)
                         foreach ($getBerita as $row) :
                         ?>
                             <tr>
-                                <td><?= $nomor++; ?></td>
+                                <td align="center"><?= $nomor++; ?></td>
                                 <?php if ($session->get('role') == 1) : ?>
                                     <td>
                                         <?= $row->email; ?></td>
@@ -76,30 +76,36 @@ function youtube($url)
                                 <td><?= $row->nama_kategori_berita; ?></td>
                                 <td><?= $row->ringkasan_berita; ?></td>
                                 <!-- <td><?= $row->konten_berita; ?></td> -->
-                                <td>
+                                <td align="center">
                                     <?php if ($row->status_berita == 1) : ?>
-                                        <button type="button" class="btn btn-outline-primary">Draft</button>
+                                        <span class="badge bg-primary text-light">Draft</span>
+                                        <hr>
                                         <?php if ($session->get('role') == 1) : ?>
-                                            <a class="edit_status" class="btn btn-outline-success" href="/berita/edit_status/<?= $row->id_berita; ?>/2"><button type="button" class="btn btn-outline-success">ACC</button></a>
-                                            <a class="edit_status" class="btn btn-outline-danger" href="/berita/edit_status/<?= $row->id_berita; ?>/4"><button type="button" class="btn btn-outline-danger">Reject</button></a>
+                                            <a class="edit_status" class="btn btn-outline-success" href="/berita/edit_status/<?= $row->id_berita; ?>/2" onClick='return confirm("Yakin akan ACC data berita ini?")'><button type="button" class="btn btn-outline-success">ACC</button></a>
+                                            <a class="edit_status" class="btn btn-outline-danger" href="/berita/edit_status/<?= $row->id_berita; ?>/4" onClick='return confirm("Yakin akan Reject data berita ini?")'><button type="button" class="btn btn-outline-danger">Reject</button></a>
                                         <?php endif ?>
                                     <?php elseif ($row->status_berita == 2) : ?>
-                                        <button type="button" class="btn btn-outline-success">Show</button>
-                                        <a class="edit_status" class="btn btn-outline-secondary" href="/berita/edit_status/<?= $row->id_berita; ?>/3"><button type="button" class="btn btn-outline-secondary">Archive</button></a>
+                                        <span class="badge bg-success text-light">Show</span>
+                                        <hr>
+                                        <a class="edit_status" class="btn btn-outline-secondary" href="/berita/edit_status/<?= $row->id_berita; ?>/3" onClick='return confirm("Yakin akan Archive data berita ini?")'><button type="button" class="btn btn-outline-secondary">Archive</button></a>
                                     <?php elseif ($row->status_berita == 3) : ?>
-                                        <button type="button" class="btn btn-outline-secondary">Archive</button>
-                                        <a class="edit_status" class="btn btn-outline-success" href="/berita/edit_status/<?= $row->id_berita; ?>/2"><button type="button" class="btn btn-outline-success">Show</button></a>
+                                        <span class="badge bg-secondary text-light">Archive</span>
+                                        <hr>
+                                        <a class="edit_status" class="btn btn-outline-success" href="/berita/edit_status/<?= $row->id_berita; ?>/2" onClick='return confirm("Yakin akan Show data berita ini?")'><button type="button" class="btn btn-outline-success">Show</button></a>
                                     <?php elseif ($row->status_berita == 4) : ?>
-                                        <button type="button" class="btn btn-outline-danger">Rejected</button>
+                                        <span class="badge bg-danger text-light">Rejected</span>
                                     <?php endif ?>
                                 </td>
                                 <td><?= $row->created_at; ?></td>
-                                <td><?= youtube($row->video_berita); ?> <br> <a href="<?=$row->video_berita?>" target="_blank">kunjungi situs</a></td>
+                                <td><?php if ($row->video_berita): ?>
+                                        <?= youtube($row->video_berita); ?> <br> <a href="<?=$row->video_berita?>" target="_blank">kunjungi situs</a>
+                                    <?php endif ?>
+                                </td>
                                 <td><img clas="bd-placeholder-img card-img-top" width="100" height="100" src="<?= base_url($row->gambar_berita); ?>"></td>
-                                <td>
-                                    <a class="edit" class="btn btn-warning" href="/berita/edit/<?= $row->id_berita; ?>"><button type="button" class="btn btn-warning">Edit</button></a>
-                                    <a class="hapus" class="btn btn-danger" href="/berita/delete/<?= $row->id_berita; ?>"><button type="button" class="btn btn-danger">Hapus</button></a>
-                                    <a class="detail" class="btn btn-info" href="/berita/<?= $row->id_berita; ?>"><button type="button" class="btn btn-info">Detail</button></a>                     
+                                <td align="center">
+                                    <a class="edit" class="btn btn-warning" href="/berita/edit/<?= $row->id_berita; ?>" title="Edit Data"><button type="button" class="btn btn-warning"><i class="fas fa-fw fa-pen"></i></button></button></a>
+                                    <a class="hapus" class="btn btn-danger" href="/berita/delete/<?= $row->id_berita; ?>" onClick='return confirm("Yakin akan menghapus data berita ini?")' title="Hapus Data"><button type="button" class="btn btn-danger"><i class="fas fa-fw fa-trash"></i></button></a>
+                                    <a class="detail" class="btn btn-info" href="/berita/<?= $row->id_berita; ?>" title="Preview Data"><button type="button" class="btn btn-info"><i class="fas fa-fw fa-eye"></i></button></a>                     
                                 </td>
                             </tr>
                         <?php endforeach; ?>

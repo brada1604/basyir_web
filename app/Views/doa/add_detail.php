@@ -23,21 +23,21 @@
                                 <div class="list-group list-group-flush">
                                     
                                     <!-- ID DOA -->
-                                    <div class="list-group-item p-3">
-                                        <div class="row align-items-start">
-                                            <div class="col-md-2 mb-8pt mb-md-0">
-                                                <div class="media align-items-left">
-                                                    <div class="d-flex flex-column media-body media-middle">
-                                                        <span
-                                                        class="card-title">Id Doa</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col mb-8pt mb-md-0">
-                                                <input name="id_doa" value="<?= $id_doa ?>" type="text" class="form-control" placeholder="Masukan Id Doa" readonly/>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <!-- <div class="list-group-item p-3"> -->
+                                        <!-- <div class="row align-items-start"> -->
+                                            <!-- <div class="col-md-2 mb-8pt mb-md-0"> -->
+                                                <!-- <div class="media align-items-left"> -->
+                                                    <!-- <div class="d-flex flex-column media-body media-middle"> -->
+                                                        <!-- <span -->
+                                                        <!-- class="card-title">Id Doa</span> -->
+                                                    <!-- </div> -->
+                                                <!-- </div> -->
+                                            <!-- </div> -->
+                                            <!-- <div class="col mb-8pt mb-md-0"> -->
+                                                <input name="id_doa" value="<?= $id_doa ?>" type="hidden" class="form-control" placeholder="Masukan Id Doa" readonly/>
+                                            <!-- </div> -->
+                                        <!-- </div> -->
+                                    <!-- </div> -->
 
                                     <!-- KONTEN DOA -->
                                     <div class="list-group-item p-3">
@@ -79,6 +79,7 @@
                         <div class="row">
                             <div class="col align-items-right">
                                 <button type="submit" class="btn btn-dark">Simpan</button>
+                                <a class="btn btn-outline-secondary" href="/doa/detail/<?= $id_doa ?>">Kembali</a>
                             </div>
                         </div>
 

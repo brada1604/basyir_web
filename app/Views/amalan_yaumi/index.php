@@ -16,7 +16,7 @@ function youtube($url){
                     <!-- Page Heading -->
                     <h1 class="h3 mb-2 text-gray-800">Master Amalan Yaumi</h1>
                     <p class="mb-4">Data untuk memanage amalan yaumi</p>
-                    <a class="edit" href="/amalan_yaumi/add"><button type="button" class="btn btn-primary">Tambah</button></a>
+                    <a class="edit" href="/amalan_yaumi/add"><button type="button" class="btn btn-primary">Tambah Amalan Yaumi</button></a>
 
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
@@ -57,14 +57,11 @@ function youtube($url){
                                                     <?php if ($row->status_amalan_yaumi == 1) : ?>
                                                         <span class="badge bg-success text-light">Show</span>
                                                         <hr>
-                                                        
-                                                        <a class="edit_status" class="btn btn-outline-secondary" href="/amalan_yaumi/edit_status/<?= $row->id_amalan_yaumi; ?>/0"><button type="button" class="btn btn-outline-secondary">Hide</button></a>
-                                                            
-                                                        
+                                                        <a class="edit_status" class="btn btn-outline-secondary" href="/amalan_yaumi/edit_status/<?= $row->id_amalan_yaumi; ?>/0" onClick='return confirm("Yakin akan hide data amalan yaumi ini untuk user?")'><button type="button" class="btn btn-outline-secondary">Hide</button></a>
                                                     <?php elseif ($row->status_amalan_yaumi == 0) : ?>
                                                         <span class="badge bg-danger text-light">Hide</span>
                                                         <hr>
-                                                        <a class="edit_status" class="btn btn-outline-secondary" href="/amalan_yaumi/edit_status/<?= $row->id_amalan_yaumi; ?>/1"><button type="button" class="btn btn-outline-secondary">Show</button></a>
+                                                        <a class="edit_status" class="btn btn-outline-secondary" href="/amalan_yaumi/edit_status/<?= $row->id_amalan_yaumi; ?>/1"><button type="button" class="btn btn-outline-secondary" onClick='return confirm("Yakin akan show data amalan yaumi ini untuk user?")'>Show</button></a>
                                                     <?php endif ?>
                                                 </td>
                                                 <td width="150px" align="center">

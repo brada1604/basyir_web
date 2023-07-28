@@ -25,35 +25,35 @@
 
                             <div class="col-md-12">
                                 <div class="list-group list-group-flush">
-                                    <div class="list-group-item p-3">
-                                        <div class="row align-items-start">
-                                            <div class="col-md-2 mb-8pt mb-md-0">
-                                                <div class="media align-items-left">
-                                                    <div class="d-flex flex-column media-body media-middle">
-                                                        <span class="card-title">ID Doa Detail</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col mb-8pt mb-md-0">
-                                                <input name="id_doa_detail" type="text" class="form-control" value="<?= $row->id_doa_detail; ?>"  readonly/>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <!-- <div class="list-group-item p-3"> -->
+                                        <!-- <div class="row align-items-start"> -->
+                                            <!-- <div class="col-md-2 mb-8pt mb-md-0"> -->
+                                                <!-- <div class="media align-items-left"> -->
+                                                    <!-- <div class="d-flex flex-column media-body media-middle"> -->
+                                                        <!-- <span class="card-title">ID Doa Detail</span> -->
+                                                    <!-- </div> -->
+                                                <!-- </div> -->
+                                            <!-- </div> -->
+                                            <!-- <div class="col mb-8pt mb-md-0"> -->
+                                                <input name="id_doa_detail" type="hidden" class="form-control" value="<?= $row->id_doa_detail; ?>"  readonly/>
+                                            <!-- </div> -->
+                                        <!-- </div> -->
+                                    <!-- </div> -->
 
-                                    <div class="list-group-item p-3">
-                                        <div class="row align-items-start">
-                                            <div class="col-md-2 mb-8pt mb-md-0">
-                                                <div class="media align-items-left">
-                                                    <div class="d-flex flex-column media-body media-middle">
-                                                        <span class="card-title">ID Doa</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col mb-8pt mb-md-0">
-                                                <input name="id_doa" type="text" class="form-control" value="<?= $row->id_doa; ?>"  readonly/>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <!-- <div class="list-group-item p-3"> -->
+                                        <!-- <div class="row align-items-start"> -->
+                                            <!-- <div class="col-md-2 mb-8pt mb-md-0"> -->
+                                                <!-- <div class="media align-items-left"> -->
+                                                    <!-- <div class="d-flex flex-column media-body media-middle"> -->
+                                                        <!-- <span class="card-title">ID Doa</span> -->
+                                                    <!-- </div> -->
+                                                <!-- </div> -->
+                                            <!-- </div> -->
+                                            <!-- <div class="col mb-8pt mb-md-0"> -->
+                                                <input name="id_doa" type="hidden" class="form-control" value="<?= $row->id_doa; ?>"  readonly/>
+                                            <!-- </div> -->
+                                        <!-- </div> -->
+                                    <!-- </div> -->
 
                                     <div class="list-group-item p-3">
                                         <div class="row align-items-start">
@@ -93,7 +93,8 @@
 
                         <div class="row">
                             <div class="col align-items-right">
-                                <button type="submit" class="btn btn-dark">Simpan</button>
+                                <button type="submit" class="btn btn-dark">Update</button>
+                                <a class="btn btn-outline-secondary" href="/doa/detail/<?= $row->id_doa ?>">Kembali</a>
                             </div>
                         </div>
 
