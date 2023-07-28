@@ -27,7 +27,7 @@ function youtube($url){
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
-                                        <tr>
+                                        <tr align="center">
                                             <th>No</th>
                                             <th>Judul</th>
                                             <th>Konten</th>
@@ -36,7 +36,7 @@ function youtube($url){
                                         </tr>
                                     </thead>
                                     <tfoot>
-                                        <tr>
+                                        <tr align="center">
                                             <th>No</th>
                                             <th>Judul</th>
                                             <th>Konten</th>
@@ -50,24 +50,26 @@ function youtube($url){
                                             foreach($getAmalanYaumi as $row):
                                         ?>
                                             <tr>
-                                                <td><?= $nomor++; ?></td>
+                                                <td align="center"><?= $nomor++; ?></td>
                                                 <td><?= $row->judul_amalan_yaumi;?></td>
                                                 <td><?= $row->konten_amalan_yaumi;?></td>
-                                                <td>
+                                                <td align="center">
                                                     <?php if ($row->status_amalan_yaumi == 1) : ?>
-                                                        <button type="button" class="btn btn-outline-success">Show</button>
+                                                        <span class="badge bg-success text-light">Show</span>
+                                                        <hr>
                                                         
                                                         <a class="edit_status" class="btn btn-outline-secondary" href="/amalan_yaumi/edit_status/<?= $row->id_amalan_yaumi; ?>/0"><button type="button" class="btn btn-outline-secondary">Hide</button></a>
                                                             
                                                         
                                                     <?php elseif ($row->status_amalan_yaumi == 0) : ?>
-                                                        <button type="button" class="btn btn-outline-danger">Hide</button>
+                                                        <span class="badge bg-danger text-light">Hide</span>
+                                                        <hr>
                                                         <a class="edit_status" class="btn btn-outline-secondary" href="/amalan_yaumi/edit_status/<?= $row->id_amalan_yaumi; ?>/1"><button type="button" class="btn btn-outline-secondary">Show</button></a>
                                                     <?php endif ?>
                                                 </td>
-                                                <td>
-                                                    <a class="edit" class="btn btn-warning" href="/amalan_yaumi/edit/<?= $row->id_amalan_yaumi;?>"><button type="button" class="btn btn-warning">Edit</button></a>
-                                                    <a class="hapus" class="btn btn-danger" href="/amalan_yaumi/delete/<?= $row->id_amalan_yaumi;?>"><button type="button" class="btn btn-danger">Hapus</button></a> 
+                                                <td width="150px" align="center">
+                                                    <a class="edit" class="btn btn-warning" href="/amalan_yaumi/edit/<?= $row->id_amalan_yaumi;?>" title="Edit Data"><button type="button" class="btn btn-warning"><i class="fas fa-fw fa-pen"></i></button></a>
+                                                    <a class="hapus" class="btn btn-danger" href="/amalan_yaumi/delete/<?= $row->id_amalan_yaumi;?>" onClick='return confirm("Yakin akan menghapus data amalan yaumi ini?")' title="Hapus Data"><button type="button" class="btn btn-danger"><i class="fas fa-fw fa-trash"></i></button></a> 
                                                 </td>
                                             </tr>
                                         <?php endforeach; ?>
