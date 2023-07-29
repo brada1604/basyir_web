@@ -6,6 +6,7 @@ use App\Models\SaranModel;
 use App\Models\KutipanModel;
 use App\Models\BeritaModel;
 use App\Models\WawasanIslamiModel;
+use App\Models\RekapKegiatanModel;
 use App\Models\UserModel;
 use App\Models\TargetNotifikasiModel;
 use App\Controllers\BaseController;
@@ -71,10 +72,13 @@ class DashboardController extends BaseController
         elseif (session()->get('role') == 4) { // Role : user
             $data['title'] = 'Basyir - Dashboard User';
 
+            $model_rekap_kegiatan = new RekapKegiatanModel;
+            $data['getRekapKegiatanByIdUser'] = $model_rekap_kegiatan->getRekapKegiatanByIdUser(session()->get('id'));
+
             echo view('layout/v_header', $data);
             echo view('layout/v_sidebar');
             echo view('layout/v_navbar');
-            echo view('dashboard/dashboard_user');
+            echo view('dashboard/dashboard_user', $data);
             echo view('layout/v_footer');
         }
         else{
