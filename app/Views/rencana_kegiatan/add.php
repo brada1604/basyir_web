@@ -51,12 +51,29 @@
                                                     <?php
                                                         foreach ($getAmalanYaumi as $row) :
                                                     ?>
-                                                        <option value="<?= $row->id_amalan_yaumi; ?>"><?= $row->judul_amalan_yaumi; ?></option>
+                                                            <option value="<?= $row->id_amalan_yaumi; ?>"><?= $row->judul_amalan_yaumi; ?></option>
+
                                                     <?php endforeach; ?>
                                                 </select>
                                             </div>
                                         </div>
                                     </div>
+
+                                    <div class="list-group-item p-3">
+                                        <div class="row align-items-start">
+                                            <div class="col-md-2 mb-8pt mb-md-0">
+                                                <div class="media align-items-left">
+                                                    <div class="d-flex flex-column media-body media-middle">
+                                                        <span class="card-title">Keterangan Kegiatan</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col mb-8pt mb-md-0">
+                                                <input name="keterangan_kegiatan" type="text" class="form-control" placeholder="Masukan Kegiatan yang akan kamu lakukan" />
+                                            </div>
+                                        </div>
+                                    </div>
+
                                 </div>
                             </div>
                         </div>
@@ -64,6 +81,7 @@
                         <div class="row">
                             <div class="col align-items-right">
                                 <button type="submit" class="btn btn-dark">Simpan</button>
+                                <a class="btn btn-outline-secondary" href="/rencana_kegiatan_master">Kembali</a>
                             </div>
                         </div>
 

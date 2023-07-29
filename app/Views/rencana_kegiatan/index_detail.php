@@ -15,7 +15,7 @@
                             <div class="table-responsive">
                                 <table class="table table-bordered"  width="100%" cellspacing="0">
                                     <thead>
-                                        <tr>
+                                        <tr align="center">
                                             <th>No</th>
                                             <th>User</th>
                                             <!-- <th>ID Rencana Kegiatan</th> -->
@@ -25,7 +25,7 @@
                                         </tr>
                                     </thead>
                                     <tfoot>
-                                        <tr>
+                                        <tr align="center">
                                             <th>No</th>
                                             <th>User</th>
                                             <!-- <th>ID Rencana Kegiatan</th> -->
@@ -40,15 +40,21 @@
                                         foreach ($getRencanaKegiatan as $row) :
                                         ?>
                                             <tr>
-                                                <td><?= $nomor++; ?></td>
+                                                <td align="center"><?= $nomor++; ?></td>
                                                 <td><?= $row->email; ?></td>
                                                 <!-- <td><?= $row->id_rencana_kegiatan; ?></td> -->
-                                                <td><?= $row->judul_amalan_yaumi; ?></td>
                                                 <td>
+                                                    <?= $row->judul_amalan_yaumi; ?>
+                                                    <?php if ($row->id_amalan_yaumi == 1): ?>
+                                                        <hr>
+                                                        <?= $row->keterangan_kegiatan; ?>      
+                                                    <?php endif ?>   
+                                                </td>
+                                                <td align="center">
                                                     <?php if ($row->status_rencana_kegiatan == 1) : ?>
-                                                        <button type="button" class="btn btn-outline-success">Show</button>
+                                                        <span class="badge bg-success text-light">Show</span>
                                                     <?php elseif ($row->status_rencana_kegiatan == 0) : ?>
-                                                        <button type="button" class="btn btn-outline-danger">Hide</button>
+                                                        <span class="badge bg-danger text-light">Hide</span>
                                                     <?php endif ?>
                                                 </td>
                                             </tr>
@@ -69,7 +75,7 @@
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
-                                        <tr>
+                                        <tr align="center">
                                             <th>No</th>
                                             <th>Rencana Jadwal</th>
                                             <th>Realisasi Jadwal</th>
@@ -78,7 +84,7 @@
                                         </tr>
                                     </thead>
                                     <tfoot>
-                                        <tr>
+                                        <tr align="center">
                                             <th>No</th>
                                             <th>Rencana Jadwal</th>
                                             <th>Realisasi Jadwal</th>
@@ -92,14 +98,14 @@
                                             foreach($getDetailRencanaKegiatan as $row_detail):
                                         ?>
                                             <tr>
-                                                <td><?= $nomor++; ?></td>
+                                                <td align="center"><?= $nomor++; ?></td>
                                                 <td><?= $row_detail->rencana_jadwal;?></td>
                                                 <td><?= $row_detail->realisasi_jadwal;?></td>
-                                                <td>
+                                                <td align="center">
                                                     <?php if ($row_detail->status_detail_rencana_kegiatan == 2) : ?>
-                                                        <button type="button" class="btn btn-outline-success">Sudah Dilakukan</button>
+                                                        <span class="badge bg-success text-light">Sudah Dilakukan</span>
                                                     <?php elseif ($row_detail->status_detail_rencana_kegiatan == 1) : ?>
-                                                        <button type="button" class="btn btn-outline-danger">Belum Dilakukan</button>
+                                                        <span class="badge bg-danger text-light">Belum Dilakukan</span>
                                                     <?php endif ?>
                                                 </td>
                                             </tr>
@@ -109,6 +115,7 @@
                             </div>
                         </div>
                     </div>
+                    <a class="btn btn-outline-secondary" href="/rencana_kegiatan_master">Kembali</a>
 
                 </div>
                 <!-- /.container-fluid -->

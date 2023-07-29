@@ -16,21 +16,29 @@ function youtube($url)
                     <!-- Page Heading -->
                     <h1 class="h3 mb-2 text-gray-800">Preview Wawasan Islami</h1>
 
-                    <?php
-                        foreach($getWawasanIslami as $row):
-                    ?>
+                    <div class="card shadow mb-4">
+                        <div class="card-body">
 
-                        <center><h1 class="h3 mb-2 text-gray-800"><?= $row->judul_wawasan_islami; ?></h1></center>
+                            <?php
+                                foreach($getWawasanIslami as $row):
+                            ?>
 
-                        <center><img clas="bd-placeholder-img card-img-top" width="500"  src="<?= base_url($row->gambar_wawasan_islami); ?>"></center>
+                                <center><h1 class="h3 mb-2 text-gray-800"><b><?= $row->judul_wawasan_islami; ?></b></h1></center>
 
-                        <p><?= $row->konten_wawasan_islami; ?></p>
+                                <center><img clas="bd-placeholder-img card-img-top" width="500"  src="<?= base_url($row->gambar_wawasan_islami); ?>"></center>
 
-                        <?= youtube($row->video_wawasan_islami); ?> <br> <a href="<?=$row->video_wawasan_islami?>" target="_blank">kunjungi situs</a>
-                        <br>
-                        <a class="back" class="btn btn-info" href="/wawasan_islami_master"><button type="button" class="btn btn-info">Kembali</button></a>      
+                                <p><?= $row->konten_wawasan_islami; ?></p>
 
-                    <?php endforeach;?>
+                                <?php if ($row->video_wawasan_islami): ?>
+                                    <?= youtube($row->video_wawasan_islami); ?> <br> <a href="<?=$row->video_wawasan_islami?>" target="_blank">kunjungi situs</a>   
+                                <?php endif ?>
+                                <br>
+
+                            <?php endforeach;?>
+                        </div>
+                    </div>
+                    
+                    <a class="btn btn-outline-secondary" href="/wawasan_islami_master">Kembali</a>      
 
                 </div>
                 <!-- /.container-fluid -->

@@ -117,6 +117,7 @@
                         <div class="row">
                             <div class="col align-items-right">
                                 <button type="submit" class="btn btn-dark">Simpan</button>
+                                <a class="btn btn-outline-secondary" href="/review_master">Kembali</a>
                             </div>
                         </div>
 

@@ -23,21 +23,20 @@
                                 <div class="list-group list-group-flush">
                                     
                                    
-                                    <div class="list-group-item p-3">
-                                        <div class="row align-items-start">
-                                            <div class="col-md-2 mb-8pt mb-md-0">
+                                    <!-- <div class="list-group-item p-3"> -->
+                                        <!-- <div class="row align-items-start"> -->
+                                            <!-- <div class="col-md-2 mb-8pt mb-md-0">
                                                 <div class="media align-items-left">
                                                     <div class="d-flex flex-column media-body media-middle">
-                                                        <span
-                                                        class="card-title">ID Notifikasi</span>
+                                                        <span class="card-title">ID Notifikasi</span>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div class="col mb-8pt mb-md-0">
-                                                <input name="id_notifikasi" value="<?= $id_notifikasi ?>" type="text" class="form-control" placeholder="Masukan ID Notifikasi" readonly/>
-                                            </div>
-                                        </div>
-                                    </div>
+                                            </div> -->
+                                            <!-- <div class="col mb-8pt mb-md-0"> -->
+                                                <input name="id_notifikasi" value="<?= $id_notifikasi ?>" type="hidden" class="form-control" placeholder="Masukan ID Notifikasi" readonly/>
+                                            <!-- </div> -->
+                                        <!-- </div> -->
+                                    <!-- </div> -->
 
                                     <div class="list-group-item p-3">
                                         <div class="row align-items-start">
@@ -111,6 +110,7 @@
                         <div class="row">
                             <div class="col align-items-right">
                                 <button type="submit" class="btn btn-dark">Simpan</button>
+                                <a class="btn btn-outline-secondary" href="/notifikasi/detail/<?= $id_notifikasi ?>">Kembali</a>
                             </div>
                         </div>
 

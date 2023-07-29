@@ -49,11 +49,11 @@
                                                     <?php if ($row->status_kutipan == 1) : ?>
                                                         <span class="badge bg-success text-light">Show</span>
                                                         <hr>
-                                                        <a class="edit_status" class="btn btn-outline-secondary" href="/kutipan/edit_status/<?= $row->id_kutipan; ?>/0"><button type="button" class="btn btn-outline-secondary">Hide</button></a>
+                                                        <a class="edit_status" class="btn btn-outline-secondary" href="/kutipan/edit_status/<?= $row->id_kutipan; ?>/0" onClick='return confirm("Yakin akan hide data kutipan ini untuk user?")'><button type="button" class="btn btn-outline-secondary">Hide</button></a>
                                                     <?php elseif ($row->status_kutipan == 0) : ?>
                                                         <span class="badge bg-danger text-light">Hide</span>
                                                         <hr>
-                                                        <a class="edit_status" class="btn btn-outline-secondary" href="/kutipan/edit_status/<?= $row->id_kutipan; ?>/1"><button type="button" class="btn btn-outline-secondary">Show</button></a>
+                                                        <a class="edit_status" class="btn btn-outline-secondary" href="/kutipan/edit_status/<?= $row->id_kutipan; ?>/1" onClick='return confirm("Yakin akan show data kutipan ini untuk user?")'><button type="button" class="btn btn-outline-secondary">Show</button></a>
                                                     <?php endif ?>
                                                 </td>
                                                 <td align="center">

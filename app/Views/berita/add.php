@@ -21,20 +21,20 @@
 
                             <div class="col-md-12">
                                 <div class="list-group list-group-flush">
-                                    <div class="list-group-item p-3">
-                                        <div class="row align-items-start">
-                                            <div class="col-md-2 mb-8pt mb-md-0">
-                                                <div class="media align-items-left">
-                                                    <div class="d-flex flex-column media-body media-middle">
-                                                        <span class="card-title">ID User</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col mb-8pt mb-md-0">
-                                                <input name="id_user" type="text" class="form-control" value="<?= $session->get('id')?>" placeholder="<?= $session->get('name');?> - <?= $session->get('email');?>" readonly/>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <!-- <div class="list-group-item p-3"> -->
+                                        <!-- <div class="row align-items-start"> -->
+                                            <!-- <div class="col-md-2 mb-8pt mb-md-0"> -->
+                                                <!-- <div class="media align-items-left"> -->
+                                                    <!-- <div class="d-flex flex-column media-body media-middle"> -->
+                                                        <!-- <span class="card-title">ID User</span> -->
+                                                    <!-- </div> -->
+                                                <!-- </div> -->
+                                            <!-- </div> -->
+                                            <!-- <div class="col mb-8pt mb-md-0"> -->
+                                                <input name="id_user" type="hidden" class="form-control" value="<?= $session->get('id')?>" placeholder="<?= $session->get('name');?> - <?= $session->get('email');?>" readonly/>
+                                            <!-- </div> -->
+                                        <!-- </div> -->
+                                    <!-- </div> -->
 
                                     <div class="list-group-item p-3">
                                         <div class="row align-items-start">

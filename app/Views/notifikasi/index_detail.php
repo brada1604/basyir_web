@@ -13,9 +13,9 @@
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                <table class="table table-bordered" width="100%" cellspacing="0">
                                     <thead>
-                                        <tr>
+                                        <tr align="center">
                                             <th>No</th>
                                             <th>Judul</th>
                                             <th>Pesan</th>
@@ -24,7 +24,7 @@
                                         </tr>
                                     </thead>
                                     <tfoot>
-                                        <tr>
+                                        <tr align="center">
                                             <th>No</th>
                                             <th>Judul</th>
                                             <th>Pesan</th>
@@ -38,7 +38,7 @@
                                             foreach($getNotifikasi as $row):
                                         ?>
                                             <tr>
-                                                <td><?= $nomor++; ?></td>
+                                                <td align="center"><?= $nomor++; ?></td>
                                                 <td><?= $row->judul_notifikasi;?></td>
                                                 <td><?= $row->pesan_notifikasi;?></td>
                                                 <td>
@@ -58,7 +58,7 @@
                         </div>
                     </div>
 
-                    <a class="tambah" href="/notifikasi/add_target/<?= $row->id_notifikasi;?>"><button type="button" class="btn btn-primary">Tambah</button></a>
+                    <a class="tambah" href="/notifikasi/add_target/<?= $row->id_notifikasi;?>"><button type="button" class="btn btn-primary">Tambah Target Notifikasi</button></a>
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
@@ -68,7 +68,7 @@
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
-                                        <tr>
+                                        <tr align="center">
                                             <th>No</th>
                                             <th>User</th>
                                             <th>Role</th>
@@ -79,7 +79,7 @@
                                         </tr>
                                     </thead>
                                     <tfoot>
-                                        <tr>
+                                        <tr align="center">
                                             <th>No</th>
                                             <th>User</th>
                                             <th>Role</th>
@@ -95,45 +95,44 @@
                                             foreach($getTargetNotifikasi as $row):
                                         ?>
                                             <tr>
-                                                <td><?= $nomor++; ?></td>
+                                                <td align="center"><?= $nomor++; ?></td>
                                                 <td><?= $row->email;?></td>
-                                                <td>
+                                                <td align="center">
                                                     <?php if ($row->role == 1) : ?>
-                                                        <button type="button" class="btn btn-outline-danger">Administrator</button>
+                                                        <span class="badge bg-danger text-light">Administrator</span>
                    
                                                     <?php elseif ($row->role == 2) : ?>
-                                                        <button type="button" class="btn btn-outline-info">Kontributor</button>
+                                                        <span class="badge bg-info text-light">Kontributor</span>
 
                                                     <?php elseif ($row->role == 3) : ?>
-                                                        <button type="button" class="btn btn-outline-primary">Creator</button>
+                                                        <span class="badge bg-primary text-light">Creator</span>
 
                                                     <?php elseif ($row->role == 4) : ?>
-                                                        <button type="button" class="btn btn-outline-success">User</button>
+                                                        <span class="badge bg-success text-light">User</span>
                                                     <?php endif ?>
                                                 </td>
                                                 <td><?= $row->jadwal_notifikasi;?></td>
-                                                <td>
+                                                <td align="center">
                                                     <?php if ($row->jenis_notifikasi == 2) : ?>
-                                                        <button type="button" class="btn btn-outline-success">Sudah Dibaca</button>
+                                                        <span class="badge bg-success text-light">Sudah Dibaca</span>
                                                         
                                                     <?php elseif ($row->jenis_notifikasi == 1) : ?>
-                                                        <button type="button" class="btn btn-outline-danger">Belum Dibaca</button>
+                                                        <span class="badge bg-danger text-light">Belum Dibaca</span>
                                                     <?php endif ?>
                                                 </td>
-                                                <td>
+                                                <td align="center">
                                                     <?php if ($row->status_notifikasi == 1) : ?>
-                                                        <button type="button" class="btn btn-outline-success">Show</button>
-                                                        
+                                                        <span class="badge bg-success text-light">Show</span>
+                                                        <hr>
                                                         <a class="edit_status" class="btn btn-outline-secondary" href="/notifikasi/edit_status/<?= $row->id_target_notifikasi; ?>/0"><button type="button" class="btn btn-outline-secondary">Hide</button></a>
-                                                            
-                                                        
                                                     <?php elseif ($row->status_notifikasi == 0) : ?>
-                                                        <button type="button" class="btn btn-outline-danger">Hide</button>
+                                                        <span class="badge bg-danger text-light">Hide</span>
+                                                        <hr>
                                                         <a class="edit_status" class="btn btn-outline-secondary" href="/notifikasi/edit_status/<?= $row->id_target_notifikasi; ?>/1"><button type="button" class="btn btn-outline-secondary">Show</button></a>
                                                     <?php endif ?>
                                                 </td>
-                                                <td>
-                                                    <a class="hapus" class="btn btn-danger" href="/notifikasi/delete_target/<?= $row->id_target_notifikasi;?>"><button type="button" class="btn btn-danger">Hapus</button></a>                   
+                                                <td align="center">
+                                                    <a class="hapus" class="btn btn-danger" href="/notifikasi/delete_target/<?= $row->id_target_notifikasi;?>" title="Hapus Data" onClick='return confirm("Yakin akan menghapus data target notifikasi ini?")'><button type="button" class="btn btn-danger"><i class="fas fa-fw fa-trash"></i></button></a>                   
                                                 </td>
                                             </tr>
                                         <?php endforeach; ?>
@@ -142,6 +141,8 @@
                             </div>
                         </div>
                     </div>
+
+                    <a class="btn btn-outline-secondary" href="/notifikasi_master">Kembali</a>
 
                 </div>
                 <!-- /.container-fluid -->

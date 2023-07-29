@@ -168,7 +168,8 @@
 
                         <div class="row">
                             <div class="col align-items-right">
-                                <button type="submit" class="btn btn-dark">Simpan</button>
+                                <button type="submit" class="btn btn-dark">Update</button>
+                                <a class="btn btn-outline-secondary" href="/wawasan_islami_master">Kembali</a>
                             </div>
                         </div>
 

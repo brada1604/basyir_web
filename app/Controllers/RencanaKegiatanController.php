@@ -14,7 +14,12 @@ class RencanaKegiatanController extends BaseController
         $model = new RencanaKegiatanModel;
         $data['session'] = session();
         $data['title'] = 'Data Rencana Kegiatan';
-        $data['getRencanaKegiatan'] = $model->getRencanaKegiatan();
+        if (session()->role == 1 ) {
+            $data['getRencanaKegiatan'] = $model->getRencanaKegiatan();
+        }
+        else if (session()->role != 1) {
+            $data['getRencanaKegiatan'] = $model->getRencanaKegiatanByIdUser(session()->id);
+        }
 
         echo view('layout/v_header', $data);
         echo view('layout/v_sidebar');
@@ -49,9 +54,15 @@ class RencanaKegiatanController extends BaseController
         if ($this->validate($rules)) {
             $model = new RencanaKegiatanModel();
 
+            $id_amalan_yaumi = $this->request->getVar('id_amalan_yaumi');
+            if ($this->request->getVar('keterangan_kegiatan')) {
+                $id_amalan_yaumi = 1;
+            }
+
             $data = [
                 'id_user' => $this->request->getVar('id_user'),
-                'id_amalan_yaumi' => $this->request->getVar('id_amalan_yaumi'),
+                'id_amalan_yaumi' => $id_amalan_yaumi,
+                'keterangan_kegiatan' => $this->request->getVar('keterangan_kegiatan'),
             ];
 
             $model->save($data);
@@ -120,16 +131,22 @@ class RencanaKegiatanController extends BaseController
             $model = new RencanaKegiatanModel();
             $id_rencana_kegiatan = $this->request->getVar('id_rencana_kegiatan');
 
+            $id_amalan_yaumi = $this->request->getVar('id_amalan_yaumi');
+            if ($this->request->getVar('keterangan_kegiatan')) {
+                $id_amalan_yaumi = 1;
+            }
+
             $data = [
                 'id_rencana_kegiatan' => $this->request->getVar('id_rencana_kegiatan'),
                 'id_user' => $this->request->getVar('id_user'),
-                'id_amalan_yaumi' => $this->request->getVar('id_amalan_yaumi'),
+                'id_amalan_yaumi' => $id_amalan_yaumi,
+                'keterangan_kegiatan' => $this->request->getVar('keterangan_kegiatan'),
             ];
 
             $model->update($id_rencana_kegiatan, $data);
 
             echo '<script>
-                    alert("Selamat! Berhasil Mengubah Data Kutipan");
+                    alert("Selamat! Berhasil Mengubah Data Rencana Kegiatan");
                     window.location="' . base_url('rencana_kegiatan_master') . '"
                 </script>';
         } else {

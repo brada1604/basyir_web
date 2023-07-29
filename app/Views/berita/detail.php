@@ -16,12 +16,12 @@
                     <h1 class="h3 mb-2 text-gray-800">Preview Berita</h1>
 
                     <div class="card shadow mb-4">
-                            <div class="card-body">
+                        <div class="card-body">
                             <?php
                                 foreach($getBerita as $row):
                             ?>
 
-                                <center><b><h1 class="h3 mb-2 text-gray-800"><?= $row->judul_berita; ?></h1></b></center>
+                                <center><h1 class="h3 mb-2 text-gray-800"><b><?= $row->judul_berita; ?></b></h1></center>
 
                                 <center><img clas="bd-placeholder-img card-img-top" width="500"  src="<?= base_url($row->gambar_berita); ?>"></center>
 

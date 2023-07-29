@@ -14,7 +14,7 @@
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
-                                        <tr>
+                                        <tr align="center">
                                             <th>No</th>
                                             <th>Saran</th>
                                             <th>Waktu</th>
@@ -22,7 +22,7 @@
                                         </tr>
                                     </thead>
                                     <tfoot>
-                                        <tr>
+                                        <tr align="center">
                                             <th>No</th>
                                             <th>Saran</th>
                                             <th>Waktu</th>
@@ -35,11 +35,11 @@
                                             foreach($getSaran as $row):
                                         ?>
                                             <tr>
-                                                <td><?= $nomor++; ?></td>
+                                                <td align="center"><?= $nomor++; ?></td>
                                                 <td><?= $row->pesan_saran;?></td>
-                                                <td><?= $row->created_at;?></td>
-                                                <td>
-                                                    <a class="hapus" class="btn btn-danger" href="/saran/delete/<?= $row->id_saran;?>"><button type="button" class="btn btn-danger">Hapus</button></a>
+                                                <td align="center"><?= $row->created_at;?></td>
+                                                <td align="center">
+                                                    <a class="hapus" class="btn btn-danger" href="/saran/delete/<?= $row->id_saran;?>" title="Hapus Data" onClick='return confirm("Yakin akan menghapus data saran ini?")'><button type="button" class="btn btn-danger"><i class="fas fa-fw fa-trash"></i></button></a>
                                                 </td>
                                             </tr>
                                         <?php endforeach; ?>
