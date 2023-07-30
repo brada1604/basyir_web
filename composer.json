@@ -13,7 +13,8 @@
         "psr/log": "^1.1",
         "jason-napolitano/codeigniter4-cart-module": "^1.0",
         "phpoffice/phpspreadsheet": "^1.28",
-        "dompdf/dompdf": "^2.0"
+        "dompdf/dompdf": "^2.0",
+        "daycry/cronjob": "^2.2"
     },
     "require-dev": {
         "kint-php/kint": "^5.0.1",

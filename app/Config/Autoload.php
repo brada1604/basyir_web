@@ -42,7 +42,8 @@ class Autoload extends AutoloadConfig
     public $psr4 = [
         APP_NAMESPACE => APPPATH, // For custom app namespace
         'Config'      => APPPATH . 'Config',
-        'CodeIgniterCart' => APPPATH . 'vendor/jason-napolitano/codeigniter4-cart-module/src'
+        'CodeIgniterCart' => APPPATH . 'vendor/jason-napolitano/codeigniter4-cart-module/src',
+        'Daycry\CronJob' => APPPATH .'ThirdParty/cronjob/src',
     ];
 
     /**

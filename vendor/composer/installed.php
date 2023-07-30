@@ -3,7 +3,7 @@
         'name' => 'codeigniter4/framework',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '852a54e46de707c6056deed11e09e7988ee73fb6',
+        'reference' => 'd51a575800761e6a961a25fa283b1aabf7200547',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -22,7 +22,7 @@
         'codeigniter4/framework' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '852a54e46de707c6056deed11e09e7988ee73fb6',
+            'reference' => 'd51a575800761e6a961a25fa283b1aabf7200547',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -54,6 +54,15 @@
             'install_path' => __DIR__ . '/./xdebug-handler',
             'aliases' => array(),
             'dev_requirement' => true,
+        ),
+        'daycry/cronjob' => array(
+            'pretty_version' => 'V2.2.13',
+            'version' => '2.2.13.0',
+            'reference' => 'efcba010f9fcda549efb0b3d73aae55e88af14c2',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../daycry/cronjob',
+            'aliases' => array(),
+            'dev_requirement' => false,
         ),
         'doctrine/annotations' => array(
             'pretty_version' => '1.14.3',
@@ -97,6 +106,15 @@
             'reference' => 'e8d2d5e37e8b0b30f0732a011295ab80680d7e85',
             'type' => 'library',
             'install_path' => __DIR__ . '/../dompdf/dompdf',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'dragonmantank/cron-expression' => array(
+            'pretty_version' => 'v3.3.2',
+            'version' => '3.3.2.0',
+            'reference' => '782ca5968ab8b954773518e9e49a6f892a34b2a8',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../dragonmantank/cron-expression',
             'aliases' => array(),
             'dev_requirement' => false,
         ),
@@ -198,6 +216,12 @@
             'install_path' => __DIR__ . '/../mikey179/vfsstream',
             'aliases' => array(),
             'dev_requirement' => true,
+        ),
+        'mtdowling/cron-expression' => array(
+            'dev_requirement' => false,
+            'replaced' => array(
+                0 => '^1.0',
+            ),
         ),
         'myclabs/deep-copy' => array(
             'pretty_version' => '1.11.1',
@@ -747,6 +771,15 @@
             'install_path' => __DIR__ . '/../theseer/tokenizer',
             'aliases' => array(),
             'dev_requirement' => true,
+        ),
+        'webmozart/assert' => array(
+            'pretty_version' => '1.11.0',
+            'version' => '1.11.0.0',
+            'reference' => '11cb2199493b2f8a3b53e7f19068fc6aac760991',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../webmozart/assert',
+            'aliases' => array(),
+            'dev_requirement' => false,
         ),
     ),
 );
