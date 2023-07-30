@@ -127,7 +127,7 @@
                 <div class="justify-center row">
                     <div class="w-full lg:w-2/3">
                         <div class="text-center header-hero-image wow fadeIn" data-wow-duration="1.3s" data-wow-delay="1.4s">
-                            <img src="assets/images/mockup basyir.png" alt="hero" style="margin-left: 125px;">
+                            <center><img src="assets/images/mockup basyir.png" alt="hero"></center>
                         </div> <!-- header hero image -->
                     </div>
                 </div> <!-- row -->
