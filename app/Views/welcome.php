@@ -858,11 +858,12 @@
                                         <h4 class="mb-8 text-2xl font-bold text-white">Resources</h4>
                                     </div>
                                     <ul class="link">
-                                        <li><a href="javascript:void(0)">Home</a></li>
-                                        <li><a href="javascript:void(0)">Page</a></li>
-                                        <li><a href="javascript:void(0)">Portfolio</a></li>
-                                        <li><a href="javascript:void(0)">Blog</a></li>
-                                        <li><a href="javascript:void(0)">Contact</a></li>
+                                        <li><a href="#home">Home</a></li>
+                                        <li><a href="#features">Jadwal Sholat</a></li>
+                                        <li><a href="#features1">Support</a></li>
+                                        <li><a href="#about">Benefit</a></li>
+                                        <li><a href="#facts">Fun Fact</a></li>
+                                        <li><a href="#team">Team</a></li>
                                     </ul>
                                 </div> <!-- footer wrapper -->
                             </div>
@@ -874,7 +875,7 @@
                                 <h4 class="mb-8 text-2xl font-bold text-white">Contact Us</h4>
                             </div>
                             <ul class="contact">
-                                <li>Whatsapp</li>
+                                <!-- <li>Whatsapp</li> -->
                                 <li>basyir@gmail.com</li>
                                 <li>Jl. Gegerkalong Hilir, Desa Ciwaruga <br> Politeknik Negeri Bandung.</li>
                             </ul>
