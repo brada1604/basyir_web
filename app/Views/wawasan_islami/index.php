@@ -16,7 +16,7 @@ function youtube($url)
 
     <!-- Page Heading -->
     <h1 class="h3 mb-2 text-gray-800">Master Wawasan Islami</h1>
-    <p class="mb-4">Data untuk memanage wawasan islami. Kunjungi Website <a target="_blank" href="/wawasan_islami">Wawasan Islami Basyir</a>.</p>
+    <p class="mb-4">Data untuk memanage wawasan islami. Kunjungi Website <a target="_blank" href="/listWawasanIslami">Wawasan Islami Basyir</a>.</p>
     <a class="edit" href="/wawasan_islami/add"><button type="button" class="btn btn-primary">Tambah Wawasan Islami</button></a>
 
     <!-- DataTales Example -->
