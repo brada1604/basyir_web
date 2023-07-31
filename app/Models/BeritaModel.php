@@ -49,10 +49,10 @@ class BeritaModel extends Model
 
             if ($role_user == 1) {
                 // Manual atau Query Builder
-                $query = $this->db->query("SELECT * FROM tbl_berita as a INNER JOIN tbl_user as b on a.id_user = b.id INNER join tbl_kategori_berita as c on a.id_kategori_berita = c.id_kategori_berita");
+                $query = $this->db->query("SELECT * FROM tbl_berita as a INNER JOIN tbl_user as b on a.id_user = b.id INNER join tbl_kategori_berita as c on a.id_kategori_berita = c.id_kategori_berita ORDER BY a.created_at DESC");
             } else {
                 // Manual atau Query Builder
-                $query = $this->db->query("SELECT * FROM tbl_berita as a INNER JOIN tbl_user as b on a.id_user = b.id INNER join tbl_kategori_berita as c on a.id_kategori_berita = c.id_kategori_berita where a.id_user = '$id_user'");
+                $query = $this->db->query("SELECT * FROM tbl_berita as a INNER JOIN tbl_user as b on a.id_user = b.id INNER join tbl_kategori_berita as c on a.id_kategori_berita = c.id_kategori_berita where a.id_user = '$id_user' ORDER BY a.created_at DESC");
             }
 
             return $query->getResult(); // return berupa array objek
@@ -61,7 +61,7 @@ class BeritaModel extends Model
             // return $this->getWhere(['id' => $id]);
 
             // Manual atau Query Builder
-            $query = $this->db->query("SELECT * FROM tbl_berita as a INNER JOIN tbl_user as b on a.id_user = b.id INNER join tbl_kategori_berita as c on a.id_kategori_berita = c.id_kategori_berita where a.id_berita = '$id' ");
+            $query = $this->db->query("SELECT * FROM tbl_berita as a INNER JOIN tbl_user as b on a.id_user = b.id INNER join tbl_kategori_berita as c on a.id_kategori_berita = c.id_kategori_berita where a.id_berita = '$id' ORDER BY a.created_at DESC");
             return $query->getResult(); // return berupa array objek
         }
     }

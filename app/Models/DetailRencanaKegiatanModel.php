@@ -14,7 +14,7 @@ class DetailRencanaKegiatanModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['id_rencana_kegiatan', 'rencana_jadwal', 'realisasi_jadwal'];
+    protected $allowedFields    = ['id_rencana_kegiatan', 'rencana_jadwal', 'realisasi_jadwal', 'status_detail_rencana_kegiatan', 'is_reminder'];
 
     // Dates
     protected $useTimestamps = false;
