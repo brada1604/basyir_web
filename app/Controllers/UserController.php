@@ -248,6 +248,25 @@ class UserController extends BaseController
 
     public function kirim_email($name_user, $email_user)
     {
+        ini_set( 'display_errors', 1 );
+        error_reporting( E_ALL );
+        $from = "official@basyir.my.id";
+        $to = $email_user;
+        $subject = "Aktivasi user";
+        $message = 'Selamat Datang '.$name_user.' di Basyir System <a href="'.base_url("/aktivasi_akun").'">Link Aktivasi</a> atau '.base_url("/aktivasi_akun/$email_user");
+        $headers = "From:" . $from;
+        mail($to,$subject,$message, $headers);
+
+        echo 'Success!';
+
+        echo '<script>
+            alert("Selamat! Berhasil Mengirim Email");
+            window.location="' . base_url('user_master') . '"
+        </script>';
+    }
+
+    public function kirim_email2($name_user, $email_user)
+    {
         // initialize email setting from emailConfig function.
         $this->email->initialize($this->emailConfig());
 
@@ -276,6 +295,25 @@ class UserController extends BaseController
     }
 
     public function kirim_email_reset_password($email_user)
+    {
+        ini_set( 'display_errors', 1 );
+        error_reporting( E_ALL );
+        $from = "official@basyir.my.id";
+        $to = $email_user;
+        $subject = "Reset Password";
+        $message = 'Selamat Datang '.$email_user.' di Basyir System. Password baru kamu adalah "12345678". Link Login '.base_url("/login");
+        $headers = "From:" . $from;
+        mail($to,$subject,$message, $headers);
+
+        echo 'Success!';
+
+        echo '<script>
+                alert("Selamat! Berhasil Reset Password Akun,  Cek email kamu");
+                window.location="' . base_url('/') . '"
+            </script>';
+    }
+
+    public function kirim_email_reset_password2($email_user)
     {
         // initialize email setting from emailConfig function.
         $this->email->initialize($this->emailConfig());
